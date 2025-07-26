@@ -11219,8 +11219,9 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 .shop-ad-height {
   height:200px;
 }
-/* Highlight Donate button in navbar */
-a.donate-highlight {
-  color: #7cb203 !important;
+.navbar-nav > li > a {
   font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
