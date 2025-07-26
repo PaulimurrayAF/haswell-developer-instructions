@@ -11253,3 +11253,12 @@ a.donate-highlight {
   font-size: 40px;
   letter-spacing: 0;
 }
+.medium-70 {
+  font-size: 70px;
+  font-weight: 500;
+}
+
+.medium-40 {
+  font-size: 40px;
+  font-weight: 500;
+}
