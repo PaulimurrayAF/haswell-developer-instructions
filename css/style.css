@@ -11230,35 +11230,3 @@ a.donate-highlight {
   color: #7cb203 !important;
   font-weight: 600;
 }
-/* Enlarge logo image in navbar */
-.logo-img {
-  height: 60px; /* Try 60–80px depending on your preference */
-  max-height: 80px;
-  width: auto;
-}
-.bold-70 {
-  font-weight: 700;
-  font-size: 70px;
-  letter-spacing: 0;
-}
-
-.bold-60 {
-  font-weight: 700;
-  font-size: 60px;
-  letter-spacing: 0;
-}
-
-.bold-40 {
-  font-weight: 700;
-  font-size: 40px;
-  letter-spacing: 0;
-}
-.medium-70 {
-  font-size: 70px;
-  font-weight: 500;
-}
-
-.medium-40 {
-  font-size: 40px;
-  font-weight: 500;
-}
