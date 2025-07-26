@@ -11262,8 +11262,11 @@ a.donate-highlight {
   font-size: 40px;
   font-weight: 500;
 }
-/* === CUSTOM OVERRIDES FOR SLIDE 1 HEIGHT === */
+/* === SLIDE 1 HEIGHT OVERRIDE === */
 #rs-fullwidth_wrapper {
-  height: 1120px !important;
+  min-height: 1280px !important;
   overflow: visible !important;
+}
+.tp-caption {
+  white-space: normal !important;
 }
