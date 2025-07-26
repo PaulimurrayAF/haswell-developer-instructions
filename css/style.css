@@ -11225,3 +11225,14 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+/* Highlight Donate button in navbar */
+a.donate-highlight {
+  color: #7cb203 !important;
+  font-weight: 600;
+}
+/* Enlarge logo image in navbar */
+.logo-img {
+  height: 60px; /* Try 60–80px depending on your preference */
+  max-height: 80px;
+  width: auto;
+}
