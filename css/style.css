@@ -11262,3 +11262,8 @@ a.donate-highlight {
   font-size: 40px;
   font-weight: 500;
 }
+/* === CUSTOM OVERRIDES FOR SLIDE 1 HEIGHT === */
+#rs-fullwidth_wrapper {
+  height: 1120px !important;
+  overflow: visible !important;
+}
