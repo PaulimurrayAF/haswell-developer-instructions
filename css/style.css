@@ -11236,3 +11236,20 @@ a.donate-highlight {
   max-height: 80px;
   width: auto;
 }
+.bold-70 {
+  font-weight: 700;
+  font-size: 70px;
+  letter-spacing: 0;
+}
+
+.bold-60 {
+  font-weight: 700;
+  font-size: 60px;
+  letter-spacing: 0;
+}
+
+.bold-40 {
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 0;
+}
