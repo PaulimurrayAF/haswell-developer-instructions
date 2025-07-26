@@ -11219,18 +11219,8 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 .shop-ad-height {
   height:200px;
 }
-/* Style for Donate link in navbar */
-.navbar-nav > li > a.donate-nav {
-  background-color: #7cb203;
-  color: #ffffff !important;
-  padding: 10px 18px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.navbar-nav > li > a.donate-nav:hover {
-  background-color: #689403;
-  color: #ffffff !important;
+/* Highlight Donate button in navbar */
+a.donate-highlight {
+  color: #7cb203 !important;
+  font-weight: 600;
 }
