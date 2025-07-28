@@ -11231,3 +11231,6 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   color: #7cb203 !important; /* PMAF green */
   font-weight: bold;
 }
+.navbar-nav {
+  margin-right: 0 !important;
+}
