@@ -11230,3 +11230,9 @@ a.donate-highlight {
   color: #7cb203 !important;
   font-weight: 600;
 }
+/* Custom Donate Link Highlight */
+.donate-highlight,
+.donate-highlight .main-menu-title {
+  color: #00c08b !important; /* PMAF green */
+  font-weight: bold;
+}
