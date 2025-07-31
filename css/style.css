@@ -11234,3 +11234,6 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 .bg-gray-footer {
     background-color: #000000fa;
 }
+.tparrows:before {
+  display: none !important;
+}
