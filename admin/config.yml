@@ -3,11 +3,9 @@ backend:
   branch: main
   site_domain: pmaf.netlify.app
 
-
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-collections:
 collections:
   - name: "posts"
     label: "Blog Posts"
@@ -33,7 +31,7 @@ collections:
           name: "categories",
           widget: "select",
           multiple: true,
-          options: ["Article", "Reflection", "Announcement", "Fundraising", "Programs", "Events", "News", "Press"]
+          options: ["Article", "Reflection", "Announcement", "Fundraising", "Programs", "Events", "News", "Press"],
           required: false
         }
 
