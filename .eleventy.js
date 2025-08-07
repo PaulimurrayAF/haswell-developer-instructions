@@ -12,10 +12,11 @@ module.exports = function(eleventyConfig) {
 
   return {
     dir: {
-      input: ".",              // ← use project root
-      includes: "_includes",   // for layout files like base.njk
-      data: "_data",           // optional global data
-      output: "_site"
+      input: ".",              // root of your project
+      includes: "_includes",   // layout & includes folder
+      data: "_data",           // global data
+      output: "_site"          // build output
     },
     passthroughFileCopy: true
   };
+};

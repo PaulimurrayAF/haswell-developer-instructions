@@ -14,6 +14,7 @@ published: true
 author_name: Cory L. Scott
 author_bio: Author | Activist | Former Pastor | Sex Educator | Strategist | Founder at Pauli Murray Awards Foundation
 author_avatar: /images/uploads/cory-icon.png
+permalink: "/posts/{{ slug }}/"
 ---
 **Introducing the Inaugural Board of Directors of the Pauli Murray Awards Foundation**
 
