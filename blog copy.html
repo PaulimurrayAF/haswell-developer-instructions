@@ -185,9 +185,9 @@
   <div class="row">
   
     <!-- FEATURED POSTS CONTAINER -->
-    <div class="col-sm-12 blog-main-posts" id="posts-container">
-      <!-- Featured blog posts will be dynamically injected here by load-posts.js -->
-    </div>
+<div id="blog-posts" class="col-sm-12 blog-main-posts">
+  <!-- Blog posts will be dynamically injected here by fetchBlogPosts() -->
+</div>
 
   </div>
 </div>
@@ -836,113 +836,56 @@
   }
 </script>
 
+<!-- Gray Matter for frontmatter parsing -->
 <script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
+
 <script>
-  async function fetchBlogPosts() {
-    const postsFolder = "/content/posts/";
-    const container = document.getElementById("blog-posts");
-    
-    if (!container) return;
+  // Wait until everything is ready — including gray-matter
+  window.addEventListener("DOMContentLoaded", function () {
+    if (typeof matter === "undefined") {
+      console.error("gray-matter is not loaded.");
+      return;
+    }
 
-    const postList = [
-      // Add your blog post filenames here manually for now
-      "building-the-future-with-vision-and-integrity.md",
-      "feast-day-of-rev-dr-pauli-murray-esq-honoring-the-saint-who-defied-every-box.md",
-      "legacy-in-progress.md",
-      "pauli-murray-was-always-there—we-just-weren’t-looking.md"
-    ];
+    async function fetchBlogPosts() {
+      const postsFolder = "/content/posts/";
+      const container = document.getElementById("blog-posts");
+      if (!container) return;
 
-    for (const filename of postList) {
-      try {
-        const res = await fetch(`${postsFolder}${filename}`);
-        const raw = await res.text();
-        const parsed = matter(raw); // gray-matter parses frontmatter
+      const postList = [
+        "building-the-future-with-vision-and-integrity.md",
+        "feast-day-of-rev-dr-pauli-murray-esq-honoring-the-saint-who-defied-every-box.md",
+        "legacy-in-progress.md",
+        "pauli-murray-was-always-there-we-just-weren’t-looking.md"
+      ];
 
-        const { title, date, excerpt, featured_image } = parsed.data;
-        const html = `
-          <div class="blog-post-preview">
-            ${featured_image ? `<img src="${featured_image}" alt="${title}" />` : ""}
-            <h3>${title}</h3>
-            <p class="date">${new Date(date).toLocaleDateString()}</p>
-            <p>${excerpt || ""}</p>
-            <a href="/post.html?file=${filename}" class="btn btn-sm">Read More</a>
-          </div>
-        `;
-        container.innerHTML += html;
-      } catch (err) {
-        console.error("Error loading post:", filename, err);
+      for (const filename of postList) {
+        try {
+          const res = await fetch(`${postsFolder}${filename}`);
+          const raw = await res.text();
+          const parsed = matter(raw);
+          const { title, date, excerpt, featured_image } = parsed.data;
+
+          const html = `
+            <div class="blog-post-preview">
+              ${featured_image ? `<img src="${featured_image}" alt="${title}" />` : ""}
+              <h3>${title}</h3>
+              <p class="date">${new Date(date).toLocaleDateString()}</p>
+              <p>${excerpt || ""}</p>
+              <a href="/post.html?file=${filename}" class="btn btn-sm">Read More</a>
+            </div>
+          `;
+          container.innerHTML += html;
+        } catch (err) {
+          console.error("Error loading post:", filename, err);
+        }
       }
     }
-  }
 
-  fetchBlogPosts();
-</script>
-
-<script>
-function buildFeaturedPostHTML(data, filename) {
-  const {
-    title,
-    date,
-    author = "PMAF",
-    categories = [],
-    excerpt,
-    featured_image
-  } = data;
-
-  const formattedDate = new Date(date).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric"
+    fetchBlogPosts();
   });
-
-  const categoryLinks = categories.map(c => `<a href="#">${c}</a>`).join(", ");
-
-  return `
-    <div class="wow fadeIn pb-70">
-      <div class="post-prev-img">
-        <a href="blog-single-sidebar-right.html?post=${filename}">
-          <img src="${featured_image}" alt="${title}">
-        </a>
-      </div>
-
-      <div class="post-prev-title">
-        <h3><a href="blog-single-sidebar-right.html?post=${filename}">${title}</a></h3>
-      </div>
-
-      <div class="post-prev-info">
-        ${formattedDate}
-        <span class="slash-divider">/</span>
-        <a href="#">${author}</a>
-        <span class="slash-divider">/</span>
-        ${categoryLinks}
-      </div>
-
-      <div class="post-prev-text">${excerpt}</div>
-
-      <div class="post-prev-more-cont clearfix">
-        <div class="post-prev-more left">
-          <a href="blog-single-sidebar-right.html?post=${filename}" class="blog-more">READ MORE</a>
-        </div>
-        <div class="right">
-          <a href="blog-single-sidebar-right.html?post=${filename}#comments" class="post-prev-count">
-            <span aria-hidden="true" class="icon_comment_alt"></span>
-            <span class="icon-count">0</span>
-          </a>
-          <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <span aria-hidden="true" class="social_share"></span>
-          </a>
-          <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
-            <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  `;
-}
 </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", loadFeaturedPosts);
-</script>
 
 	</body>
 </html>		
