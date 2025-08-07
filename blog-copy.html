@@ -836,55 +836,52 @@
   }
 </script>
 
-<!-- Gray Matter for frontmatter parsing -->
-<script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
+<!-- Load gray-matter correctly -->
+<script src="https://cdn.jsdelivr.net/npm/gray-matter@3.1.1/dist/gray-matter.min.js"></script>
 
 <script>
-  // Wait until everything is ready — including gray-matter
-  window.addEventListener("DOMContentLoaded", function () {
-    if (typeof matter === "undefined") {
-      console.error("gray-matter is not loaded.");
-      return;
-    }
+  async function fetchBlogPosts() {
+    const postsFolder = "./content/posts/";
+    const container = document.getElementById("blog-posts");
 
-    async function fetchBlogPosts() {
-      const postsFolder = "/content/posts/";
-      const container = document.getElementById("blog-posts");
-      if (!container) return;
+    if (!container) return;
 
-      const postList = [
-        "building-the-future-with-vision-and-integrity.md",
-        "feast-day-of-rev-dr-pauli-murray-esq-honoring-the-saint-who-defied-every-box.md",
-        "legacy-in-progress.md",
-        "pauli-murray-was-always-there-we-just-weren’t-looking.md"
-      ];
+    const postList = [
+      "building-the-future-with-vision-and-integrity.md",
+      "feast-day-of-rev-dr-pauli-murray-esq-honoring-the-saint-who-defied-every-box.md",
+      "legacy-in-progress.md",
+      "pauli-murray-was-always-there—we-just-weren’t-looking.md"
+    ];
 
-      for (const filename of postList) {
-        try {
-          const res = await fetch(`${postsFolder}${filename}`);
-          const raw = await res.text();
-          const parsed = matter(raw);
-          const { title, date, excerpt, featured_image } = parsed.data;
+    for (const filename of postList) {
+      try {
+        const res = await fetch(`${postsFolder}${filename}`);
+        const raw = await res.text();
 
-          const html = `
-            <div class="blog-post-preview">
-              ${featured_image ? `<img src="${featured_image}" alt="${title}" />` : ""}
-              <h3>${title}</h3>
-              <p class="date">${new Date(date).toLocaleDateString()}</p>
-              <p>${excerpt || ""}</p>
-              <a href="/post.html?file=${filename}" class="btn btn-sm">Read More</a>
-            </div>
-          `;
-          container.innerHTML += html;
-        } catch (err) {
-          console.error("Error loading post:", filename, err);
-        }
+        // Make sure gray-matter is available
+        const parsed = matter(raw);
+
+        const { title, date, excerpt, featured_image } = parsed.data;
+
+        const html = `
+          <div class="blog-post-preview">
+            ${featured_image ? `<img src="${featured_image}" alt="${title}" />` : ""}
+            <h3>${title}</h3>
+            <p class="date">${new Date(date).toLocaleDateString()}</p>
+            <p>${excerpt || ""}</p>
+            <a href="/post.html?file=${filename}" class="btn btn-sm">Read More</a>
+          </div>
+        `;
+        container.innerHTML += html;
+      } catch (err) {
+        console.error("Error loading post:", filename, err);
       }
     }
+  }
 
-    fetchBlogPosts();
-  });
+  document.addEventListener("DOMContentLoaded", fetchBlogPosts);
 </script>
+
 
 
 	</body>
