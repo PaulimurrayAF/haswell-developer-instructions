@@ -1,3 +1,4 @@
+@ -1,1325 +0,0 @@
 <!DOCTYPE html>
 <!--
 
@@ -23,7 +24,10 @@
     <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
-		
+
+<!-- REVICON Fonts-->		
+<link rel="stylesheet" href="rs-plugin/fonts/revicons/revicons.css" type="text/css" media="all" />
+
 <!-- CSS -->
     <!-- REVOSLIDER CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.min.css" media="screen">
@@ -43,66 +47,12 @@
     <!-- ANIMATE -->	
 		<link rel='stylesheet' href="css/animate.min.css">
 		
-    <!-- IE Warning CSS -->
-		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie-warning.css" ><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie8-fix.css" ><![endif]-->
-    
-    <!-- Magnific popup  in style.css	Owl Carousel Assets in style.css -->		
-	
-<!-- CSS end -->
-
-<!-- JS begin some js files in bottom of file-->
-		
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		
-    <!-- Modernizr -->
-    <!-- <script src="js/modernizr.js"></script> -->
-		
-	</head>
-	<body>
-	
-		<!-- LOADER -->	
-		<div id="loader-overflow">
-      <div id="loader3">Please enable JS</div>
-    </div>	
-
-		<div id="wrap" class="boxed ">
+       		<div id="wrap" class="boxed ">
 			<div class="grey-bg"> <!-- Grey BG  -->	
 				
-				<!--[if lte IE 8]>
-				<div id="ie-container">
-					<div id="ie-cont-close">
-						<a href='#' onclick='javascript&#058;this.parentNode.parentNode.style.display="none"; return false;'><img src='images/ie-warn/ie-warning-close.jpg' style='border: none;' alt='Close'></a>
-					</div>
-					<div id="ie-cont-content" >
-						<div id="ie-cont-warning">
-							<img src='images/ie-warn/ie-warning.jpg' alt='Warning!'>
-						</div>
-						<div id="ie-cont-text" >
-							<div id="ie-text-bold">
-								You are using an outdated browser
-							</div>
-							<div id="ie-text">
-								For a better experience using this site, please upgrade to a modern web browser.
-							</div>
-						</div>
-						<div id="ie-cont-brows" >
-							<a href='http://www.firefox.com' target='_blank'><img src='images/ie-warn/ie-warning-firefox.jpg' alt='Download Firefox'></a>
-							<a href='http://www.opera.com/download/' target='_blank'><img src='images/ie-warn/ie-warning-opera.jpg' alt='Download Opera'></a>
-							<a href='http://www.apple.com/safari/download/' target='_blank'><img src='images/ie-warn/ie-warning-safari.jpg' alt='Download Safari'></a>
-							<a href='http://www.google.com/chrome' target='_blank'><img src='images/ie-warn/ie-warning-chrome.jpg' alt='Download Google Chrome'></a>
-						</div>
-					</div>
-				</div>
-				<![endif]-->
-				
-				<!-- HEADER -->
-				<header id="nav" class="header header-1">
+				<!-- HEADER 1 BLACK MOBILE-NO-TRANSPARENT -->
+				<header id="nav" class="header header-1 black-header mobile-no-transparent">
+          
 				  <div class="header-wrapper">
 					<div class="container-m-30 clearfix">
 					  <div class="logo-row">
@@ -111,7 +61,7 @@
 						<div class="logo-container-2">
                 <div class="logo-2">
                   <a href="index.html" class="clearfix">
-                    <img src="images/logo.png" class="logo-img" alt="Logo">
+                    <img src="images/logo-white.png" class="logo-img" alt="White Pauli Murray Awards Foundation Logo">
                   </a>
                 </div>
               </div>
@@ -129,463 +79,66 @@
 						
 						  <div class="container-m-30 clearfix">	
 						  
-								<!-- MAIN MENU -->
+<!-- MAIN MENU -->
 								<div id="main-menu">
 								  <div class="navbar navbar-default" role="navigation">
 
 									<!-- MAIN MENU LIST -->
 									<nav class="collapse collapsing navbar-collapse right-1024">
 									  <ul class="nav navbar-nav">
-                      
+									  
                       <!-- MENU ITEM -->
-                      <li class="parent current">
-                        <a href="#"><div class="main-menu-title">HOME</div></a>
-                        <ul class="sub">
-                        <li class="parent">
-                          <a class="current" href="#">Home - Corporate</a>
-                          <ul class="sub">
-                          <li><a class="current" href="index.html">Corporate 1</a></li>
-                          <li><a href="index2.html">Corporate 2</a></li>
-                          <li><a href="index3.html">Corporate 3</a></li>
-                          <li><a href="index4.html">Corporate 4</a></li>
-                          <li><a href="index5.html">Corporate 5</a></li>
-                          <li><a href="index6.html">Corporate 6</a></li>
-                          <li><a href="index-center.html">Corporate 7 <span class="label-new">new</span></a></li>
-                          <li><a href="index-sticky-header-on-mobile.html">Corporate 8 <span class="label-new">new</span></a></li>
-                          <li><a href="index-hiding-logo-header.html">Corporate 9 <span class="label-new">new</span></a></li>
-                          <li><a href="index10.html">Corporate 10<span class="label-new">new</span></a></li>
-                          <li><a href="agency.html">Agency<span class="label-new">new</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="parent">
-                          <a href="#" >Home - Blog</a>
-                          <ul class="sub">
-                          <li><a href="index-blog.html">Blog Layout 1</a></li>
-                          <li><a href="index-blog-2.html">Blog Layout 2</a></li>
-                          </ul>
-                        </li>
-                        <li class="parent">
-                          <a href="#" >Home - Landing</a>
-                          <ul class="sub">
-                            <li><a href="one-page-landing.html">Landing 1</a></li>
-                            <li><a href="one-page-landing2.html">Landing 2</a></li>
-                          </ul>
-                        </li>
-                        <li class="parent">
-                          <a href="#" >Home - Min Menu</a>
-                          <ul class="sub">
-                            <li><a href="index-side-menu.html">Side Menu</a></li>
-                            <li><a href="index-full-screen-menu.html">Fullscreen Menu</a></li>
-                            <li><a href="index-full-screen-menu-sub.html">Fullscreen Menu Sub</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="index-portfolio.html">Home - Portfolio</a></li>
-                        <li><a href="index-shop.html">Home - Shop</a></li>
-                        <li><a href="index-construction.html">Home - Construct</a></li>
-                        <li><a href="index-construction2.html">Home - Construct 2</a></li>
-                        <li><a href="index-cars.html">Home - Cars</a></li>
-                        <li><a href="car-service.html">Home - Car Service</a></li>
-                        <li><a href="index-photo.html">Home - Photo</a></li>
-                        <li><a href="photographer.html">Home - Photo 2 <span class="label-new">new</span></a></li>
-                        <li><a href="one-page-travel.html">Home - Travel</a></li>
-                        <li><a href="index-magazine.html">Home - Magazine</a></li>
-                        <li><a href="intro.html#one-pages">Home - One Page</a></li>
-                        <li class="parent">
-                          <a href="#" >Home - Static</a>
-                          <ul class="sub">
-                          <li><a href="static-image.html">Image</a></li>
-                          <li><a href="static-image-left.html">Image 2 <span class="label-new">new</span></a></li>
-                          <li><a href="static-parallax.html">Parallax</a></li>
-                          <li><a href="static-parallax2.html">Parallax 2 <span class="label-new">new</span></a></li>
-                          <li><a href="static-text-rotator.html">Text Rotator</a></li>
-                          
-                          <li><a href="static-video.html">HTML5 Video</a></li>
-                          </ul>
-                        </li>
-                        
-                        <li><a href="slider-revo-html5-video.html">Home - Video</a></li>
-                        
-                        </ul>
-                      </li>
+  <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
 
-                      <!-- MENU ITEM -->
-                      <li class="parent">
-                        <a href="#"><div class="main-menu-title">SLIDERS</div></a>
-                        <ul class="sub">
-                        <li class="parent">
-                          <a href="#">Revolution Slider</a>
-                          <ul class="sub">
-                            <li><a href="index.html">Full Screen</a></li>
-                            <li><a href="slider-revo-full-width.html">Full Width</a></li>
-                            <li><a href="slider-revo-kenburns.html">Kenburns Effect</a></li>
-                            <li><a href="slider-revo-html5-video.html">HTML5 Video</a></li>
-                            <li><a href="revo-slider-demo/start-here.html">All Demos <span class="label-new">new</span></a></li>
-                          </ul>
-                        </li>
-                        
-                        <li><a href="slider-flex.html">Flex Slider</a></li>
-                        <li class="parent">
-                          <a href="#" >Static Media</a>
-                          <ul class="sub">
-                            <li><a href="static-image.html">Image</a></li>
-                          <li><a href="static-image-left.html">Image 2 <span class="label-new">new</span></a></li>
-                            <li><a href="static-parallax.html">Parallax</a></li>
-                          <li><a href="static-parallax2.html">Parallax 2 <span class="label-new">new</span></a></li>
-                            <li><a href="static-text-rotator.html">Text Rotator</a></li>
-                            <li><a href="static-video.html">HTML5 Video</a></li>
-                          </ul>
-                        </li>
-                        </ul>
-                      </li>
-                      
-                      <!-- MEGA MENU ITEM -->
-                      <li class="parent megamenu">
-                        <a href="#"><div class="main-menu-title">PAGES & FEATURES</div></a>
-                        <ul class="sub">
-                          <li>
-                          
-                            <div class="menu-sub-container">
-                              
-                              <div class="box col-md-2 nofloat closed">
-                                <h5 class="title">HEADERS</h5>
-                                <ul>
-                                  <li><a href="index.html">Black Transparent</a></li>
-                                  <li><a href="index2.html">White Transparent</a></li>
-                                  <li><a href="index3.html">White No Transparent</a></li>
-                                  <li><a href="index-blog-2.html">Black No Transparent</a></li>
-                                  <li><a href="index-sticky-header-on-mobile.html">Sticky on Mobile <span class="label-new">new</span></a></li>
-                                  <li><a href="index-center.html">Header Center <span class="label-new">new</span></a></li>
-                                  <li><a href="static-image-left.html">Header Left <span class="label-new">new</span></a></li>
-                                  <li><a href="index-hiding-logo-header.html">Hiding Logo<span class="label-new">new</span></a></li>
-                                  <li><a href="one-page-index7.html">Header Below<span class="label-new">new</span></a></li>
-                                  <li><a href="index10.html">Header Logo Change<span class="label-new">new</span></a></li>
-                                  <li><a href="index-shop.html">Header Shop</a></li>
-                                  <li><a href="index-photo.html">Side Menu</a></li>
-                                  <li><a href="index-side-menu.html">Header Min Menu</a></li>
-                                  <li><a href="index-full-screen-menu.html">Min Menu 2</a></li>
-                                  <li><a href="index-full-screen-menu-sub.html">Min Menu 2 Sub <span class="label-new">new</span></a></li>
-                                  <li><a href="coming-soon2.html">Black Min Menu 2</a></li>
-                                  <li><a href="index-construction2.html">Header Top Bar</a></li>
-                        <li><a href="index-magazine.html">Header Magazine</a></li>
-                                </ul>
-                              </div>
-                              
-                              <div class="box col-md-2 nofloat closed">
-                                <h5 class="title">FOOTERS</h5>
-                                <ul>
-                                  <li><a href="index2.html#footer1">Footer 1</a></li>
-                                  <li><a href="index.html#footer2">Footer 2</a></li>
-                                  <li><a href="index4.html#footer3">Footer 3</a></li>
-                                  <li><a href="index-cars.html#footer4">Footer 4</a></li>
-                                  <li><a href="index-side-menu.html#footer5">Footer 5</a></li>
-                                  <li><a href="agency.html#footer6">Footer 6<span class="label-new">new</span></a></li>
-                                  <li><a href="photographer.html#footer7">Footer 7<span class="label-new">new</span></a></li>
-                                </ul>
-                              </div>
-                              
-                              <div class="box col-md-3 nofloat closed">
-                                <h5 class="title">PAGES SAMPLES 1</h5>
-                                <ul>
-                                  <li><a href="typography.html">Typography</a></li>
-                                  <li><a href="grid-system.html">Grid System</a></li>
-                                  <li><a href="layout-full-width.html">Layout Full width</a></li>
-                                  <li><a href="layout-left-sidebar.html">Layout Left sidebar</a></li>
-                                  <li><a href="layout-right-sidebar.html">Layout Right sidebar</a></li>
-                                  <li><a href="under-construction.html">Under construction</a></li>
-                                  <li><a href="coming-soon2.html">Under construction 2</a></li>
-                                  <li><a href="maintenance-page.html">Maintenance Page</a></li>
-                                </ul>
-                              </div>
-                              
-                              <div class="box col-md-3 nofloat closed">
-                                <h5 class="title">PAGES SAMPLES 2</h5>
-                                <ul>
-                                  <li><a href="about-us.html">About Us</a></li>
-                                  <li><a href="about-us-2.html">About Us 2</a></li>
-                                  <li><a href="about-me.html">About Me</a></li>
-                                  <li><a href="team.html">Team</a></li>
-                                  <li><a href="services.html">Services</a></li>
-                                  <li><a href="faq.html">FAQ</a></li>
-                                  <li><a href="404.html">404 Error</a></li>
-                                  <li><a href="img-comp.html">Image Compare<span class="label-new">new</span></a></li>
-                                  <li><a href="login.html">Login / Register <span class="label-new">new</span></a></li>
-                                  <li><a href="cookie1.html">Cookie 1<span class="label-new">new</span></a></li>
-                                  <li><a href="cookie2.html">Cookie 2<span class="label-new">new</span></a></li>
-                                  <li><a href="cookie-policy.html">Cookie Policy<span class="label-new">new</span></a></li>
-                                </ul>
-                              </div>
-                              
-                              <div class="box col-md-2 nofloat closed">
-                                <h5 class="title">PAGE TITLES</h5>
-                                <ul>
-                                  <li><a href="page-title-small-grey.html">Small Grey</a></li>
-                                  <li><a href="page-title-small-white.html">Small White</a></li>
-                                  <li><a href="page-title-small-dark.html">Small Dark</a></li>
-                                  <li><a href="page-title-big-grey.html">Big Grey</a></li>
-                                  <li><a href="page-title-big-white.html">Big White</a></li>
-                                  <li><a href="page-title-big-dark.html">Big Dark</a></li>
-                                  <li><a href="page-title-big-img.html">Big Image</a></li>
-                                  <li><a href="page-title-large-img.html">Large Image</a></li>
-                                </ul>
-                              </div>
-     
-                            </div>
+  <!-- ABOUT -->
+  <li class="parent">
+    <a href="about.html"><div class="main-menu-title">About</div></a>
+    <ul class="sub">
+      <li><a href="about-us.html">About PMAF</a></li>
+      <li><a href="about-paulimurray.html">About Pauli Murray</a></li>
+      <li class="parent">
+        <a href="board.html">Board of Directors</a>
+        <ul class="sub">
+          <li><a href="board-member-bios.html">Board Member Bios</a></li>
+          <li><a href="join-the-board.html">Join the Board</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 
-                          </li>
-                        </ul>
-                      </li>					
-                      
-                      <!-- MENU ITEM -->
-                      <li class="parent">
-                        <a href="#"><div class="main-menu-title">PORTFOLIO</div></a>
-                        <ul class="sub">
-                          <li><a href="portfolio-grid.html">Portfolio Grid</a></li>
-                          <li class="parent">
-                            <a href="#">Boxed</a>
-                            <ul class="sub">
-                              <li><a href="portfolio-boxed-2col.html">2 Columns</a></li>
-                              <li><a href="portfolio-boxed-3col.html">3 Columns</a></li>
-                              <li><a href="portfolio-boxed-4col.html">4 Columns</a></li>
-                              <li><a href="portfolio-boxed-5col.html">5 Columns</a></li>
-                            </ul>
-                          </li>
-                          <li class="parent">
-                            <a href="#">Boxed bordered</a>
-                            <ul class="sub">
-                              <li><a href="portfolio-boxed-gut-2col.html">2 Columns</a></li>
-                              <li><a href="portfolio-boxed-gut-3col.html">3 Columns</a></li>
-                              <li><a href="portfolio-boxed-gut-4col.html">4 Columns</a></li>
-                              
-                            </ul>
-                          </li>                        <li class="parent">
-                            <a href="#">Wide</a>
-                            <ul class="sub">
-                              <li><a href="portfolio-wide-2col.html">2 Columns</a></li>
-                              <li><a href="portfolio-wide-3col.html">3 Columns</a></li>
-                              <li><a href="portfolio-wide-4col.html">4 Columns</a></li>
-                              <li><a href="portfolio-wide-5col.html">5 Columns</a></li>
-                            </ul>
-                          </li>
-                          <li class="parent">
-                            <a href="#">Wide bordered</a>
-                            <ul class="sub">
-                              <li><a href="portfolio-wide-gut-2col.html">2 Columns</a></li>
-                              <li><a href="portfolio-wide-gut-3col.html">3 Columns</a></li>
-                              <li><a href="portfolio-wide-gut-4col.html">4 Columns</a></li>
-                              <li><a href="portfolio-wide-gut-5col.html">5 Columns</a></li>
-                            </ul>
-                          </li>
-                          <li class="parent">
-                            <a href="#">Masonry</a>
-                            <ul class="sub">
-                              <li><a href="portfolio-masonry-2col.html">2 Columns</a></li>
-                              <li><a href="portfolio-masonry-3col.html">3 Columns</a></li>
-                              <li><a href="portfolio-masonry-4col.html">4 Columns</a></li>
-                              <li><a href="portfolio-masonry-5col.html">5 Columns</a></li>
-                            </ul>
-                          </li>
-                          <li class="parent">
-                            <a href="#">Portfolio Single</a>
-                            <ul class="sub">
-                              <li><a href="portfolio-single1.html">Single 1</a></li>
-                              <li><a href="portfolio-single2.html">Single 2</a></li>
-                              <li><a href="portfolio-single3.html">Single 3</a></li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>					
-                      
-                      <!-- MENU ITEM -->
-                      <li class="parent">
-                        <a href="#"><div class="main-menu-title">BLOG</div></a>
-                        <ul class="sub">
-                        <li class="parent">
-                          <a href="#">Blog Masonry</a>
-                          <ul class="sub">
-                            <li><a href="blog-masonry-2col.html">2 Columns</a></li>
-                            <li><a href="blog-masonry-3col.html">3 Columns</a></li>
-                            <li><a href="blog-masonry-4col.html">4 Columns</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="blog-full-width.html">Blog Full Width</a></li>
-                        
-                        <li><a href="blog-small-image.html">Blog Small Image</a></li>
-                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                        <li class="parent">
-                          <a href="#">Blog Single</a>
-                          <ul class="sub">
-                          <li><a href="blog-single-disqus.html">Disqus Comments</a></li>
-                          <li><a href="blog-single-facebook.html">Facebook Comments</a></li>
-                          <li><a href="blog-single-sidebar-right.html">Right Sidebar</a></li>
-                          <li><a href="blog-single-sidebar-left.html">Left Sidebar</a></li>
-                          <li><a href="blog-single-fullwidth.html">Fullwidth</a></li>
-                          </ul>
-                        </li>
-                        </ul>
-                      </li>	
-                      
-                      <!-- MENU ITEM -->
-                      <li class="parent">
-                        <a href="#"><div class="main-menu-title">SHOP</div></a>
-                        <ul class="sub">
-                        <li><a href="index-shop.html">Home - Shop</a></li>
-                        <li><a href="shop-2-col.html">2 Columns</a></li>
-                        <li><a href="shop-3-col.html">3 Columns</a></li>
-                        <li><a href="shop-4-col.html">4 Columns</a></li>
-                        <li><a href="shop-single.html">Shop Single</a></li>
-                        <li><a href="shop-shoping-cart.html">Shoping Cart</a></li>
-                        </ul>
-                      </li>
-                      
-                      <!-- MEGA MENU ITEM -->
-                      <li class="parent megamenu">
-                        <a href="#"><div class="main-menu-title">SHORTCODES</div></a>
-                        <ul class="sub">
-                        <li class="clearfix">
-                        
-                          <div class="menu-sub-container">
-                          
-                            <div class="box col-md-3 ">
-                              <ul>
-                              <li><a href="animations.html"><div class="icon icon-basic-mixer2"></div> ANIMATIONS</a></li>
-                              <li><a href="shortcodes.html#accordions"><div class="icon icon-basic-map"></div> ACCORDIONS</a></li>
-                              <li><a href="shortcodes.html#buttons"><div class="icon icon-basic-link"></div> BUTTONS</a></li>
-                              <li><a href="shortcodes.html#carousels"><div class="icon icon-arrows-expand-horizontal1"></div> CAROUSELS</a></li>
-                              <li><a href="shortcodes.html#toggles"><div class="icon icon-arrows-hamburger1"></div>TOGGLES</a></li>
-                              <li><a href="shortcodes.html#tabs"><div class="icon icon-basic-folder"></div>TABS</a></li>
-                              <li><a href="shortcodes.html#labels"><div class="icon icon-ecommerce-diamond"></div>LABELS</a></li>
-                              <li><a href="shortcodes.html#twitter-link"><div class="icon icon-basic-world"></div>TWITTER FEEDS</a></li>
-                              </ul>
-                            </div>
-                          
-                            <div class="box col-md-3">
-                              <ul>
-                              <li><a href="icons.html"><div class="icon icon-basic-lightbulb"></div>ICONS</a></li>
-                              <li><a href="shortcodes.html#alerts"><div class="icon icon-basic-exclamation"></div>ALERTS</a></li>
-                              <li><a href="shortcodes.html#modals"><div class="icon icon-basic-webpage-img-txt"></div>MODALS</a></li>
-                              <li><a href="shortcodes.html#pagination"><div class="icon icon-arrows-stretch-horizontal1"></div>PAGINATION</a></li>
-                              <li><a href="shortcodes.html#lightbox"><div class="icon icon-basic-webpage-multiple"></div>LIGHTBOX</a></li>
-                              <li><a href="shortcodes.html#counters-charts"><div class="icon icon-ecommerce-graph2"></div>COUNTERS & CHARTS</a></li>
-                              <li><a href="shortcodes.html#progress-bars"><div class="icon icon-basic-server2"></div>PROGRESS BARS</a></li>
-                              <li><a href="shortcodes.html#flickr-link"><div class="icon icon-basic-webpage-multiple"></div>FLICKR FEEDS</a></li>
-                              </ul>
-                            </div>
-                          
-                            <div class="box col-md-3">
-                              <ul>
-                              <li><a href="typography.html#heading"><div class="icon icon-arrows-drag-vert"></div> HEADINGS</a></li>
-                              <li><a href="typography.html#dropcaps"><div class="icon icon-software-font-smallcaps"></div>DROPCAPS</a></li>
-                              <li><a href="typography.html#blockquotes"><div class="icon icon-basic-message-txt"></div>BLOCKQUOTES</a></li>
-                              <li><a href="typography.html#testimonials"><div class="icon icon-arrows-keyboard-cmd-29"></div>TESTIMONIALS</a></li>
-                              <li><a href="typography.html#pricing-tables"><div class="icon icon-basic-notebook"></div>PRICING TABLES</a></li>
-                              <li><a href="typography.html#cd-timeline"><div class="icon icon-arrows-drag-horiz"></div>TIMELINE</a></li>
-                              <li><a href="typography.html#tables"><div class="icon icon-arrows-squares"></div>TABLES</a></li>
-                              </ul>
-                            </div>
-                            
-                            <div class="box col-md-3 ">
-                              <ul>
-                              <li><a href="typography.html#lists"><div class="icon icon-arrows-check"></div>LISTS</a></li>
-                              <li><a href="typography.html#code"><div class="icon icon-basic-webpage-txt"></div>CODE</a></li>
-                              <li><a href="typography.html#tooltips"><div class="icon icon-arrows-sign-right"></div>TOOLTIPS</a></li>
-                              <li><a href="typography.html#popover"><div class="icon icon-arrows-keyboard-right"></div>POPOVER</a></li>
-                              <li><a href="typography.html#highlights"><div class="icon icon-ecommerce-sale"></div>HIGHLIGHTS</a></li>
-                              <li><a href="typography.html#dividers"><div class="icon icon-arrows-minus"></div>DIVIDERS</a></li>
-                              <li><a href="shortcodes.html#media"><div class="icon icon-music-play-button"></div>MEDIA</a></li>
-                              
-                              </ul>
-                            </div>
+  <!-- AWARDS -->
+  <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
 
-                          </div>
+  <!-- PROGRAMS -->
+  <li class="parent">
+    <a href="programs.html"><div class="main-menu-title">Programs</div></a>
+    <ul class="sub">
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+  </li>
 
-                        </li>
-                        </ul>
-                      </li>					
-                      
-                      <!-- MENU ITEM -->
-                      <li id="menu-contact-info-big" class="parent megamenu">
-                        <a href="#"><div class="main-menu-title">CONTACT</div></a>
-                        <ul class="sub">
-                          <li class="clearfix" >
-                            <div class="menu-sub-container">
+  <!-- BLOG -->
+  <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
 
-                              <div class="box col-md-3 menu-demo-info closed">
-                                <h5 class="title">CONTACT PAGES</h5>
-                                <ul>
-                                <li><a href="contact.html">Contact Version 1</a></li>
-                                <li><a href="contact2.html">Contact Version 2</a></li>
-                                <li><a href="contact-recaptcha.html">Contact reCAPTCHA<span class="label-new">NEW</span></a></li>
-                                <li><a href="contact2-recaptcha.html">Contact 2 reCAPTCHA<span class="label-new">NEW</span></a></li>
-                                <li><a href="contact-embed.html">Contact Embed<span class="label-new">NEW</span></a></li>
-                                <li><a href="contact2-embed.html">Contact 2 Embed<span class="label-new">NEW</span></a></li>
-                                </ul>
-                              </div>
-                              
-                              <div class="col-md-3 menu-contact-info">
-                                <ul class="contact-list">
-                                  <li class="contact-loc clearfix">
-                                    <div class="loc-icon-container">
-                                      <span aria-hidden="true" class="icon_pin_alt main-menu-contact-icon"></span>
-                                    </div>
-                                    <div class="menu-contact-text-container">555 California str, Suite 100</div>
-                                  </li>
-                                  <li class="contact-phone clearfix">
-                                    <div class="loc-icon-container">
-                                      <span aria-hidden="true" class="icon_phone main-menu-contact-icon"></span>
-                                    </div>	
-                                    <div class="menu-contact-text-container">1-32-312-22, 1-32-112-22</div>
-                                  </li>
-                                  <li class="contact-mail clearfix" >
-                                    <div class="loc-icon-container">
-                                      <span aria-hidden="true" class="icon_mail_alt main-menu-contact-icon"></span>
-                                    </div>
-                                    <div class="menu-contact-text-container">							
-                                      <a class="a-mail" href="mailto:info@haswell.com">info@haswell.com</a>
-                                    </div>	
-                                  </li>
-                                </ul>
-                              </div>
-                              
-                              <div class="col-md-6 menu-map-container hide-max-960 ">
-                                <!-- Google Maps -->
-                                <div class="google-map-container">
-                                  <img src="images/map-line.png" alt="alt">
-                                </div>
-                                <!-- Google Maps / End -->	
-                              </div>
-                              
-                            </div>
-                          </li>
-                        </ul>
-                      </li>
-                    
-									  </ul>
-						  
-									</nav>
+  <!-- FAQ -->
+  <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
 
-								  </div>
-								</div>
+  <!-- DONATE -->
+  <li>
+    <a href="donate.html" class="donate-highlight">
+      <div class="main-menu-title">Donate</div>
+    </a>
+  </li>
+
+  <!-- CONTACT -->
+  <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
+
+  <!-- LOGIN -->
+  <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
+</ul>
+                                                       
 								<!-- END main-menu -->
-								
-						  </div>
-						  <!-- END container-m-30 -->
-						
-					</div>
-					<!-- END main-menu-container -->
-					
-					<!-- SEARCH READ DOCUMENTATION -->
-					<ul class="cd-header-buttons">
-						<li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
-					</ul> <!-- cd-header-buttons -->
-					<div id="cd-search" class="cd-search">
-						<form class="form-search" id="searchForm" action="page-search-results.html" method="get">
-							<input type="text" value="" name="q" id="q" placeholder="Search...">
-						</form>
-					</div>
-					
-				  </div>
-				  <!-- END header-wrapper -->
 				  
 				</header>
 				
@@ -595,236 +148,249 @@
 						
 						<div id="rs-fullscr" class="tp-banner" >
 							<ul>	
-								<!-- SLIDE 1 -->
-								<li data-transition="zoomout" data-slotamount="1" data-masterspeed="1500" data-thumb="images/revo-slider/rs-fullscr-thumb1.jpg"  data-saveperformance="on"  data-title="BEGIN">
-									<!-- MAIN IMAGE -->
-									 
-          <img src="images/black-trans-man-rainbow-face-paint.jpeg" alt="slidebg1" data-bgposition="center top" data-bgfit="cover" class="rev-slidebg">								
-									
-									<!-- LAYERS -->
+<!-- SLIDE 1 -->
+<li data-transition="zoomout" data-slotamount="1" data-masterspeed="1500"
+    data-thumb="images/welcome-thumbnail.png"
+    data-saveperformance="on" data-title="WELCOME">
 
-									<!-- LAYER NR. 0 BG CAPTIONS -->
-									<div class="tp-caption rs-parallaxlevel-4 zoomout"
-										data-x="left"
-										data-y="center" 
-										
-										data-speed="1300"
-										data-start="200"
-										
-										data-easing="Power3.easeInOut"
-										style="z-index: 0;">
-										<div class="slider-bg-white-cap"></div>
-									</div>
-									
-									<!--PARALLAX & OPACITY container -->
-									<div class="rs-parallaxlevel-4 opacity-scroll2">
-										<!-- LAYER NR. 1 -->
-										<div class="tp-caption dark-light-100 tp-left sfb tp-resizeme"
-											data-x="640"
-											data-y="205" 
-											data-speed="500"
-											data-start="850"
-											data-easing="Power1.easeInOut"
-											data-splitin="none"
-											data-splitout="none"
-											data-elementdelay="0.1"
-											data-endelementdelay="0.1"
-											style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;">WELCOME TO THE
-										</div>
-										
-										<!-- LAYER NR. 2 -->
-										<div class="tp-caption dark-black-100 tp-left sfb tp-resizeme"
-											data-x="650"
-											data-y="295" 
-											data-speed="500"
-											data-start="1050"
-											data-easing="Power1.easeInOut"
-											data-splitin="none"
-											data-splitout="none"
-											data-elementdelay="0.1"
-											data-endelementdelay="0.1"
-											style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">PAULI MURRAY AWARDS FOUNDATION
-										</div>
+  <!-- MAIN IMAGE -->
+  <img src="images/black-trans-man-rainbow-face-paint.jpeg" alt="slidebg1"
+       data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 
-										<!-- LAYER NR. 4 LINE -->
-										 <div class="tp-caption slider-1-cap-line tp-left hide-0-736 sfb tp-resizeme"
-											data-x="650"
-											data-y="420" 
-											data-speed="1000"
-											data-start="1250"
-											data-easing="Power3.easeInOut"
-											data-splitin="none"
-											data-splitout="none"
-											data-elementdelay="0.1"
-											data-endelementdelay="0.1"
-											style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-											<div class="cap-line"></div>
-										</div> 			
-										
-										<!-- LAYER NR. 5 -->
-										<div class="tp-caption dark-light-32 fs16-when-0-736 tp-left sfb tp-resizeme"
-											data-x="650"
-											data-y="450" 
-											data-speed="900"
-											data-start="1500"
-											data-easing="Power3.easeInOut"
-											data-splitin="none"
-											data-splitout="none"
-											data-elementdelay="0.1"
-											data-endelementdelay="0.1"
-											style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">   Honoring Black LGBTQ+ brilliance across generations and disciplines
-										</div>
-									</div>
+  <!-- LAYERS -->
+
+  <!-- LAYER NR. 0: Background White Cap -->
+  <div class="tp-caption rs-parallaxlevel-4 zoomout"
+       data-x="left" data-y="center"
+       data-speed="1300" data-start="200"
+       data-easing="Power3.easeInOut"
+       style="z-index: 0;">
+    <div class="slider-bg-white-cap"></div>
+  </div>
+
+  <!-- TEXT CONTAINER -->
+  <div class="rs-parallaxlevel-4 opacity-scroll2">
+
+    <!-- LAYER 1: Welcome (Smaller, White) -->
+    <div class="tp-caption font-white tp-left sfb tp-resizeme"
+      data-x="650"
+      data-y="205"
+      data-speed="500" data-start="850"
+      data-easing="Power1.easeInOut"
+      style="z-index: 7; white-space: nowrap; font-size: 32px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
+      Welcome To The
+    </div>
+
+    <!-- LAYER 2: Title (Bold, White, Better Spacing) -->
+    <div class="tp-caption font-white tp-left sfb tp-resizeme"
+      data-x="650"
+      data-y="265"
+      data-speed="500" data-start="1050"
+      data-easing="Power1.easeInOut"
+      style="z-index: 8; white-space: nowrap; font-size: 60px; font-weight: 700; line-height: 1.2; max-width: 700px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
+      PAULI MURRAY <br>AWARDS FOUNDATION
+    </div>
+
+<!-- LAYER 3: White Line (Clean, Centered, Lowered) -->
+<div class="tp-caption tp-left sfb tp-resizeme"
+  data-x="650"
+  data-y="445"
+  data-speed="1000" data-start="1250"
+  data-easing="Power3.easeInOut"
+  style="z-index: 6;">
+  <div style="width: 120px; height: 2px; background-color: #ffffff;"></div>
+</div>
+
+<!-- LAYER 4: Subtitle (Bold) -->
+<div class="tp-caption font-white tp-left sfb tp-resizeme"
+  data-x="650"
+  data-y="480"
+  data-speed="900" data-start="1500"
+  data-easing="Power3.easeInOut"
+  style="z-index: 9; font-size: 20px; line-height: 1.6; max-width: 600px; font-weight: 600; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
+  HONORING EXCELLENCE. <br> CELEBRATING LEGACY. <br> EMPOWERING THE FUTURE.
+</div>
+
+  </div>
+</li>
 
 
+<!-- SLIDE 2 -->
+<li data-transition="zoomout" data-slotamount="1" data-masterspeed="1500"
+    data-thumb="images/fuel-the-future-thumbnail.png" data-saveperformance="on" data-title="FUEL THE FUTURE">
 
-								</li>
+  <!-- MAIN IMAGE -->
+  <img src="images/pretty-killmonger-hair-pride-flag.jpeg" alt="slidebg2"
+       data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 
-								<!-- SLIDE 2 -->
-								<li data-transition="zoomout" data-slotamount="1" data-masterspeed="1500" data-thumb="images/revo-slider/rs-fullscr-thumb2.jpg"  data-saveperformance="on"  data-title="IMAGINATION">
-									
-                  <!-- MAIN IMAGE -->
-                  <img src="images/revo-slider/dummy.png"  alt="slidebg2" data-lazyload="images/revo-slider/slide_1_2.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-									
-									<!-- LAYERS -->
+  <!-- LAYERS -->
+  <div class="rs-parallaxlevel-4 opacity-scroll2">
 
-									<!-- LAYER NR. 0 BG CAPTIONS -->
-									<div class="tp-caption rs-parallaxlevel-4 zoomout"
-										data-x="left"
-										data-y="center" 
-										data-speed="1300"
-										data-start="200"
-										data-easing="Power3.easeInOut"
-										style="z-index: 0;">
-										<div class="slider-bg-white-cap"></div>
-									</div>	
-									
-									<!--PARALLAX & OPACITY container -->
-									<div class="rs-parallaxlevel-4 opacity-scroll2">
-										
-										<!-- LAYER NR. 1 -->
-										<div class="tp-caption center-0-478 dark-light-61 sfb tp-resizeme"
-											data-x="645"
-											data-y="255" 
-											data-speed="500"
-											data-start="850"
-											data-easing="Power1.easeInOut"
-											data-splitin="none"
-											data-splitout="none"
-											data-elementdelay="0.1"
-											data-endelementdelay="0.1"
-											style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;">IMAGINATION
-										</div>
-										
-										<!-- LAYER NR. 2 -->
-										<div class="tp-caption center-0-478 dark-light-54 sfb tp-resizeme"
-											data-x="650"
-											data-y="330" 
-											data-speed="500"
-											data-start="1050"
-											data-easing="Power1.easeInOut"
-											data-splitin="none"
-											data-splitout="none"
-											data-elementdelay="0.1"
-											data-endelementdelay="0.1"
-											style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">WILL TAKE YOU
-										</div>
-										
-										<!-- LAYER NR. 3 -->
-										<div class="tp-caption center-0-478 dark-black-63 sfb tp-resizeme"
-											data-x="650"
-											data-y="407" 
-											data-speed="900"
-											data-start="1500"
-											data-easing="Power3.easeInOut"
-											data-splitin="none"
-											data-splitout="none"
-											data-elementdelay="0.1"
-											data-endelementdelay="0.1"
-											style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">EVERYWHERE
-										</div>
-									</div>
-								</li>
-								
-								<!-- SLIDE 3 -->
-								<li data-transition="zoomout" data-slotamount="1" data-masterspeed="1500" data-thumb="images/revo-slider/rs-fullscr-thumb3.jpg"  data-saveperformance="on"  data-title="WELCOM">
-									
-                  <!-- MAIN IMAGE -->
-									<img src="images/revo-slider/dummy.png"  alt="citybg" data-lazyload="images/revo-slider/slide_1_3.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-									
-									<!-- LAYERS -->
+    <!-- TITLE -->
+    <div class="tp-caption font-white tp-left sfb tp-resizeme"
+      data-x="775" data-y="160"
+      data-speed="500" data-start="1050"
+      data-easing="Power1.easeInOut"
+      style="z-index: 9; font-size: 56px; font-weight: 700; line-height: 1.2; white-space: normal; max-width: 700px; text-align: left; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
+      Fuel A Future That<br>Celebrates Those<br>Too Often Forgotten
+    </div>
 
-									<!-- LAYER NR. 0 BG CAPTIONS -->
-									 <div class="tp-caption rs-parallaxlevel-4 zoomout"
-										data-x="left"
-										data-y="center" 
-										data-speed="1300"
-										data-start="200"
-										data-easing="Power3.easeInOut"
-										style="z-index: 0;">
-										<div class="slider-bg-white-cap"></div>
-									</div>
-									
-									<!--PARALLAX & OPACITY container -->
-									<div class="rs-parallaxlevel-4  opacity-scroll2">					
-										<!-- LAYER NR. 1 -->
-										<div class="tp-caption dark-light-60 center-0-478 sfb tp-resizeme"
-											data-x="645"
-											data-y="218" 
-											data-speed="500"
-											data-start="850"
-											data-easing="Power1.easeInOut"
-											data-splitin="none"
-											data-splitout="none"
-											data-elementdelay="0.1"
-											data-endelementdelay="0.1"
-											style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;">WELCOME TO THE
-										</div>
+    <!-- SUBTEXT -->
+    <div class="tp-caption font-white tp-left sfb tp-resizeme"
+      data-x="775" data-y="380"
+      data-speed="500" data-start="1150"
+      data-easing="Power1.easeInOut"
+      style="z-index: 10; font-size: 20px; font-weight: 600; line-height: 1.6; white-space: normal; max-width: 700px; text-align: left; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
+      Your gift uplifts Black LGBTQ+ leaders — across identities,<br>industries, and communities — across the country!
+      <br>
+      <br>You’re not just giving. <br>You’re rewriting who gets remembered.
+    </div>
 
-										<!-- LAYER NR. 2 -->
-										<div class="tp-caption dark-black-60 center-0-478 sfb tp-resizeme"
-											data-x="645"
-											data-y="295" 
-											data-speed="500"
-											data-start="1050"
-											data-easing="Power1.easeInOut"
-											data-splitin="none"
-											data-splitout="none"
-											data-elementdelay="0.1"
-											data-endelementdelay="0.1"
-											style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">PAULI MURRAY <br>AWARDS FOUNDATION
-										</div>
+<!-- CTA BUTTON -->
+<div class="tp-caption sfb tp-resizeme"
+  data-x="970" data-y="600"
+  data-speed="900" data-start="1250"
+  data-easing="Power3.easeInOut"
+  style="z-index: 11; text-align: center; max-width: 700px;">
+  <a href="donate.html" class="button medium thin hover-dark tp-button white" style="font-weight: 700;">GIVE TODAY</a>
+</div>
+</div>
+</li>
 
-										<!-- LAYER NR. 3 -->
-										<div class="tp-caption center-0-478 hide-0-736 sfb tp-resizeme"
-											data-x="650"
-											data-y="395" 
-											data-speed="900"
-											data-start="1200"
-											data-easing="Power3.easeInOut"
-											data-splitin="none"
-											data-splitout="none"
-											data-elementdelay="0.1"
-											data-endelementdelay="0.1"
-											style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">Honoring Black LGBTQ+ brilliance <br>across generations and disciplines
-										</div>
-										
-										<!-- LAYER NR. 4 -->
-										<div class="tp-caption center-0-478 sfb"
-											data-x="650"
-											data-y="465" 
-											data-speed="900"
-											data-start="1350"
-											data-easing="Power3.easeInOut"
-											data-splitin="none"
-											data-splitout="none"
-											data-elementdelay="0.1"
-											data-endelementdelay="0.1"
-											style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;"><a class="button medium thin hover-dark tp-button hide-479-736 ml-20" href="https://paulimurrayawards.com/about.html">LEARN MORE</a>
-										</div>					
-									</div>					
-									
-								</li>
+<!-- SLIDE 3 -->
+<li data-transition="zoomout" data-slotamount="1" data-masterspeed="1500"
+    data-delay="7800"
+    data-thumb="images/shine-through-thumbnail.png" data-saveperformance="on" data-title="SHINE THROUGH">
+
+  <!-- MAIN IMAGE -->
+  <img src="images/black-woman-pride-flag-sun.jpeg" alt="slidebg3"
+       data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+  <!-- LAYERS -->
+  <div class="rs-parallaxlevel-4 opacity-scroll2">
+
+    <!-- HEADLINE -->
+    <div class="tp-caption customin tp-resizeme"
+      data-x="center" data-hoffset="30" data-y="20"
+      data-speed="1000" data-start="850"
+      data-easing="Power1.easeInOut"
+      data-customin="scaleX:1.3;scaleY:1.3;opacity:0;"
+      style="z-index: 10; text-align: center;">
+      <div style="font-size: 83px; font-weight: 700; line-height: 1.3; color: #ffffff; margin-bottom: 100px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
+        OUR LIGHT WON’T BE DIMMED.
+      </div>
+    </div>
+
+    <!-- SUBHEADLINE -->
+    <div class="tp-caption tp-resizeme"
+      data-x="center" data-hoffset="30" data-y="160"
+      data-speed="1000" data-start="1200"
+      data-easing="Power1.easeInOut"
+      style="z-index: 11; text-align: center;">
+      <div style="font-size: 56px; font-weight: 700; line-height: 1.3; color: #ffffff; margin-bottom: 100px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
+        BLACK QUEER BRILLIANCE<br>SHINES THROUGH THE DARKNESS!
+      </div>
+    </div>
+
+    <!-- SUBTEXT LINE 1 -->
+    <div class="tp-caption tp-resizeme"
+      data-x="center" data-hoffset="30" data-y="360"
+      data-speed="600" data-start="2500"
+      data-easing="Power1.easeInOut"
+      style="z-index: 12; text-align: center;">
+      <div style="font-size: 35px; font-weight: 600; line-height: 1.3; color: #333333;">
+        EVERY HONOREE IS A MIRROR OF WHAT'S POSSIBLE.
+      </div>
+    </div>
+
+    <!-- SUBTEXT LINE 2 -->
+    <div class="tp-caption tp-resizeme"
+      data-x="center" data-hoffset="30" data-y="440"
+      data-speed="600" data-start="4300"
+      data-easing="Power1.easeInOut"
+      style="z-index: 13; text-align: center;">
+      <div style="font-size: 35px; font-weight: 600; line-height: 1.3; color: #333333;">
+        EVERY CATEGORY, NEW STORIES TOLD BODLY.
+      </div>
+    </div>
+
+  </div>
+</li>
+
+<!-- SLIDE 4 -->
+<li data-transition="zoomout" data-slotamount="1" data-masterspeed="1500"
+    data-thumb="images/my-name-is-pauli-murray-key-art.jpeg" data-saveperformance="on" data-title="MY NAME IS PAULI MURRAY">
+
+  <!-- MAIN IMAGE (Fallback) -->
+  <img src="images/pm-signature-bg-image.jpeg" alt="slidebg4"
+       data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+  <!-- LAYERS -->
+  <!-- LAYER 0: VIDEO BACKGROUND -->
+  <div class="tp-caption tp-fade fadeout fullscreenvideo"
+    data-speed="1000"
+    data-start="1100"
+    data-easing="Power4.easeOut"
+    data-elementdelay="0.01"
+    data-endelementdelay="0.1"
+    data-endspeed="1500"
+    data-endeasing="Power4.easeIn"
+    data-autoplay="true"
+    data-autoplayonlyfirsttime="false"
+    data-nextslideatend="true"
+    data-volume="mute"
+    data-forceCover="1"
+    data-dottedoverlay="twoxtwo"
+    data-aspectratio="16:9"
+    data-forcerewind="on"
+    style="z-index: 2;">
+    <video preload="none" width="100%" height="100%"
+      poster="images/my-name-is-pauli-murray-no-text.jpeg">
+      <source src="images/my-name-is-pauli-murray-trailer.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <div class="rs-parallaxlevel-4 opacity-scroll2">
+    <!-- SINGLE TP-CAPTION WRAPPING GRID -->
+    <div class="tp-caption tp-resizeme"
+      data-x="center" data-y="center"
+      data-speed="700" data-start="800"
+      data-easing="Power1.easeInOut"
+      style="z-index: 10; width: 100%;">
+
+      <!-- Faux Grid Layout -->
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 90%; margin: 0 auto; max-width: 1140px; min-height: 100vh;">
+
+        <!-- COLUMN 1 (SPACER) -->
+        <div style="flex: 1;"></div>
+
+        <!-- COLUMN 2 (Centered Play Button - Bold) -->
+        <div style="flex: 1; display: flex; justify-content: center;">
+          <a class="popup-video" href="javascript:void(0);" onclick="openModal()">
+            <svg width="70" height="70" viewBox="0 0 100 100" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="48" stroke="#ffffff" stroke-width="4" fill="none"/>
+              <polygon points="40,30 75,50 40,70" fill="#ffffff"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- COLUMN 3 (Text Block) -->
+        <div style="flex: 1; color: #ffffff; text-align: left;">
+          <div style="font-size: 32px; margin-bottom: 20px;">Poet. Lawyer. Activist.</div>
+          <div style="font-size: 32px; margin-bottom: 30px;">Priest. Prophet. Saint.</div>
+          <div style="font-size: 60px; font-weight: 700; line-height: 1.2; margin-bottom: 30px;">
+            ARCHITECT OF<br>MODERN AMERICAN<br>DEMOCRACY
+          </div>
+          <div style="font-size: 16px;">
+            Click to watch the trailer from the powerful documentary,<br>
+            “My Name Is Pauli Murray”.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</li>
 
 							</ul>
 					
@@ -832,686 +398,457 @@
 						
 					</div>	
 					
-					<!-- SCROLL ICON -->
-					<div class="local-scroll-cont">
-						<a href="#about" class="scroll-down smooth-scroll">
-              <div class="icon icon-arrows-down"></div>
-            </a>  
-					</div>
-					
-				</div>
-				
-				<!-- FEATURES 1 -->
-				<div id="about" class="page-section">
-					<div class="container fes1-cont">
-						<div class="row">
-            
-							<div class="col-md-4 fes1-img-cont wow fadeInUp mb-20">
-								<img src="images/phone-with-arrow.png" alt="img" >
-							</div>
-              
-							<div class="col-md-8">
-              
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="fes1-main-title-cont wow fadeInDown">
-                      <div class="title-fs-60">
-                        WE ARE<br>
-                        <span class="bold">CREATIVE</span>
-                      </div>
-                      <div class="line-3-100"></div>
-                    </div>
-                  </div>
-								</div>
-                    
-                <div class="row">
-                    
-                  <div class="col-md-6 col-sm-6">
-                    <div class="fes1-box wow fadeIn" >
-                      <div class="fes1-box-icon">
-                        <div class="icon icon-basic-mixer2"></div>
-                      </div>
-                      <h3>FULLY RESPONSIVE</h3>
-                      <p>Sed ut perspiciatis unde omnis iste nat eror acus  antium que</p>
-                    </div>
-                  </div>
-                      
-                  <div class="col-md-6 col-sm-6">
-                    <div class="fes1-box wow fadeIn" data-wow-delay="200ms">
-                      <div class="fes1-box-icon">
-                        <div class="icon icon-basic-lightbulb"></div>
-                      </div>
-                      <h3>RETINA READY</h3>
-                      <p>Sed ut perspiciatis unde omnis iste nat eror acus  antium que</p>
-                    </div>
-                  </div>
-                      
-                </div>
-                    
-                <div class="row">
-                    
-                  <div class="col-md-6 col-sm-6">
-                    <div class="fes1-box wow fadeIn" data-wow-delay="400ms">
-                      <div class="fes1-box-icon">
-                        <div class="icon icon-basic-helm"></div>
-                      </div>
-                      <h3>UNIQUE DESIGN</h3>
-                      <p>Sed ut perspiciatis unde omnis iste nat eror acus  antium que</p>
-                    </div>
-                  </div>
-                      
-                  <div class="col-md-6 col-sm-6">
-                    <div class="fes1-box wow fadeIn"  data-wow-delay="600ms">
-                      <div class="fes1-box-icon">
-                        <div class="icon icon-basic-settings"></div>
-                      </div>
-                      <h3>EASY TO CUSTOMIZE</h3>
-                      <p>Sed ut perspiciatis unde omnis iste nat eror acus  antium que</p>
-                    </div>
-                  </div>
-                  
-                </div>                    
-                    
-							</div>
-						
+					  <!-- SCROLL ICON -->
+    <div class="local-scroll-cont">
+      <a href="#about" class="scroll-down smooth-scroll">
+        <div class="icon icon-arrows-down"></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+          <!-- PMAF VALUES BLOCK -->
+<div id="about" class="page-section" style="padding-bottom: 0;">
+  <div class="row" style="display: flex; align-items: stretch; margin: 0;">
+
+    <!-- IMAGE COLUMN -->
+    <div class="col-md-4 fes1-img-cont wow fadeInUp mb-20" style="padding: 0; margin-left: -60px; display: flex; align-items: flex-end;">
+      <img src="images/pm-cigarette.png" alt="Pauli Murray smoking" 
+           style="height: 100%; width: auto; object-fit: contain;">
+    </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="col-md-8">
+
+<!-- TITLE -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="fes1-main-title-cont wow fadeInDown">
+      <div class="title-fs-60" style="margin-bottom: 30px;">
+        THE HEART OF<br>
+        <span class="bold">OUR WORK</span>
+      </div>
+      <div class="line-3-100" style="margin-bottom: 30px;"></div>
+    </div>
+  </div>
+</div>
+
+        <!-- DESCRIPTION PARAGRAPH -->
+        <div class="row">
+          <div class="col-md-12">
+            <p style="font-size: 18px; line-height: 28px; margin-top: 0px; margin-bottom: 30px;">
+              The Pauli Murray Awards Foundation uplifts Black LGBTQ+ leaders who are changing the world.
+              Rooted in the groundbreaking legacy of Rev. Dr. Pauli Murray, Esq., we recognize 40 honorees each year
+              across fields ranging from the arts to public service. Through visibility, support, and storytelling,
+              we champion those who embody brilliance, resilience, and vision for generations to come.
+            </p>
+          </div>
+        </div>
+
+        <!-- FIRST ROW -->
+        <div class="row">
+
+          <div class="col-md-6 col-sm-6">
+            <div class="fes1-box wow fadeIn">
+              <div class="fes1-box-icon">
+                <img src="images/icon-legacy.png" alt="Legacy Icon" style="height: 45px;">
+              </div>
+              <h3>LEGACY</h3>
+              <p>We honor the lineage of Black LGBTQ+ brilliance and carry forward the work of those who paved the way.</p>
             </div>
-					</div>
-				</div>
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <div class="fes1-box wow fadeIn" data-wow-delay="200ms">
+              <div class="fes1-box-icon">
+                <img src="images/icon-liberation.png" alt="Liberation Icon" style="height: 45px;">
+              </div>
+              <h3>LIBERATION</h3>
+              <p>We are committed to dismantling systems of oppression and building a world where Black LGBTQ+ people can thrive freely.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SECOND ROW -->
+        <div class="row">
+
+          <div class="col-md-6 col-sm-6">
+            <div class="fes1-box wow fadeIn" data-wow-delay="400ms">
+              <div class="fes1-box-icon">
+                <img src="images/icon-community.png" alt="Community Icon" style="height: 45px;">
+              </div>
+              <h3>COMMUNITY</h3>
+              <p>We believe in the power of being seen, heard, and celebrated on our own terms.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <div class="fes1-box wow fadeIn" data-wow-delay="600ms">
+              <div class="fes1-box-icon">
+                <img src="images/icon-visibility.png" alt="Visibility Icon" style="height: 45px;">
+              </div>
+              <h3>VISIBILITY</h3>
+              <p>We believe in the power of being seen, heard, and celebrated — and in ensuring that Black LGBTQ+ lives, leadership, & legacies are never erased.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div> <!-- /.col-md-8 -->
+
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+</div>
+
+<!-- COUNTERS 1 -->
+<div id="counter-1" class="page-section" style="background-color: #111111; padding: 40px 0;">
+  <div class="container">
+
+    <!-- TITLE -->
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="title-fs-45" style="color: #ffffff; margin-top: 0; margin-bottom: 30px;">
+          COUNTING DOWN TO <span class="bold">A NEW LEGACY</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COUNTERS -->
+    <div class="row text-center">
+
+      <!-- Item 1 -->
+      <div class="col-sm-3 col-xs-6">
+        <div class="count-number" style="color: #7cb203; font-weight: bold;">40</div>
+        <div class="count-descr">
+          <div style="color: #ffffff;">OUTSTANDING</div>
+          <span class="count-title" style="font-weight: bold; color: #ffffff;">HONOREES</span>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="col-sm-3 col-xs-6">
+        <div class="count-number" style="color: #7cb203; font-weight: bold;">8</div>
+        <div class="count-descr">
+          <div style="color: #ffffff;">DIVERSE</div>
+          <span class="count-title" style="font-weight: bold; color: #ffffff;">CATEGORIES</span>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="col-sm-3 col-xs-6">
+        <div class="count-number" style="color: #7cb203; font-weight: bold;">1</div>
+        <div class="count-descr">
+          <div style="color: #ffffff;">NIGHT OF</div>
+          <span class="count-title" style="font-weight: bold; color: #ffffff;">CELEBRATION</span>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="col-sm-3 col-xs-6">
+        <div id="days-until" class="count-number" style="color: #7cb203; font-weight: bold;">...</div>
+        <div class="count-descr">
+          <div style="color: #ffffff;">DAYS UNTIL</div>
+          <span class="count-title" style="font-weight: bold; color: #ffffff;">THE PMAs</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PMAs BLOCK -->
+<div class="page-section" style="background-color: #303236; color: #ffffff; padding: 50px;">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; align-items: stretch;">
+
+      
+<!-- LEFT TEXT COLUMN -->
+<div class="col-md-6 d-flex" style="align-items: flex-start; padding: 0;">
+  <div class="fes2-main-text-cont" style="padding: 0px 40px 30px 40px; margin-top: 0;">
+    <div class="title-fs-45" style="color: #ffffff; margin-top: 0; margin-bottom: 30px;">
+  THE PAULI MURRAY<br>
+  <span class="bold">AWARDS (PMAs)</span>
+</div>
+<div class="line-3-70" style="background-color: #ffffff; margin-bottom: 30px;"></div>
+    <div class="fes2-text-cont" style="font-size: 18px; line-height: 28px; color: #ffffff; margin-top: 20px;">
+      <p>
+        The Paul Murray Awards (PMAs) honor 40 Black LGBTQ+ visionaries, ages 18–40, who are shaping culture, transforming communities, and building a more just world. Through celebration, visibility, and support, the PMAs uplift those who embody the legacy and spirit of Pauli Murray.
+      </p>
+      <br>
+      <p style="margin-bottom: 0;">
+        The inaugural awards will be held on October 11, 2026 – National Coming Out Day – in New York City. Applications will open on March 1, 2026.
+      </p>
+    </div>
+  </div>
+</div>
+
+      <!-- RIGHT VIDEO COLUMN -->
+      <div class="col-md-6 p-0" style="display: flex; align-items: flex-start; justify-content: center;">
+        <video autoplay muted loop playsinline
+               style="width: 100%; height: auto; display: block;">
+          <source src="images/pma-2026-teaser.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    </div>
+  </div>
+</div>
+        
+
+       <!-- ABOUT PAULI BLOCK -->
+<div class="page-section grey-light-bg clearfix">
+  <div class="fes7-img-cont col-md-5">
+    <div class="fes7-img" style="background-image: url(images/pm-true-community-card.jpeg)"></div>
+  </div>
   
-				<!-- DIVIDER -->
-				<hr class="mt-0 mb-0">			
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-6 fes7-text-cont p-80-cont">
+<div class="title-fs-45" style="color: #303236; margin-top: 0; margin-bottom: 30px;">
+  ABOUT<br>
+  <span class="bold">PAULI MURRAY</span>
+</div>
+<div class="line-3-70" style="background-color: #2f2f2f; margin-bottom: 30px;"></div>
+        <p style="font-size: 18px; line-height: 28px; margin-bottom: 40px;">
+          Pauli Murray, Howard University School of Law Class of 1944. Their legal theory shaped the arguments in <i>Brown v. Board of Education</i>. A mentor to Ruth Bader Ginsburg. The first Black person assigned female at birth to be ordained as an Episcopal priest. A poet. A trailblazer. A visionary. A queer person whose identity—like so many others—has too often been erased. <br><br>
+          And yet, this is only the beginning of their story. To understand Murray is to uncover the roots of modern democracy and the ongoing fight for equity. Their legacy touches law, faith, gender, race, and justice. Learning about Pauli is learning how we got here—and how we move forward.
+        </p>
 
-				<!-- FEATURES 2 -->
-				<div class="page-section">
-					<div class="container-fluid">
-						<div class="row">
-            
-							<div class="col-md-6 wow fadeInLeft equal-height ">
-								<div class="fes2-main-text-cont">
-									<div class="title-fs-45">
-										MORE THAN<br>
-										<span class="bold">RESPONSIVE</span>
-									</div>
-									<div class="line-3-70"></div>
-									<div class="fes2-text-cont">Sed ut perspiciatis unde omnis iste nat eror acus  antium que. Asperiores, ea velit enim labore doloribus.</div>
-								</div>
-							</div>
-              
-							<div class="col-md-6">
-								<div class="row">
-									<div class="fes2-img equal-height"></div>
-								</div>
-							</div>
-              
-						</div>
-					</div>
-				</div>
+<div style="text-align: center; margin-top: 30px;">
+  <a href="about-paulimurray.html"
+     style="
+       display: inline-block;
+       padding: 12px 30px;
+       font-size: 14px;
+       font-weight: 700;
+       color: #7cb203;
+       background-color: #303236;
+       border: 1px solid #7cb203;
+       text-decoration: none;
+       transition: all 0.3s ease;
+     "
+     onmouseover="this.style.backgroundColor='#7cb203'; this.style.color='#ffffff';"
+     onmouseout="this.style.backgroundColor='#303236'; this.style.color='#7cb203';">
+    LEARN MORE
+  </a>
+</div>
 
-				<!-- FEATURES 3 -->
-				<div class="page-section">
-					<div class="container-fluid">
-						<div class="row">
-							
-							<div class="col-md-6 left-50 wow fadeInRight equal-height">
-									<div class="fes2-main-text-cont">
-										<div class="title-fs-45">
-											POWERFUL<br>
-											<span class="bold">PERFORMANCE</span>
-										</div>
-										<div class="line-3-100"></div>
-										<div class="fes2-text-cont">Sed ut perspiciatis unde omnis iste nat eror acus  antium que. Asperiores, ea velit enim labore doloribus.</div>
-									</div>
-							</div>
-              
-              <div class="col-md-6 right-50">
-								<div class="row">
-									<div class="fes3-img equal-height" ></div>
-								</div>
-							</div>
-              
-						</div>
-					</div>
-				</div>
+      </div>
+    </div><!--end of row-->
+  </div>
+</div>
+<!-- BOARD OF DIRECTORS SECTION -->
+<div class="page-section" style="background-color: #303236; padding: 40px 0; color: #ffffff;">
+  <div class="container text-center">
 
-				<!-- DIVIDER -->
-				<hr class="mt-0 mb-0">	
+    <!-- Title -->
+    <div class="title-fs-45" style="color: #ffffff; margin-top: 0; margin-bottom: 30px;">
+      BOARD OF <span class="bold">DIRECTORS</span>
+    </div>
+    <h4 style="color: #7cb203; font-size: 24px; margin-bottom: 60px;">
+      BUILDING THE FUTURE WITH VISION AND INTEGRITY
+    </h4>
 
-				<!-- FEATURES 4 -->
-				<div class="page-section fes4-cont">
-					<div class="container">
-            <div class="row">
-            
-              <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="fes4-box wow fadeIn">
-								  <h2 class="section-title">OUR <span class="bold">SERVICES</span></h2>
-								</div>
-							</div>            
-							<div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="fes4-box wow fadeIn" data-wow-delay="200ms">
-								  <div class="fes4-title-cont" >
-								  	<div class="fes4-box-icon">
-								  		<div class="icon icon-basic-settings"></div>
-								  	</div>
-								  	<h3><span class="bold">DEVELOPMENT</span></h3>
-								  	<p>LOREM IPSUM DOLOR</p>
-								  </div>
-								  <div>
-								     Maecenas luctus nisi in sem fermentum blat. In nec  elit solliudin, elementum, dictum pur quam volutpat suscipit antena. 
-								  </div>
-								</div>
-							</div>
-              <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="fes4-box wow fadeIn" data-wow-delay="400ms">
-								  <div class="fes4-title-cont" >
-								  	<div class="fes4-box-icon">
-								  		<div class="icon icon-basic-share"></div>
-								  	</div>
-								  	<h3><span class="bold">PRODUCTION</span></h3>
-								  	<p>LOREM IPSUM DOLOR</p>
-								  </div>
-								  <div>
-								     Seductio maesto nisi in sem fermentum blat. In nec elit solliudin, elementum, dictum pur quam volutpat suscipit antena.
-								  </div>
-								</div>
-							</div>
-              
-						</div>
-						<div class="row">
-            
-              <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="fes4-box wow fadeIn" data-wow-delay="600ms">
-								  <div class="fes4-title-cont" >
-								  	<div class="fes4-box-icon">
-								  		<div class="icon icon-basic-target"></div>
-								  	</div>
-								  	<h3><span class="bold">BRANDING</span></h3>
-								  	<p>LOREM IPSUM DOLOR</p>
-								  </div>
-								  <div>
-								    Donec vel luctus nisi in sem fermentum blat. In nec elit solliudin, elementum, dictum pur quam volutpat suscipit antena.
-								  </div>
-								</div>
-							</div>
-							<div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="fes4-box wow fadeIn" data-wow-delay="800ms" >
-								  <div class="fes4-title-cont" >
-								  	<div class="fes4-box-icon">
-								  		<div class="icon icon-basic-globe"></div>
-								  	</div>
-								  	<h3><span class="bold">WEB DESIGN</span></h3>
-								  	<p>LOREM IPSUM DOLOR</p>
-								  </div>
-								  <div>
-								    Lorem luctus antena at nisi in sem blandit. In nec elit soltudin, elementum odio et, dictum quam a volutpat elementum. 
-								  </div>
-								</div>
-							</div>
-              <div class="col-xs-12 col-sm-4 col-md-4">
-                <div class="fes4-box wow fadeIn" data-wow-delay="1000ms">
-								  <div class="fes4-title-cont" >
-								  	<div class="fes4-box-icon">
-								  		<div class="icon icon-basic-picture"></div>
-								  	</div>
-								  	<h3><span class="bold">PHOTOGRAPHY</span></h3>
-								  	<p>LOREM IPSUM DOLOR</p>
-								  </div>
-								  <div>
-								    Fermentum nisi in sem fertum blat. In elit soldin, elemtum, arenam pur quam volutpat suscipit dictum pur quam.
-								  </div>
-								</div>
-							</div>              
-						
-            </div>
-					</div>
-				</div>
-         
-        <!-- PORTFOLIO SECTION 2 -->
-        <div class="page-section">
-          <div class="relative">
-          
-            <!-- ITEMS GRID -->
-            <ul class="port-grid display-hover-on-mobile port-grid-3 port-grid-gut clearfix" id="items-grid">
-              
-              <!-- Item 1 -->
-              <li role="button" class="port-item mix">
-                <a href="portfolio-single1.html">
-                  <div class="port-img-overlay"><img class="port-main-img" src="images/portfolio/projects-5.jpg" alt="img" ></div>
-                </a>
-                <div class="port-overlay-cont">
 
-                    <div class="port-title-cont">
-                      <h3><a href="portfolio-single1.html">MINIMALISM BOOKS</a></h3>
-                      <span><a href="#">ui elements</a><span class="slash-divider">/</span><a href="#">media</a></span>
-                    </div>
-                    <div class="port-btn-cont">
-                      <a href="images/portfolio/projects-5.jpg" class="lightbox mr-20" ><div aria-hidden="true" class="icon_search"></div></a>
-                      <a href="portfolio-single1.html"><div aria-hidden="true" class="icon_link"></div></a>
-                    </div>
-
-                </div>
-              </li>
-
-              <!-- Item 2 -->
-              <li role="button" class="port-item mix">
-                <a href="portfolio-single1.html">
-                  <div class="port-img-overlay">
-                    <img class="port-main-img" src="images/portfolio/projects-3.jpg" alt="img" >
-                  </div>
-                </a>
-                <div class="port-overlay-cont">
-
-                    <div class="port-title-cont">
-                      <h3><a href="portfolio-single1.html">CALENDAR</a></h3>
-                      <span><a href="#">photography</a><span class="slash-divider">/</span><a href="#">media</a></span>
-                    </div>
-                    <div class="port-btn-cont">
-                      <a href="images/portfolio/projects-3.jpg" class="lightbox mr-20" ><div aria-hidden="true" class="icon_search"></div></a>
-                      <a href="portfolio-single1.html"><div aria-hidden="true" class="icon_link"></div></a>
-                    </div>
-
-                </div>
-              </li>
-              
-              <!-- Item 3 -->
-              <li role="button" class="port-item mix">
-                <a href="portfolio-single1.html">
-                  <div class="port-img-overlay">
-                    <img class="port-main-img" src="images/portfolio/projects-1.jpg" alt="img" >
-                  </div>
-                </a>
-                <div class="port-overlay-cont">
-
-                    <div class="port-title-cont">
-                      <h3><a href="portfolio-single1.html">EYES OF THE CAR</a></h3>
-                      <span><a href="#">branding</a><span class="slash-divider">/</span><a href="#">marketing</a></span>
-                    </div>
-                    <div class="port-btn-cont">
-                      <a href="images/portfolio/projects-1.jpg" class="lightbox mr-20" ><div aria-hidden="true" class="icon_search"></div></a>
-                      <a href="portfolio-single1.html"><div aria-hidden="true" class="icon_link"></div></a>
-                    </div>
-
-                </div>
-              </li>
-              
-              <!-- Item 4 -->
-              <li role="button" class="port-item mix">
-                <a href="portfolio-single1.html">
-                  <div class="port-img-overlay">
-                    <img class="port-main-img" src="images/portfolio/projects-6.jpg" alt="img" >
-                  </div>
-                </a>
-                <div class="port-overlay-cont">
-
-                    <div class="port-title-cont">
-                      <h3><a href="portfolio-single1.html">NOW IS NOW</a></h3>
-                      <span><a href="#">design</a><span class="slash-divider">/</span><a href="#">photography</a></span>
-                    </div>
-                    <div class="port-btn-cont">
-                      <a href="images/portfolio/projects-6.jpg" class="lightbox mr-20" ><div aria-hidden="true" class="icon_search"></div></a>
-                      <a href="portfolio-single1.html"><div aria-hidden="true" class="icon_link"></div></a>
-                    </div>
-
-                </div>
-              </li>
-              
-              <!-- Item 5 -->
-              <li role="button" class="port-item mix">
-                <a href="portfolio-single1.html">
-                  <div class="port-img-overlay">
-                    <img class="port-main-img" src="images/portfolio/projects-7.jpg" alt="img" >
-                  </div>
-                </a>
-                <div class="port-overlay-cont">
-
-                    <div class="port-title-cont">
-                      <h3><a href="portfolio-single1.html">EYES OF THE CAR</a></h3>
-                      <span><a href="#">ui elements</a><span class="slash-divider">/</span><a href="#">media</a></span>
-                    </div>
-                    <div class="port-btn-cont">
-                      <a href="images/portfolio/projects-7.jpg" class="lightbox mr-20" ><div aria-hidden="true" class="icon_search"></div></a>
-                      <a href="portfolio-single1.html"><div aria-hidden="true" class="icon_link"></div></a>
-                    </div>
-
-                </div>
-              </li>
-              
-              <!-- Item 6 -->
-              <li role="button" class="port-item mix">
-                <a href="portfolio-single1.html">
-                  <div class="port-img-overlay">
-                    <img class="port-main-img" src="images/portfolio/projects-4.jpg" alt="img" >
-                  </div>
-                </a>
-                <div class="port-overlay-cont">
-
-                    <div class="port-title-cont">
-                      <h3><a href="portfolio-single1.html">LOVE</a></h3>
-                      <span><a href="#">branding</a><span class="slash-divider">/</span><a href="#">media</a></span>
-                    </div>
-                    <div class="port-btn-cont">
-                      <a href="images/portfolio/projects-4.jpg" class="lightbox mr-20" ><div aria-hidden="true" class="icon_search"></div></a>
-                      <a href="portfolio-single1.html"><div aria-hidden="true" class="icon_link"></div></a>
-                    </div>
-
-                </div>
-              </li>
-             
-            </ul>
-          
-          </div>
+    <!-- BOARD CAROUSEL -->
+    <div id="board-carousel" class="owl-carousel owl-theme mt-60">
+      
+<!-- Cory -->
+      <div class="item text-center">
+        <img src="images/cory-icon.png" alt="Cory L. Scott" class="img-responsive center-block" style="border-radius: 50%; max-width: 200px;">
+        <h3 class="mt-20" style="color: #ffffff;">Cory L. Scott<br><small>(He/Him)</small></h3>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 220px;">
+          <p class="board-blurb" style="color: #ffffff;">Author, activist, and former pastor with 15+ years of experience leading movements for Black queer communities. PMAF’s visionary founder.</p>
+          <a href="board-member-bios.html#cory" class="button board-readmore">READ MORE</a>
         </div>
-        
-        <!-- VIEW MORE PROJECTS  -->
-        <div class="port-view-more-cont">
-          <a class="port-view-more" href="portfolio-boxed-gut-3col.html">VIEW MORE PROJECTS</a>
+      </div>
+
+      <!-- Nyron -->
+      <div class="item text-center">
+        <img src="images/nyron-icon.png" alt="Nyron Rouse" class="img-responsive center-block" style="border-radius: 50%; max-width: 200px;">
+        <h3 class="mt-20" style="color: #ffffff;">Nyron Rouse<br><small>(He/Him)</small></h3>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 220px;">
+          <p class="board-blurb" style="color: #ffffff;">Strategic funding leader and Iraqi Freedom vet advancing equity and access for marginalized communities nationwide.</p>
+          <a href="board-member-bios.html#nyron" class="button board-readmore">READ MORE</a>
         </div>
-        <!-- END PORTFOLIO SECTION 1 -->
+      </div>
 
-				<!-- DIVIDER -->
-				<hr class="mt-0 mb-0">	
-        
-        <!-- CLIENTS 1 & TESTIMONIALS 1 -->
-        <div class="page-section p-110-cont">
-					<div class="container">
-            <div class="row">
-            
-              <div class="col-md-12">
-                <div class="mb-50">
-								  <h2 class="section-title">OUR <span class="bold">CLIENTS</span></h2>
-								</div>
-							</div>
-              
-						</div>
-            <div class="row">
-              <!-- CLIENTS 1 -->
-              <div class="col-md-7">
-                <div class="row client-row border-bot">
-
-                    <div class="col-xs-6 col-sm-3 text-center">
-                      <img alt="client" src="images/clients/1.png">
-                    </div>
-                  
-                    <div class="col-xs-6 col-sm-3 text-center">
-                      <img alt="client" src="images/clients/2.png">
-                    </div>
-                  
-                    <div class="col-xs-6 col-sm-3 text-center">
-                      <img alt="client" src="images/clients/3.png">
-                    </div>
-                  
-                    <div class="col-xs-6 col-sm-3 text-center">
-                      <img alt="client" src="images/clients/4.png">
-                    </div>
-
-                </div>
-                
-                <div class="row client-row">
-
-                    <div class="col-xs-6 col-sm-3 text-center">
-                      <img alt="client" src="images/clients/5.png">
-                    </div>
-                  
-                    <div class="col-xs-6 col-sm-3 text-center">
-                      <img alt="client" src="images/clients/6.png">
-                    </div>
-                  
-                    <div class="col-xs-6 col-sm-3 text-center">
-                      <img alt="client" src="images/clients/7.png">
-                    </div>
-                  
-                    <div class="col-xs-6 col-sm-3 text-center">
-                      <img alt="client" src="images/clients/8.png">
-                    </div>
-
-                </div>
-                
-							</div>
-              <!-- TESTIMONIALS 1 -->
-              <div class="col-md-5">
-                <blockquote class="quote mb-0 pl-50-min-1169">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, maiores esse temporibus accusantium quas soluta quis sed rerum.</p>
-                  <footer>John Doe, Google Inc.</footer>
-                 </blockquote>
-							</div>
-              
-						</div>
-					</div>
-				</div>
-        
-				<!-- WORK PROCESS 1 -->
-				<div class="page-section " >
-				<div class="work-proc-1-bg" >
-					<div class="container fes4-cont">
-						<div class="row">
-							
-							<div class="col-md-4 ">
-								<div class="mb-50">
-								  <h2 class="section-title">WORK <span class="bold">PROCESS</span></h2>
-								</div>
-                <p class="mb-50 " >Sed ut perspiciatis unde omnis iste nat eror acus  antium que</p>
-							</div>
-							<div class="col-md-7 col-lg-offset-1">
-                <div class="row">
-                
-                  <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="fes4-box">
-                      <div class="fes4-title-cont" >
-                        <div class="fes4-box-icon">
-                          <div class="icon icon-basic-lightbulb"></div>
-                        </div>
-                        <h3><span class="bold">PLANING</span></h3>
-                        <p>LOREM IPSUM DOLOR</p>
-                      </div>
-
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="fes4-box" >
-                      <div class="fes4-title-cont" >
-                        <div class="fes4-box-icon">
-                          <div class="icon icon-basic-gear"></div>
-                        </div>
-                        <h3><span class="bold">DEVELOPMENT</span></h3>
-                        <p>LOREM IPSUM DOLOR</p>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                
-                <div class="row">
-                
-                  <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="fes4-box" >
-                      <div class="fes4-title-cont" >
-                        <div class="fes4-box-icon">
-                          <div class="icon icon-basic-laptop"></div>
-                        </div>
-                        <h3><span class="bold">DESIGNING</span></h3>
-                        <p>LOREM IPSUM DOLOR</p>
-                      </div>
-
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="fes4-box" >
-                      <div class="fes4-title-cont" >
-                        <div class="fes4-box-icon">
-                          <div class="icon icon-basic-paperplane"></div>
-                        </div>
-                        <h3><span class="bold">LAUNCH</span></h3>
-                        <p>LOREM IPSUM DOLOR</p>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-							</div>
-						</div>
-					</div>
-				</div>        
-				</div>        
-
-				<!-- ABOUT US 2 -->
-				<div class="page-section about-us-2-cont pt-100-cont">
-					<div class="container">
-          
-            <div class="row">
-              <div class="col-md-12">
-                <div class="mb-40">
-								  <h2 class="section-title">OUR <span class="bold">TEAM</span></h2>
-								</div>
-							</div>
-						</div>
-            
-            <div class="row">
-              <div class="col-md-12 text-center wow fadeInUp" data-wow-duration="1s">
-                <img src="images/team/team-all.jpg" alt="img">
-              </div>
-            </div>
-            
-					</div>
+      <!-- Darnell -->
+      <div class="item text-center">
+        <img src="images/darnell-icon.png" alt="Darnell Riley" class="img-responsive center-block" style="border-radius: 50%; max-width: 200px;">
+        <h3 class="mt-20" style="color: #ffffff;">Darnell Riley<br><small>(He/Him)</small></h3>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 220px;">
+          <p class="board-blurb" style="color: #ffffff;">Union leader, educator, and curriculum expert dedicated to inclusive education and culturally rooted celebration.</p>
+          <a href="board-member-bios.html#darnell" class="button board-readmore">READ MORE</a>
         </div>
-        <!-- VIEW MORE PROJECTS  -->
-        <div class="port-view-more-cont">
-          <a class="port-view-more-inv" href="about-us.html">VIEW ALL TEAM</a>
-        </div>        
-        
-        <!-- COUNTERS 1 -->
-        <div id="counter-1" class="page-section p-80-cont">
-          <div class="container">
-        
-            <div  class="row text-center">
-                            
-              <!-- Item -->
-              <div class="col-xs-6 col-sm-3">
-                <div class="count-number">
-                  75
-                </div>
-                <div class="count-descr">
-                  <span class="count-title">AWARDS WINNING</span>
-                </div>
-              </div>
-              
-              <!-- Item -->
-              <div class="col-xs-6 col-sm-3">
-                <div class="count-number">
-                 450
-                </div>
-                <div class="count-descr">
-                  <span class="count-title">HAPPY CLIENTS</span>
-                </div>
-              </div>
-              
-              <!-- Item -->
-              <div class="col-xs-6 col-sm-3">
-                <div class="count-number">
-                  151
-                </div>
-                <div class="count-descr">
-                  <span class="count-title">PROJECTS DONE</span>
-                </div>
-              </div>
-              
-              <!-- Item -->
-              <div class="col-xs-6 col-sm-3">
-                <div class="count-number">
-                 768
-                </div>
-                <div class="count-descr">
-                  <span class="count-title">HOURS OF CODE</span>
-                </div>
-              </div>  
-              
-            </div>
-          </div>
+      </div>
+
+      <!-- Karyden -->
+      <div class="item text-center">
+        <img src="images/karyden-icon.png" alt="Karyden Roberts" class="img-responsive center-block" style="border-radius: 50%; max-width: 200px;">
+        <h3 class="mt-20" style="color: #ffffff;">Karyden Roberts<br><small>(She/Her)</small></h3>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 220px;">
+          <p class="board-blurb" style="color: #ffffff;">Performance artist and cultural worker using art to reimagine privacy, consent, and liberation across movements.</p>
+          <a href="board-member-bios.html#karyden" class="button board-readmore">READ MORE</a>
+        </div>
+      </div>
+
+      <!-- David -->
+      <div class="item text-center">
+        <img src="images/david-icon.png" alt="David Brandyn" class="img-responsive center-block" style="border-radius: 50%; max-width: 200px;">
+        <h3 class="mt-20" style="color: #ffffff;">David Brandyn<br><small>(He/Him)</small></h3>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 220px;">
+          <p class="board-blurb" style="color: #ffffff;">Content strategist and wellness advocate championing queer visibility, joy, and sexual health education.</p>
+          <a href="board-member-bios.html#david" class="button board-readmore">READ MORE</a>
+        </div>
+      </div>
+
+      <!-- Faith -->
+      <div class="item text-center">
+        <img src="images/faith-icon.png" alt="Faith Rogers" class="img-responsive center-block" style="border-radius: 50%; max-width: 200px;">
+        <h3 class="mt-20" style="color: #ffffff;">Faith Rogers, Esq.<br><small>(She/Her)</small></h3>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 220px;">
+          <p class="board-blurb" style="color: #ffffff;">Federal executive turned strategist building equitable systems and culture-driven operations for social good.</p>
+          <a href="board-member-bios.html#faith" class="button board-readmore">READ MORE</a>
+        </div>
+      </div>
+
+      <!-- Jon -->
+      <div class="item text-center">
+        <img src="images/jon-icon.png" alt="Jon Pierre" class="img-responsive center-block" style="border-radius: 50%; max-width: 200px;">
+        <h3 class="mt-20" style="color: #ffffff;">Jon Pierre<br><small>(He/Him)</small></h3>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 220px;">
+          <p class="board-blurb" style="color: #ffffff;">Creative director and pop culture commentator reshaping media with authenticity and imagination.</p>
+          <a href="board-member-bios.html#jon" class="button board-readmore">READ MORE</a>
+        </div>
+      </div>
+
+      <!-- Chris -->
+      <div class="item text-center">
+        <img src="images/chris-icon.png" alt="Dr. Chris N. Smith" class="img-responsive center-block" style="border-radius: 50%; max-width: 200px;">
+        <h3 class="mt-20" style="color: #ffffff;">Dr. Chris N. Smith<br><small>(They/He)</small></h3>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 220px;">
+          <p class="board-blurb" style="color: #ffffff;">Veteran, statistician, and educator designing data-driven solutions rooted in justice and lived experience.</p>
+          <a href="board-member-bios.html#chris" class="button board-readmore">READ MORE</a>
+        </div>
+      </div>
+
+      <!-- Aaron -->
+      <div class="item text-center">
+        <img src="images/aaron-icon.png" alt="Aaron Marcellus" class="img-responsive center-block" style="border-radius: 50%; max-width: 200px;">
+        <h3 class="mt-20" style="color: #ffffff;">Aaron Marcellus<br><small>(He/Him)</small></h3>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 220px;">
+          <p class="board-blurb" style="color: #ffffff;">Musician, producer, and creative director whose artistry and leadership inspire through sound and soul.</p>
+          <a href="board-member-bios.html#aaron" class="button board-readmore">READ MORE</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CENTERED DIVIDER LINE (60% width) -->
+<div style="background-color: #303236; text-align: center;">
+  <div style="height: 2px; width: 60%; background-color: #7cb203; margin: 0 auto;"></div>
+</div>
+
+<!-- LEARN MORE ABOUT THE BOARD with Inward-Pointing Animated Arrows -->
+<div style="background-color: #303237; padding: 40px 0; text-align: center;">
+  <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+
+    <!-- Left Arrow (→ pointing in) -->
+    <div class="arrow-bounce-right" style="color: #7cb203; font-size: 36px; font-weight: 800;">→</div>
+
+    <!-- Text -->
+    <a href="board.html" style="
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+    ">
+      LEARN MORE ABOUT THE BOARD
+    </a>
+
+    <!-- Right Arrow (← pointing in) -->
+    <div class="arrow-bounce-left" style="color: #7cb203; font-size: 36px; font-weight: 800;">←</div>
+
+  </div>
+</div>
+
+<!-- CENTERED DIVIDER LINE (60% width) -->
+<div style="background-color: #303236; text-align: center;">
+  <div style="height: 2px; width: 60%; background-color: #7cb203; margin: 0 auto;"></div>
+</div>
+
+<!-- BOARD PARAGRAPH SECTION (DARK BACKGROUND, FULL WIDTH) -->
+<div style="background-color: #303236; color: #ffffff; padding: 20px 0 60px 0;">
+  <div class="container text-center" style="max-width: 1140px;">
+
+    <!-- Green Title Line -->
+    <h4 style="color: #7cb203; font-size: 24px; font-weight: 400; margin-bottom: 20px;">
+      MEET THE CHANGEMAKERS SHAPING OUR STRATEGY, STEWARDING OUR VALUES, AND GUIDING<br>THE MISSION OF THE PAULI MURRAY AWARDS FOUNDATION
+    </h4>
+
+    <p style="font-size: 18px; line-height: 1.6; font-weight: 400;">
+      The Board of Directors of the Pauli Murray Awards Foundation is a collective of brilliant thinkers,
+      cultural stewards, community leaders, and organizational strategists who reflect the very brilliance
+      we seek to honor. They guide the vision of the Foundation with care, conviction, and clarity —
+      helping to shape a more just and joyful world.
+    </p>
+
+  </div>
+</div>
+
+ <!-- HONOR BLOCK WITH DONATE -->
+<<div class="page-section p-80-cont">
+  <div class="container">
+    <div class="row" style="display: flex; align-items: stretch;">
+
+      <!-- LEFT CONTENT COLUMN -->
+      <div class="col-md-6 d-flex flex-column justify-content-between">
+        <div>
+          <h2 class="section-title">
+            <span class="bold">HELP US<br>HONOR BLACK<br>LGBTQ+ BRILLIANCE</span>
+          </h2>
+
+          <p style="font-size: 18px; line-height: 28px; color: #2f2f2f; margin: 30px 0;">
+            Your gift helps make the Pauli Murray Awards possible — supporting our honorees, elevating their stories, and building the platform they deserve. Every dollar fuels the brilliance of Black LGBTQ+ leadership across the country.
+          </p>
         </div>
 
-				<!-- DIVIDER -->
-				<hr class="mt-0 mb-0">	
-        
-				<!-- ADS 1 -->
-				<div class="page-section">
-					<div class="container">
-						<div class="row">
-							
-							<div class="col-md-6 left-50">
-									<div class="fes2-main-text-cont">
-										<div class="title-fs-45">
-											OPTIMIZED FOR<br>
-											<span class="bold">MOBILE</span>
-										</div>
-										<div class="line-3-100"></div>
-										<div class="fes2-text-cont">Sed ut perspiciatis unde omnis iste nat eror acus  antium que. Asperiores, ea velit enim labore doloribus.</div>
-                    <div class="mt-30">
-                      <a class="button medium thin hover-dark" href="https://1.envato.market/GVZ26">DONATE</a>
-                    </div>
-									</div>
-							</div>
-              
-              <div class="col-md-6 right-50 wow fadeInLeft">
-							
-									<div class="ads-img-cont" >
-                    <img src="images/ads-phone.jpg" alt="img">
-                  </div>
-				
-							</div>
-              
-						</div>
-					</div>
-				</div> 
+<div style="text-align: center; margin-top: 20px;">
+  <a href="donate.html" class="button board-readmore" style="font-size: 14px; padding: 10px 20px;">
+    DONATE
+  </a>
+</div>
+      </div>
 
-				<!-- DIVIDER -->
-				<hr class="mt-0 mb-0">	        
+      <!-- RIGHT IMAGE COLUMN -->
+      <div class="col-md-6 d-flex align-items-stretch">
+        <img src="images/rainbow-sketch.png"
+             alt="Sketch of Pauli Murray with rainbow overlay"
+             style="object-fit: cover; width: 100%; height: auto; max-height: 100%;"
+             class="wow fadeInUp" data-wow-delay="150ms" data-wow-duration="1s">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
         
-				<!-- ADS 2 -->
-				<div class="page-section">
-					<div class="container">
-						<div class="row">
-							
-							<div class="col-md-6  ">
-									<div class="fes2-main-text-cont">
-										<div class="title-fs-45">
-											POWERFUL<br>
-											<span class="bold">OPTIONS</span>
-										</div>
-										<div class="line-3-100"></div>
-										<div class="fes2-text-cont">Sed ut perspiciatis unde omnis iste nat eror acus  antium que. Asperiores, ea velit enim labore doloribus.</div>
-                    <div class="mt-30">
-                      <a class="button medium thin hover-dark" href="https://1.envato.market/GVZ26">BUY NOW</a>
-                    </div>
-									</div>
-							</div>
-              
-              <div class="col-md-6 wow fadeInRight">
-								
-									<div class="ads-img-cont" >
-                    <img src="images/ads-noute.jpg" alt="img">
-                  </div>
-							
-							</div>
-              
-						</div>
-					</div>
-				</div>        
-        
-        <!-- VIDEO ADS 1 -->
-				<div class="page-section video-ads-bg" >
-					<div class="container">
-            <div class="video-ads-text-cont clearfix">
-              <span class="video-ads-text">BE CREATIVE</span>
-              <span class="video-ads-a">
-                <a class="popup-youtube" href="https://www.youtube.com/watch?v=0gv7OC9L2s8">
-                  <span class="icon icon-music-play-button"></span>
-                </a>
-              </span>
-              <span class="video-ads-text">WITH HASWELL</span>
-            </div>
-					</div>
-				</div>
-        
-        <!-- BLOG 1 -->
+        <!-- DARK CALL TO ACTION BOX WITHOUT TEXT -->
+<div class="port-view-more-cont-dark" style="background-color: #303237; padding: 50px 40px;">
+  <!-- Empty content intentionally left to preserve the box -->
+</div>
+
+        </div>
+
+        <!-- BLOG 2 -->
         <div class="page-section pt-110-b-30-cont">
           <div class="container">
                 
@@ -1523,125 +860,80 @@
             <div class="row">
               
               <!-- Post Item 1 -->
-              <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-70" >
-                  
-                <div class="post-prev-img">
-                  <a href="blog-single-sidebar-right.html"><img src="images/blog/post-prev-1.jpg" alt="img"></a>
-                </div>
-                  
-                <div class="post-prev-title">
-                  <h3><a href="blog-single-sidebar-right.html">TIME FOR MINIMALISM</a></h3>
-                </div>
-                  
-                <div class="post-prev-info">
-                  JULE 10<span class="slash-divider">/</span><a href="https://1.envato.market/1rOKNa">JOHN DOE</a>
-                </div>
-                  
-                <div class="post-prev-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, nostrum, cumque culpa provident aliquam commodi assumenda laudantium magnam illo nostrum. 
-                </div>
-                  
-                <div class="post-prev-more-cont clearfix">
-                  <div class="post-prev-more left">
-                    <a href="blog-single-sidebar-right.html" class="blog-more">READ MORE</a>
+              <div class="col-md-12 wow fadeIn pb-30" >
+                <div class="row">
+                
+                  <div class="col-md-4 blog2-post-title-cont">
+                    <div class="post-prev-date-cont">
+                      <span class="blog2-date-numb">21</span><span class="blog2-month">October</span>
+                    </div>
+                    <div class="post-prev-title">
+                      <h3><a href="blog-single-sidebar-right.html">TIME FOR MINIMALISM</a></h3>
+                      <div class="post-prev-info">
+                        <a href="#">DESIGN</a><span class="slash-divider">/</span><a href="https://1.envato.market/1rOKNa">JOHN DOE</a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="right" >
-                    <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
-                    <a href="https://1.envato.market/1rOKNa" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span><span class="icon-count">53</span></a>
-                    <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
-                      <span aria-hidden="true" class="social_share"></span>
-                    </a>
-                    <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
-                      <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
-                      </li>
-                      <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
-                      <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
-                    </ul>
+                    
+                  <div class="col-md-8">
+                    <div class="blog2-post-prev-text">                     
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!                      
+                    </div>
                   </div>
+                  
                 </div>
-              
               </div>
               
               <!-- Post Item 2 -->
-              <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-70" data-wow-delay="200ms" >
-                  
-                <div class="post-prev-img">
-                  <a href="blog-single-sidebar-right.html"><img src="images/blog/post-prev-2.jpg" alt="img"></a>
-                </div>
-                  
-                <div class="post-prev-title">
-                  <h3><a href="blog-single-sidebar-right.html">NEW TRENDS IN WEB DESIGN</a></h3>
-                </div>
-                  
-                <div class="post-prev-info">
-                  MAY 11<span class="slash-divider">/</span><a href="https://1.envato.market/1rOKNa">JOHN DOE</a>
-                </div>
-                  
-                <div class="post-prev-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, nostrum, cumque culpa provident aliquam commodi assumenda laudantium magnam illo nostrum. 
-                </div>
-                  
-                <div class="post-prev-more-cont clearfix">
-                  <div class="post-prev-more left">
-                    <a href="blog-single-sidebar-right.html" class="blog-more">READ MORE</a>
+              <div class="col-md-12 wow fadeIn pb-30" >
+                <div class="row">
+                
+                  <div class="col-md-4 blog2-post-title-cont">
+                    <div class="post-prev-date-cont">
+                      <span class="blog2-date-numb">17</span><span class="blog2-month">August</span>
+                    </div>
+                    <div class="post-prev-title">
+                      <h3><a href="blog-single-sidebar-right.html">NEW TRENDS IN WEB</a></h3>
+                      <div class="post-prev-info">
+                        <a href="#">DESIGN</a><span class="slash-divider">/</span><a href="https://1.envato.market/1rOKNa">JOHN DOE</a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="right" >
-                    <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
-                    <a href="https://1.envato.market/1rOKNa" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span><span class="icon-count">53</span></a>
-                    <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
-                      <span aria-hidden="true" class="social_share"></span>
-                    </a>
-                    <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
-                      <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
-                      </li>
-                      <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
-                      <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
-                    </ul>
+                    
+                  <div class="col-md-8">
+                    <div class="blog2-post-prev-text">                     
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!                      
+                    </div>
                   </div>
+                  
                 </div>
-              
               </div>
-              
+
               <!-- Post Item 3 -->
-              <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-70" data-wow-delay="400ms" >
-                  
-                <div class="post-prev-img">
-                  <a href="blog-single-sidebar-right.html"><img src="images/blog/post-prev-3.jpg" alt="img"></a>
-                </div>
-                  
-                <div class="post-prev-title">
-                  <h3><a href="blog-single-sidebar-right.html">THE SOUND OF LIFE</a></h3>
-                </div>
-                  
-                <div class="post-prev-info">
-                  DECEMBER 21<span class="slash-divider">/</span><a href="https://1.envato.market/1rOKNa">JOHN DOE</a>
-                </div>
-                  
-                <div class="post-prev-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, nostrum, cumque culpa provident aliquam commodi assumenda laudantium magnam illo nostrum. 
-                </div>
-                  
-                <div class="post-prev-more-cont clearfix">
-                  <div class="post-prev-more left">
-                    <a href="blog-single-sidebar-right.html" class="blog-more">READ MORE</a>
+              <div class="col-md-12 wow fadeIn pb-30" >
+                <div class="row">
+                
+                  <div class="col-md-4 blog2-post-title-cont">
+                    <div class="post-prev-date-cont">
+                      <span class="blog2-date-numb">1</span><span class="blog2-month">August</span>
+                    </div>
+                    <div class="post-prev-title">
+                      <h3><a href="blog-single-sidebar-right.html">THE SOUND OF LIFE</a></h3>
+                      <div class="post-prev-info">
+                        <a href="#">DESIGN</a><span class="slash-divider">/</span><a href="https://1.envato.market/1rOKNa">JOHN DOE</a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="right" >
-                    <a href="blog-single-sidebar-right.html#comments" class="post-prev-count"><span aria-hidden="true" class="icon_comment_alt"></span><span class="icon-count">21</span></a>
-                    <a href="https://1.envato.market/1rOKNa" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span><span class="icon-count">53</span></a>
-                    <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
-                      <span aria-hidden="true" class="social_share"></span>
-                    </a>
-                    <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
-                      <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
-                      </li>
-                      <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
-                      <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
-                    </ul>
+                    
+                  <div class="col-md-8">
+                    <div class="blog2-post-prev-text">                     
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, excepturi modi cupiditate ipsam molestiae eveniet incidunt nostrum atque alias dicta? Quos, quisquam iusto numquam dicta vel voluptatem aperiam voluptas similique!                      
+                    </div>
                   </div>
+                  
                 </div>
-              
               </div>
-              
+
             </div>
             
           </div>
@@ -1665,86 +957,103 @@
           </div>
         </div>
 
-        <!-- FOOTER 2 -->
-        <footer id="footer2" class="page-section pt-80 pb-50">
-          <div class="container">
-            <div class="row">
-            
-              <div class="col-md-3 col-sm-3 widget">
-                <div class="logo-footer-cont">
-                  <a href="index.html">
-                    <img class="logo-footer" src="images/logo-footer.png" alt="logo">
-                  </a>
-                </div>
-                <div class="footer-2-text-cont">
-                  <address>
-                    555 California str, Suite 100<br>
-                    San&nbsp;Francisco, CA 94107
-                  </address>
-                </div>
-                <div class="footer-2-text-cont">
-                  1-800-312-2121<br>
-                  1-800-310-1010
-                </div>
-                <div class="footer-2-text-cont">
-                  <a class="a-text" href="mailto:info@haswell.com">info@haswell.com</a>
-                </div>
-              </div>
-              
-              <div class="col-md-3 col-sm-3 widget">
-                <h4>NAVIGATE</h4>
-                <ul class="links-list bold a-text-cont">
-                  <li><a href="index.html">HOME</a></li>
-                  <li><a href="grid-system.html">GRID SYSTEM</a></li>
-                  <li><a href="services.html">SERVICES</a></li>
-                  <li><a href="index-portfolio.html">PORTFOLIO</a></li>
-                  <li><a href="index-blog.html">BLOG</a></li>
-                  <li><a href="index-shop.html">SHOP</a></li>
-                  <li><a href="intro.html">PAGES</a></li>
-                </ul>
-              </div>
-              
-              <div class="col-md-3 col-sm-3 widget">
-                <h4>ABOUT US</h4>
-                <ul class="links-list a-text-cont" >
-                  <li><a href="about-us.html">COMPANY</a></li>
-                  <li><a href="services.html">WHAT WE DO</a></li>
-                  <li><a href="https://help.market.envato.com/hc/en-us">HELP CENTER</a></li>
-                  <li><a href="http://themeforest.net/legal/market">TERMS OF SERVICE</a></li>
-                  <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-              </div>
-            </div>    
-            
-            <div class="footer-2-copy-cont clearfix">
-              <!-- Social Links -->
-              <div class="footer-2-soc-a right">
-                <a href="https://1.envato.market/1rOKNa" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="https://1.envato.market/1rOKNa" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="https://1.envato.market/1rOKNa" title="Behance" target="_blank"><i class="fa fa-behance"></i></a>
-                <a href="https://1.envato.market/1rOKNa" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
-                <a href="https://dribbble.com/abcgomel" title="Dribbble" target="_blank"><i class="fa fa-dribbble"></i></a>
-              </div>
-              
-              <!-- Copyright -->
-              <div class="left">
-                <a class="footer-2-copy" href="https://1.envato.market/1rOKNa" target="_blank">&copy; HASWELL 2023</a>
-              </div>
-              
+<!-- FOOTER 3 BLACK -->
+<footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
+  <div class="container-m-60">
+    <div class="row">
 
-            </div>
-                    
+      <!-- Column 1: Logo + Contact Info -->
+      <div class="col-md-3 col-sm-3 widget">
+        <div class="logo-footer-cont">
+          <a href="index.html">
+            <img class="logo-footer" src="images/logo-footer-white.png" alt="logo">
+          </a>
+        </div>
+        <div class="footer-2-text-cont">
+          <address>
+            1178 Broadway, 3rd Floor #502<br>
+            New York, NY 10001
+          </address>
+        </div>
+        <div class="footer-2-text-cont">
+          646-736-2596<br>
+        </div>
+        <div class="footer-2-text-cont">
+          <a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="col-md-3 col-sm-3 widget">
+        <h4>QUICK LINKS</h4>
+        <ul class="links-list bold a-text-cont">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT PMAF</a></li>
+          <li><a href="about-pauli-murray.html">ABOUT PAULI MURRAY</a></li>
+          <li><a href="programs.html">PROGRAMS</a></li>
+          <li><a href="blog.html">NEWS</a></li>
+          <li><a href="donate.html">DONATE</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: PMAs 2026 -->
+      <div class="col-md-3 col-sm-3 widget">
+        <h4>PMAs 2026</h4>
+        <ul class="links-list a-text-cont">
+          <li><a href="awards.html">PMAs</a></li>
+          <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
+          <li><a href="awards/timeline.html">PMA 2026 TIMELINE</a></li>
+          <li><a href="awards/FAQs.html">FAQs</a></li>
+          <li><a href="awards/login.html">LOGIN</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Recent Posts -->
+      <div class="col-md-3 col-sm-3 widget">
+        <h4>RECENT POSTS</h4>
+        <div id="post-list-footer">
+          <div class="post-prev-title">
+            <h3><a class="a-text" href="blog-single-sidebar-right.html">New trends in web design</a></h3>
           </div>
-        </footer>
-        
-				<!-- BACK TO TOP -->
+          <div class="post-prev-info">Jule 10</div>
+
+          <div class="post-prev-title">
+            <h3><a class="a-text" href="blog-single-sidebar-right.html">The sound of life</a></h3>
+          </div>
+          <div class="post-prev-info">October 10</div>
+
+          <div class="post-prev-title">
+            <h3><a class="a-text" href="blog-single-sidebar-right.html">Time for minimalism</a></h3>
+          </div>
+          <div class="post-prev-info">September 21</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-2-copy-cont clearfix">
+      <!-- Social Links -->
+      <div class="footer-2-soc-a right">
+        <a href="https://www.facebook.com/PauliMurrayAF/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/PauliMurrayAF/" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/paulimurrayawards" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="left">
+        <a class="footer-2-copy" href="https://paulimurrayawaards.com" target="_blank">
+          &copy; PAULI MURRAY AWARDS FOUNDATIONS INC. 2025
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+	<!-- BACK TO TOP -->
 				<p id="back-top">
           <a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a>
         </p>
-        
-			</div><!-- End BG -->	
-		</div><!-- End wrap -->	
-			
+        		
 <!-- JS begin -->
 
 		<!-- jQuery  -->
@@ -1942,6 +1251,90 @@
 			</script>
 
 <!-- JS end -->	
-	
+
+<script>
+  function updateDaysUntilAwards() {
+    const eventDate = new Date("October 11, 2026");
+    const today = new Date();
+    const timeDiff = eventDate - today;
+    const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+    const daysEl = document.getElementById("days-until");
+    if (daysEl) {
+      daysEl.textContent = daysLeft;
+    }
+  }
+
+  updateDaysUntilAwards();
+</script>
+
+<!-- VIDEO MODAL -->
+<div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;">
+  <div class="close" onclick="closeModal()" style="position:absolute; top:20px; right:30px; font-size:40px; color:#fff; cursor:pointer;">×</div>
+  <video controls autoplay id="pauliVideo" style="width:90%; max-width:900px;">
+    <source src="images/my-name-is-pauli-murray-trailer.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<script>
+  function matchPmaSectionHeights() {
+    const left = document.getElementById("pma-left");
+    const right = document.getElementById("pma-right");
+
+    if (left && right) {
+      right.style.height = left.offsetHeight + "px";
+    }
+  }
+
+  window.addEventListener("load", matchPmaSectionHeights);
+  window.addEventListener("resize", matchPmaSectionHeights);
+</script>
+
+<script>
+  $(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 30,
+      nav: false,
+      dots: true,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      responsive: {
+        0:    { items: 1 },
+        768:  { items: 2 },
+        992:  { items: 3 }
+      }
+    });
+  });
+</script>
+
+<!-- Netlify Identity Widget -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function(user) {
+      if (!user) {
+        window.netlifyIdentity.on("login", function() {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
 	</body>
 </html>		
+<script>
+  function openModal() {
+    document.getElementById("videoModal").style.display = "flex";
+    document.getElementById("pauliVideo").play();
+  }
+
+  function closeModal() {
+    document.getElementById("videoModal").style.display = "none";
+    const video = document.getElementById("pauliVideo");
+    video.pause();
+    video.currentTime = 0;
+  }
+</script>
