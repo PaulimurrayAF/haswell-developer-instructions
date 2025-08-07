@@ -1,12 +1,12 @@
 const postsContainer = document.getElementById('posts-container');
 
-// Load the index of posts (optional: you can hardcode paths if no index exists)
+// Load the list of posts
 async function fetchPostsList() {
   const posts = [
-    // Manually list your blog post markdown files here:
-    'content/posts/first-post.md',
-    'content/posts/second-post.md',
-    // Add more as needed
+  'content/posts/building-the-future-with-vision-and-integrity.md',
+  'content/posts/legacy-in-progress.md',
+  'content/posts/pauli-murray-was-always-there—we-just-weren’t-looking.md',
+  'content/posts/feast-day-of-rev-dr-pauli-murray-esq-honoring-the-saint-who-defied-every-box.md'
   ];
   return posts;
 }
@@ -17,7 +17,7 @@ async function convertMarkdownToHTML(mdText) {
   return converter.makeHtml(mdText);
 }
 
-// Fetch and render each post
+// Render each post
 async function renderPosts() {
   const postPaths = await fetchPostsList();
 
@@ -33,8 +33,13 @@ async function renderPosts() {
         ${html}
       </div>
     `;
+
     postsContainer.appendChild(postDiv);
   }
 }
 
-renderPosts();
+// Expose the function expected by your HTML
+function loadFeaturedPosts() {
+  renderPosts();
+}
+window.loadFeaturedPosts = loadFeaturedPosts;
