@@ -10,7 +10,11 @@ excerpt: >-
 
   On July 1, we celebrate the Feast Day of Rev. Dr. Pauli Murray, Esq.—a poet, priest, and prophetic force who reshaped law, language, and liberation. Their sainthood affirms that resistance is holy and that Black queer and trans lives are sacred. At the Pauli Murray Awards Foundation, we carry this legacy forward with pride, purpose, and revolutionary love.
 published: true
+author_name: Cory L. Scott
+author_bio: Author | Activist | Former Pastor | Sex Educator | Strategist | Founder at Pauli Murray Awards Foundation
+author_avatar: /images/uploads/cory-icon.png
 ---
+
 July 1 marks the **Feast Day of Rev. Dr. Pauli Murray, Esq.**, a moment in the Episcopal Church calendar when the faithful pause to honor a soul whose life and legacy still ripple through our movements, our identities, and our demands for justice. For us at the Pauli Murray Awards Foundation, it’s more than a date on a calendar. It’s a call to remembrance. A call to action. A call to become.
 
 In the **Episcopal tradition**, a feast day is a formal moment of recognition—when a saint, martyr, or significant figure in the Christian faith is commemorated. To be granted a feast day is to have one’s life acknowledged as having enduring **spiritual significance and moral witness**. And to see Pauli Murray’s name etched into that sacred rhythm of the church year is nothing short of revolutionary.

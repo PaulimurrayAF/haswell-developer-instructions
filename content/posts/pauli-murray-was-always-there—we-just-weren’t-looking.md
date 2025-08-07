@@ -9,6 +9,9 @@ excerpt: >-
 
   The Pauli Murray Awards Foundation was created to honor and invest in Black LGBTQ+ brilliance. Inspired by Pauli Murray’s life and legacy—and fueled by the urgent need to end cycles of erasure—we’re building a national platform that celebrates, resources, and sustains our community’s visionaries. This is more than recognition. It’s transformation.
 published: true
+author_name: Cory L. Scott
+author_bio: Author | Activist | Former Pastor | Sex Educator | Strategist | Founder at Pauli Murray Awards Foundation
+author_avatar: /images/uploads/cory-icon.png
 ---
 ***Founding the Pauli Murray Awards Foundation to Honor and Invest in Black Queer Brilliance***
 

@@ -9,6 +9,9 @@ excerpt: >-
 
   The Pauli Murray Awards: 40 Under 40 Black LGBTQ+ Honors were created to recognize brilliance now, not later. Too often, our people are honored only after burnout—or death. This program flips the script, offering not just recognition but real support, funding, and community to emerging leaders shaping our world today. Because we deserve to be seen while we’re still breathing.
 published: true
+author_name: Cory L. Scott
+author_bio: Author | Activist | Former Pastor | Sex Educator | Strategist | Founder at Pauli Murray Awards Foundation
+author_avatar: /images/uploads/cory-icon.png
 ---
 **Why the Pauli Murray Awards Honor Black LGBTQ+ Changemakers Under 40**
 

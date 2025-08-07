@@ -43,6 +43,21 @@ collections:
           hint: "Short summary for previews and social media."
         }
 
+      # Author Name
+      - { label: "Author Name", name: "author_name", widget: "string" }
+
+      # Author Bio
+      - { label: "Author Bio", name: "author_bio", widget: "text", required: false }
+
+      # Author Avatar
+      - {
+          label: "Author Avatar",
+          name: "author_avatar",
+          widget: "image",
+          required: false,
+          hint: "Upload an image for the author (optional)."
+        }
+
       # Published toggle
       - {
           label: "Published",
@@ -58,4 +73,3 @@ collections:
           name: "body",
           widget: "markdown"
         }
-

@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+title: "Blog"
+---
+
+<!-- PAGE TITLE SECTION -->
+<div class="page-title-cont page-title-small grey-dark-bg page-title-img pt-250" style="background-image: url('/images/uploads/pm-true-community-card.jpeg'); position: relative; overflow: hidden;">
+  <div style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.45); z-index: 1;"></div>
+  <div class="relative container align-left" style="position: relative; z-index: 2;">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="page-title" style="font-size: 80px; line-height: 90px; color: white;">Blog</h1>
+      </div>
+      <div class="col-md-4">
+        <div class="breadcrumbs">
+          <a href="/">Home</a><span class="slash-divider">/</span><span class="bread-current">Blog</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BLOG GRID SECTION -->
+<div class="container p-140-cont">
+  <div class="row">
+
+    {% for post in collections.posts | reverse %}
+    <div class="col-sm-6 col-md-4 col-lg-4 wow fadeIn pb-50">
+      
+      {% if post.data.featured_image %}
+      <div class="post-prev-img">
+        <a href="{{ post.url }}"><img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}"></a>
+      </div>
+      {% endif %}
+
+      <div class="post-prev-title">
+        <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      </div>
+
+      <div class="post-prev-info">
+        {{ post.date | date('MMMM D, YYYY') }}
+        {% if post.data.author_name %}<span class="slash-divider">/</span> {{ post.data.author_name }}{% endif %}
+      </div>
+
+      <div class="post-prev-text">
+        <p>{{ post.data.excerpt }}</p>
+      </div>
+
+    </div>
+    {% endfor %}
+
+  </div>
+</div>

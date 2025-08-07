@@ -1,6 +1,7 @@
 ---
 title: Building the Future with Vision and Integrity
 date: 2025-06-02T16:00:06.513Z
+featured_image: /images/uploads/board-intro.jpeg
 categories:
   - Announcement
   - News
@@ -9,6 +10,10 @@ excerpt: >-
 
   The Pauli Murray Awards Foundation is proud to introduce its inaugural Board of Directors—a visionary team of Black LGBTQ+ leaders, artists, strategists, and changemakers. United by purpose, they are guiding the Foundation’s mission to honor, uplift, and invest in Black queer brilliance across the country.
 published: true
+
+author_name: Cory L. Scott
+author_bio: Author | Activist | Former Pastor | Sex Educator | Strategist | Founder at Pauli Murray Awards Foundation
+author_avatar: /images/uploads/cory-icon.png
 ---
 **Introducing the Inaugural Board of Directors of the Pauli Murray Awards Foundation**
 
@@ -20,7 +25,7 @@ These individuals have committed to shaping the future of this organization with
 
 - - -
 
-### 🏛️ Meet the Board:
+### Meet the Board:
 
 ### Cory L. Scott (Chair & Founding Executive Director) (He/Him)
 
