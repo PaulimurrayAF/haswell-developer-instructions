@@ -8,18 +8,56 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+collections:
   - name: "posts"
     label: "Blog Posts"
-    folder: "blog"
+    folder: "content/posts"
     create: true
     slug: "{{slug}}"
     fields:
-      - label: "Title"
-        name: "title"
-        widget: "string"
-      - label: "Publish Date"
-        name: "date"
-        widget: "datetime"
-      - label: "Body"
-        name: "body"
-        widget: "markdown"
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+
+      # Featured Image
+      - {
+          label: "Featured Image",
+          name: "featured_image",
+          widget: "image",
+          required: false,
+          hint: "Upload or select a featured image for this post."
+        }
+
+      # Categories (multiple choice)
+      - {
+          label: "Categories",
+          name: "categories",
+          widget: "select",
+          multiple: true,
+          options: ["Article", "Reflection", "Announcement", "Fundraising", "Programs", "Events", "News", "Press"]
+          required: false
+        }
+
+      # Short Summary
+      - {
+          label: "Excerpt",
+          name: "excerpt",
+          widget: "text",
+          hint: "Short summary for previews and social media."
+        }
+
+      # Published toggle
+      - {
+          label: "Published",
+          name: "published",
+          widget: "boolean",
+          default: true,
+          hint: "Toggle post visibility."
+        }
+
+      # Main Content
+      - {
+          label: "Body",
+          name: "body",
+          widget: "markdown"
+        }
+
