@@ -1,5 +1,5 @@
 ---
-title: "Building the Future with Vision and Integrity:"
+title: Building the Future with Vision and Integrity
 date: 2025-06-02T16:00:06.513Z
 categories:
   - Announcement
