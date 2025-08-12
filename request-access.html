@@ -140,78 +140,176 @@
 </header>
 
 
-<!-- PMAF LOGIN — BODY ONLY (Haswell horizontal tabs + PMAF green, with Request Access CTA) -->
-<section id="portal-login" class="page-section" style="padding:110px 0 60px; position:relative;">
-  <!-- Scoped styles (only affect elements inside #portal-login) -->
+<!-- PMAF REQUEST ACCESS — BODY ONLY (Haswell-compatible) -->
+<section id="request-access" class="page-section" style="padding:110px 0 60px; position:relative;">
+  <!-- Scoped styles (only affect elements inside #request-access) -->
   <style>
-    #portal-login {
+    #request-access {
       --pmaf-green:#7cb203;
       --pmaf-dark:#303236;
       --pmaf-text:#2f2f2f;
       --card-radius:14px;
     }
-    #portal-login .pmaf-wrap { display:flex; gap:36px; align-items:stretch; }
-    @media (max-width:991px){ #portal-login .pmaf-wrap{flex-direction:column; gap:20px;} }
+    #request-access .wrap { display:flex; gap:36px; align-items:stretch; }
+    @media (max-width:991px){ #request-access .wrap{flex-direction:column; gap:20px;} }
 
     /* Left lead card */
-    #portal-login .lead-card{
+    #request-access .lead-card{
       background:#fff; border:1px solid #e8e8e8; border-radius:var(--card-radius);
       padding:28px; box-shadow:0 10px 24px rgba(0,0,0,.06); color:var(--pmaf-text);
       height:100%;
     }
-    #portal-login .lead-eyebrow{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--pmaf-green);font-weight:700;margin-bottom:6px;}
-    #portal-login h1{color:#24354e;font-weight:700;margin:0 0 10px;line-height:1.15;}
-    #portal-login .lead-sub{opacity:.9;margin-bottom:12px;}
-    #portal-login .roles {opacity:.95; font-weight:600; color:var(--pmaf-dark);}
-    #portal-login .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#f6f9f3;color:var(--pmaf-green);font-weight:600;font-size:12px;margin:0 8px 8px 0;border:1px solid #e7f2d9;}
-    #portal-login .link-muted{color:var(--pmaf-dark); opacity:.85; text-decoration:none;}
-    #portal-login .link-muted:hover{opacity:1; text-decoration:underline;}
-    #portal-login .btn-cta{
-      background:var(--pmaf-green); color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:700;
-      display:inline-block; text-decoration:none;
-    }
-    #portal-login .btn-cta:hover{filter:brightness(.96);}
+    #request-access .eyebrow{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--pmaf-green);font-weight:700;margin-bottom:6px;}
+    #request-access h1{color:#24354e;font-weight:700;margin:0 0 10px;line-height:1.15;}
+    #request-access .lead-sub{opacity:.9;margin-bottom:12px;}
+    #request-access .tip{color:#566; font-size:14px;}
+    #request-access .link-muted{color:var(--pmaf-dark); opacity:.85; text-decoration:none;}
+    #request-access .link-muted:hover{opacity:1; text-decoration:underline;}
 
-    /* Right auth card shell */
-    #portal-login .login-card{
+    /* Right form card */
+    #request-access .form-card{
       background:#fff; border:1px solid #ececec; border-radius:var(--card-radius);
-      padding:0; box-shadow:0 10px 24px rgba(0,0,0,.06); overflow:hidden;
+      padding:24px; box-shadow:0 10px 24px rgba(0,0,0,.06);
     }
+    #request-access .form-card h3{margin:0 0 8px 0; color:var(--pmaf-dark); font-weight:700;}
+    #request-access .muted{opacity:.8;}
 
-    /* Haswell tabs (shortcodes) + PMAF green overrides */
-    #portal-login .custom-tabs .nav-tabs { border-bottom:2px solid #e8f1d1; padding:0 16px; }
-    #portal-login .custom-tabs .nav-tabs>li>a{
-      font-weight:700; color:#5b6570; border:1px solid transparent; border-radius:12px 12px 0 0;
-      padding:10px 14px; background:#f2f5f0; margin-right:8px;
-      transition:all .15s ease;
-    }
-    #portal-login .custom-tabs .nav-tabs>li>a:hover{ filter:brightness(.98); }
-    #portal-login .custom-tabs .nav-tabs>li.active>a,
-    #portal-login .custom-tabs .nav-tabs>li.active>a:focus,
-    #portal-login .custom-tabs .nav-tabs>li.active>a:hover{
-      color:var(--pmaf-dark);
-      background:#f6f9f3;
-      border-color:var(--pmaf-green) var(--pmaf-green) transparent;
-      box-shadow:0 6px 14px rgba(124,178,3,.18);
-    }
-    #portal-login .tab-content-container{
-      border:1px solid var(--pmaf-green);
-      border-top:none;
-      border-radius:0 0 var(--card-radius) var(--card-radius);
-      padding:24px 24px 28px;
-    }
-
-    /* Inputs & buttons */
-    #portal-login .controled{width:100%; border:1px solid #dfe3e8; border-radius:10px; padding:12px 14px; font-size:15px; outline:none;}
-    #portal-login .controled:focus{border-color:#cfd6dc; box-shadow:0 0 0 3px rgba(124,178,3,.12);}
-    #portal-login .btn-pmaf{background:var(--pmaf-green); color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:700; width:100%;}
-    #portal-login .btn-pmaf:hover{filter:brightness(.96);}
+    /* Inputs & buttons (works with Haswell) */
+    #request-access .controled{width:100%; border:1px solid #dfe3e8; border-radius:10px; padding:12px 14px; font-size:15px; outline:none;}
+    #request-access .controled:focus{border-color:#cfd6dc; box-shadow:0 0 0 3px rgba(124,178,3,.12);}
+    #request-access .btn-pmaf{background:var(--pmaf-green); color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:700; width:100%;}
+    #request-access .btn-pmaf:hover{filter:brightness(.96);}
+    #request-access .helper{font-size:12px; opacity:.75; margin-top:6px;}
 
     /* Subtle background band */
-    #portal-login .band{position:absolute; inset:0; background:linear-gradient(135deg, rgba(48,50,54,.07), rgba(124,178,3,.07)); pointer-events:none;}
+    #request-access .band{position:absolute; inset:0; background:linear-gradient(135deg, rgba(48,50,54,.07), rgba(124,178,3,.07)); pointer-events:none;}
   </style>
 
   <div class="band" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="row wrap">
+      <!-- LEFT: Context -->
+      <div class="col-md-6">
+        <div class="lead-card">
+          <span class="eyebrow">PMAF Portal</span>
+          <h1>Request Access</h1>
+          <p class="lead-sub">For <strong>Reviewers, Volunteers, and Board Members</strong> who are not PMA applicants.</p>
+          <p class="tip">
+            If you’re an <strong>Applicant</strong>, please use <a class="link-muted" href="login.html#pmaf-apply-tab">PMA Application Registration</a> instead.
+          </p>
+          <p class="tip" style="margin-top:10px;">
+            Submit this form to create your account. You’ll choose your role below. A confirmation email may be required.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Request Access Form -->
+      <div class="col-md-6">
+        <div class="form-card">
+          <h3>Create Your Portal Account</h3>
+          <div class="muted" style="margin-bottom:14px;">Select your role and enter your details.</div>
+
+          <form id="request-access-form" action="request-access.html" method="post" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">First name</label>
+                <input type="text" name="first_name" class="controled" placeholder="First name" required>
+              </div>
+              <div class="col-md-6 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">Last name</label>
+                <input type="text" name="last_name" class="controled" placeholder="Last name" required>
+              </div>
+              <div class="col-md-12 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">Email</label>
+                <input type="email" name="email" class="controled" placeholder="you@organization.org" required>
+              </div>
+
+              <div class="col-md-12 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">Role you’re requesting</label>
+                <select name="role" class="controled" required>
+                  <option value="" selected disabled>Select a role…</option>
+                  <option value="reviewer">Reviewer</option>
+                  <option value="volunteer">Volunteer</option>
+                  <option value="board">Board Member</option>
+                </select>
+                <div class="helper">We’ll tailor your dashboard to this role.</div>
+              </div>
+
+              <div class="col-md-12 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">Organization (optional)</label>
+                <input type="text" name="organization" class="controled" placeholder="Organization or affiliation">
+              </div>
+
+              <div class="col-md-12 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">Phone (optional)</label>
+                <input type="tel" name="phone" class="controled" placeholder="(555) 555-5555">
+              </div>
+
+              <div class="col-md-6 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">Password</label>
+                <input type="password" name="password" class="controled" placeholder="Create a password" required>
+              </div>
+              <div class="col-md-6 mb-20">
+                <label style="font-weight:600; margin-bottom:6px;">Re-enter password</label>
+                <input type="password" name="password2" class="controled" placeholder="Re-enter password" required>
+              </div>
+
+              <div class="col-md-12 mb-15">
+                <label style="display:flex; align-items:center; gap:8px; margin:0;">
+                  <input type="checkbox" name="agree" required>
+                  <span class="muted">I agree to the <a class="link-muted" href="terms.html">Terms</a> and <a class="link-muted" href="privacy.html">Privacy Policy</a>.</span>
+                </label>
+              </div>
+
+              <div class="col-md-12">
+                <button type="submit" class="btn-pmaf">Request Access</button>
+                <div id="form-status" class="helper"></div>
+              </div>
+            </div>
+          </form>
+
+          <p style="margin-top:16px;" class="muted">
+            Already have an account? <a class="link-muted" href="login.html">Log in</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional tiny preview script (UI-only; remove when wiring to Supabase) -->
+  <script>
+    (function () {
+      var form = document.getElementById('request-access-form');
+      var statusEl = document.getElementById('form-status');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var fd = new FormData(form);
+        var pwd = String(fd.get('password') || '');
+        var pwd2 = String(fd.get('password2') || '');
+        if (pwd !== pwd2) {
+          alert('Passwords do not match. Please re-enter.');
+          return;
+        }
+        var payload = {
+          first_name: fd.get('first_name'),
+          last_name: fd.get('last_name'),
+          email: fd.get('email'),
+          role: fd.get('role'),
+          organization: fd.get('organization'),
+          phone: fd.get('phone')
+        };
+        console.log('[Request Access — preview only]', payload);
+        if (statusEl) statusEl.textContent = 'Looks good! We’ll wire this to save next.';
+        alert('Preview captured. We’ll connect this form to the database next.');
+        // form.reset(); // uncomment if you want it to clear after preview
+      });
+    })();
+  </script>
+</section>
+<!-- /PMAF REQUEST ACCESS — BODY ONLY -->
 
 
 
