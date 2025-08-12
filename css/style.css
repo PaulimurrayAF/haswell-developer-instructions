@@ -3349,7 +3349,7 @@ select.input-border {
   animation: fadeIn .4s;
 }
 #main-menu .sub a {
-  color: #ffffff;
+  color: #d3d3d3;
   display: block;
   text-decoration: none;
   min-width: 160px;
@@ -11324,4 +11324,20 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   animation: bounce-right 1s infinite ease-in-out;
 }
 
+/* === CUSTOM: NAV BAR TEXT COLORS === */
+
+/* Default nav bar text color */
+.main-menu > li > a {
+  color: #303236 !important; /* Dark gray */
+}
+
+/* Submenu text color */
+.main-menu .sub > li > a {
+  color: #ffffff !important; /* White */
+}
+
+/* Nav bar text color when sticky/scroll highlight appears */
+.sticky-nav .main-menu > li > a {
+  color: #ffffff !important; /* White */
+}
 
