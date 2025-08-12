@@ -140,143 +140,45 @@
 </header>
 
 
-<ul class="cd-header-buttons">
-  <li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
-</ul>
-<div id="cd-search" class="cd-search">
-  <form class="form-search" id="searchForm" action="page-search-results.html" method="get">
-    <input type="text" value="" name="q" id="q" placeholder="Search...">
-  </form>
-</div>
-
-<!-- PAGE TITLE -->
-<div class="page-title-cont page-title-large grey-dark-bg page-title-img pt-250"
-     style="background-image: url(images/pm-typing.jpg); position: relative; overflow: hidden;">
-
-  <!-- Overlay Filter -->
-  <div style="position: absolute; top: 0; left: 0; height: 100%; width: 100%;
-              background-color: rgba(0, 0, 0, 0.45); z-index: 1;"></div>
-
-  <!-- Title Content -->
-  <div class="relative container align-left" style="position: relative; z-index: 2;">
+<!-- ADMIN: CREATE INTERVIEW PANEL (PLACEHOLDER) -->
+<section id="admin-interviews" class="page-section" style="padding:60px 0;">
+  <div class="container">
+    <!-- Title -->
     <div class="row">
-      
-      <!-- Title -->
-      <div class="col-md-8">
-        <h1 class="page-title" style="
-          font-size: 80px;
-          line-height: 90px;
-          color: white;">
-          {{ title }}
+      <div class="col-md-12">
+        <h1 class="fes1-main-title-cont" style="margin-bottom:10px; color:#24354e;">
+          Create Interview Panel
         </h1>
+        <p style="margin:0 0 20px 0; color:#2f2f2f; opacity:.8;">
+          If you can see this section, the page is wired correctly. Next we’ll add the real form.
+        </p>
       </div>
+    </div>
 
-      <!-- Breadcrumbs -->
-      <div class="col-md-4">
-        <div class="breadcrumbs" style="color: #fff;">
-          <a href="index.html">Home</a>
-          <span class="slash-divider">/</span>
-          <a href="#">Blog</a>
-          <span class="slash-divider">/</span>
-          <span class="bread-current">{{ title }}</span>
+    <!-- Card -->
+    <div class="row">
+      <div class="col-md-8">
+        <div style="border:1px solid #e6e6e6; border-radius:12px; padding:20px;">
+          <p class="mb-10">This admin page will let you:</p>
+          <ul class="a-text-cont" style="margin-left:18px; line-height:1.6;">
+            <li>Choose an applicant</li>
+            <li>Set date/time & duration</li>
+            <li>Add panelist emails</li>
+          </ul>
+          <p class="mt-20" style="opacity:.75;">
+            We’ll connect this to Supabase in the next step.
+          </p>
+          <a href="#" class="btn btn-md" style="background:#7cb203; color:#fff; border-radius:10px; font-weight:700; border:none; padding:10px 16px; cursor:default;">
+            Form coming next →
+          </a>
         </div>
       </div>
-
     </div>
   </div>
-</div>
-
-<!-- BLOG CONTENT START -->
-<div class="blog-post wow fadeIn pb-50">
-
-  <!-- FEATURED IMAGE -->
-  {% if featured_image %}
-  <div class="post-prev-img">
-    <img src="{{ featured_image }}" alt="{{ title }}">
-  </div>
-  {% endif %}
-
-  <!-- BLOG META -->
-  <div class="post-prev-info">
-    {{ date | date: "%B %d, %Y" }}
-    {% if author %}<span class="slash-divider">/</span>{{ author }}{% endif %}
-    {% if categories.length > 0 %}
-      <span class="slash-divider">/</span>
-      {% for category in categories %}
-        <a href="#">{{ category }}</a>{% if not loop.last %}, {% endif %}
-      {% endfor %}
-    {% endif %}
-  </div>
-
-  <!-- POST BODY CONTENT -->
-<div class="post-prev-text">
-  {{ content | safe }}
-</div>
-
-<!-- POST ITEM -->
-<div class="blog-post wow fadeIn pb-50">
-  <div class="post-prev-img">
-    <img src="{{ featured_image }}" alt="{{ title }}">
-  </div>
-
-  <div class="post-prev-title">
-    <h3>{{ title }}</h3>
-  </div>
-
-  <div class="post-prev-info">
-    {{ date | date: "%B %d, %Y" }}
-    <span class="slash-divider">/</span>
-    {% if author %}<a href="#">{{ author }}</a>{% endif %}
-    {% if categories %}
-      <span class="slash-divider">/</span>
-      {% for cat in categories %}
-        <a href="#">{{ cat }}</a>{% if not loop.last %}, {% endif %}
-      {% endfor %}
-    {% endif %}
-  </div>
-
-  <div class="post-prev-text">
-    {{ content | safe }}
-  </div>
-</div>
-
-<!-- AUTHOR -->
-<div class="post-author-container clearfix mb-50">
-
-  {% if author_avatar %}
-  <div class="post-author-avatar">
-    <img alt="Author Avatar" src="{{ author_avatar | url }}" />
-  </div>
-  {% endif %}
-
-  <div class="comment-content">
-    {% if author_name %}
-    <div class="comment-author">
-      <a href="#">{{ author_name }}</a>
-    </div>
-    {% endif %}
-
-    {% if author_bio %}
-    <p>{{ author_bio }}</p>
-    {% endif %}
-  </div>
-
-</div>
+</section>
+<!-- /ADMIN: CREATE INTERVIEW PANEL (PLACEHOLDER) -->
 
 
-<div class="post-prev-text">
-  {{ content | safe }}
-</div>
-
-<h3><a href="#">{{ title }}</a></h3>
-
-<img src="{{ featured_image }}" alt="{{ title }}">
-
-{{ date | date: "%B %e, %Y" }}<span class="slash-divider">/</span>{{ author }}
-
-{% for category in categories %}
-  <a href="#">{{ category }}</a>{% if not loop.last %}, {% endif %}
-{% endfor %}
 
 
 <!-- FOOTER 3 BLACK -->

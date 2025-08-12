@@ -13,6 +13,7 @@ published: true
 author_name: Cory L. Scott
 author_bio: Author | Activist | Former Pastor | Sex Educator | Strategist | Founder at Pauli Murray Awards Foundation
 author_avatar: /images/uploads/cory-icon.png
+permalink: "/posts/{{ slug }}/"
 ---
 
 July 1 marks the **Feast Day of Rev. Dr. Pauli Murray, Esq.**, a moment in the Episcopal Church calendar when the faithful pause to honor a soul whose life and legacy still ripple through our movements, our identities, and our demands for justice. For us at the Pauli Murray Awards Foundation, it’s more than a date on a calendar. It’s a call to remembrance. A call to action. A call to become.
