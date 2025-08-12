@@ -140,177 +140,189 @@
 </header>
 
 
-<!-- PMAF LOGIN (BODY-ONLY, DROP-IN) -->
-<section id="portal-login" class="page-section" style="padding:60px 0; position:relative; overflow:hidden;">
+<!-- PMAF LOGIN — BODY ONLY (Haswell horizontal tabs + PMAF green, with Request Access CTA) -->
+<section id="portal-login" class="page-section" style="padding:110px 0 60px; position:relative;">
+  <!-- Scoped styles (only affect elements inside #portal-login) -->
   <style>
-    /* Scoped styles: only affect elements inside #portal-login */
     #portal-login {
-      --pmaf-green: #7cb203;
-      --pmaf-dark:  #303236;
-      --pmaf-text:  #2f2f2f;
-      --card-radius: 14px;
+      --pmaf-green:#7cb203;
+      --pmaf-dark:#303236;
+      --pmaf-text:#2f2f2f;
+      --card-radius:14px;
     }
-    #portal-login .login-wrap {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
+    #portal-login .pmaf-wrap { display:flex; gap:36px; align-items:stretch; }
+    @media (max-width:991px){ #portal-login .pmaf-wrap{flex-direction:column; gap:20px;} }
+
+    /* Left lead card */
+    #portal-login .lead-card{
+      background:#fff; border:1px solid #e8e8e8; border-radius:var(--card-radius);
+      padding:28px; box-shadow:0 10px 24px rgba(0,0,0,.06); color:var(--pmaf-text);
+      height:100%;
     }
-    @media (max-width: 991px) {
-      #portal-login .login-wrap { grid-template-columns: 1fr; }
+    #portal-login .lead-eyebrow{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--pmaf-green);font-weight:700;margin-bottom:6px;}
+    #portal-login h1{color:#24354e;font-weight:700;margin:0 0 10px;line-height:1.15;}
+    #portal-login .lead-sub{opacity:.9;margin-bottom:12px;}
+    #portal-login .roles {opacity:.95; font-weight:600; color:var(--pmaf-dark);}
+    #portal-login .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#f6f9f3;color:var(--pmaf-green);font-weight:600;font-size:12px;margin:0 8px 8px 0;border:1px solid #e7f2d9;}
+    #portal-login .link-muted{color:var(--pmaf-dark); opacity:.85; text-decoration:none;}
+    #portal-login .link-muted:hover{opacity:1; text-decoration:underline;}
+    #portal-login .btn-cta{
+      background:var(--pmaf-green); color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:700;
+      display:inline-block; text-decoration:none;
     }
-    #portal-login .lead-card {
-      background: #fff;
-      border: 1px solid #e8e8e8;
-      border-radius: var(--card-radius);
-      padding: 28px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-      color: var(--pmaf-text);
-    }
-    #portal-login .lead-eyebrow {
-      display:inline-block;
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--pmaf-green);
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    #portal-login h1 {
-      color: #24354e;
-      font-weight: 700;
-      margin: 0 0 10px 0;
-      line-height: 1.15;
-    }
-    #portal-login .lead-sub {
-      opacity: .85;
-      margin-bottom: 16px;
-    }
-    #portal-login .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #f6f9f3;
-      color: var(--pmaf-green);
-      font-weight: 600;
-      font-size: 12px;
-      margin-right: 8px;
-      margin-bottom: 8px;
-      border: 1px solid #e7f2d9;
+    #portal-login .btn-cta:hover{filter:brightness(.96);}
+
+    /* Right auth card shell */
+    #portal-login .login-card{
+      background:#fff; border:1px solid #ececec; border-radius:var(--card-radius);
+      padding:0; box-shadow:0 10px 24px rgba(0,0,0,.06); overflow:hidden;
     }
 
-    /* Login card */
-    #portal-login .login-card {
-      background: #ffffff;
-      border: 1px solid #ececec;
-      border-radius: var(--card-radius);
-      padding: 28px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+    /* Haswell tabs (shortcodes) + PMAF green overrides */
+    #portal-login .custom-tabs .nav-tabs { border-bottom:2px solid #e8f1d1; padding:0 16px; }
+    #portal-login .custom-tabs .nav-tabs>li>a{
+      font-weight:700; color:#5b6570; border:1px solid transparent; border-radius:12px 12px 0 0;
+      padding:10px 14px; background:#f2f5f0; margin-right:8px;
+      transition:all .15s ease;
     }
-    #portal-login .login-card h3 {
-      margin: 0 0 8px 0;
-      color: var(--pmaf-dark);
-      font-weight: 700;
+    #portal-login .custom-tabs .nav-tabs>li>a:hover{ filter:brightness(.98); }
+    #portal-login .custom-tabs .nav-tabs>li.active>a,
+    #portal-login .custom-tabs .nav-tabs>li.active>a:focus,
+    #portal-login .custom-tabs .nav-tabs>li.active>a:hover{
+      color:var(--pmaf-dark);
+      background:#f6f9f3;
+      border-color:var(--pmaf-green) var(--pmaf-green) transparent;
+      box-shadow:0 6px 14px rgba(124,178,3,.18);
     }
-    #portal-login .login-card .muted { opacity: .75; }
+    #portal-login .tab-content-container{
+      border:1px solid var(--pmaf-green);
+      border-top:none;
+      border-radius:0 0 var(--card-radius) var(--card-radius);
+      padding:24px 24px 28px;
+    }
 
-    /* Inputs & buttons (compatible with Bootstrap .form-control/.btn) */
-    #portal-login .form-control {
-      border-radius: 10px;
-      border: 1px solid #dfe3e8;
-      padding: 12px 14px;
-      font-size: 15px;
-    }
-    #portal-login .btn-pmaf {
-      background: var(--pmaf-green);
-      color: #fff;
-      border: none;
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-weight: 700;
-      transition: transform .04s ease, filter .14s ease;
-    }
-    #portal-login .btn-pmaf:hover { filter: brightness(0.96); }
-    #portal-login .btn-pmaf:active { transform: translateY(1px); }
-    #portal-login .link-muted {
-      color: var(--pmaf-dark);
-      opacity: .8;
-      text-decoration: none;
-    }
-    #portal-login .link-muted:hover { opacity: 1; text-decoration: underline; }
+    /* Inputs & buttons */
+    #portal-login .controled{width:100%; border:1px solid #dfe3e8; border-radius:10px; padding:12px 14px; font-size:15px; outline:none;}
+    #portal-login .controled:focus{border-color:#cfd6dc; box-shadow:0 0 0 3px rgba(124,178,3,.12);}
+    #portal-login .btn-pmaf{background:var(--pmaf-green); color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:700; width:100%;}
+    #portal-login .btn-pmaf:hover{filter:brightness(.96);}
 
-    /* Background band (subtle brand feel; stays within section only) */
-    #portal-login .band {
-      position:absolute; inset:0;
-      background: linear-gradient(135deg, rgba(48,50,54,0.07), rgba(124,178,3,0.07));
-      pointer-events:none;
-    }
+    /* Subtle background band */
+    #portal-login .band{position:absolute; inset:0; background:linear-gradient(135deg, rgba(48,50,54,.07), rgba(124,178,3,.07)); pointer-events:none;}
   </style>
 
   <div class="band" aria-hidden="true"></div>
 
   <div class="container">
-    <div class="login-wrap">
-      <!-- Left: message / brand -->
-      <div class="lead-card">
-        <span class="lead-eyebrow">PMAF Portal</span>
-        <h1>Welcome back.</h1>
-        <p class="lead-sub">
-          Sign in to access applications, review assignments, interview panels, and volunteer tools — all in one place.
-        </p>
-
-        <div>
-          <span class="pill">Secure access</span>
-          <span class="pill">Role-based</span>
-          <span class="pill">PMAF values</span>
-        </div>
-
-        <div style="margin-top:18px; color:#566; font-size:14px;">
-          Need help? <a class="link-muted" href="contact.html">Contact support</a>.
-        </div>
-      </div>
-
-      <!-- Right: login form (HTML only; wire to your auth as needed) -->
-      <div class="login-card">
-        <h3>Sign in to PMAF</h3>
-        <div class="muted" style="margin-bottom:14px;">Use your portal email and password.</div>
-
-        <form method="post" action="login.html" novalidate>
-          <div class="form-group" style="margin-bottom:14px;">
-            <label style="font-weight:600; margin-bottom:6px;">Email</label>
-            <input type="email" name="email" class="form-control" placeholder="you@organization.org" required>
+    <div class="row pmaf-wrap">
+      <!-- LEFT: Brand/Context -->
+      <div class="col-md-7">
+        <div class="lead-card">
+          <span class="lead-eyebrow">PMAF Portal</span>
+          <h1>Welcome!</h1>
+          <p class="lead-sub">
+            This portal is for <span class="roles">Applicants, Reviewers, Volunteers, and Board Members</span>.
+          </p>
+          <div>
+            <span class="pill">Secure access</span>
+            <span class="pill">Role-based</span>
+            <span class="pill">Values-aligned</span>
           </div>
-
-          <div class="form-group" style="margin-bottom:10px;">
-            <label style="font-weight:600; margin-bottom:6px;">Password</label>
-            <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+          <p style="margin-top:18px; color:#566; font-size:14px;">
+            Not an applicant? Please <a class="link-muted" href="request-access.html">request access</a> to create an account.
+          </p>
+          <div style="margin-top:25px;">
+            <a href="request-access.html" class="btn-cta">Request Access</a>
           </div>
-
-          <div class="form-group" style="margin:6px 0 16px 0;">
-            <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-              <label style="display:flex; align-items:center; gap:8px; margin:0;">
-                <input type="checkbox" name="remember-me"> <span class="muted">Remember me</span>
-              </label>
-              <a class="link-muted" href="forgot-password.html">Forgot password?</a>
-            </div>
-          </div>
-
-          <div class="form-group" style="margin-top:14px;">
-            <button class="btn btn-pmaf" type="submit" name="log-in">Log In</button>
-          </div>
-        </form>
-
-        <div style="margin-top:18px;" class="muted">
-          Don’t have an account? <a class="link-muted" href="register.html">Request access</a>
         </div>
       </div>
+
+      <!-- RIGHT: Haswell horizontal tabs -->
+      <div class="col-md-5">
+        <div class="login-card">
+          <div class="tabs custom-tabs">
+            <!-- NAV TABS (Haswell shortcodes style) -->
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a href="#pmaf-login-tab" data-toggle="tab">Login</a>
+              </li>
+              <li>
+                <a href="#pmaf-apply-tab" data-toggle="tab">PMA Application Registration</a>
+              </li>
+            </ul>
+
+            <!-- PANES -->
+            <div class="tab-content">
+              <!-- LOGIN -->
+              <div id="pmaf-login-tab" class="tab-pane tab-content-container active">
+                <form id="login-form" action="login.html" method="post" novalidate>
+                  <div class="row mt-10">
+                    <div class="col-md-12 mb-15">
+                      <input type="email" name="email" class="controled" placeholder="Email" required>
+                    </div>
+                    <div class="col-md-12 mb-10">
+                      <input type="password" name="password" class="controled" placeholder="Password" required>
+                    </div>
+                  </div>
+
+                  <div class="row" style="margin-top:6px;">
+                    <div class="col-md-6 mb-10">
+                      <label style="display:flex; align-items:center; gap:8px; margin:0;">
+                        <input type="checkbox" name="remember" value="true"> <span style="opacity:.8;">Remember me</span>
+                      </label>
+                    </div>
+                    <div class="col-md-6 mb-10 text-right text-sm-center">
+                      <a class="link-muted" href="forgot-password.html"><small>Forgot password?</small></a>
+                    </div>
+                    <div class="col-md-12" style="margin-top:6px;">
+                      <button type="submit" class="btn-pmaf">Log In</button>
+                    </div>
+                  </div>
+
+                  <p style="margin-top:12px; opacity:.8; font-size:13px;">
+                    Don’t have an account? Applicants can register under <strong>PMA Application Registration</strong>.<br>
+                    Reviewers, Volunteers, and Board Members should <a class="link-muted" href="request-access.html">request access</a>.
+                  </p>
+                </form>
+              </div>
+
+              <!-- PMA APPLICATION REGISTRATION -->
+              <div id="pmaf-apply-tab" class="tab-pane tab-content-container">
+                <form id="apply-form" action="register.html" method="post" novalidate>
+                  <div class="row mt-10">
+                    <div class="col-md-6 mb-15">
+                      <input type="text" name="first_name" class="controled" placeholder="First name" required>
+                    </div>
+                    <div class="col-md-6 mb-15">
+                      <input type="text" name="last_name" class="controled" placeholder="Last name" required>
+                    </div>
+                    <div class="col-md-12 mb-15">
+                      <input type="email" name="email" class="controled" placeholder="Email" required>
+                    </div>
+                    <div class="col-md-12 mb-15">
+                      <input type="password" name="password" class="controled" placeholder="Password" required>
+                    </div>
+                    <div class="col-md-12 mb-20">
+                      <input type="password" name="password2" class="controled" placeholder="Re-enter password" required>
+                    </div>
+                    <div class="col-md-12">
+                      <button type="submit" class="btn-pmaf">Start PMA Application</button>
+                    </div>
+                  </div>
+                </form>
+                <p style="margin-top:10px; opacity:.85; font-size:13px;">
+                  Not applying as an applicant? Please <a class="link-muted" href="request-access.html">request access</a> to register as a
+                  Reviewer, Volunteer, or Board Member (you’ll select your role on that page).
+                </p>
+              </div>
+            </div><!-- /tab-content -->
+          </div><!-- /tabs -->
+        </div><!-- /login-card -->
+      </div><!-- /RIGHT -->
     </div>
   </div>
 </section>
-<!-- /PMAF LOGIN (BODY-ONLY, DROP-IN) -->
-
-
+<!-- /PMAF LOGIN — BODY ONLY -->
 
 
 <!-- FOOTER 3 BLACK -->
