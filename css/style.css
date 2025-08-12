@@ -3318,8 +3318,17 @@ select.input-border {
 	padding-bottom:14px;
 	padding-top:10px;
 }
-#main-menu .navbar .nav > li:hover > a {
-  color:#111; 
+#main-menu .navbar .nav > li > a {
+    color: #303236;
+    display: block;
+    padding: 0 15px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 .black-header #main-menu .navbar .nav > li:hover > a, .header-black-white #main-menu .navbar .nav > li:hover > a {
   color:#fff; 
@@ -3327,15 +3336,15 @@ select.input-border {
 #main-menu .navbar .nav .parent {
   position: relative;
 }
-#main-menu .sub {
-  background: #4B4E53;
-  -webkit-box-shadow: 0 4px 5px rgba(0,0,0, .2);
-  box-shadow: 0 4px 5px rgba(0,0,0, .2);
-  display: none;
-  margin:0;
-  padding: 10px 10px 10px 24px;
-  position: absolute;
-  z-index: 905;
+#main-menu .sub a {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 20px;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 #main-menu .sub li {
   font-size: 12px;
@@ -3742,6 +3751,10 @@ background:none;
   transform: translateZ(0);
 	-webkit-box-shadow: 0 1px 15px rgba(0,0,0, .15);
 	box-shadow: 0 1px 15px rgba(0,0,0, .15);
+}
+.affix.black-header #main-menu .navbar .nav > li > a,
+.affix.black-header #main-menu .navbar .nav > li.current > a {
+  color: #ffffff;
 }
 .affix.black-header .header-wrapper {
 	background: #ffffff;
