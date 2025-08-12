@@ -139,7 +139,7 @@
 				  
 </header>
 
-<!-- ADMIN: CREATE INTERVIEW PANEL (HTML-ONLY FORM) -->
+<!-- ADMIN: CREATE INTERVIEW PANEL (HTML FORM + SAVE PANEL) -->
 <section id="admin-interviews" class="page-section" style="padding:60px 0;">
   <div class="container">
     <!-- Title -->
@@ -149,7 +149,7 @@
           Create Interview Panel
         </h1>
         <p style="margin:0 0 20px 0; color:#2f2f2f; opacity:.8;">
-          This is the real form UI. Submitting doesn’t save yet — wiring to Supabase is next (and we’ll keep it inside this section).
+          Fill this form and submit. You must be signed in; otherwise you’ll be redirected to <code>login.html</code>.
         </p>
       </div>
     </div>
@@ -157,7 +157,7 @@
     <div class="row">
       <div class="col-md-9">
         <form id="create-panel-form" style="border:1px solid #e6e6e6; border-radius:12px; padding:20px;">
-          <!-- Applicant (temporary: email input; later we’ll swap to a DB-powered dropdown) -->
+          <!-- Applicant (temporary: email input; later we can swap to a DB-powered dropdown) -->
           <div class="row">
             <div class="col-md-12">
               <label class="mb-5" style="display:block; font-weight:600;">Applicant Email (temporary)</label>
@@ -194,12 +194,12 @@
             </div>
           </div>
 
-          <!-- Panelist Emails -->
+          <!-- Panelist Emails (we’ll use this in the next step to add panelists) -->
           <div class="row" style="margin-top:15px;">
             <div class="col-md-12">
               <label class="mb-5" style="display:block; font-weight:600;">Panelist Emails</label>
               <textarea class="form-control" name="panelist_emails" rows="2" placeholder="email1@org.com, email2@org.com" required></textarea>
-              <div style="font-size:12px; opacity:.7; margin-top:6px;">Separate by commas or spaces.</div>
+              <div style="font-size:12px; opacity:.7; margin-top:6px;">Separate by commas or spaces. (Panelists will be added after the panel is created.)</div>
             </div>
           </div>
 
@@ -216,7 +216,7 @@
             <div class="col-md-12">
               <button type="submit" class="btn btn-md"
                 style="background:#7cb203; color:#fff; border-radius:10px; font-weight:700; border:none; padding:10px 16px;">
-                Continue (not yet saving)
+                Create Panel
               </button>
               <span id="form-status" style="margin-left:12px; opacity:.7;"></span>
             </div>
@@ -226,33 +226,95 @@
     </div>
   </div>
 
-  <!-- Inline script lives INSIDE this section only; does NOT touch header or footer -->
+  <!-- All scripts live INSIDE this section only (no header/footer changes) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    (function () {
-      var form = document.getElementById('create-panel-form');
-      var statusEl = document.getElementById('form-status');
-      if (!form) return;
+    // === CONFIG: replace with your project settings (Supabase → Project Settings → API) ===
+    const SUPABASE_URL = "YOUR_SUPABASE_URL";
+    const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
 
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var fd = new FormData(form);
-        var preview = {
-          applicant_email: fd.get('applicant_email'),
-          scheduled_at: fd.get('scheduled_at'),
-          duration: fd.get('duration'),
-          meeting_link: fd.get('meeting_link'),
-          location: fd.get('location'),
-          panelist_emails: fd.get('panelist_emails'),
-          notes: fd.get('notes'),
-        };
-        if (statusEl) statusEl.textContent = 'Preview captured — ready to wire saving next.';
-        console.log('[Preview — not saved]', preview);
-        alert('Good! The form works. Next, we will add saving — still inside this section only.');
-      });
-    })();
+    // If there’s no active session, send users to your login page:
+    const LOGIN_URL = "login.html";
+
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const form = document.getElementById('create-panel-form');
+    const statusEl = document.getElementById('form-status');
+
+    // Require login session
+    document.addEventListener('DOMContentLoaded', async () => {
+      const { data: { session } } = await sb.auth.getSession();
+      if (!session) {
+        if (statusEl) statusEl.textContent = 'Redirecting to sign-in…';
+        window.location.href = LOGIN_URL;
+        return;
+      }
+      if (statusEl) statusEl.textContent = 'Signed in.';
+    });
+
+    // Submit: create the panel (we’ll add panelists in the next step)
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const fd = new FormData(form);
+      const applicantEmail = String(fd.get('applicant_email') || '').trim();
+      const scheduledAt    = String(fd.get('scheduled_at') || '');
+      const duration       = parseInt(String(fd.get('duration') || '30'), 10);
+      const meetingLink    = String(fd.get('meeting_link') || '').trim() || null;
+      const location       = String(fd.get('location') || '').trim() || null;
+      const notes          = String(fd.get('notes') || '').trim() || null;
+
+      if (!applicantEmail) { alert('Applicant email is required.'); return; }
+      if (!scheduledAt)    { alert('Please pick a date & time.'); return; }
+
+      // 1) Find the application by email
+      if (statusEl) statusEl.textContent = 'Looking up application…';
+      const { data: app, error: appErr } = await sb
+        .from('pma_applications')
+        .select('id')
+        .eq('email', applicantEmail)
+        .maybeSingle();
+
+      if (appErr || !app) {
+        alert('No application found for that email. Double-check it.');
+        if (statusEl) statusEl.textContent = 'Application not found.';
+        return;
+      }
+
+      // 2) Create the panel
+      const { data: { user } } = await sb.auth.getUser();
+      const createdBy = user?.id ?? null;
+
+      if (statusEl) statusEl.textContent = 'Creating panel…';
+      const { data: panel, error: panelErr } = await sb
+        .from('interview_panels')
+        .insert({
+          application_id: app.id,
+          scheduled_at: new Date(scheduledAt).toISOString(),
+          duration_minutes: duration,
+          meeting_link: meetingLink,
+          location,
+          notes,
+          created_by: createdBy
+        })
+        .select('id')
+        .single();
+
+      if (panelErr) {
+        console.error(panelErr);
+        alert('Failed to create panel: ' + panelErr.message);
+        if (statusEl) statusEl.textContent = 'Failed to create panel.';
+        return;
+      }
+
+      if (statusEl) statusEl.textContent = 'Panel created. We’ll add panelists next.';
+      alert('Panel created! ID: ' + panel.id);
+      form.reset();
+    });
   </script>
 </section>
-<!-- /ADMIN: CREATE INTERVIEW PANEL (HTML-ONLY FORM) -->
+<!-- /ADMIN: CREATE INTERVIEW PANEL (HTML FORM + SAVE PANEL) -->
+
 
 
 
