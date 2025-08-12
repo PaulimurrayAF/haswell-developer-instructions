@@ -139,49 +139,72 @@
 				  
 </header>
 
+<!-- PAGE TITLE — REQUEST ACCESS -->
+<div class="page-title-cont page-title-large grey-dark-bg page-title-img pt-250"
+     style="background-image: url('images/pride-heart-sticker.jpeg'); position: relative; overflow: hidden;">
+  <!-- Overlay -->
+  <div style="position:absolute; inset:0; background: rgba(0,0,0,0.45); z-index:1;"></div>
 
-<!-- PMAF REQUEST ACCESS — BODY ONLY (Haswell-compatible) -->
+  <!-- Title -->
+  <div class="relative container align-left" style="position: relative; z-index: 2;">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="page-title" style="font-size:80px; line-height:90px; color:#fff; margin:0;">
+          REQUEST ACCESS
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /PAGE TITLE — REQUEST ACCESS -->
+
+<!-- PMAF REQUEST ACCESS  -->
 <section id="request-access" class="page-section" style="padding:110px 0 60px; position:relative;">
-  <!-- Scoped styles (only affect elements inside #request-access) -->
   <style>
-    #request-access {
-      --pmaf-green:#7cb203;
-      --pmaf-dark:#303236;
-      --pmaf-text:#2f2f2f;
-      --card-radius:14px;
+    #request-access{
+      --pmaf-green:#7cb203; --pmaf-dark:#303236; --pmaf-text:#2f2f2f; --card-radius:14px;
     }
-    #request-access .wrap { display:flex; gap:36px; align-items:stretch; }
-    @media (max-width:991px){ #request-access .wrap{flex-direction:column; gap:20px;} }
+    #request-access .wrap{display:flex; gap:36px; align-items:stretch;}
+    @media (max-width:991px){#request-access .wrap{flex-direction:column; gap:20px;}}
 
-    /* Left lead card */
-    #request-access .lead-card{
-      background:#fff; border:1px solid #e8e8e8; border-radius:var(--card-radius);
-      padding:28px; box-shadow:0 10px 24px rgba(0,0,0,.06); color:var(--pmaf-text);
-      height:100%;
+    /* LEFT: Simple brand panel (no box/border/shadow) */
+    #request-access .lead-panel{
+      padding:8px 0;
+      color:var(--pmaf-text);
     }
-    #request-access .eyebrow{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--pmaf-green);font-weight:700;margin-bottom:6px;}
-    #request-access h1{color:#24354e;font-weight:700;margin:0 0 10px;line-height:1.15;}
-    #request-access .lead-sub{opacity:.9;margin-bottom:12px;}
-    #request-access .tip{color:#566; font-size:14px;}
-    #request-access .link-muted{color:var(--pmaf-dark); opacity:.85; text-decoration:none;}
-    #request-access .link-muted:hover{opacity:1; text-decoration:underline;}
+    #request-access .lead-panel .eyebrow{
+      display:inline-block; font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+      color:var(--pmaf-green); font-weight:700; margin-bottom:6px;
+    }
+    #request-access .lead-panel h1{
+      color:#24354e; font-weight:700; margin:0 0 10px; line-height:1.15;
+    }
+    #request-access .lead-panel .lead-sub{margin-bottom:12px; color:#000;} /* small text black */
+    #request-access .lead-panel .tip{color:#000; font-size:14px;}         /* small text black */
+    #request-access .lead-panel .link-muted{color:var(--pmaf-dark); text-decoration:none;}
+    #request-access .lead-panel .link-muted:hover{text-decoration:underline;}
 
-    /* Right form card */
+    /* Optional accent below the intro */
+    #request-access .lead-panel .accent{
+      height:4px; width:80px; background:var(--pmaf-green); border-radius:999px; margin:14px 0 18px;
+    }
+
+    /* RIGHT: Request Access form stays as a card */
     #request-access .form-card{
       background:#fff; border:1px solid #ececec; border-radius:var(--card-radius);
       padding:24px; box-shadow:0 10px 24px rgba(0,0,0,.06);
     }
-    #request-access .form-card h3{margin:0 0 8px 0; color:var(--pmaf-dark); font-weight:700;}
-    #request-access .muted{opacity:.8;}
+    #request-access .form-card h3{margin:0 0 8px; color:var(--pmaf-dark); font-weight:700;}
+    #request-access .muted{color:#000;}         /* small text black */
+    #request-access .helper{font-size:12px; color:#000; margin-top:6px;} /* small helper text black */
 
-    /* Inputs & buttons (works with Haswell) */
+    /* Inputs & button */
     #request-access .controled{width:100%; border:1px solid #dfe3e8; border-radius:10px; padding:12px 14px; font-size:15px; outline:none;}
     #request-access .controled:focus{border-color:#cfd6dc; box-shadow:0 0 0 3px rgba(124,178,3,.12);}
     #request-access .btn-pmaf{background:var(--pmaf-green); color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:700; width:100%;}
     #request-access .btn-pmaf:hover{filter:brightness(.96);}
-    #request-access .helper{font-size:12px; opacity:.75; margin-top:6px;}
 
-    /* Subtle background band */
+    /* Subtle background band (unchanged) */
     #request-access .band{position:absolute; inset:0; background:linear-gradient(135deg, rgba(48,50,54,.07), rgba(124,178,3,.07)); pointer-events:none;}
   </style>
 
@@ -189,26 +212,31 @@
 
   <div class="container">
     <div class="row wrap">
-      <!-- LEFT: Context -->
+      <!-- LEFT: Simple panel (no card UI) -->
       <div class="col-md-6">
-        <div class="lead-card">
+        <div class="lead-panel">
           <span class="eyebrow">PMAF Portal</span>
           <h1>Request Access</h1>
-          <p class="lead-sub">For <strong>Reviewers, Volunteers, and Board Members</strong> who are not PMA applicants.</p>
+          <div class="accent"></div>
+          <p class="lead-sub">
+            For <strong>Reviewers, Volunteers, and Board Members</strong> who are not PMA applicants.
+          </p>
           <p class="tip">
-            If you’re an <strong>Applicant</strong>, please use <a class="link-muted" href="login.html#pmaf-apply-tab">PMA Application Registration</a> instead.
+            If you’re an <strong>Applicant</strong>, please use
+            <a class="link-muted" href="login.html#pmaf-apply-tab">PMA Application Registration</a> instead.
           </p>
           <p class="tip" style="margin-top:10px;">
-            Submit this form to create your account. You’ll choose your role below. A confirmation email may be required.
+            Submit this form to create your account. Your request will be marked <strong>Pending Approval</strong>
+            until an administrator approves it.
           </p>
         </div>
       </div>
 
-      <!-- RIGHT: Request Access Form -->
+      <!-- RIGHT: Request Access Form (card) -->
       <div class="col-md-6">
         <div class="form-card">
           <h3>Create Your Portal Account</h3>
-          <div class="muted" style="margin-bottom:14px;">Select your role and enter your details.</div>
+          <div class="muted" style="margin-bottom:14px;">Enter your details and Select your role.</div>
 
           <form id="request-access-form" action="request-access.html" method="post" novalidate>
             <div class="row">
@@ -233,7 +261,7 @@
                   <option value="volunteer">Volunteer</option>
                   <option value="board">Board Member</option>
                 </select>
-                <div class="helper">We’ll tailor your dashboard to this role.</div>
+                <div class="helper">Your dashboard will be tailored to this role.</div>
               </div>
 
               <div class="col-md-12 mb-15">
@@ -277,39 +305,10 @@
     </div>
   </div>
 
-  <!-- Optional tiny preview script (UI-only; remove when wiring to Supabase) -->
-  <script>
-    (function () {
-      var form = document.getElementById('request-access-form');
-      var statusEl = document.getElementById('form-status');
-      if (!form) return;
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var fd = new FormData(form);
-        var pwd = String(fd.get('password') || '');
-        var pwd2 = String(fd.get('password2') || '');
-        if (pwd !== pwd2) {
-          alert('Passwords do not match. Please re-enter.');
-          return;
-        }
-        var payload = {
-          first_name: fd.get('first_name'),
-          last_name: fd.get('last_name'),
-          email: fd.get('email'),
-          role: fd.get('role'),
-          organization: fd.get('organization'),
-          phone: fd.get('phone')
-        };
-        console.log('[Request Access — preview only]', payload);
-        if (statusEl) statusEl.textContent = 'Looks good! We’ll wire this to save next.';
-        alert('Preview captured. We’ll connect this form to the database next.');
-        // form.reset(); // uncomment if you want it to clear after preview
-      });
-    })();
-  </script>
+  <!-- If you already added the Supabase signup script after this section, keep it as-is. -->
 </section>
-<!-- /PMAF REQUEST ACCESS — BODY ONLY -->
+<!-- /PMAF REQUEST ACCESS -->
+
 
 
 
