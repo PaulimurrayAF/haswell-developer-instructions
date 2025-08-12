@@ -140,8 +140,8 @@
 </header>
 
 
-<!-- PMAF LOGIN — BODY ONLY (Haswell-compatible) -->
-<section id="portal-login" class="page-section" style="padding:60px 0; position:relative;">
+<!-- PMAF LOGIN — BODY ONLY (Haswell-compatible, updated per requests) -->
+<section id="portal-login" class="page-section" style="padding:110px 0 60px; position:relative;">
   <!-- Scoped styles (only affect elements inside #portal-login) -->
   <style>
     #portal-login {
@@ -162,7 +162,7 @@
     #portal-login .lead-eyebrow{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--pmaf-green);font-weight:700;margin-bottom:6px;}
     #portal-login h1{color:#24354e;font-weight:700;margin:0 0 10px;line-height:1.15;}
     #portal-login .lead-sub{opacity:.9;margin-bottom:12px;}
-    #portal-login .roles {opacity:.9; font-weight:600; color:var(--pmaf-dark);}
+    #portal-login .roles {opacity:.95; font-weight:600; color:var(--pmaf-dark);}
     #portal-login .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#f6f9f3;color:var(--pmaf-green);font-weight:600;font-size:12px;margin:0 8px 8px 0;border:1px solid #e7f2d9;}
 
     /* Right auth card */
@@ -170,13 +170,21 @@
       background:#fff; border:1px solid #ececec; border-radius:var(--card-radius);
       padding:0; box-shadow:0 10px 24px rgba(0,0,0,.06); overflow:hidden;
     }
-    #portal-login .pmaf-tabs{border-bottom:1px solid #eef0f2; background:#fafbfc; padding:12px 16px;}
-    #portal-login .pmaf-tabs>li>a{color:#5b6570; font-weight:700;}
-    #portal-login .pmaf-tabs>li.active>a,
-    #portal-login .pmaf-tabs>li>a:hover{color:var(--pmaf-dark); border-bottom:2px solid var(--pmaf-green); background:transparent;}
-    #portal-login .tab6-cont{padding:24px 24px 28px;}
 
-    /* Inputs & buttons (works with Haswell's classes) */
+    /* Tabs — make active tab clearly highlighted (no green underline) */
+    #portal-login .pmaf-tabs{border:none; background:transparent; padding:14px 16px 0; display:flex; gap:10px;}
+    #portal-login .pmaf-tabs>li{margin:0;}
+    #portal-login .pmaf-tabs>li>a{
+      color:#5b6570; font-weight:700; border:none; border-radius:12px; padding:10px 14px;
+      background:#f2f5f0; transition:all .15s ease;
+    }
+    #portal-login .pmaf-tabs>li>a:hover{filter:brightness(.98);}
+    #portal-login .pmaf-tabs>li.active>a{
+      color:#fff; background:var(--pmaf-green); box-shadow:0 6px 14px rgba(124,178,3,.28);
+    }
+    #portal-login .tab6-cont{padding:20px 24px 28px; border-top:1px solid #eef0f2;}
+
+    /* Inputs & buttons */
     #portal-login .controled{width:100%; border:1px solid #dfe3e8; border-radius:10px; padding:12px 14px; font-size:15px; outline:none;}
     #portal-login .controled:focus{border-color:#cfd6dc; box-shadow:0 0 0 3px rgba(124,178,3,.12);}
     #portal-login .btn-pmaf{background:var(--pmaf-green); color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:700; width:100%;}
@@ -206,8 +214,8 @@
             <span class="pill">Values-aligned</span>
           </div>
           <p style="margin-top:18px; color:#566; font-size:14px;">
-            New to PMAF and planning to apply? Use <strong>PMA Application Registration</strong> on the right.
-            Not an applicant? Please <a class="link-muted" href="request-access.html">request access</a>.
+            Not an applicant? Please <a class="link-muted" href="request-access.html">request access</a> to create an account
+            (you’ll select your role on that page).
           </p>
         </div>
       </div>
@@ -248,9 +256,10 @@
                     <button type="submit" class="btn-pmaf">Log In</button>
                   </div>
                 </div>
+
                 <p style="margin-top:12px; opacity:.8; font-size:13px;">
-                  Don’t have an account? Applicants can register under <strong>PMA Application Registration</strong>.
-                  Reviewers, Volunteers, and Board should <a class="link-muted" href="request-access.html">request access</a>.
+                  Don’t have an account? Applicants can register under <strong>PMA Application Registration</strong>.<br>
+                  Reviewers, Volunteers, and Board Members should <a class="link-muted" href="request-access.html">request access</a>.
                 </p>
               </form>
             </div>
@@ -259,8 +268,11 @@
             <div class="tab-pane fade" id="pmaf-apply-tab">
               <form id="apply-form" action="register.html" method="post" novalidate>
                 <div class="row mt-10">
-                  <div class="col-md-12 mb-15">
-                    <input type="text" name="name" class="controled" placeholder="Full name" required>
+                  <div class="col-md-6 mb-15">
+                    <input type="text" name="first_name" class="controled" placeholder="First name" required>
+                  </div>
+                  <div class="col-md-6 mb-15">
+                    <input type="text" name="last_name" class="controled" placeholder="Last name" required>
                   </div>
                   <div class="col-md-12 mb-15">
                     <input type="email" name="email" class="controled" placeholder="Email" required>
@@ -276,8 +288,9 @@
                   </div>
                 </div>
               </form>
-              <p style="margin-top:10px; opacity:.8; font-size:13px;">
-                Not applying as an applicant? Please <a class="link-muted" href="request-access.html">request access</a> instead.
+              <p style="margin-top:10px; opacity:.85; font-size:13px;">
+                Not applying as an applicant? Please <a class="link-muted" href="request-access.html">request access</a> to register as a
+                Reviewer, Volunteer, or Board Member (you’ll select your role on that page).
               </p>
             </div>
           </div>
