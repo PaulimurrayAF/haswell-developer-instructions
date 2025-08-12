@@ -140,7 +140,7 @@
 </header>
 
 
-<!-- ADMIN: CREATE INTERVIEW PANEL (PLACEHOLDER) -->
+<!-- ADMIN: CREATE INTERVIEW PANEL (HTML-ONLY FORM) -->
 <section id="admin-interviews" class="page-section" style="padding:60px 0;">
   <div class="container">
     <!-- Title -->
@@ -150,33 +150,105 @@
           Create Interview Panel
         </h1>
         <p style="margin:0 0 20px 0; color:#2f2f2f; opacity:.8;">
-          If you can see this section, the page is wired correctly. Next we’ll add the real form.
+          This is the real form UI. Submitting doesn’t save yet — wiring to Supabase is next.
         </p>
       </div>
     </div>
 
-    <!-- Card -->
     <div class="row">
-      <div class="col-md-8">
-        <div style="border:1px solid #e6e6e6; border-radius:12px; padding:20px;">
-          <p class="mb-10">This admin page will let you:</p>
-          <ul class="a-text-cont" style="margin-left:18px; line-height:1.6;">
-            <li>Choose an applicant</li>
-            <li>Set date/time & duration</li>
-            <li>Add panelist emails</li>
-          </ul>
-          <p class="mt-20" style="opacity:.75;">
-            We’ll connect this to Supabase in the next step.
-          </p>
-          <a href="#" class="btn btn-md" style="background:#7cb203; color:#fff; border-radius:10px; font-weight:700; border:none; padding:10px 16px; cursor:default;">
-            Form coming next →
-          </a>
-        </div>
+      <div class="col-md-9">
+        <form id="create-panel-form" style="border:1px solid #e6e6e6; border-radius:12px; padding:20px;">
+          <!-- Applicant (for now, email; later we’ll replace with a dropdown loaded from DB) -->
+          <div class="row">
+            <div class="col-md-12">
+              <label class="mb-5" style="display:block; font-weight:600;">Applicant Email (temporary)</label>
+              <input type="email" class="form-control" name="applicant_email" placeholder="applicant@email.com" required>
+            </div>
+          </div>
+
+          <!-- Date/Time + Duration -->
+          <div class="row" style="margin-top:15px;">
+            <div class="col-md-6">
+              <label class="mb-5" style="display:block; font-weight:600;">Date & Time</label>
+              <input type="datetime-local" class="form-control" name="scheduled_at" required>
+            </div>
+            <div class="col-md-6">
+              <label class="mb-5" style="display:block; font-weight:600;">Duration (minutes)</label>
+              <select class="form-control" name="duration" required>
+                <option value="20">20</option>
+                <option value="30" selected>30</option>
+                <option value="45">45</option>
+                <option value="60">60</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Meeting Link + Location -->
+          <div class="row" style="margin-top:15px;">
+            <div class="col-md-6">
+              <label class="mb-5" style="display:block; font-weight:600;">Meeting Link (optional)</label>
+              <input type="url" class="form-control" name="meeting_link" placeholder="https://…">
+            </div>
+            <div class="col-md-6">
+              <label class="mb-5" style="display:block; font-weight:600;">Location (optional)</label>
+              <input type="text" class="form-control" name="location" placeholder="In-person venue">
+            </div>
+          </div>
+
+          <!-- Panelist Emails -->
+          <div class="row" style="margin-top:15px;">
+            <div class="col-md-12">
+              <label class="mb-5" style="display:block; font-weight:600;">Panelist Emails</label>
+              <textarea class="form-control" name="panelist_emails" rows="2" placeholder="email1@org.com, email2@org.com" required></textarea>
+              <div style="font-size:12px; opacity:.7; margin-top:6px;">Separate by commas or spaces.</div>
+            </div>
+          </div>
+
+          <!-- Notes -->
+          <div class="row" style="margin-top:15px;">
+            <div class="col-md-12">
+              <label class="mb-5" style="display:block; font-weight:600;">Notes (optional)</label>
+              <textarea class="form-control" name="notes" rows="2"></textarea>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="row" style="margin-top:20px;">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-md"
+                style="background:#7cb203; color:#fff; border-radius:10px; font-weight:700; border:none; padding:10px 16px;">
+                Continue (not yet saving)
+              </button>
+              <span id="form-status" style="margin-left:12px; opacity:.7;"></span>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
-<!-- /ADMIN: CREATE INTERVIEW PANEL (PLACEHOLDER) -->
+
+<script>
+  // TEMP: simple client-side handler so you can click the button without errors.
+  document.getElementById('create-panel-form')?.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const preview = {
+      applicant_email: fd.get('applicant_email'),
+      scheduled_at: fd.get('scheduled_at'),
+      duration: fd.get('duration'),
+      meeting_link: fd.get('meeting_link'),
+      location: fd.get('location'),
+      panelist_emails: fd.get('panelist_emails'),
+      notes: fd.get('notes'),
+    };
+    document.getElementById('form-status').textContent = 'Looks good. Next step: wire to Supabase.';
+    console.log('[Preview only — not saved]', preview);
+    alert('Preview captured (not saved). We’ll wire Supabase next.');
+  });
+</script>
+<!-- /ADMIN: CREATE INTERVIEW PANEL (HTML-ONLY FORM) -->
+
 
 
 
