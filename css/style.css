@@ -3349,7 +3349,7 @@ select.input-border {
   animation: fadeIn .4s;
 }
 #main-menu .sub a {
-  color: #d3d3d3;
+  color: #ffffff;
   display: block;
   text-decoration: none;
   min-width: 160px;
@@ -3744,7 +3744,7 @@ background:none;
 	box-shadow: 0 1px 15px rgba(0,0,0, .15);
 }
 .affix.black-header .header-wrapper {
-	background: #303236;
+	background: #ffffff;
 }
 #nav-below.header {
 	position:relative;
