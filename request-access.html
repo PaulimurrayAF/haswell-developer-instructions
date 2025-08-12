@@ -140,45 +140,71 @@
 </header>
 
 
-      <!-- ============================= PAGE BODY (REQUEST ACCESS) ============================= -->
-
+<!-- PMAF REQUEST ACCESS — BODY ONLY (Haswell-compatible) -->
 <section id="request-access" class="page-section" style="padding:110px 0 60px; position:relative;">
+  <!-- Scoped styles (only affect elements inside #request-access) -->
   <style>
-    #request-access{--pmaf-green:#7cb203;--pmaf-dark:#303236;--pmaf-text:#2f2f2f;--card-radius:14px;}
-    #request-access .wrap{display:flex;gap:36px;align-items:stretch;}
-    @media (max-width:991px){#request-access .wrap{flex-direction:column;gap:20px;}}
-    #request-access .lead-card{background:#fff;border:1px solid #e8e8e8;border-radius:var(--card-radius);padding:28px;box-shadow:0 10px 24px rgba(0,0,0,.06);color:var(--pmaf-text);}
+    #request-access {
+      --pmaf-green:#7cb203;
+      --pmaf-dark:#303236;
+      --pmaf-text:#2f2f2f;
+      --card-radius:14px;
+    }
+    #request-access .wrap { display:flex; gap:36px; align-items:stretch; }
+    @media (max-width:991px){ #request-access .wrap{flex-direction:column; gap:20px;} }
+
+    /* Left lead card */
+    #request-access .lead-card{
+      background:#fff; border:1px solid #e8e8e8; border-radius:var(--card-radius);
+      padding:28px; box-shadow:0 10px 24px rgba(0,0,0,.06); color:var(--pmaf-text);
+      height:100%;
+    }
     #request-access .eyebrow{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--pmaf-green);font-weight:700;margin-bottom:6px;}
     #request-access h1{color:#24354e;font-weight:700;margin:0 0 10px;line-height:1.15;}
     #request-access .lead-sub{opacity:.9;margin-bottom:12px;}
-    #request-access .tip{color:#566;font-size:14px;}
-    #request-access .link-muted{color:var(--pmaf-dark);opacity:.85;text-decoration:none;}
-    #request-access .link-muted:hover{opacity:1;text-decoration:underline;}
-    #request-access .form-card{background:#fff;border:1px solid #ececec;border-radius:var(--card-radius);padding:24px;box-shadow:0 10px 24px rgba(0,0,0,.06);}
-    #request-access .form-card h3{margin:0 0 8px;color:var(--pmaf-dark);font-weight:700;}
+    #request-access .tip{color:#566; font-size:14px;}
+    #request-access .link-muted{color:var(--pmaf-dark); opacity:.85; text-decoration:none;}
+    #request-access .link-muted:hover{opacity:1; text-decoration:underline;}
+
+    /* Right form card */
+    #request-access .form-card{
+      background:#fff; border:1px solid #ececec; border-radius:var(--card-radius);
+      padding:24px; box-shadow:0 10px 24px rgba(0,0,0,.06);
+    }
+    #request-access .form-card h3{margin:0 0 8px 0; color:var(--pmaf-dark); font-weight:700;}
     #request-access .muted{opacity:.8;}
-    #request-access .controled{width:100%;border:1px solid #dfe3e8;border-radius:10px;padding:12px 14px;font-size:15px;outline:none;}
-    #request-access .controled:focus{border-color:#cfd6dc;box-shadow:0 0 0 3px rgba(124,178,3,.12);}
-    #request-access .btn-pmaf{background:var(--pmaf-green);color:#fff;border:none;padding:12px 16px;border-radius:12px;font-weight:700;width:100%;}
+
+    /* Inputs & buttons (works with Haswell) */
+    #request-access .controled{width:100%; border:1px solid #dfe3e8; border-radius:10px; padding:12px 14px; font-size:15px; outline:none;}
+    #request-access .controled:focus{border-color:#cfd6dc; box-shadow:0 0 0 3px rgba(124,178,3,.12);}
+    #request-access .btn-pmaf{background:var(--pmaf-green); color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:700; width:100%;}
     #request-access .btn-pmaf:hover{filter:brightness(.96);}
-    #request-access .helper{font-size:12px;opacity:.75;margin-top:6px;}
-    #request-access .band{position:absolute;inset:0;background:linear-gradient(135deg, rgba(48,50,54,.07), rgba(124,178,3,.07));pointer-events:none;}
+    #request-access .helper{font-size:12px; opacity:.75; margin-top:6px;}
+
+    /* Subtle background band */
+    #request-access .band{position:absolute; inset:0; background:linear-gradient(135deg, rgba(48,50,54,.07), rgba(124,178,3,.07)); pointer-events:none;}
   </style>
 
   <div class="band" aria-hidden="true"></div>
 
   <div class="container">
     <div class="row wrap">
+      <!-- LEFT: Context -->
       <div class="col-md-6">
         <div class="lead-card">
           <span class="eyebrow">PMAF Portal</span>
           <h1>Request Access</h1>
           <p class="lead-sub">For <strong>Reviewers, Volunteers, and Board Members</strong> who are not PMA applicants.</p>
-          <p class="tip">If you’re an <strong>Applicant</strong>, please use <a class="link-muted" href="login.html#pmaf-apply-tab">PMA Application Registration</a> instead.</p>
-          <p class="tip" style="margin-top:10px;">Submit this form to create your account. Your request will be marked <strong>Pending Approval</strong> until an administrator approves it.</p>
+          <p class="tip">
+            If you’re an <strong>Applicant</strong>, please use <a class="link-muted" href="login.html#pmaf-apply-tab">PMA Application Registration</a> instead.
+          </p>
+          <p class="tip" style="margin-top:10px;">
+            Submit this form to create your account. You’ll choose your role below. A confirmation email may be required.
+          </p>
         </div>
       </div>
 
+      <!-- RIGHT: Request Access Form -->
       <div class="col-md-6">
         <div class="form-card">
           <h3>Create Your Portal Account</h3>
@@ -186,23 +212,56 @@
 
           <form id="request-access-form" action="request-access.html" method="post" novalidate>
             <div class="row">
-              <div class="col-md-6 mb-15"><label style="font-weight:600;margin-bottom:6px;">First name</label><input type="text" name="first_name" class="controled" placeholder="First name" required></div>
-              <div class="col-md-6 mb-15"><label style="font-weight:600;margin-bottom:6px;">Last name</label><input type="text" name="last_name" class="controled" placeholder="Last name" required></div>
-              <div class="col-md-12 mb-15"><label style="font-weight:600;margin-bottom:6px;">Email</label><input type="email" name="email" class="controled" placeholder="you@organization.org" required></div>
-              <div class="col-md-12 mb-15"><label style="font-weight:600;margin-bottom:6px;">Role you’re requesting</label>
+              <div class="col-md-6 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">First name</label>
+                <input type="text" name="first_name" class="controled" placeholder="First name" required>
+              </div>
+              <div class="col-md-6 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">Last name</label>
+                <input type="text" name="last_name" class="controled" placeholder="Last name" required>
+              </div>
+              <div class="col-md-12 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">Email</label>
+                <input type="email" name="email" class="controled" placeholder="you@organization.org" required>
+              </div>
+
+              <div class="col-md-12 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">Role you’re requesting</label>
                 <select name="role" class="controled" required>
                   <option value="" selected disabled>Select a role…</option>
                   <option value="reviewer">Reviewer</option>
                   <option value="volunteer">Volunteer</option>
                   <option value="board">Board Member</option>
                 </select>
-                <div class="helper">We’ll tailor your dashboard to this role after approval.</div>
+                <div class="helper">We’ll tailor your dashboard to this role.</div>
               </div>
-              <div class="col-md-12 mb-15"><label style="font-weight:600;margin-bottom:6px;">Organization (optional)</label><input type="text" name="organization" class="controled" placeholder="Organization or affiliation"></div>
-              <div class="col-md-12 mb-15"><label style="font-weight:600;margin-bottom:6px;">Phone (optional)</label><input type="tel" name="phone" class="controled" placeholder="(555) 555-5555"></div>
-              <div class="col-md-6 mb-15"><label style="font-weight:600;margin-bottom:6px;">Password</label><input type="password" name="password" class="controled" placeholder="Create a password" required></div>
-              <div class="col-md-6 mb-20"><label style="font-weight:600;margin-bottom:6px;">Re-enter password</label><input type="password" name="password2" class="controled" placeholder="Re-enter password" required></div>
-              <div class="col-md-12 mb-15"><label style="display:flex;align-items:center;gap:8px;margin:0;"><input type="checkbox" name="agree" required> <span class="muted">I agree to the <a class="link-muted" href="terms.html">Terms</a> and <a class="link-muted" href="privacy.html">Privacy Policy</a>.</span></label></div>
+
+              <div class="col-md-12 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">Organization (optional)</label>
+                <input type="text" name="organization" class="controled" placeholder="Organization or affiliation">
+              </div>
+
+              <div class="col-md-12 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">Phone (optional)</label>
+                <input type="tel" name="phone" class="controled" placeholder="(555) 555-5555">
+              </div>
+
+              <div class="col-md-6 mb-15">
+                <label style="font-weight:600; margin-bottom:6px;">Password</label>
+                <input type="password" name="password" class="controled" placeholder="Create a password" required>
+              </div>
+              <div class="col-md-6 mb-20">
+                <label style="font-weight:600; margin-bottom:6px;">Re-enter password</label>
+                <input type="password" name="password2" class="controled" placeholder="Re-enter password" required>
+              </div>
+
+              <div class="col-md-12 mb-15">
+                <label style="display:flex; align-items:center; gap:8px; margin:0;">
+                  <input type="checkbox" name="agree" required>
+                  <span class="muted">I agree to the <a class="link-muted" href="terms.html">Terms</a> and <a class="link-muted" href="privacy.html">Privacy Policy</a>.</span>
+                </label>
+              </div>
+
               <div class="col-md-12">
                 <button type="submit" class="btn-pmaf">Request Access</button>
                 <div id="form-status" class="helper"></div>
@@ -210,75 +269,48 @@
             </div>
           </form>
 
-          <p style="margin-top:16px;" class="muted">Already have an account? <a class="link-muted" href="login.html">Log in</a>.</p>
+          <p style="margin-top:16px;" class="muted">
+            Already have an account? <a class="link-muted" href="login.html">Log in</a>.
+          </p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Supabase SDK + sign-up wiring scoped to this page section -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Optional tiny preview script (UI-only; remove when wiring to Supabase) -->
   <script>
-    const SUPABASE_URL = "YOUR_SUPABASE_URL";
-    const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
-    const EMAIL_REDIRECT_TO = window.location.origin + "/login.html";
-    const APPROVALS_TABLE = "portal_access_requests";
-
-    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-    (function(){
+    (function () {
       var form = document.getElementById('request-access-form');
       var statusEl = document.getElementById('form-status');
-      if(!form) return;
-      function setStatus(msg, ok){ if(!statusEl) return; statusEl.textContent = msg; statusEl.style.color = ok ? "#2e7d32" : "#555"; }
+      if (!form) return;
 
-      form.addEventListener('submit', async function(e){
+      form.addEventListener('submit', function (e) {
         e.preventDefault();
         var fd = new FormData(form);
-        var first_name = String(fd.get('first_name')||'').trim();
-        var last_name  = String(fd.get('last_name')||'').trim();
-        var email      = String(fd.get('email')||'').trim();
-        var role       = String(fd.get('role')||'').trim();
-        var organization = String(fd.get('organization')||'').trim();
-        var phone      = String(fd.get('phone')||'').trim();
-        var password   = String(fd.get('password')||'');
-        var password2  = String(fd.get('password2')||'');
-        if(!first_name || !last_name || !email || !role){ alert('Please complete all required fields.'); return; }
-        if(['reviewer','volunteer','board'].indexOf(role) === -1){ alert('Please select a valid role.'); return; }
-        if(password !== password2){ alert('Passwords do not match.'); return; }
-
-        try{
-          setStatus('Creating your account…');
-          const { data: signUpData, error: signUpErr } = await sb.auth.signUp({
-            email, password,
-            options: {
-              data: { first_name, last_name, role, organization, phone, approval_status: 'pending' },
-              emailRedirectTo: EMAIL_REDIRECT_TO
-            }
-          });
-          if(signUpErr) throw signUpErr;
-          var userId = signUpData && signUpData.user && signUpData.user.id;
-
-          if(userId){
-            const { error: insErr } = await sb.from(APPROVALS_TABLE).insert({
-              user_id: userId, email, first_name, last_name, role, organization, phone, status: 'pending'
-            });
-            if(insErr){ console.warn('Approval row insert failed:', insErr.message); }
-          }
-          setStatus('Almost done! Check your email to confirm. Your access will be activated after admin approval.', true);
-          alert('Success! Please confirm your email. Your access will be activated after admin approval.');
-          form.reset();
-        }catch(err){
-          console.error(err);
-          setStatus('Request failed: ' + err.message);
-          alert('Request failed: ' + err.message);
+        var pwd = String(fd.get('password') || '');
+        var pwd2 = String(fd.get('password2') || '');
+        if (pwd !== pwd2) {
+          alert('Passwords do not match. Please re-enter.');
+          return;
         }
+        var payload = {
+          first_name: fd.get('first_name'),
+          last_name: fd.get('last_name'),
+          email: fd.get('email'),
+          role: fd.get('role'),
+          organization: fd.get('organization'),
+          phone: fd.get('phone')
+        };
+        console.log('[Request Access — preview only]', payload);
+        if (statusEl) statusEl.textContent = 'Looks good! We’ll wire this to save next.';
+        alert('Preview captured. We’ll connect this form to the database next.');
+        // form.reset(); // uncomment if you want it to clear after preview
       });
     })();
   </script>
 </section>
+<!-- /PMAF REQUEST ACCESS — BODY ONLY -->
 
-        <!-- ============================= /PAGE BODY ============================= -->
 
 
 
