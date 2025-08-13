@@ -1,383 +1,379 @@
 <!DOCTYPE html>
 <!--
-  PMAF — Request Access (Login-style layout, photo LEFT, form RIGHT)
-  Header & footer match your Haswell template. Only change made here:
-  removed the "REQUEST ACCESS" item from the nav bar.
+  Title: Pauli Murray Awards Foundation — Request Access
+  Description: Request portal access for Reviewers, Volunteers, and Board Members.
+  Author: Cory L. Scott
+  Designed by: 11soft
+  Coded by: Evan Vaughn & Cory L. Scott
 -->
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>PMAF — Request Access</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<head>
+  <meta charset="utf-8">
+  <title>PMAF — Request Access</title>
+  <meta name="description" content="Request access to the PMAF portal for reviewers, volunteers, or board members.">
+  <meta name="keywords" content="Pauli Murray, PMAF, Portal, Request Access, Reviewers, Volunteers, Board">
+  <meta name="author" content="Cory L. Scott">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- FAVICONS -->
-    <link rel="shortcut icon" href="images/favicon/favicon.png" />
-    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png" />
+  <!-- FAVICONS -->
+  <link rel="shortcut icon" href="images/favicon/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
 
-    <!-- CSS (Haswell stack) -->
-    <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.min.css" media="screen" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,300,700" />
-    <link rel="stylesheet" href="css/icons-fonts.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/animate.min.css" />
-  </head>
+  <!-- REVICON Fonts-->		
+  <link rel="stylesheet" href="rs-plugin/fonts/revicons/revicons.css" type="text/css" media="all" />
 
-  <body>
-    <div id="wrap" class="boxed">
-      <div class="grey-bg"><!-- Grey BG -->
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.min.css" media="screen">
+  <link rel="stylesheet" href="css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,300,700">
+  <link rel="stylesheet" href="css/icons-fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.min.css">
 
-        <!-- ======= HEADER (unchanged, minus "REQUEST ACCESS") ======= -->
-        <header id="nav" class="header header-1 black-header mobile-no-transparent">
-          <div class="header-wrapper">
-            <div class="container-m-30 clearfix">
-              <div class="logo-row">
-                <!-- LOGO -->
-                <div class="logo-container-2">
-                  <div class="logo-2">
-                    <a href="index.html" class="clearfix">
-                      <img src="images/logo-white.png" class="logo-img" alt="Pauli Murray Awards Foundation" />
-                    </a>
-                  </div>
-                </div>
-                <!-- MENU BUTTON (mobile) -->
-                <div class="menu-btn-respons-container">
-                  <button
-                    type="button"
-                    class="navbar-toggle btn-navbar collapsed"
-                    data-toggle="collapse"
-                    data-target="#main-menu .navbar-collapse"
-                  >
-                    <span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
-                  </button>
-                </div>
+  <style>
+    :root{ --pmaf-green:#7CB203; --pmaf-dark:#111111; }
+    html,body{ margin:0; padding:0; }
+    /* Sticky nav gray on scroll */
+    #nav.scrolled{ background:#2b2b2b !important; transition:background .25s ease; }
+
+    /* ====== PAGE LAYOUT ====== */
+    #request-access{ margin:0; padding:0; }
+    #request-access .split{
+      display:flex; flex-wrap:nowrap; width:100%;
+      min-height: calc(100vh - 0px);
+    }
+    /* LEFT = PHOTO */
+    #request-access .left{
+      flex:1 1 50%;
+      background:url("images/pride-heart-sticker.jpeg") center/cover no-repeat;
+      position:relative; min-height:680px;
+    }
+    #request-access .left:after{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.35); }
+
+    /* RIGHT = CONTENT (DARK) */
+    #request-access .right{
+      flex:1 1 50%;
+      background:var(--pmaf-dark);
+      color:#fff;
+      display:flex; flex-direction:column; align-items:center;
+      padding:90px 24px 70px;
+    }
+
+    /* ====== HEADLINE, INTRO, TAGS ====== */
+    .portal-hero{ text-align:center; color:#fff; margin:6px 0 10px; }
+    .portal-hero .title{ font-size:54px; font-weight:800; margin:0; text-transform:uppercase; color:var(--pmaf-green); text-shadow:0 10px 24px rgba(0,0,0,.35); }
+    .intro-copy{ max-width:760px; margin:12px auto 8px; line-height:1.55; text-align:center; color:#fff; }
+    .hero-tags{
+      color:#fff; text-transform:uppercase; font-weight:800; letter-spacing:.5px;
+      opacity:.95; margin:14px 0 20px; text-align:center;
+    }
+
+    /* ====== AUTH CARD (unchanged sizing) ====== */
+    .auth-wrap{ width:100%; max-width:640px; margin:12px auto 20px; }
+    .auth-card{ background:#fff; color:#333; border:1px solid #e9efe1; border-radius:14px; box-shadow:0 16px 42px rgba(0,0,0,.25); padding:18px; }
+    .auth-inner{ background:#fff; border-radius:10px; padding:14px; }
+
+    /* Inputs & submit */
+    .form-control{ height:52px; border-radius:10px; border:1px solid #dfe6d6; box-shadow:inset 0 1px 1px rgba(0,0,0,.02); }
+    .btn-pmaf{ background:var(--pmaf-green); color:#fff; border:none; height:52px; font-weight:800; text-transform:uppercase; border-radius:12px; width:100%; }
+    .btn-pmaf:hover{ opacity:.95; }
+
+    /* Helper copy (moved above form per your request) */
+    .helper-copy{ color:#fff; text-align:center; margin:10px 0 10px; line-height:1.45; text-transform:uppercase; font-weight:700; }
+
+    @media (max-width:991px){
+      #request-access .split{ flex-direction:column; }
+      #request-access .left{ min-height:280px; }
+      .portal-hero .title{ font-size:42px; }
+      .intro-copy{ padding:0 8px; }
+    }
+  </style>
+</head>
+
+<body>
+<div id="wrap" class="boxed">
+  <div class="grey-bg"><!-- Grey BG -->
+
+    <!-- =================== HEADER (UNCHANGED) =================== -->
+    <header id="nav" class="header header-1 black-header mobile-no-transparent">
+      <div class="header-wrapper">
+        <div class="container-m-30 clearfix">
+          <div class="logo-row">
+            <div class="logo-container-2">
+              <div class="logo-2">
+                <a href="index.html" class="clearfix">
+                  <img src="images/logo-white.png" class="logo-img" alt="White Pauli Murray Awards Foundation Logo">
+                </a>
               </div>
             </div>
-
-            <!-- MAIN MENU -->
-            <div class="main-menu-container">
-              <div class="container-m-30 clearfix">
-                <div id="main-menu">
-                  <div class="navbar navbar-default" role="navigation">
-                    <nav class="collapse collapsing navbar-collapse right-1024">
-                      <ul class="nav navbar-nav">
-                        <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
-                        <li class="parent">
-                          <a href="about.html"><div class="main-menu-title">About</div></a>
-                          <ul class="sub">
-                            <li><a href="about-us.html">About PMAF</a></li>
-                            <li><a href="about-paulimurray.html">About Pauli Murray</a></li>
-                            <li class="parent">
-                              <a href="board.html">Board of Directors</a>
-                              <ul class="sub">
-                                <li><a href="board-member-bios.html">Board Member Bios</a></li>
-                                <li><a href="join-the-board.html">Join the Board</a></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
-                        <li class="parent">
-                          <a href="programs.html"><div class="main-menu-title">Programs</div></a>
-                          <ul class="sub">
-                            <li><a href="programs.html">Programs</a></li>
-                            <li><a href="events.html">Events</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
-                        <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
-                        <li>
-                          <a href="donate.html" class="donate-highlight">
-                            <div class="main-menu-title">Donate</div>
-                          </a>
-                        </li>
-                        <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
-                        <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
-                        <!-- NOTE: "REQUEST ACCESS" nav item intentionally removed -->
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-              </div>
+            <div class="menu-btn-respons-container">
+              <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target="#main-menu .navbar-collapse">
+                <span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
+              </button>
             </div>
-            <!-- /MAIN MENU -->
           </div>
-        </header>
-        <!-- ======= /HEADER ======= -->
+        </div>
 
-        <!-- ============================= PAGE BODY ============================= -->
-        <section id="request-access-split" class="page-section" style="padding:110px 0 60px; position:relative;">
-          <style>
-            /* Scoped to request access page */
-            #request-access-split{--pmaf-green:#7cb203; --pmaf-dark:#111;}
-            #request-access-split .split{
-              display:flex; min-height:560px; border-radius:0; overflow:hidden;
-              box-shadow:0 18px 38px rgba(0,0,0,.12);
-            }
-            @media (max-width:991px){#request-access-split .split{flex-direction:column}}
-            #request-access-split .left{
-              flex:1 1 50%;
-              background:url('images/pride-heart-sticker.jpeg') center/cover no-repeat;
-              position:relative;
-            }
-            #request-access-split .left::after{
-              content:""; position:absolute; inset:0; background:rgba(0,0,0,.25);
-            }
-            #request-access-split .right{
-              flex:1 1 50%; background:var(--pmaf-dark); color:#fff; position:relative;
-              display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
-              padding:40px 24px 30px;
-            }
-            #request-access-split h1{
-              margin:20px 0 8px; text-align:center; font-weight:800; letter-spacing:.02em;
-            }
-            #request-access-split .hero-tags{
-              margin:6px 0 24px; text-align:center; font-weight:800; letter-spacing:.06em;
-              text-transform:uppercase; opacity:.95;
-            }
-            #request-access-split .auth-wrap{
-              width:100%; max-width:760px; margin:20px auto 20px;
-              background:#ffffff; color:#222; border:1px solid #e9e9e9; border-radius:14px;
-              box-shadow:0 16px 34px rgba(0,0,0,.18);
-            }
-            #request-access-split .tab-head{
-              display:flex; gap:12px; padding:12px 14px; background:#f7f7f7; border-bottom:1px solid #ededed;
-            }
-            #request-access-split .tab-btn{
-              padding:8px 18px; border-radius:10px; font-weight:700; border:1px solid transparent;
-              color:#fff; background:#9aa3ad; text-decoration:none;
-            }
-            #request-access-split .tab-btn.active{
-              background:var(--pmaf-green); border-color:#9ad40c; box-shadow:0 8px 18px rgba(124,178,3,.28);
-              color:#fff;
-            }
-            #request-access-split .card-body{padding:18px 18px 22px;}
-            #request-access-split .form-control{height:48px; border-radius:12px;}
-            #request-access-split .btn-pmaf{background:var(--pmaf-green); color:#fff; border:none; border-radius:12px; height:48px; font-weight:800;}
-            #request-access-split .btn-outline-fb{border:2px solid #1877f2; color:#1877f2; height:50px; border-radius:14px; font-weight:700; background:#fff;}
-            #request-access-split .btn-outline-go{border:2px solid #ea4335; color:#ea4335; height:50px; border-radius:14px; font-weight:700; background:#fff;}
-            #request-access-split .muted{opacity:.85; color:#d6d6d6;}
-            #request-access-split .center-note{max-width:760px; margin:0 auto; text-align:center; color:#fff;}
-            #request-access-split .request-btn{display:inline-block; margin-top:14px; background:var(--pmaf-green); color:#fff; border:none; border-radius:18px; padding:10px 18px; font-weight:800;}
-          </style>
+        <div class="main-menu-container">
+          <div class="container-m-30 clearfix">
+            <div id="main-menu">
+              <div class="navbar navbar-default" role="navigation">
+                <nav class="collapse collapsing navbar-collapse right-1024">
+                  <ul class="nav navbar-nav">
+                    <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
+                    <li class="parent">
+                      <a href="about.html"><div class="main-menu-title">About</div></a>
+                      <ul class="sub">
+                        <li><a href="about-us.html">About PMAF</a></li>
+                        <li><a href="about-paulimurray.html">About Pauli Murray</a></li>
+                        <li class="parent">
+                          <a href="board.html">Board of Directors</a>
+                          <ul class="sub">
+                            <li><a href="board-member-bios.html">Board Member Bios</a></li>
+                            <li><a href="join-the-board.html">Join the Board</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
+                    <li class="parent">
+                      <a href="programs.html"><div class="main-menu-title">Programs</div></a>
+                      <ul class="sub">
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="events.html">Events</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
+                    <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
+                    <li>
+                      <a href="donate.html" class="donate-highlight">
+                        <div class="main-menu-title">Donate</div>
+                      </a>
+                    </li>
+                    <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
+                    <li class="active"><a href="request-access.html"><div class="main-menu-title">Request Access</div></a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div><!-- /main-menu-container -->
+      </div>
+    </header>
+    <!-- =================== /HEADER =================== -->
 
-          <div class="container">
-            <div class="split">
-              <!-- LEFT PHOTO -->
-              <div class="left" aria-hidden="true"></div>
+    <!-- ===================== REQUEST ACCESS PAGE ===================== -->
+    <main id="request-access">
+      <div class="split">
+        <!-- LEFT: Photo panel -->
+        <div class="left" aria-hidden="true"></div>
 
-              <!-- RIGHT PANEL -->
-              <div class="right">
-                <h1 class="title-fs-45 wow fadeInUp" data-wow-delay="0.1s">REQUEST ACCESS</h1>
-                <div class="hero-tags">REVIEWERS &nbsp; • &nbsp; VOLUNTEERS &nbsp; • &nbsp; BOARD MEMBERS</div>
+        <!-- RIGHT: Dark content panel -->
+        <div class="right">
+          <div class="portal-hero">
+            <h1 class="title">REQUEST ACCESS</h1>
+          </div>
 
-                <!-- AUTH / REQUEST FORM CARD -->
-                <div class="auth-wrap">
-                  <!-- Tabs mimic (single active: REQUEST ACCESS) -->
-                  <div class="tab-head">
-                    <a class="tab-btn" href="login.html">LOGIN</a>
-                    <span class="tab-btn active">REQUEST ACCESS</span>
+          <!-- NEW: Intro paragraph (1st after title) -->
+          <p class="intro-copy">
+            This page is for <strong>Reviewers, Volunteers, and Board Members</strong> who need access to the PMAF Portal.
+            If you’re a PMA applicant, please use <a href="login.html#tab-apply" style="color:#fff;text-decoration:underline;">PMA Application Registration</a> on the login page instead.
+          </p>
+
+          <!-- MOVED: Helper paragraph (2nd after title) -->
+          <p class="helper-copy">
+            ENTER YOUR DETAILS AND SELECT YOUR ROLE.<br>
+            YOUR DASHBOARD WILL BE TAILORED TO THIS ROLE. REQUESTS REQUIRE APPROVAL.
+          </p>
+
+          <!-- Inline, all-caps tags -->
+          <div class="hero-tags">SECURE ACCESS &nbsp; • &nbsp; ROLE-BASED &nbsp; • &nbsp; VALUES-ALIGNED</div>
+          <div style="height:20px;"></div>
+
+          <!-- Form (unchanged) -->
+          <div class="auth-wrap">
+            <div class="auth-card">
+              <div class="auth-inner">
+                <form id="access-form" autocomplete="on">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
+                      </div>
+                    </div>
                   </div>
 
-                  <div class="card-body">
-                    <!-- Intro above form -->
-                    <p class="muted" style="color:#555; margin-bottom:10px;">
-                      This page is for community members who are <strong>not PMA applicants</strong> but need access to the portal as a
-                      <strong>Reviewer</strong>, <strong>Volunteer</strong>, or <strong>Board Member</strong>.
-                    </p>
-                    <p class="muted" style="color:#555; margin-bottom:18px;">
-                      Already have an account? <a href="login.html">Log in</a>.
-                    </p>
+                  <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                  </div>
 
-                    <form id="request-access-form" action="request-access.html" method="post" novalidate>
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <input type="text" class="form-control" name="first_name" placeholder="First Name" />
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <input type="text" class="form-control" name="last_name" placeholder="Last Name" />
-                          </div>
-                        </div>
-                      </div>
-
+                  <div class="row">
+                    <div class="col-sm-6">
                       <div class="form-group">
-                        <input type="email" class="form-control" name="email" placeholder="Email" />
-                      </div>
-
-                      <div class="form-group">
-                        <select name="role" class="form-control">
-                          <option value="">Select Role…</option>
+                        <select class="form-control" name="role" required>
+                          <option value="" disabled selected>Select Role</option>
                           <option value="reviewer">Reviewer</option>
                           <option value="volunteer">Volunteer</option>
                           <option value="board">Board Member</option>
                         </select>
                       </div>
-
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password" />
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <input type="password" class="form-control" name="password2" placeholder="Confirm Password" />
-                          </div>
-                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" name="organization" placeholder="Organization (Optional)">
                       </div>
-
-                      <button type="submit" class="btn btn-pmaf btn-block">REQUEST ACCESS</button>
-                    </form>
+                    </div>
                   </div>
-                </div>
 
-                <!-- Small note (kept) -->
-                <div class="center-note">
-                  <p class="muted" style="margin-top:12px;">
-                    Applicants should register under <strong>PMA Application Registration</strong> on the Login page.
-                  </p>
-                </div>
+                  <div class="form-group">
+                    <textarea class="form-control" name="notes" placeholder="Notes (Optional)" rows="4" style="height:auto; padding-top:14px;"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-pmaf">Submit Request</button>
+                </form>
               </div>
             </div>
           </div>
 
-          <!-- Supabase SDK + wiring -->
-          <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-          <script>
-            const SUPABASE_URL = "YOUR_SUPABASE_URL";
-            const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
-            const EMAIL_REDIRECT_TO = window.location.origin + "/login.html";
-            const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+          <!-- (Helper paragraph moved above; nothing below the form now) -->
+        </div>
+      </div>
+    </main>
+    <!-- ===================== /REQUEST ACCESS PAGE ===================== -->
 
-            document.getElementById('request-access-form')?.addEventListener('submit', async (e)=>{
-              e.preventDefault();
-              const fd = new FormData(e.currentTarget);
-              const first_name = String(fd.get('first_name')||'').trim();
-              const last_name  = String(fd.get('last_name')||'').trim();
-              const email      = String(fd.get('email')||'').trim();
-              const role       = String(fd.get('role')||'').trim().toLowerCase();
-              const password   = String(fd.get('password')||'');
-              const password2  = String(fd.get('password2')||'');
-
-              if (!first_name || !last_name || !email || !role) { alert('Please complete all required fields.'); return; }
-              if (!['reviewer','volunteer','board'].includes(role)) { alert('Please select a valid role.'); return; }
-              if (password !== password2) { alert('Passwords do not match.'); return; }
-
-              const { error } = await sb.auth.signUp({
-                email, password,
-                options:{
-                  data:{ first_name, last_name, role, approval_status:'pending' },
-                  emailRedirectTo: EMAIL_REDIRECT_TO
-                }
-              });
-              if (error) { alert('Request failed: ' + error.message); return; }
-              alert('Success! Please confirm your email. Your access will be activated after admin approval.');
-              e.currentTarget.reset();
-            });
-          </script>
-        </section>
-        <!-- ============================= /PAGE BODY ============================= -->
-
-        <!-- ======= FOOTER (unchanged) ======= -->
-        <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
-          <div class="container-m-60">
-            <div class="row">
-              <div class="col-md-3 col-sm-3 widget">
-                <div class="logo-footer-cont">
-                  <a href="index.html"><img class="logo-footer" src="images/logo-footer-white.png" alt="logo" /></a>
-                </div>
-                <div class="footer-2-text-cont">
-                  <address>
-                    1178 Broadway, 3rd Floor #502<br />New York, NY 10001
-                  </address>
-                </div>
-                <div class="footer-2-text-cont">646-736-2596<br /></div>
-                <div class="footer-2-text-cont">
-                  <a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-sm-3 widget">
-                <h4>QUICK LINKS</h4>
-                <ul class="links-list bold a-text-cont">
-                  <li><a href="index.html">HOME</a></li>
-                  <li><a href="about.html">ABOUT PMAF</a></li>
-                  <li><a href="about-pauli-murray.html">ABOUT PAULI MURRAY</a></li>
-                  <li><a href="programs.html">PROGRAMS</a></li>
-                  <li><a href="blog.html">NEWS</a></li>
-                  <li><a href="donate.html">DONATE</a></li>
-                </ul>
-              </div>
-
-              <div class="col-md-3 col-sm-3 widget">
-                <h4>PMAs 2026</h4>
-                <ul class="links-list a-text-cont">
-                  <li><a href="awards.html">PMAs</a></li>
-                  <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
-                  <li><a href="awards/timeline.html">PMA 2026 TIMELINE</a></li>
-                  <li><a href="awards/FAQs.html">FAQs</a></li>
-                  <li><a href="awards/login.html">LOGIN</a></li>
-                </ul>
-              </div>
-
-              <div class="col-md-3 col-sm-3 widget">
-                <h4>RECENT POSTS</h4>
-                <div id="post-list-footer">
-                  <div class="post-prev-title">
-                    <h3><a class="a-text" href="blog-single-sidebar-right.html">New trends in web design</a></h3>
-                  </div>
-                  <div class="post-prev-info">Jule 10</div>
-                  <div class="post-prev-title">
-                    <h3><a class="a-text" href="blog-single-sidebar-right.html">The sound of life</a></h3>
-                  </div>
-                  <div class="post-prev-info">October 10</div>
-                  <div class="post-prev-title">
-                    <h3><a class="a-text" href="blog-single-sidebar-right.html">Time for minimalism</a></h3>
-                  </div>
-                  <div class="post-prev-info">September 21</div>
-                </div>
-              </div>
+    <!-- =================== FOOTER (UNCHANGED) =================== -->
+    <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
+      <div class="container-m-60">
+        <div class="row">
+          <div class="col-md-3 col-sm-3 widget">
+            <div class="logo-footer-cont">
+              <a href="index.html"><img class="logo-footer" src="images/logo-footer-white.png" alt="logo"></a>
             </div>
+            <div class="footer-2-text-cont">
+              <address>1178 Broadway, 3rd Floor #502<br>New York, NY 10001</address>
+            </div>
+            <div class="footer-2-text-cont">646-736-2596<br></div>
+            <div class="footer-2-text-cont"><a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a></div>
+          </div>
 
-            <!-- Footer Bottom -->
-            <div class="footer-2-copy-cont clearfix">
-              <div class="footer-2-soc-a right">
-                <a href="https://www.facebook.com/PauliMurrayAF/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="https://www.instagram.com/PauliMurrayAF/" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/paulimurrayawards" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
-              </div>
-              <div class="left">
-                <a class="footer-2-copy" href="https://paulimurrayawaards.com" target="_blank">
-                  &copy; PAULI MURRAY AWARDS FOUNDATIONS INC. 2025
-                </a>
-              </div>
+          <div class="col-md-3 col-sm-3 widget">
+            <h4>QUICK LINKS</h4>
+            <ul class="links-list bold a-text-cont">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="about.html">ABOUT PMAF</a></li>
+              <li><a href="about-pauli-murray.html">ABOUT PAULI MURRAY</a></li>
+              <li><a href="programs.html">PROGRAMS</a></li>
+              <li><a href="blog.html">NEWS</a></li>
+              <li><a href="donate.html">DONATE</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 col-sm-3 widget">
+            <h4>PMAs 2026</h4>
+            <ul class="links-list a-text-cont">
+              <li><a href="awards.html">PMAs</a></li>
+              <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
+              <li><a href="awards/timeline.html">PMA 2026 TIMELINE</a></li>
+              <li><a href="awards/FAQs.html">FAQs</a></li>
+              <li><a href="awards/login.html">LOGIN</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 col-sm-3 widget">
+            <h4>RECENT POSTS</h4>
+            <div id="post-list-footer">
+              <div class="post-prev-title"><h3><a class="a-text" href="#">New trends in web design</a></h3></div>
+              <div class="post-prev-info">Jule 10</div>
+              <div class="post-prev-title"><h3><a class="a-text" href="#">The sound of life</a></h3></div>
+              <div class="post-prev-info">October 10</div>
+              <div class="post-prev-title"><h3><a class="a-text" href="#">Time for minimalism</a></h3></div>
+              <div class="post-prev-info">September 21</div>
             </div>
           </div>
-        </footer>
-        <!-- ======= /FOOTER ======= -->
+        </div>
 
-        <!-- BACK TO TOP -->
-        <p id="back-top"><a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a></p>
-      </div><!-- /grey-bg -->
-    </div><!-- /wrap -->
+        <div class="footer-2-copy-cont clearfix">
+          <div class="footer-2-soc-a right">
+            <a href="https://www.facebook.com/PauliMurrayAF/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/PauliMurrayAF/" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/paulimurrayawards" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
+          </div>
+          <div class="left">
+            <a class="footer-2-copy" href="https://paulimurrayawaards.com" target="_blank">
+              &copy; PAULI MURRAY AWARDS FOUNDATIONS INC. 2025
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- =================== /FOOTER =================== -->
 
-    <!-- JS (Haswell stack) -->
-    <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
-    <script src="js/jquery.countTo.js"></script>
-    <script src="js/jquery.appear.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-    <script src="rs-plugin/js/jquery.themepunch.revolution-parallax.min.js"></script>
-  </body>
+    <p id="back-top"><a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a></p>
+  </div>
+</div>
+
+<!-- ============== JS (full stack) ============== -->
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/jquery.countTo.js"></script>
+<script src="js/jquery.appear.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+<script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>   
+<script src="rs-plugin/js/jquery.themepunch.revolution-parallax.min.js"></script>
+
+<!-- Sticky header gray background on scroll -->
+<script>
+  (function(){
+    var header = document.getElementById('nav');
+    function onScroll(){
+      if(window.scrollY>10){ header.classList.add('scrolled'); }
+      else{ header.classList.remove('scrolled'); }
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+  })();
+</script>
+
+<!-- Supabase (optional: wire when the table is ready) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  // Uncomment when you're ready to insert requests into your table:
+  /*
+  const SUPABASE_URL = "https://icnkxtjzbdqorgvkzpik.supabase.co";
+  const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  document.getElementById('access-form')?.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      first_name: fd.get('first_name')?.toString().trim(),
+      last_name:  fd.get('last_name')?.toString().trim(),
+      email:      fd.get('email')?.toString().trim(),
+      role:       fd.get('role')?.toString(),
+      organization: fd.get('organization')?.toString() || null,
+      notes:      fd.get('notes')?.toString() || null,
+      status:     'pending',
+      requested_at: new Date().toISOString()
+    };
+    const { error } = await sb.from('portal_access_requests').insert(payload);
+    if (error) { alert("Submission error (table not ready?): " + error.message); return; }
+    alert("Request submitted! You’ll receive an email once approved.");
+    e.currentTarget.reset();
+  });
+  */
+</script>
+</body>
 </html>
