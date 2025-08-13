@@ -1,11 +1,8 @@
-Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **all tab text set to white** (for normal, hover, and active states). Everything else stays as we had it: even card padding, PMAF PORTAL next to the logo, value pills, brand-colored social buttons, and your exact footer block.
-
-```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>PMAF Portal — Login</title>
+  <title>PMAF PORTAL — LOGIN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Haswell / site CSS -->
@@ -24,6 +21,7 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
         radial-gradient(1200px 600px at 10% -10%, rgba(124,178,3,.08), transparent 60%),
         radial-gradient(800px 400px at 110% 10%, rgba(48,50,54,.06), transparent 60%),
         #f7f9f7;
+      text-transform: uppercase; /* <<< ALL CAPS SITE-WIDE >>> */
     }
     main { flex: 1 0 auto; }
 
@@ -44,7 +42,7 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
     }
     .logo-stack img{ height:64px; width:auto; display:block; }
     .portal-title{
-      margin:0; font-weight:900; letter-spacing:.06em; text-transform:uppercase;
+      margin:0; font-weight:900; letter-spacing:.06em;
       color:var(--pmaf-green); line-height:1; font-size:64px; /* set 70px if preferred */
     }
     @media (max-width:991px){ .portal-title{ font-size:48px; } .logo-stack img{ height:56px; } }
@@ -63,7 +61,7 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
       display:inline-flex; align-items:center; gap:8px;
       padding:10px 14px;
       border-radius:999px; background:#f6f9f3; color:var(--pmaf-green);
-      font-weight:800; font-size:14px; text-transform:uppercase;
+      font-weight:800; font-size:14px;
       border:2px solid #a9d16f; /* thicker stroke for visibility */
     }
 
@@ -128,15 +126,19 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
 
     .row-helpers{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
 
-    /* >>> Make ALL tab text white + tiny shadow for readability <<< */
+    /* TAB TEXT COLORS OVERRIDES */
+    /* Inactive tabs = dark gray; Active tabs = white; tiny shadow for both */
     .custom-tabs .nav-tabs > li > a,
     .custom-tabs .nav-tabs > li > a:hover,
-    .custom-tabs .nav-tabs > li > a:focus,
+    .custom-tabs .nav-tabs > li > a:focus{
+      color: var(--pmaf-dark) !important;
+      text-shadow: 0 1px 1px rgba(0,0,0,.15);
+    }
     .custom-tabs .nav-tabs > li.active > a,
     .custom-tabs .nav-tabs > li.active > a:hover,
     .custom-tabs .nav-tabs > li.active > a:focus{
-      color:#fff !important;
-      text-shadow:0 1px 1px rgba(0,0,0,.25);
+      color: #fff !important;
+      text-shadow: 0 1px 1px rgba(0,0,0,.25);
     }
   </style>
 </head>
@@ -160,7 +162,7 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
           <!-- Headline & subcopy (centered) -->
           <h1>WELCOME!!</h1>
           <p class="lead-sub">
-            This portal is for <strong>Applicants, Reviewers, Volunteers, and Board Members</strong>.
+            THIS PORTAL IS FOR <strong>APPLICANTS, REVIEWERS, VOLUNTEERS, AND BOARD MEMBERS</strong>.
           </p>
 
           <div class="pill-row">
@@ -174,34 +176,34 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
             <div class="login-card-inner">
               <div class="tabs custom-tabs">
                 <ul class="nav nav-tabs">
-                  <li class="active"><a href="#tab-login" data-toggle="tab">Login</a></li>
-                  <li><a href="#tab-apply" data-toggle="tab">PMA Application Registration</a></li>
+                  <li class="active"><a href="#tab-login" data-toggle="tab">LOGIN</a></li>
+                  <li><a href="#tab-apply" data-toggle="tab">PMA APPLICATION REGISTRATION</a></li>
                 </ul>
 
                 <div class="tab-content">
                   <!-- LOGIN TAB -->
                   <div id="tab-login" class="tab-pane tab-content-container active">
                     <form id="login-form" action="login.html" method="post" novalidate>
-                      <div class="field"><input type="email" name="email" class="controled" placeholder="Email" required></div>
-                      <div class="field" style="margin-bottom:10px;"><input type="password" name="password" class="controled" placeholder="Password" required></div>
+                      <div class="field"><input type="email" name="email" class="controled" placeholder="EMAIL" required></div>
+                      <div class="field" style="margin-bottom:10px;"><input type="password" name="password" class="controled" placeholder="PASSWORD" required></div>
 
                       <div class="row-helpers" style="margin:8px 0 14px;">
                         <label style="display:flex; align-items:center; gap:8px; margin:0;">
-                          <input type="checkbox" name="remember" value="true"> <span style="opacity:.85;">Remember me</span>
+                          <input type="checkbox" name="remember" value="true"> <span style="opacity:.85;">REMEMBER ME</span>
                         </label>
-                        <a class="link-muted" href="forgot-password.html"><small>Forgot password?</small></a>
+                        <a class="link-muted" href="forgot-password.html"><small>FORGOT PASSWORD?</small></a>
                       </div>
 
-                      <button type="submit" class="btn-pmaf">Log In</button>
+                      <button type="submit" class="btn-pmaf">LOG IN</button>
 
-                      <div class="divider"><span>or</span></div>
+                      <div class="divider"><span>OR</span></div>
 
                       <div class="social-row">
                         <button class="btn-social btn-facebook" id="facebook-login" type="button">
-                          <i class="fa fa-facebook"></i> Log In with Facebook
+                          <i class="fa fa-facebook"></i> LOG IN WITH FACEBOOK
                         </button>
                         <button class="btn-social btn-google" id="google-login" type="button">
-                          <i class="fa fa-google"></i> Log In with Google
+                          <i class="fa fa-google"></i> LOG IN WITH GOOGLE
                         </button>
                       </div>
                     </form>
@@ -211,13 +213,13 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
                   <div id="tab-apply" class="tab-pane tab-content-container">
                     <form id="apply-form" action="register.html" method="post" novalidate>
                       <div class="grid-2 field" style="margin-top:10px;">
-                        <div><input type="text" name="first_name" class="controled" placeholder="First name" required></div>
-                        <div><input type="text" name="last_name" class="controled" placeholder="Last name" required></div>
+                        <div><input type="text" name="first_name" class="controled" placeholder="FIRST NAME" required></div>
+                        <div><input type="text" name="last_name" class="controled" placeholder="LAST NAME" required></div>
                       </div>
-                      <div class="field"><input type="email" name="email" class="controled" placeholder="Email" required></div>
-                      <div class="field"><input type="password" name="password" class="controled" placeholder="Password" required></div>
-                      <div class="field" style="margin-bottom:20px;"><input type="password" name="password2" class="controled" placeholder="Re-enter password" required></div>
-                      <button type="submit" class="btn-pmaf">Start PMA Application</button>
+                      <div class="field"><input type="email" name="email" class="controled" placeholder="EMAIL" required></div>
+                      <div class="field"><input type="password" name="password" class="controled" placeholder="PASSWORD" required></div>
+                      <div class="field" style="margin-bottom:20px;"><input type="password" name="password2" class="controled" placeholder="RE-ENTER PASSWORD" required></div>
+                      <button type="submit" class="btn-pmaf">START PMA APPLICATION</button>
                     </form>
                   </div>
                 </div><!-- /tab-content -->
@@ -227,12 +229,12 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
 
           <!-- Centered “no account” copy + button at the VERY BOTTOM -->
           <div class="centered" style="text-align:center; margin-top:18px; opacity:.9;">
-            Don’t have an account? Applicants can register under <strong>PMA Application Registration</strong>.<br>
-            Reviewers, Volunteers, and Board Members should
-            <a class="link-muted" href="request-access.html">request access</a>.
+            DON’T HAVE AN ACCOUNT? APPLICANTS CAN REGISTER UNDER <strong>PMA APPLICATION REGISTRATION</strong>.<br>
+            REVIEWERS, VOLUNTEERS, AND BOARD MEMBERS SHOULD
+            <a class="link-muted" href="request-access.html">REQUEST ACCESS</a>.
           </div>
           <div style="margin-top:10px; text-align:center;">
-            <a href="request-access.html" class="btn-cta">Request Access</a>
+            <a href="request-access.html" class="btn-cta">REQUEST ACCESS</a>
           </div>
         </div><!-- /content-wrap -->
       </div><!-- /right -->
@@ -254,15 +256,15 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
           </div>
           <div class="footer-2-text-cont">
             <address>
-              1178 Broadway, 3rd Floor #502<br>
-              New York, NY 10001
+              1178 BROADWAY, 3RD FLOOR #502<br>
+              NEW YORK, NY 10001
             </address>
           </div>
           <div class="footer-2-text-cont">
             646-736-2596<br>
           </div>
           <div class="footer-2-text-cont">
-            <a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a>
+            <a class="a-text" href="mailto:info@paulimurrayawards.com">INFO@PAULIMURRAYAWARDS.COM</a>
           </div>
         </div>
 
@@ -281,12 +283,12 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
 
         <!-- Column 3: PMAs 2026 -->
         <div class="col-md-3 col-sm-3 widget">
-          <h4>PMAs 2026</h4>
+          <h4>PMAS 2026</h4>
           <ul class="links-list a-text-cont">
-            <li><a href="awards.html">PMAs</a></li>
+            <li><a href="awards.html">PMAS</a></li>
             <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
             <li><a href="awards/timeline.html">PMA 2026 TIMELINE</a></li>
-            <li><a href="awards/FAQs.html">FAQs</a></li>
+            <li><a href="awards/FAQs.html">FAQS</a></li>
             <li><a href="awards/login.html">LOGIN</a></li>
           </ul>
         </div>
@@ -296,19 +298,19 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
           <h4>RECENT POSTS</h4>
           <div id="post-list-footer">
             <div class="post-prev-title">
-              <h3><a class="a-text" href="blog-single-sidebar-right.html">New trends in web design</a></h3>
+              <h3><a class="a-text" href="blog-single-sidebar-right.html">NEW TRENDS IN WEB DESIGN</a></h3>
             </div>
-            <div class="post-prev-info">Jule 10</div>
+            <div class="post-prev-info">JULE 10</div>
 
             <div class="post-prev-title">
-              <h3><a class="a-text" href="blog-single-sidebar-right.html">The sound of life</a></h3>
+              <h3><a class="a-text" href="blog-single-sidebar-right.html">THE SOUND OF LIFE</a></h3>
             </div>
-            <div class="post-prev-info">October 10</div>
+            <div class="post-prev-info">OCTOBER 10</div>
 
             <div class="post-prev-title">
-              <h3><a class="a-text" href="blog-single-sidebar-right.html">Time for minimalism</a></h3>
+              <h3><a class="a-text" href="blog-single-sidebar-right.html">TIME FOR MINIMALISM</a></h3>
             </div>
-            <div class="post-prev-info">September 21</div>
+            <div class="post-prev-info">SEPTEMBER 21</div>
           </div>
         </div>
       </div>
@@ -343,12 +345,11 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <script>
-    // Supabase config (your project)
+    /* SUPABASE CONFIG */
     const SUPABASE_URL = "https://icnkxtjzbdqorgvkzpik.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imljbmt4dGp6YmRxb3Jndmt6cGlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI5NTUzNzcsImV4cCI6MjA2ODUzMTM3N30.EOIOQwc149Xmzr92TBcuA9PxrcjqjukFKYPNfnDPj28";
     const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    // Role-based redirects
     const DASHBOARD_BY_ROLE = {
       applicant: "applicant-dashboard.html",
       reviewer:  "reviewer/index.html",
@@ -360,13 +361,11 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
     const PENDING_APPROVAL_URL = "pending-approval.html";
     const OAUTH_REDIRECT_TO = window.location.origin + "/login.html";
 
-    // If already logged in (e.g., after OAuth), redirect
     document.addEventListener("DOMContentLoaded", async () => {
       const { data: { session } } = await sb.auth.getSession();
       if (session?.user) doRoleRedirect(session.user);
     });
 
-    // Login tab
     (function () {
       const form = document.getElementById("login-form");
       if (!form) return;
@@ -377,17 +376,16 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
         const fd = new FormData(form);
         const email = String(fd.get("email") || "").trim();
         const password = String(fd.get("password") || "");
-        if (!email || !password) { alert("Please enter your email and password."); return setDisabled(false); }
+        if (!email || !password) { alert("PLEASE ENTER YOUR EMAIL AND PASSWORD."); return setDisabled(false); }
 
         const { error } = await sb.auth.signInWithPassword({ email, password });
-        if (error) { alert("Sign-in failed: " + error.message); return setDisabled(false); }
+        if (error) { alert("SIGN-IN FAILED: " + error.message); return setDisabled(false); }
 
         const { data: { user } } = await sb.auth.getUser();
         doRoleRedirect(user);
       });
     })();
 
-    // Applicant registration tab
     (function () {
       const form = document.getElementById("apply-form");
       if (!form) return;
@@ -396,12 +394,11 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
         const fd = new FormData(form);
         const first_name = String(fd.get("first_name")||"").trim();
         const last_name  = String(fd.get("last_name")||"").trim();
-        theEmail = String(fd.get("email")||"").trim();
-        const email = theEmail;
+        const email      = String(fd.get("email")||"").trim();
         const password   = String(fd.get("password")||"");
         const password2  = String(fd.get("password2")||"");
-        if (!first_name || !last_name || !email || !password) return alert("Please complete all required fields.");
-        if (password !== password2) return alert("Passwords do not match.");
+        if (!first_name || !last_name || !email || !password) return alert("PLEASE COMPLETE ALL REQUIRED FIELDS.");
+        if (password !== password2) return alert("PASSWORDS DO NOT MATCH.");
 
         const { error } = await sb.auth.signUp({
           email, password,
@@ -410,14 +407,13 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
             emailRedirectTo: window.location.origin + "/login.html"
           }
         });
-        if (error) return alert("Registration failed: " + error.message);
-        alert("Success! Please check your email to confirm, then return to log in.");
+        if (error) return alert("REGISTRATION FAILED: " + error.message);
+        alert("SUCCESS! PLEASE CHECK YOUR EMAIL TO CONFIRM, THEN RETURN TO LOG IN.");
         form.reset();
         $('a[href="#tab-login"]').tab('show');
       });
     })();
 
-    // OAuth buttons
     (function () {
       document.getElementById("google-login")?.addEventListener("click", async () => {
         await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: OAUTH_REDIRECT_TO } });
@@ -438,6 +434,3 @@ Absolutely! Here’s the full `login.html` with the **tiny shadow** added and **
   </script>
 </body>
 </html>
-```
-
-Want the “PMAF PORTAL” headline at exactly 70px? Just change `.portal-title{ font-size:64px; }` → `70px`.
