@@ -1,167 +1,141 @@
 <!DOCTYPE html>
+<!--
+
+	Title: Pauli Murray Awards Foundation
+	Description: Celebrating Black LGBTQ+ brilliance through national awards, leadership programs, and advocacy. 
+	Author: Cory L. Scott
+	Designed by: 11soft
+  Coded by: Evan Vaughn & Cory L. Scott
+	
+-->
+
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Pauli Murray Awards Foundation — Login</title>
-  <meta name="description" content="Honoring Black LGBTQ+ brilliance through national awards, leadership, and advocacy.">
-  <meta name="keywords" content="Pauli Murray, Black LGBTQ Awards, Social Justice, Leadership, PMAF">
-  <meta name="author" content="Cory L. Scott">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ 	<head>
+		<title>Pauli Murray Awards Foundation</title>
+<meta name="description" content="Honoring Black LGBTQ+ brilliance through national awards, leadership, and advocacy.">
+<meta name="keywords" content="Pauli Murray, Black LGBTQ Awards, Social Justice, Leadership, PMAF">
+<meta name="author" content="Cory L. Scott">
 
-  <!-- FAVICONS -->
-  <link rel="shortcut icon" href="images/favicon/favicon.png">
-  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<!-- FAVICONS -->
+    <link rel="shortcut icon" href="images/favicon/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
 
-  <!-- REVICON Fonts -->
-  <link rel="stylesheet" href="rs-plugin/fonts/revicons/revicons.css" type="text/css" media="all" />
+<!-- REVICON Fonts-->		
+<link rel="stylesheet" href="rs-plugin/fonts/revicons/revicons.css" type="text/css" media="all" />
 
-  <!-- CSS -->
-  <!-- REVOSLIDER CSS SETTINGS -->
-  <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.min.css" media="screen">
+<!-- CSS -->
+    <!-- REVOSLIDER CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.min.css" media="screen">
 
-  <!-- BOOTSTRAP -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--  BOOTSTRAP -->
+		<link rel="stylesheet" href="css/bootstrap.min.css"> 
+	
+    <!--  GOOGLE FONT -->		
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,300,700" type="text/css">
 
-  <!-- GOOGLE FONTS -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,300,700" type="text/css">
-
-  <!-- ICONS + THEME -->
-  <link rel="stylesheet" href="css/icons-fonts.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animate.min.css">
-
-  <!-- Page overrides (keeps header/footer untouched; fixes z-index; split layout) -->
-  <style>
-    :root{ --pmaf-green:#76a704; --pmaf-dark:#1a1a1a; --pmaf-gray:#f2f3f5; }
-
-    /* keep header & menus above the left photo/overlay */
-    header.header{ position:relative; z-index:5000; }
-    .navbar .sub{ position:absolute; z-index:6000; }
-
-    /* push content down under header */
-    #portal-login{ margin-top:80px; }
-
-    /* Split layout */
-    #split{ display:flex; min-height:calc(100vh - 160px); position:relative; z-index:1; background:#f7f7f7; }
-    #split .left{
-      flex:1 1 50%;
-      background:url("images/small-pride-flag-on-desk.jpeg") center/cover no-repeat;
-      position:relative;
-    }
-    #split .left::after{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.4); }
-    #split .left .portal-title{
-      position:absolute; left:40px; top:40px;
-      color:#6fa000; font-weight:900; letter-spacing:2px; font-size:62px;
-    }
-    #split .right{ flex:1 1 50%; padding:48px; background:#f7f7f7; }
-
-    .auth-wrap{ max-width:780px; margin:0 auto; }
-    .auth-card{ background:#fff; border-radius:14px; border:1px solid #e7e7e7; box-shadow:0 6px 22px rgba(0,0,0,.08); }
-    .auth-card .tab-content{ padding:20px; }
-
-    /* tabs */
-    .nav-tabs.portal-tabs{ border-bottom:1px solid #eee; }
-    .nav-tabs.portal-tabs>li>a{
-      font-weight:800; letter-spacing:.5px; color:#333; text-transform:uppercase;
-      border-radius:10px 10px 0 0;
-    }
-    .nav-tabs.portal-tabs>li.active>a,
-    .nav-tabs.portal-tabs>li.active>a:focus,
-    .nav-tabs.portal-tabs>li.active>a:hover{
-      background:var(--pmaf-green)!important; border-color:var(--pmaf-green)!important;
-      color:#fff!important; text-shadow:0 1px 0 rgba(0,0,0,.2);
-      box-shadow:0 6px 22px rgba(118,167,4,.35);
-    }
-
-    /* pills */
-    .pill-row{ display:flex; justify-content:center; gap:10px; margin:16px 0 24px; }
-    .pill{
-      padding:10px 16px; border-radius:999px; background:#f7fbef; color:var(--pmaf-green);
-      font-weight:800; font-size:13px; border:2px solid #bfd48a; text-transform:uppercase;
-    }
-
-    /* brand buttons */
-    .btn-fb{ border:2px solid #1877f2; color:#1877f2; background:#fff; }
-    .btn-fb:hover{ background:#1877f2; color:#fff; }
-    .btn-google{ border:2px solid #db4437; color:#db4437; background:#fff; }
-    .btn-google:hover{ background:#db4437; color:#fff; }
-  </style>
-</head>
-<body>
-
-<div id="wrap" class="boxed">
-  <div class="grey-bg"><!-- Grey BG -->
-
-    <!-- ====== HEADER (unchanged) ====== -->
-    <header id="nav" class="header header-1 black-header mobile-no-transparent">
-      <div class="header-wrapper">
-        <div class="container-m-30 clearfix">
-          <div class="logo-row">
-            <!-- LOGO -->
-            <div class="logo-container-2">
-              <div class="logo-2">
-                <a href="index.html" class="clearfix">
-                  <img src="images/logo-white.png" class="logo-img" alt="White Pauli Murray Awards Foundation Logo">
-                </a>
+    <!-- ICONS ELEGANT FONT & FONT AWESOME & LINEA ICONS  -->		
+		<link rel="stylesheet" href="css/icons-fonts.css" >	
+	
+    <!--  CSS THEME -->		
+		<link rel="stylesheet" href="css/style.css" >
+	
+    <!-- ANIMATE -->	
+		<link rel='stylesheet' href="css/animate.min.css">
+		
+       		<div id="wrap" class="boxed ">
+			<div class="grey-bg"> <!-- Grey BG  -->	
+				
+				<!-- HEADER 1 BLACK MOBILE-NO-TRANSPARENT -->
+				<header id="nav" class="header header-1 black-header mobile-no-transparent">
+          
+				  <div class="header-wrapper">
+					<div class="container-m-30 clearfix">
+					  <div class="logo-row">
+					  
+						<!-- LOGO --> 
+						<div class="logo-container-2">
+                <div class="logo-2">
+                  <a href="index.html" class="clearfix">
+                    <img src="images/logo-white.png" class="logo-img" alt="White Pauli Murray Awards Foundation Logo">
+                  </a>
+                </div>
               </div>
-            </div>
-            <!-- BUTTON -->
-            <div class="menu-btn-respons-container">
-              <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target="#main-menu .navbar-collapse">
-                <span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
-              </button>
-            </div>
-          </div>
-        </div>
+						<!-- BUTTON --> 
+						<div class="menu-btn-respons-container">
+							<button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target="#main-menu .navbar-collapse">
+								<span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
+							</button>
+						</div>
+					 </div>
+					</div>
 
-        <!-- MAIN MENU CONTAINER -->
-        <div class="main-menu-container">
-          <div class="container-m-30 clearfix">
-            <!-- MAIN MENU -->
-            <div id="main-menu">
-              <div class="navbar navbar-default" role="navigation">
-                <!-- MAIN MENU LIST -->
-                <nav class="collapse collapsing navbar-collapse right-1024">
-                  <ul class="nav navbar-nav">
-                    <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
-                    <li class="parent">
-                      <a href="about.html"><div class="main-menu-title">About</div></a>
-                      <ul class="sub">
-                        <li><a href="about-us.html">About PMAF</a></li>
-                        <li><a href="about-paulimurray.html">About Pauli Murray</a></li>
-                        <li class="parent">
-                          <a href="board.html">Board of Directors</a>
-                          <ul class="sub">
-                            <li><a href="board-member-bios.html">Board Member Bios</a></li>
-                            <li><a href="join-the-board.html">Join the Board</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
-                    <li class="parent">
-                      <a href="programs.html"><div class="main-menu-title">Programs</div></a>
-                      <ul class="sub">
-                        <li><a href="programs.html">Programs</a></li>
-                        <li><a href="events.html">Events</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
-                    <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
-                    <li><a href="donate.html" class="donate-highlight"><div class="main-menu-title">Donate</div></a></li>
-                    <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
-                    <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-            <!-- END main menu -->
-          </div>
-        </div>
-      </div>
-    </header>
+					<!-- MAIN MENU CONTAINER -->
+					<div class="main-menu-container">
+						
+						  <div class="container-m-30 clearfix">	
+						  
+<!-- MAIN MENU -->
+								<div id="main-menu">
+								  <div class="navbar navbar-default" role="navigation">
+
+									<!-- MAIN MENU LIST -->
+									<nav class="collapse collapsing navbar-collapse right-1024">
+									  <ul class="nav navbar-nav">
+									  
+                      <!-- MENU ITEM -->
+  <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
+
+  <!-- ABOUT -->
+  <li class="parent">
+    <a href="about.html"><div class="main-menu-title">About</div></a>
+    <ul class="sub">
+      <li><a href="about-us.html">About PMAF</a></li>
+      <li><a href="about-paulimurray.html">About Pauli Murray</a></li>
+      <li class="parent">
+        <a href="board.html">Board of Directors</a>
+        <ul class="sub">
+          <li><a href="board-member-bios.html">Board Member Bios</a></li>
+          <li><a href="join-the-board.html">Join the Board</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <!-- AWARDS -->
+  <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
+
+  <!-- PROGRAMS -->
+  <li class="parent">
+    <a href="programs.html"><div class="main-menu-title">Programs</div></a>
+    <ul class="sub">
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+  </li>
+
+  <!-- BLOG -->
+  <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
+
+  <!-- FAQ -->
+  <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
+
+  <!-- DONATE -->
+  <li>
+    <a href="donate.html" class="donate-highlight">
+      <div class="main-menu-title">Donate</div>
+    </a>
+  </li>
+
+  <!-- CONTACT -->
+  <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
+
+  <!-- LOGIN -->
+  <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
+</ul>
 
     <!-- ====== /HEADER ====== -->
 
