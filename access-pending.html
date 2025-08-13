@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!--
+  PMAF — Pending Approval
+  Consistent with portal pages, centered layout over photo with overlay
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PMAF — Pending Approval</title>
+  <meta name="description" content="Your PMAF portal access request is pending approval.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- FAVICONS -->
+  <link rel="shortcut icon" href="images/favicon/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+
+  <!-- REVICON Fonts-->
+  <link rel="stylesheet" href="rs-plugin/fonts/revicons/revicons.css" type="text/css" media="all" />
+
+  <!-- CSS (Haswell stack) -->
+  <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.min.css" media="screen">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,300,700">
+  <link rel="stylesheet" href="css/icons-fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+
+  <style>
+    :root{ --pmaf-green:#7CB203; --pmaf-dark:#111111; }
+
+    html, body { margin:0; padding:0; }
+    /* Sticky nav gets gray bg on scroll (kept consistent) */
+    #nav.scrolled { background:#2b2b2b !important; transition:background .25s ease; }
+
+    /* ====== PENDING (centered over image) ====== */
+    #pending-approval {
+      position: relative;
+      min-height: calc(100vh - 0px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      /* Full-width photo background */
+      background: url("images/purple-pride-sash.jpeg") center/cover no-repeat;
+    }
+    /* Opacity layer over photo */
+    #pending-approval::before {
+      content:"";
+      position:absolute; inset:0;
+      background: rgba(0,0,0,.35);
+    }
+
+    /* Content wrapper sits above overlay */
+    #pending-approval .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 860px;
+      padding: 120px 24px 90px; /* top space keeps it clear of header */
+      color: #fff;
+    }
+
+    /* Title + tags (matches portal vibe) */
+    #pending-approval .title {
+      font-size: 54px;
+      font-weight: 800;
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      color: var(--pmaf-green);
+      text-shadow: 0 10px 24px rgba(0,0,0,.35);
+    }
+    #pending-approval .hero-tags {
+      color:#fff;
+      text-transform:uppercase;
+      font-weight:800;
+      letter-spacing:.5px;
+      opacity:.95;
+      margin: 8px 0 20px;
+    }
+
+    /* Center card (same DNA as auth card) */
+    .pending-card {
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
+      background:#fff; color:#333;
+      border:1px solid #e9efe1;
+      border-radius:14px;
+      box-shadow:0 16px 42px rgba(0,0,0,.25);
+      text-align:left;
+      padding: 22px;
+    }
+    .pending-card h3 {
+      margin: 0 0 8px;
+      font-weight: 800;
+      color: #222;
+    }
+    .pending-card p { margin: 8px 0 0; line-height: 1.55; }
+    .pending-card ul { margin: 14px 0 0; padding-left: 18px; line-height: 1.55; }
+
+    /* Button style aligned with portal */
+    .btn-pmaf {
+      display:inline-block;
+      background: var(--pmaf-green);
+      color:#fff !important;
+      border:none;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(124,178,3,.25);
+    }
+    .btn-pmaf:hover { filter: brightness(.96); }
+
+    /* Helper line under card */
+    #pending-approval .helper {
+      margin: 18px 0 0;
+      color:#fff;
+      font-weight:700;
+      text-transform:uppercase;
+    }
+
+    @media (max-width: 991px){
+      #pending-approval .title { font-size: 42px; }
+      #pending-approval .content { padding: 110px 16px 70px; }
+    }
+  </style>
+</head>
+
+<body>
+<div id="wrap" class="boxed">
+  <div class="grey-bg"><!-- Grey BG -->
+
+    <!-- =================== HEADER (UNCHANGED) =================== -->
+    <header id="nav" class="header header-1 black-header mobile-no-transparent">
+      <div class="header-wrapper">
+        <div class="container-m-30 clearfix">
+          <div class="logo-row">
+            <div class="logo-container-2">
+              <div class="logo-2">
+                <a href="index.html" class="clearfix">
+                  <img src="images/logo-white.png" class="logo-img" alt="White Pauli Murray Awards Foundation Logo">
+                </a>
+              </div>
+            </div>
+            <div class="menu-btn-respons-container">
+              <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target="#main-menu .navbar-collapse">
+                <span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-menu-container">
+          <div class="container-m-30 clearfix">
+            <div id="main-menu">
+              <div class="navbar navbar-default" role="navigation">
+                <nav class="collapse collapsing navbar-collapse right-1024">
+                  <ul class="nav navbar-nav">
+                    <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
+
+                    <li class="parent">
+                      <a href="about.html"><div class="main-menu-title">About</div></a>
+                      <ul class="sub">
+                        <li><a href="about-us.html">About PMAF</a></li>
+                        <li><a href="about-paulimurray.html">About Pauli Murray</a></li>
+                        <li class="parent">
+                          <a href="board.html">Board of Directors</a>
+                          <ul class="sub">
+                            <li><a href="board-member-bios.html">Board Member Bios</a></li>
+                            <li><a href="join-the-board.html">Join the Board</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
+
+                    <li class="parent">
+                      <a href="programs.html"><div class="main-menu-title">Programs</div></a>
+                      <ul class="sub">
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="events.html">Events</a></li>
+                      </ul>
+                    </li>
+
+                    <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
+                    <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
+
+                    <li>
+                      <a href="donate.html" class="donate-highlight">
+                        <div class="main-menu-title">Donate</div>
+                      </a>
+                    </li>
+
+                    <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
+                    <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div><!-- /main-menu-container -->
+      </div>
+    </header>
+    <!-- =================== /HEADER =================== -->
+
+    <!-- ===================== PENDING APPROVAL (CENTERED) ===================== -->
+    <main id="pending-approval">
+      <div class="content">
+        <h1 class="title">PENDING APPROVAL</h1>
+        <div class="hero-tags">SECURE ACCESS &nbsp; • &nbsp; ROLE-BASED &nbsp; • &nbsp; VALUES-ALIGNED</div>
+
+        <div class="pending-card">
+          <h3>Thanks! Your Request Was Received</h3>
+          <p>We’ve sent a confirmation email. After an administrator approves your access, you’ll be able to sign in.</p>
+          <ul>
+            <li>Didn’t get the email? Check spam/junk folders.</li>
+            <li>Need help? <a href="contact.html">Contact us</a> using the same email you registered with.</li>
+          </ul>
+          <div style="margin-top:16px;">
+            <a href="login.html" class="btn-pmaf">Return to Login</a>
+          </div>
+        </div>
+
+        <div class="helper">YOU CAN CLOSE THIS WINDOW OR RETURN TO LOGIN</div>
+      </div>
+    </main>
+    <!-- ===================== /PENDING APPROVAL ===================== -->
+
+    <!-- =================== FOOTER (STANDARD PMAF) =================== -->
+    <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
+      <div class="container-m-60">
+        <div class="row">
+
+          <!-- Column 1: Logo + Contact Info -->
+          <div class="col-md-3 col-sm-3 widget">
+            <div class="logo-footer-cont">
+              <a href="index.html">
+                <img class="logo-footer" src="images/logo-footer-white.png" alt="logo">
+              </a>
+            </div>
+            <div class="footer-2-text-cont">
+              <address>
+                1178 Broadway, 3rd Floor #502<br>
+                New York, NY 10001
+              </address>
+            </div>
+            <div class="footer-2-text-cont">
+              646-736-2596<br>
+            </div>
+            <div class="footer-2-text-cont">
+              <a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="col-md-3 col-sm-3 widget">
+            <h4>QUICK LINKS</h4>
+            <ul class="links-list bold a-text-cont">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="about.html">ABOUT PMAF</a></li>
+              <li><a href="about-pauli-murray.html">ABOUT PAULI MURRAY</a></li>
+              <li><a href="programs.html">PROGRAMS</a></li>
+              <li><a href="blog.html">NEWS</a></li>
+              <li><a href="donate.html">DONATE</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: PMAs 2026 -->
+          <div class="col-md-3 col-sm-3 widget">
+            <h4>PMAs 2026</h4>
+            <ul class="links-list a-text-cont">
+              <li><a href="awards.html">PMAs</a></li>
+              <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
+              <li><a href="awards/timeline.html">PMA 2026 TIMELINE</a></li>
+              <li><a href="awards/FAQs.html">FAQs</a></li>
+              <li><a href="awards/login.html">LOGIN</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Recent Posts -->
+          <div class="col-md-3 col-sm-3 widget">
+            <h4>RECENT POSTS</h4>
+            <div id="post-list-footer">
+              <div class="post-prev-title">
+                <h3><a class="a-text" href="blog-single-sidebar-right.html">New trends in web design</a></h3>
+              </div>
+              <div class="post-prev-info">Jule 10</div>
+
+              <div class="post-prev-title">
+                <h3><a class="a-text" href="blog-single-sidebar-right.html">The sound of life</a></h3>
+              </div>
+              <div class="post-prev-info">October 10</div>
+
+              <div class="post-prev-title">
+                <h3><a class="a-text" href="blog-single-sidebar-right.html">Time for minimalism</a></h3>
+              </div>
+              <div class="post-prev-info">September 21</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-2-copy-cont clearfix">
+          <!-- Social Links -->
+          <div class="footer-2-soc-a right">
+            <a href="https://www.facebook.com/PauliMurrayAF/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/PauliMurrayAF/" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/paulimurrayawards" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
+          </div>
+
+          <!-- Copyright -->
+          <div class="left">
+            <a class="footer-2-copy" href="https://paulimurrayawaards.com" target="_blank">
+              &copy; PAULI MURRAY AWARDS FOUNDATIONS INC. 2025
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- =================== /FOOTER =================== -->
+
+    <!-- BACK TO TOP -->
+    <p id="back-top">
+      <a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a>
+    </p>
+  </div><!-- /grey-bg -->
+</div><!-- /wrap -->
+
+<!-- ============== JS (full stack) ============== -->
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/jquery.countTo.js"></script>
+<script src="js/jquery.appear.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+<script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script src="rs-plugin/js/jquery.themepunch.revolution-parallax.min.js"></script>
+
+<!-- Sticky header gray background on scroll -->
+<script>
+  (function(){
+    var header = document.getElementById('nav');
+    function onScroll(){
+      if(window.scrollY>10){ header.classList.add('scrolled'); }
+      else{ header.classList.remove('scrolled'); }
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+  })();
+</script>
+</body>
+</html>
