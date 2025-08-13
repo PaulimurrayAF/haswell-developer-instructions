@@ -36,6 +36,9 @@
     :root{ --pmaf-green:#7cb203; --pmaf-dark:#111111; }
     html,body{ margin:0; padding:0; }
 
+    /* keep header behavior; add gray bg when scrolled */
+    #nav.scrolled{ background:#2b2b2b !important; transition:background .25s ease; }
+
     /* ======== PAGE LAYOUT (between header & footer only) ======== */
     #portal-login{ margin:0; padding:0; }
     #portal-login .split{
@@ -54,37 +57,42 @@
       background:var(--pmaf-dark);
       color:#fff;
       display:flex; flex-direction:column; align-items:center;
-      padding:90px 24px 70px; /* 50px + 40px as requested */
+      padding:90px 24px 70px; /* includes the extra ~40px you asked for */
     }
 
-    /* ======== HEADLINE & PILLS ======== */
-    .portal-hero{ text-align:center; color:#fff; margin:6px 0 18px; animation:fadeInUp .7s ease both; }
-    .portal-hero .welcome{ font-size:40px; font-weight:800; letter-spacing:.5px; margin:0 0 10px; text-transform:uppercase; }
+    /* ======== HEADLINE & INLINE TAGS ======== */
+    .portal-hero{ text-align:center; color:#fff; margin:6px 0 10px; animation:fadeInUp .7s ease both; }
+    .portal-hero .welcome{ font-size:40px; font-weight:800; letter-spacing:.5px; margin:0; text-transform:uppercase; }
+    .title-gap{ display:block; height:14px; } /* visual extra <br> */
     .portal-hero .portal{ font-size:54px; font-weight:800; margin:0; text-transform:uppercase; color:var(--pmaf-green); text-shadow:0 10px 24px rgba(0,0,0,.35); }
 
-    .pill-row{ display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:10px; margin:14px 0 20px; }
-    .pill{ display:inline-flex; align-items:center; padding:10px 14px; border-radius:999px; background:#f6f9f3; color:var(--pmaf-green); font-weight:800; font-size:13px; text-transform:uppercase; border:2px solid #d9eac0; }
+    .hero-tags{
+      color:#fff; text-transform:uppercase; font-weight:800; letter-spacing:.5px;
+      opacity:.95; margin:14px 0 20px; text-align:center;
+    }
 
     /* ======== AUTH CARD (fixed width; not stretched) ======== */
     .auth-wrap{ width:100%; max-width:640px; margin:12px auto 0; }
     .auth-card{ background:#fff; color:#333; border:1px solid #e9efe1; border-radius:14px; box-shadow:0 16px 42px rgba(0,0,0,.25); padding:18px; }
     .auth-inner{ background:#fff; border-radius:10px; padding:14px; }
 
-    /* Tabs — inactive gray w/ white text; active = PMAF green w/ white text */
+    /* Tabs — inactive gray with white text; remove underline; active green with white text */
     .nav-tabs{ border:0; margin:0 0 12px; }
     .nav-tabs>li>a{
-      background:#444;               /* gray */
-      color:#fff;                    /* white text for inactive */
+      background:#444;               /* inactive gray */
+      color:#fff;                    /* white text */
       border:0; margin-right:6px;
       text-transform:uppercase; font-weight:800;
       border-radius:10px 10px 0 0; padding:10px 16px;
+      text-decoration:none !important;   /* remove underline */
     }
-    .nav-tabs>li>a:hover{ background:#4d4d4d; color:#fff; }
+    .nav-tabs>li>a:hover{ background:#4d4d4d; color:#fff; text-decoration:none !important; }
     .nav-tabs>li.active>a,
     .nav-tabs>li.active>a:focus,
     .nav-tabs>li.active>a:hover{
       background:var(--pmaf-green) !important; color:#fff !important;
       box-shadow:0 10px 24px rgba(124,178,3,.35);
+      text-decoration:none !important;   /* ensure no underline */
     }
     .tab-content{ background:#fff; border-radius:0 10px 10px 10px; padding:14px; }
 
@@ -102,7 +110,7 @@
     .or-divider{ display:flex; align-items:center; gap:14px; margin:12px 0; color:#666; }
     .or-divider .line{ height:2px; flex:1; background:#eee; border-radius:2px; }
 
-    /* White helper copy below card; no link inside per request */
+    /* White helper copy below card; no inline link in paragraph per your request */
     .helper-copy{ color:#fff; text-align:center; margin:22px 0 12px; line-height:1.45; }
 
     /* Request Access — regular button (NOT pill), no underline */
@@ -112,7 +120,7 @@
       font-weight:800; text-transform:uppercase; letter-spacing:.4px;
       padding:12px 22px; border-radius:6px; border:none;
       box-shadow:0 10px 24px rgba(124,178,3,.25);
-      text-decoration:none !important;      /* ensure no underline */
+      text-decoration:none !important;
     }
     .request-access-btn:hover{ opacity:.95; transform:translateY(-1px); }
 
@@ -124,7 +132,7 @@
     @media (max-width:991px){
       #portal-login .split{ flex-direction:column; }
       #portal-login .left{ min-height:280px; }
-      .portal-hero .welcome{ font-size:32px; margin-bottom:8px; }
+      .portal-hero .welcome{ font-size:32px; }
       .portal-hero .portal{ font-size:42px; }
     }
   </style>
@@ -212,14 +220,12 @@
         <div class="right">
           <div class="portal-hero">
             <div class="welcome">WELCOME TO THE</div>
+            <br class="title-gap">
             <div class="portal">PMAF PORTAL</div>
           </div>
 
-          <div class="pill-row">
-            <span class="pill">SECURE ACCESS</span>
-            <span class="pill">ROLE-BASED</span>
-            <span class="pill">VALUES-ALIGNED</span>
-          </div>
+          <!-- Inline, all-caps tags (no pills) -->
+          <div class="hero-tags">SECURE ACCESS &nbsp; • &nbsp; ROLE-BASED &nbsp; • &nbsp; VALUES-ALIGNED</div>
 
           <div class="auth-wrap">
             <div class="auth-card">
@@ -400,7 +406,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/isotope.pkgd.min.js"></script>
-script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
 <script src="js/masonry.pkgd.min.js"></script>
 <script src="js/jquery.countTo.js"></script>
 <script src="js/jquery.appear.js"></script>
@@ -409,11 +415,24 @@ script src="js/imagesloaded.pkgd.min.js"></script>
 <script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>   
 <script src="rs-plugin/js/jquery.themepunch.revolution-parallax.min.js"></script>
 
+<!-- Sticky header gray background on scroll -->
+<script>
+  (function(){
+    var header = document.getElementById('nav');
+    function onScroll(){
+      if(window.scrollY>10){ header.classList.add('scrolled'); }
+      else{ header.classList.remove('scrolled'); }
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+  })();
+</script>
+
 <!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   const SUPABASE_URL = "https://icnkxtjzbdqorgvkzpik.supabase.co";
-  const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY"; // replace
+  const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY"; // replace with your real anon key
   const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
   const DASHBOARD_BY_ROLE = {
