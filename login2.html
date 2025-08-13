@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <title>PMAF Portal — Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <!-- Haswell / site CSS (adjust paths if needed) -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/icons-fonts.css">
@@ -11,165 +12,250 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    :root { --pmaf-green:#7cb203; --pmaf-dark:#303236; --card-radius:14px; }
+    :root { --pmaf-green:#7cb203; --pmaf-dark:#303236; --pmaf-text:#2f2f2f; --card-radius:14px; }
 
-    /* Page background (no hero) */
-    body {
+    html, body { height: 100%; }
+    body{
+      display:flex; flex-direction:column; min-height:100%;
       background:
         radial-gradient(1200px 600px at 10% -10%, rgba(124,178,3,.08), transparent 60%),
         radial-gradient(800px 400px at 110% 10%, rgba(48,50,54,.06), transparent 60%),
         #f7f9f7;
     }
+    main { flex: 1 0 auto; }
 
-    /* Slim top bar with logo on the RIGHT */
-    #pmaf-topbar {
-      position: sticky; top: 0; left: 0; right: 0; z-index: 10;
-      background: transparent; padding: 16px 0;
+    /* Top bar (logo LEFT with 40% black badge and green title) */
+    #pmaf-topbar{ position:sticky; top:0; z-index:10; padding:16px 0; background:transparent; }
+    #pmaf-topbar .container{ display:flex; align-items:flex-start; }
+    .logo-stack{
+      display:inline-flex; flex-direction:column; align-items:flex-start;
+      background: rgba(0,0,0,.40); /* 40% black opacity layer */
+      padding:10px 12px; border-radius:12px;
     }
-    #pmaf-topbar .container { position: relative; }
-    #pmaf-topbar .logo-right {
-      position: absolute; right: 0; top: 0; display: inline-block;
+    .logo-stack img{ height:55px; width:auto; display:block; filter:drop-shadow(0 2px 8px rgba(0,0,0,.25)); }
+    .portal-title{
+      margin-top:6px; font-weight:900; letter-spacing:.08em; text-transform:uppercase;
+      color:var(--pmaf-green); text-shadow:0 2px 6px rgba(0,0,0,.7); font-size:15px; line-height:1;
     }
-    /* +25% logo size */
-    #pmaf-topbar .logo-right img {
-      height: 55px;  /* was 44px */
-      width: auto; display:block;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,.25));
-    }
-    @media (max-width: 575px) {
-      #pmaf-topbar .logo-right img { height: 45px; /* was 36px */ }
-    }
-
-    /* Centering wrapper */
-    #login-wrap {
-      min-height: calc(100vh - 76px);
-      display: flex; align-items: center; justify-content: center;
-      padding: 40px 0 60px;
+    @media (max-width:575px){
+      .logo-stack img{ height:45px; }
+      .portal-title{ font-size:14px; }
     }
 
-    /* Login card */
-    .login-card {
-      background: #fff;
-      border: 1px solid #ececec;
-      border-radius: var(--card-radius);
-      box-shadow: 0 14px 38px rgba(0,0,0,.12);
-      max-width: 520px; width: 100%;
-      padding: 26px 26px 22px; margin: 0 auto;
+    /* Split layout */
+    #split{ min-height:calc(100vh - 76px); display:flex; }
+    #split .left{
+      flex:1 1 50%;
+      background:url('images/small-pride-flag-on-desk.jpeg') center/cover no-repeat;
+      position:relative;
     }
-    .login-card h3 { margin: 0 0 4px; font-weight: 800; color: var(--pmaf-dark); }
-    .login-card .sub { margin: 0 0 16px; opacity: .9; }
+    #split .left::before{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.25); }
+    #split .right{ flex:1 1 50%; display:flex; align-items:flex-start; }
+    @media (max-width:991px){ #split{ flex-direction:column; } #split .left{ min-height:240px; } }
+
+    /* Right column content */
+    .content-wrap{ width:100%; max-width:840px; padding:34px 24px 60px; margin:0 auto; }
+    .eyebrow{ display:inline-block; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--pmaf-green); font-weight:700; margin-bottom:6px;}
+    h1{ color:#24354e; font-weight:700; margin:0 0 10px; line-height:1.15; }
+    .lead-sub{ margin-bottom:12px; color:#000; }
+    .pill-row{ display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:8px; margin:6px 0 8px; }
+    .pill{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:#f6f9f3; color:var(--pmaf-green); font-weight:700; font-size:12px; border:1px solid #e7f2d9; }
+    .link-muted{ color:var(--pmaf-dark); text-decoration:none; }
+    .link-muted:hover{ text-decoration:underline; }
+    .btn-cta{ background:var(--pmaf-green); color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:700; display:inline-block; text-decoration:none; }
+    .btn-cta:hover{ filter:brightness(.96); }
+
+    /* Auth card with tabs */
+    .login-card{
+      background:#fff; border:1px solid #ececec; border-radius:var(--card-radius);
+      box-shadow:0 10px 24px rgba(0,0,0,.06); overflow:hidden;
+    }
+    .custom-tabs .nav-tabs{ border-bottom:2px solid #e8f1d1; padding:0 16px; }
+    .custom-tabs .nav-tabs>li>a{
+      font-weight:700; color:#5b6570; border:1px solid transparent; border-radius:12px 12px 0 0;
+      padding:10px 14px; background:#f2f5f0; margin-right:8px; transition:all .15s ease;
+    }
+    .custom-tabs .nav-tabs>li.active>a,
+    .custom-tabs .nav-tabs>li.active>a:focus,
+    .custom-tabs .nav-tabs>li.active>a:hover{
+      color:var(--pmaf-dark); background:#f6f9f3; border-color:var(--pmaf-green) var(--pmaf-green) transparent;
+      box-shadow:0 6px 14px rgba(124,178,3,.18);
+    }
+    .tab-content-container{ border:1px solid var(--pmaf-green); border-top:none; border-radius:0 0 var(--card-radius) var(--card-radius); padding:24px 24px 28px; }
 
     /* Inputs & buttons */
-    .controled {
-      width: 100%; border:1px solid #dfe3e8; border-radius:10px;
-      padding: 12px 14px; font-size: 15px; outline: none;
-    }
-    .controled:focus { border-color:#cfd6dc; box-shadow: 0 0 0 3px rgba(124,178,3,.12); }
-
-    .btn-pmaf {
-      background: var(--pmaf-green); color:#fff; border:none;
-      padding: 12px 16px; border-radius: 12px; font-weight: 700;
-      width: 100%;
-    }
-    .btn-pmaf:hover { filter: brightness(.96); }
+    .controled{ width:100%; border:1px solid #dfe3e8; border-radius:10px; padding:12px 14px; font-size:15px; outline:none; }
+    .controled:focus{ border-color:#cfd6dc; box-shadow:0 0 0 3px rgba(124,178,3,.12); }
+    .btn-pmaf{ background:var(--pmaf-green); color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:700; width:100%; }
+    .btn-pmaf:hover{ filter:brightness(.96); }
 
     /* Social buttons */
-    .btn-social {
-      display: block; width: 100%; text-align: center;
-      border-radius: 12px; padding: 12px 16px; font-weight: 700;
-      border: 1px solid rgba(0,0,0,.08); background: #fff;
-    }
-    .btn-social i { margin-right: 8px; }
-    .btn-google:hover  { background: #f7f7f7; }
-    .btn-facebook:hover{ background: #f2f6ff; }
+    .btn-social{ display:block; width:100%; text-align:center; border-radius:12px; padding:12px 16px; font-weight:700; border:1px solid rgba(0,0,0,.08); background:#fff; }
+    .btn-social i{ margin-right:8px; }
+    .btn-google:hover{ background:#f7f7f7; } .btn-facebook:hover{ background:#f2f6ff; }
+    .divider{ position:relative; text-align:center; margin:16px 0; color:#666; }
+    .divider::before,.divider::after{ content:""; height:1px; background:#e6e6e6; position:absolute; top:50%; width:38%; }
+    .divider::before{ left:0; } .divider::after{ right:0; }
 
-    /* Divider */
-    .divider { position: relative; text-align: center; margin: 16px 0; color:#666; }
-    .divider::before, .divider::after {
-      content:""; height:1px; background: #e6e6e6; position:absolute; top:50%; width:38%;
-    }
-    .divider::before { left:0; } .divider::after { right:0; }
+    .row-helpers{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
 
-    /* Helper row */
-    .row-helpers { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-    .link-muted { color: #2d2f31; opacity:.85; text-decoration: none; }
-    .link-muted:hover { opacity:1; text-decoration: underline; }
+    /* Footer */
+    footer { flex-shrink:0; background:#111; color:#bbb; }
+    .footer-2-copy-cont{ padding:18px 0; border-top:1px solid rgba(255,255,255,.08); }
+    .footer-2-soc-a a{ color:#bbb; margin-left:10px; }
+    .footer-2-soc-a a:hover{ color:#fff; }
+    .footer-2-copy{ color:#bbb; }
   </style>
 </head>
-<body>
+<body id="top">
 
-  <!-- Top bar with logo on the right -->
-  <div id="pmaf-topbar">
-    <div class="container">
-      <a class="logo-right" href="index.html" title="Back to main site">
-        <img src="images/logo-white.png" alt="PMAF">
-      </a>
-    </div>
-  </div>
-
-  <!-- Centered login card (no hero) -->
-  <section id="login-wrap">
-    <div class="container">
-      <div class="login-card" role="form" aria-label="PMAF Portal login">
-        <h3>PMAF Portal</h3>
-        <div class="sub">Login to your account</div>
-
-        <!-- EMAIL/PASSWORD LOGIN -->
-        <form id="login-form" action="login.html" method="post" novalidate>
-          <div class="form-group" style="margin-bottom:14px;">
-            <label style="font-weight:600; margin-bottom:6px;">Email</label>
-            <input type="email" name="email" class="controled" placeholder="you@organization.org" required>
-          </div>
-          <div class="form-group" style="margin-bottom:10px;">
-            <label style="font-weight:600; margin-bottom:6px;">Password</label>
-            <input type="password" name="password" class="controled" placeholder="••••••••" required>
-          </div>
-
-          <div class="row-helpers" style="margin:10px 0 14px;">
-            <label style="display:flex; align-items:center; gap:8px; margin:0;">
-              <input type="checkbox" name="remember" value="true"> <span style="opacity:.85;">Remember me</span>
-            </label>
-            <a class="link-muted" href="forgot-password.html"><small>Forgot password?</small></a>
-          </div>
-
-          <button type="submit" class="btn-pmaf">Log In</button>
-        </form>
-
-        <div class="divider"><span>or</span></div>
-
-        <!-- SOCIAL LOGINS -->
-        <div class="row" style="gap:10px; display:flex; margin-bottom:4px;">
-          <div class="col-xs-12 col-sm-6" style="padding:0;">
-            <button class="btn-social btn-facebook" id="facebook-login" type="button" aria-label="Log in with Facebook">
-              <i class="fa fa-facebook"></i> Log In with Facebook
-            </button>
-          </div>
-          <div class="col-xs-12 col-sm-6" style="padding:0;">
-            <button class="btn-social btn-google" id="google-login" type="button" aria-label="Log in with Google">
-              <i class="fa fa-google"></i> Log In with Google
-            </button>
-          </div>
+  <main>
+    <!-- Topbar (logo + portal title under it, inside a 40% black badge) -->
+    <div id="pmaf-topbar">
+      <div class="container">
+        <div class="logo-stack">
+          <a href="index.html" title="Back to main site">
+            <img src="images/logo-white.png" alt="PMAF">
+          </a>
+          <div class="portal-title">PMAF PORTAL</div>
         </div>
-
-        <p style="margin-top:10px; text-align:center;">
-          New applicant? You’ll create your account in the PMA Application. <br>
-          Reviewer / Volunteer / Board? <a class="link-muted" href="request-access.html">Request access</a>.
-        </p>
       </div>
     </div>
-  </section>
 
-  <!-- JS -->
+    <!-- Split layout -->
+    <div id="split">
+      <div class="left" aria-hidden="true"></div>
+
+      <div class="right">
+        <div class="content-wrap">
+          <!-- Welcome copy -->
+          <span class="eyebrow">PMAF Portal</span>
+          <h1>Welcome!</h1>
+          <p class="lead-sub">This portal is for <strong>Applicants, Reviewers, Volunteers, and Board Members</strong>.</p>
+
+          <div class="pill-row">
+            <span class="pill">Secure Access</span>
+            <span class="pill">Role-Based</span>
+            <span class="pill">Values-Aligned</span>
+          </div>
+
+          <p style="margin-top:10px; text-align:center; color:#000;">
+            Not an applicant? Please <a class="link-muted" href="request-access.html">request access</a> to create an account.
+          </p>
+          <div style="margin-top:10px; text-align:center;">
+            <a href="request-access.html" class="btn-cta">Request Access</a>
+          </div>
+
+          <!-- Auth card with TWO tabs -->
+          <div class="login-card" style="margin-top:24px;">
+            <div class="tabs custom-tabs">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab-login" data-toggle="tab">Login</a></li>
+                <li><a href="#tab-apply" data-toggle="tab">PMA Application Registration</a></li>
+              </ul>
+
+              <div class="tab-content">
+                <!-- LOGIN TAB -->
+                <div id="tab-login" class="tab-pane tab-content-container active">
+                  <form id="login-form" action="login.html" method="post" novalidate>
+                    <div class="row mt-10">
+                      <div class="col-md-12 mb-15"><input type="email" name="email" class="controled" placeholder="Email" required></div>
+                      <div class="col-md-12 mb-10"><input type="password" name="password" class="controled" placeholder="Password" required></div>
+                    </div>
+
+                    <div class="row-helpers" style="margin:8px 0 14px;">
+                      <label style="display:flex; align-items:center; gap:8px; margin:0;">
+                        <input type="checkbox" name="remember" value="true"> <span style="opacity:.85;">Remember me</span>
+                      </label>
+                      <a class="link-muted" href="forgot-password.html"><small>Forgot password?</small></a>
+                    </div>
+
+                    <button type="submit" class="btn-pmaf">Log In</button>
+
+                    <div class="divider"><span>or</span></div>
+
+                    <div class="row" style="gap:10px; display:flex; margin-bottom:4px;">
+                      <div class="col-xs-12 col-sm-6" style="padding:0;">
+                        <button class="btn-social btn-facebook" id="facebook-login" type="button">
+                          <i class="fa fa-facebook"></i> Log In with Facebook
+                        </button>
+                      </div>
+                      <div class="col-xs-12 col-sm-6" style="padding:0;">
+                        <button class="btn-social btn-google" id="google-login" type="button">
+                          <i class="fa fa-google"></i> Log In with Google
+                        </button>
+                      </div>
+                    </div>
+
+                    <p style="margin-top:10px; opacity:.85; font-size:13px;">
+                      Don’t have an account? Applicants can register under <strong>PMA Application Registration</strong>.<br>
+                      Reviewers, Volunteers, and Board Members should <a class="link-muted" href="request-access.html">request access</a>.
+                    </p>
+                  </form>
+                </div>
+
+                <!-- APPLICATION REGISTRATION TAB -->
+                <div id="tab-apply" class="tab-pane tab-content-container">
+                  <form id="apply-form" action="register.html" method="post" novalidate>
+                    <div class="row mt-10">
+                      <div class="col-md-6 mb-15"><input type="text" name="first_name" class="controled" placeholder="First name" required></div>
+                      <div class="col-md-6 mb-15"><input type="text" name="last_name" class="controled" placeholder="Last name" required></div>
+                      <div class="col-md-12 mb-15"><input type="email" name="email" class="controled" placeholder="Email" required></div>
+                      <div class="col-md-12 mb-15"><input type="password" name="password" class="controled" placeholder="Password" required></div>
+                      <div class="col-md-12 mb-20"><input type="password" name="password2" class="controled" placeholder="Re-enter password" required></div>
+                      <div class="col-md-12"><button type="submit" class="btn-pmaf">Start PMA Application</button></div>
+                    </div>
+                  </form>
+                  <p style="margin-top:10px; opacity:.85; font-size:13px;">
+                    Not applying as an applicant? Please <a class="link-muted" href="request-access.html">request access</a> to register as a Reviewer, Volunteer, or Board Member.
+                  </p>
+                </div>
+              </div><!-- /tab-content -->
+            </div><!-- /tabs -->
+          </div><!-- /login-card -->
+        </div><!-- /content-wrap -->
+      </div><!-- /right -->
+    </div><!-- /split -->
+  </main>
+
+  <!-- Footer Bottom -->
+  <footer>
+    <div class="container">
+      <div class="footer-2-copy-cont clearfix">
+        <!-- Social Links -->
+        <div class="footer-2-soc-a right">
+          <a href="https://www.facebook.com/PauliMurrayAF/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.instagram.com/PauliMurrayAF/" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/paulimurrayawards" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="left">
+          <a class="footer-2-copy" href="https://paulimurrayawaards.com" target="_blank">
+            &copy; PAULI MURRAY AWARDS FOUNDATIONS INC. 2025
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <p id="back-top">
+    <a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a>
+  </p>
+
+  <!-- JS (order matters) -->
   <script src="js/jquery-1.11.2.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <script>
-    // === Supabase config (your project) ===
+    // Supabase config (your project)
     const SUPABASE_URL = "https://icnkxtjzbdqorgvkzpik.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imljbmt4dGp6YmRxb3Jndmt6cGlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI5NTUzNzcsImV4cCI6MjA2ODUzMTM3N30.EOIOQwc149Xmzr92TBcuA9PxrcjqjukFKYPNfnDPj28";
     const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    // === Role-based redirects ===
+    // Role-based redirects
     const DASHBOARD_BY_ROLE = {
       applicant: "applicant-dashboard.html",
       reviewer:  "reviewer/index.html",
@@ -179,521 +265,82 @@
     };
     const DEFAULT_DASHBOARD = "portal/home.html";
     const PENDING_APPROVAL_URL = "pending-approval.html";
-    const OAUTH_REDIRECT_TO = window.location.origin + "/login.html"; // after OAuth, we land here
+    const OAUTH_REDIRECT_TO = window.location.origin + "/login.html";
 
-    // If already logged in (e.g., returned from OAuth), redirect immediately
+    // If already logged in (e.g., after OAuth), redirect
     document.addEventListener("DOMContentLoaded", async () => {
       const { data: { session } } = await sb.auth.getSession();
-      if (session?.user) {
-        const meta = session.user.user_metadata || {};
-        const role = (meta.role || "").toLowerCase();
-        const approval = (meta.approval_status || "approved").toLowerCase();
-        const needsApproval = role && role !== "applicant";
-        if (needsApproval && approval === "pending") return (window.location.href = PENDING_APPROVAL_URL);
-        return (window.location.href = DASHBOARD_BY_ROLE[role] || DEFAULT_DASHBOARD);
-      }
+      if (session?.user) doRoleRedirect(session.user);
     });
 
-    // EMAIL/PASSWORD LOGIN
+    // Login tab
     (function () {
       const form = document.getElementById("login-form");
       if (!form) return;
-
       function setDisabled(d){ Array.from(form.elements).forEach(el => el.disabled = d); }
 
       form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        setDisabled(true);
-
+        e.preventDefault(); setDisabled(true);
         const fd = new FormData(form);
         const email = String(fd.get("email") || "").trim();
         const password = String(fd.get("password") || "");
-
-        if (!email || !password) {
-          alert("Please enter your email and password.");
-          return setDisabled(false);
-        }
+        if (!email || !password) { alert("Please enter your email and password."); return setDisabled(false); }
 
         const { error } = await sb.auth.signInWithPassword({ email, password });
-        if (error) {
-          alert("Sign-in failed: " + error.message);
-          return setDisabled(false);
-        }
+        if (error) { alert("Sign-in failed: " + error.message); return setDisabled(false); }
 
         const { data: { user } } = await sb.auth.getUser();
-        const meta = user?.user_metadata || {};
-        const role = (meta.role || "").toLowerCase();
-        const approval = (meta.approval_status || "approved").toLowerCase();
-        const needsApproval = role && role !== "applicant";
-
-        if (needsApproval && approval === "pending") {
-          window.location.href = PENDING_APPROVAL_URL;
-          return;
-        }
-        window.location.href = DASHBOARD_BY_ROLE[role] || DEFAULT_DASHBOARD;
+        doRoleRedirect(user);
       });
     })();
 
-    // SOCIAL LOGINS (Google & Facebook)
+    // Applicant registration tab
     (function () {
-      const googleBtn = document.getElementById("google-login");
-      const facebookBtn = document.getElementById("facebook-login");
+      const form = document.getElementById("apply-form");
+      if (!form) return;
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const first_name = String(fd.get("first_name")||"").trim();
+        const last_name  = String(fd.get("last_name")||"").trim();
+        const email      = String(fd.get("email")||"").trim();
+        const password   = String(fd.get("password")||"");
+        const password2  = String(fd.get("password2")||"");
+        if (!first_name || !last_name || !email || !password) return alert("Please complete all required fields.");
+        if (password !== password2) return alert("Passwords do not match.");
 
-      googleBtn?.addEventListener("click", async () => {
-        await sb.auth.signInWithOAuth({
-          provider: "google",
-          options: { redirectTo: OAUTH_REDIRECT_TO }
+        const { error } = await sb.auth.signUp({
+          email, password,
+          options: {
+            data: { first_name, last_name, role: "applicant", approval_status: "approved" },
+            emailRedirectTo: window.location.origin + "/login.html"
+          }
         });
-      });
-
-      facebookBtn?.addEventListener("click", async () => {
-        await sb.auth.signInWithOAuth({
-          provider: "facebook",
-          options: { redirectTo: OAUTH_REDIRECT_TO }
-        });
+        if (error) return alert("Registration failed: " + error.message);
+        alert("Success! Please check your email to confirm, then return to log in.");
+        form.reset();
+        $('a[href="#tab-login"]').tab('show');
       });
     })();
+
+    // OAuth buttons
+    (function () {
+      document.getElementById("google-login")?.addEventListener("click", async () => {
+        await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: OAUTH_REDIRECT_TO } });
+      });
+      document.getElementById("facebook-login")?.addEventListener("click", async () => {
+        await sb.auth.signInWithOAuth({ provider: "facebook", options: { redirectTo: OAUTH_REDIRECT_TO } });
+      });
+    })();
+
+    function doRoleRedirect(user){
+      const meta = user?.user_metadata || {};
+      const role = (meta.role || "").toLowerCase();
+      const approval = (meta.approval_status || "approved").toLowerCase();
+      const needsApproval = role && role !== "applicant";
+      if (needsApproval && approval === "pending") { window.location.href = PENDING_APPROVAL_URL; return; }
+      window.location.href = DASHBOARD_BY_ROLE[role] || DEFAULT_DASHBOARD;
+    }
   </script>
-
-  <!-- NOTE:
-    • In Supabase → Authentication → Providers, enable Google & Facebook and add the Redirect URL:
-      https://YOUR-DOMAIN/login.html
-    • For local dev, also add: http://localhost:8080/login.html (or your local port)
-  -->
 </body>
-
-
-
-
-<!-- FOOTER 3 BLACK -->
-<footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
-  <div class="container-m-60">
-    <div class="row">
-
-      <!-- Column 1: Logo + Contact Info -->
-      <div class="col-md-3 col-sm-3 widget">
-        <div class="logo-footer-cont">
-          <a href="index.html">
-            <img class="logo-footer" src="images/logo-footer-white.png" alt="logo">
-          </a>
-        </div>
-        <div class="footer-2-text-cont">
-          <address>
-            1178 Broadway, 3rd Floor #502<br>
-            New York, NY 10001
-          </address>
-        </div>
-        <div class="footer-2-text-cont">
-          646-736-2596<br>
-        </div>
-        <div class="footer-2-text-cont">
-          <a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a>
-        </div>
-      </div>
-
-      <!-- Column 2: Quick Links -->
-      <div class="col-md-3 col-sm-3 widget">
-        <h4>QUICK LINKS</h4>
-        <ul class="links-list bold a-text-cont">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html">ABOUT PMAF</a></li>
-          <li><a href="about-pauli-murray.html">ABOUT PAULI MURRAY</a></li>
-          <li><a href="programs.html">PROGRAMS</a></li>
-          <li><a href="blog.html">NEWS</a></li>
-          <li><a href="donate.html">DONATE</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 3: PMAs 2026 -->
-      <div class="col-md-3 col-sm-3 widget">
-        <h4>PMAs 2026</h4>
-        <ul class="links-list a-text-cont">
-          <li><a href="awards.html">PMAs</a></li>
-          <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
-          <li><a href="awards/timeline.html">PMA 2026 TIMELINE</a></li>
-          <li><a href="awards/FAQs.html">FAQs</a></li>
-          <li><a href="awards/login.html">LOGIN</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 4: Recent Posts -->
-      <div class="col-md-3 col-sm-3 widget">
-        <h4>RECENT POSTS</h4>
-        <div id="post-list-footer">
-          <div class="post-prev-title">
-            <h3><a class="a-text" href="blog-single-sidebar-right.html">New trends in web design</a></h3>
-          </div>
-          <div class="post-prev-info">Jule 10</div>
-
-          <div class="post-prev-title">
-            <h3><a class="a-text" href="blog-single-sidebar-right.html">The sound of life</a></h3>
-          </div>
-          <div class="post-prev-info">October 10</div>
-
-          <div class="post-prev-title">
-            <h3><a class="a-text" href="blog-single-sidebar-right.html">Time for minimalism</a></h3>
-          </div>
-          <div class="post-prev-info">September 21</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer Bottom -->
-    <div class="footer-2-copy-cont clearfix">
-      <!-- Social Links -->
-      <div class="footer-2-soc-a right">
-        <a href="https://www.facebook.com/PauliMurrayAF/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.instagram.com/PauliMurrayAF/" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/paulimurrayawards" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
-      </div>
-
-      <!-- Copyright -->
-      <div class="left">
-        <a class="footer-2-copy" href="https://paulimurrayawaards.com" target="_blank">
-          &copy; PAULI MURRAY AWARDS FOUNDATIONS INC. 2025
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-	<!-- BACK TO TOP -->
-				<p id="back-top">
-          <a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a>
-        </p>
-        		
-<!-- JS begin -->
-
-		<!-- jQuery  -->
-		<script src="js/jquery-1.11.2.min.js"></script>
-
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>		
-
-		<!-- MAGNIFIC POPUP -->
-		<script src='js/jquery.magnific-popup.min.js'></script>
-    
-    <!-- PORTFOLIO SCRIPTS -->
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
-    
-    <!-- COUNTER -->
-    <script src="js/jquery.countTo.js"></script>
-    
-    <!-- APPEAR -->    
-    <script src="js/jquery.appear.js"></script>
-    
-    <!-- OWL CAROUSEL -->    
-    <script src="js/owl.carousel.min.js"></script>
-    
-    <!-- MAIN SCRIPT -->
-		<script src="js/main.js"></script>
-		
-		<!-- REVOSLIDER SCRIPTS  -->
-			<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-			<script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>   
-			<script src="rs-plugin/js/jquery.themepunch.revolution-parallax.min.js"></script>
-      
-      <!-- SLIDER REVOLUTION INIT  -->
-			<script>
-
-				jQuery(document).ready(function() {
-          if ( (navigator.appVersion.indexOf("Win")!=-1) && ( ieDetect == false ) ) {	
-                    jQuery('#rs-fullscr').revolution(
-                    {
-                      dottedOverlay:"none",
-                      delay:16000,
-                      startwidth:1170,
-                      startheight:700,
-                      hideThumbs:200,
-                      
-                      thumbWidth:100,
-                      thumbHeight:50,
-                      thumbAmount:5,
-                      
-                      //fullScreenAlignForce: "off",
-                      
-                      navigationType:"none",
-                      navigationArrows:"solo",
-                      navigationStyle:"preview4",
-                      
-                      hideTimerBar:"on",
-                      
-                      touchenabled:"on",
-                      onHoverStop:"on",
-                      
-                      swipe_velocity: 0.7,
-                      swipe_min_touches: 1,
-                      swipe_max_touches: 1,
-                      drag_block_vertical: false,
-                                  
-                      parallax:"scroll",
-                      parallaxBgFreeze:"on",
-                      parallaxLevels:[45,40,35,50],
-                      parallaxDisableOnMobile:"on",
-                                  
-                      keyboardNavigation:"off",
-                      
-                      navigationHAlign:"center",
-                      navigationVAlign:"bottom",
-                      navigationHOffset:0,
-                      navigationVOffset:20,
-
-                      soloArrowLeftHalign:"left",
-                      soloArrowLeftValign:"center",
-                      soloArrowLeftHOffset:20,
-                      soloArrowLeftVOffset:0,
-
-                      soloArrowRightHalign:"right",
-                      soloArrowRightValign:"center",
-                      soloArrowRightHOffset:20,
-                      soloArrowRightVOffset:0,
-                          
-                      shadow:0,
-                      fullWidth:"off",
-                      fullScreen:"on",
-
-                      spinner:"spinner4",
-                      
-                      stopLoop:"off",
-                      stopAfterLoops:-1,
-                      stopAtSlide:-1,
-
-                      shuffle:"off",
-                      
-                      autoHeight:"off",						
-                      forceFullWidth:"off",						
-                                  
-                      hideThumbsOnMobile:"off",
-                      hideNavDelayOnMobile:1500,						
-                      hideBulletsOnMobile:"off",
-                      hideArrowsOnMobile:"off",
-                      hideThumbsUnderResolution:0,
-                      
-                      hideSliderAtLimit:0,
-                      hideCaptionAtLimit:0,
-                      hideAllCaptionAtLilmit:0,
-                      startWithSlide:0,
-                      //fullScreenOffsetContainer: ""	
-                    });
-          } else {
-                  jQuery('#rs-fullscr').revolution(
-                    {
-                      dottedOverlay:"none",
-                      delay:16000,
-                      startwidth:1170,
-                      startheight:700,
-                      hideThumbs:200,
-                      
-                      thumbWidth:100,
-                      thumbHeight:50,
-                      thumbAmount:5,
-                      
-                      navigationType:"none",
-                      navigationArrows:"solo",
-                      navigationStyle:"preview4",
-                      
-                      hideTimerBar:"on",
-                      
-                      touchenabled:"on",
-                      onHoverStop:"on",
-                      
-                      swipe_velocity: 0.7,
-                      swipe_min_touches: 1,
-                      swipe_max_touches: 1,
-                      drag_block_vertical: false,
-                                  
-                      parallax:"mouse",
-                      parallaxBgFreeze:"on",
-                      parallaxLevels:[0],
-                      parallaxDisableOnMobile:"on",
-                                  
-                      keyboardNavigation:"off",
-                      
-                      navigationHAlign:"center",
-                      navigationVAlign:"bottom",
-                      navigationHOffset:0,
-                      navigationVOffset:20,
-
-                      soloArrowLeftHalign:"left",
-                      soloArrowLeftValign:"center",
-                      soloArrowLeftHOffset:20,
-                      soloArrowLeftVOffset:0,
-
-                      soloArrowRightHalign:"right",
-                      soloArrowRightValign:"center",
-                      soloArrowRightHOffset:20,
-                      soloArrowRightVOffset:0,
-                          
-                      shadow:0,
-                      fullWidth:"off",
-                      fullScreen:"on",
-
-                      spinner:"spinner4",
-                      
-                      stopLoop:"off",
-                      stopAfterLoops:-1,
-                      stopAtSlide:-1,
-
-                      shuffle:"off",
-                      
-                      autoHeight:"off",						
-                      forceFullWidth:"off",						
-                                  
-                      hideThumbsOnMobile:"off",
-                      hideNavDelayOnMobile:1500,						
-                      hideBulletsOnMobile:"off",
-                      hideArrowsOnMobile:"off",
-                      hideThumbsUnderResolution:0,
-                      
-                      hideSliderAtLimit:0,
-                      hideCaptionAtLimit:0,
-                      hideAllCaptionAtLilmit:0,
-                      startWithSlide:0,
-	
-                    });      
-          }									
-				});	//ready
-				
-			</script>
-
-<!-- JS end -->	
-
-<script>
-  function updateDaysUntilAwards() {
-    const eventDate = new Date("October 11, 2026");
-    const today = new Date();
-    const timeDiff = eventDate - today;
-    const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-
-    const daysEl = document.getElementById("days-until");
-    if (daysEl) {
-      daysEl.textContent = daysLeft;
-    }
-  }
-
-  updateDaysUntilAwards();
-</script>
-
-<!-- VIDEO MODAL -->
-<div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;">
-  <div class="close" onclick="closeModal()" style="position:absolute; top:20px; right:30px; font-size:40px; color:#fff; cursor:pointer;">×</div>
-  <video controls autoplay id="pauliVideo" style="width:90%; max-width:900px;">
-    <source src="images/my-name-is-pauli-murray-trailer.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-<script>
-  function matchPmaSectionHeights() {
-    const left = document.getElementById("pma-left");
-    const right = document.getElementById("pma-right");
-
-    if (left && right) {
-      right.style.height = left.offsetHeight + "px";
-    }
-  }
-
-  window.addEventListener("load", matchPmaSectionHeights);
-  window.addEventListener("resize", matchPmaSectionHeights);
-</script>
-
-<script>
-  $(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 30,
-      nav: false,
-      dots: true,
-      autoplay: true,
-      autoplayTimeout: 5000,
-      responsive: {
-        0:    { items: 1 },
-        768:  { items: 2 },
-        992:  { items: 3 }
-      }
-    });
-  });
-</script>
-
-<!-- Netlify Identity Widget -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", function(user) {
-      if (!user) {
-        window.netlifyIdentity.on("login", function() {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-
-<!-- Load gray-matter correctly -->
-<script src="https://cdn.jsdelivr.net/npm/gray-matter@3.1.1/dist/gray-matter.min.js"></script>
-
-<script>
-  async function fetchBlogPosts() {
-    const postsFolder = "./content/posts/";
-    const container = document.getElementById("blog-posts");
-
-    if (!container) return;
-
-    const postList = [
-      "building-the-future-with-vision-and-integrity.md",
-      "feast-day-of-rev-dr-pauli-murray-esq-honoring-the-saint-who-defied-every-box.md",
-      "legacy-in-progress.md",
-      "pauli-murray-was-always-there—we-just-weren’t-looking.md"
-    ];
-
-    for (const filename of postList) {
-      try {
-        const res = await fetch(`${postsFolder}${filename}`);
-        const raw = await res.text();
-
-        // Make sure gray-matter is available
-        const parsed = matter(raw);
-
-        const { title, date, excerpt, featured_image } = parsed.data;
-
-        const html = `
-          <div class="blog-post-preview">
-            ${featured_image ? `<img src="${featured_image}" alt="${title}" />` : ""}
-            <h3>${title}</h3>
-            <p class="date">${new Date(date).toLocaleDateString()}</p>
-            <p>${excerpt || ""}</p>
-            <a href="/post.html?file=${filename}" class="btn btn-sm">Read More</a>
-          </div>
-        `;
-        container.innerHTML += html;
-      } catch (err) {
-        console.error("Error loading post:", filename, err);
-      }
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", fetchBlogPosts);
-</script>
-
-
-
-	</body>
-</html>		
-<script>
-  function openModal() {
-    document.getElementById("videoModal").style.display = "flex";
-    document.getElementById("pauliVideo").play();
-  }
-
-  function closeModal() {
-    document.getElementById("videoModal").style.display = "none";
-    const video = document.getElementById("pauliVideo");
-    video.pause();
-    video.currentTime = 0;
-  }
-</script>
-
-
-<script src="js/load-posts.js"></script>
+</html>
