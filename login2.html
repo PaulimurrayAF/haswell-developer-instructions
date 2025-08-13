@@ -1,637 +1,504 @@
 <!DOCTYPE html>
 <!--
-
-	Title: Pauli Murray Awards Foundation
-	Description: Celebrating Black LGBTQ+ brilliance through national awards, leadership programs, and advocacy. 
-	Author: Cory L. Scott
-	Designed by: 11soft
+  Title: Pauli Murray Awards Foundation
+  Description: Celebrating Black LGBTQ+ brilliance through national awards, leadership programs, and advocacy. 
+  Author: Cory L. Scott
+  Designed by: 11soft
   Coded by: Evan Vaughn & Cory L. Scott
-	
 -->
-
 <html lang="en">
- 	<head>
-		<title>Pauli Murray Awards Foundation</title>
-    <meta name="description" content="Honoring Black LGBTQ+ brilliance through national awards, leadership, and advocacy.">
-    <meta name="keywords" content="Pauli Murray, Black LGBTQ Awards, Social Justice, Leadership, PMAF">
-    <meta name="author" content="Cory L. Scott">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		
-		<!-- FAVICONS -->
-    <link rel="shortcut icon" href="images/favicon/favicon.png">
-    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+<head>
+  <meta charset="utf-8">
+  <title>Pauli Murray Awards Foundation — Portal Login</title>
+  <meta name="description" content="Honoring Black LGBTQ+ brilliance through national awards, leadership, and advocacy.">
+  <meta name="keywords" content="Pauli Murray, Black LGBTQ Awards, Social Justice, Leadership, PMAF">
+  <meta name="author" content="Cory L. Scott">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- REVICON Fonts-->		
-    <link rel="stylesheet" href="rs-plugin/fonts/revicons/revicons.css" type="text/css" media="all" />
+  <!-- FAVICONS -->
+  <link rel="shortcut icon" href="images/favicon/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
 
-    <!-- CSS -->
-    <!-- REVOSLIDER CSS SETTINGS -->
-    <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.min.css" media="screen">
+  <!-- REVICON Fonts-->		
+  <link rel="stylesheet" href="rs-plugin/fonts/revicons/revicons.css" type="text/css" media="all" />
 
-    <!--  BOOTSTRAP -->
-		<link rel="stylesheet" href="css/bootstrap.min.css"> 
-	
-    <!--  GOOGLE FONT -->		
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,300,700" type="text/css">
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.min.css" media="screen">
+  <link rel="stylesheet" href="css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,300,700">
+  <link rel="stylesheet" href="css/icons-fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.min.css">
 
-    <!-- ICONS ELEGANT FONT & FONT AWESOME & LINEA ICONS  -->		
-		<link rel="stylesheet" href="css/icons-fonts.css">	
-	
-    <!--  CSS THEME -->		
-		<link rel="stylesheet" href="css/style.css">
-	
-    <!-- ANIMATE -->	
-		<link rel="stylesheet" href="css/animate.min.css">
-  </head>
+  <style>
+    :root{ --pmaf-green:#7cb203; --pmaf-dark:#111111; }
+    html,body{ margin:0; padding:0; } /* flush to top (no white gap over nav) */
 
-  <body>
-		<div id="wrap" class="boxed">
-			<div class="grey-bg"><!-- Grey BG  -->
-				
-				<!-- ================= HEADER (unchanged) ================= -->
-				<header id="nav" class="header header-1 black-header mobile-no-transparent">
-				  <div class="header-wrapper">
-					  <div class="container-m-30 clearfix">
-						  <div class="logo-row">
-							  <!-- LOGO --> 
-							  <div class="logo-container-2">
-                  <div class="logo-2">
-                    <a href="index.html" class="clearfix">
-                      <img src="images/logo-white.png" class="logo-img" alt="White Pauli Murray Awards Foundation Logo">
-                    </a>
-                  </div>
-                </div>
-							  <!-- BUTTON --> 
-							  <div class="menu-btn-respons-container">
-								  <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target="#main-menu .navbar-collapse">
-									  <span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
-								  </button>
-							  </div>
-						  </div>
-					  </div>
+    /* ======== PAGE LAYOUT (between header & footer only) ======== */
+    #portal-login{ margin:0; padding:0; }
+    #portal-login .split{
+      display:flex; flex-wrap:nowrap; width:100%;
+      min-height: calc(100vh - 0px); /* nothing pushes below header */
+    }
+    #portal-login .left{
+      flex:1 1 50%;
+      background:url("images/small-pride-flag-on-desk.jpeg") center/cover no-repeat;
+      position:relative; min-height:680px;
+    }
+    #portal-login .left:after{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.35); }
 
-					  <!-- MAIN MENU CONTAINER -->
-					  <div class="main-menu-container">
-						  <div class="container-m-30 clearfix">	
-							  <!-- MAIN MENU -->
-							  <div id="main-menu">
-								  <div class="navbar navbar-default" role="navigation">
-									  <!-- MAIN MENU LIST -->
-									  <nav class="collapse collapsing navbar-collapse right-1024">
-										  <ul class="nav navbar-nav">
-											  <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
+    #portal-login .right{
+      flex:1 1 50%;
+      background:var(--pmaf-dark);
+      color:#fff;
+      display:flex; flex-direction:column; align-items:center;
+      padding:50px 24px 70px; /* 50px top space per request */
+    }
 
-											  <li class="parent">
-											    <a href="about.html"><div class="main-menu-title">About</div></a>
-											    <ul class="sub">
-											      <li><a href="about-us.html">About PMAF</a></li>
-											      <li><a href="about-paulimurray.html">About Pauli Murray</a></li>
-											      <li class="parent">
-											        <a href="board.html">Board of Directors</a>
-											        <ul class="sub">
-											          <li><a href="board-member-bios.html">Board Member Bios</a></li>
-											          <li><a href="join-the-board.html">Join the Board</a></li>
-											        </ul>
-											      </li>
-											    </ul>
-											  </li>
+    /* ======== HEADLINE & PILLS ======== */
+    .portal-hero{ text-align:center; color:#fff; margin:6px 0 18px; animation:fadeInUp .7s ease both; }
+    .portal-hero .welcome{ font-size:40px; font-weight:800; letter-spacing:.5px; margin:0 0 6px; text-transform:uppercase; }
+    .portal-hero .portal{ font-size:54px; font-weight:800; margin:0; text-transform:uppercase; color:var(--pmaf-green); text-shadow:0 10px 24px rgba(0,0,0,.35); }
 
-											  <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
+    .pill-row{ display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:10px; margin:14px 0 20px; }
+    .pill{ display:inline-flex; align-items:center; padding:10px 14px; border-radius:999px; background:#f6f9f3; color:var(--pmaf-green); font-weight:800; font-size:13px; text-transform:uppercase; border:2px solid #d9eac0; }
 
-											  <li class="parent">
-											    <a href="programs.html"><div class="main-menu-title">Programs</div></a>
-											    <ul class="sub">
-											      <li><a href="programs.html">Programs</a></li>
-											      <li><a href="events.html">Events</a></li>
-											    </ul>
-											  </li>
+    /* ======== AUTH CARD (keep prior size/spacing) ======== */
+    .auth-wrap{ width:100%; max-width:960px; } /* not full width; same feel */
+    .auth-card{ background:#fff; color:#333; border:1px solid #e9efe1; border-radius:14px; box-shadow:0 16px 42px rgba(0,0,0,.25); padding:18px; }
+    .auth-inner{ background:#fff; border-radius:10px; padding:14px; }
 
-											  <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
-											  <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
+    /* Tabs – active = PMAF green w/ white text, inactive = default gray text */
+    .nav-tabs{ border:0; margin:0 0 12px; }
+    .nav-tabs>li>a{
+      background:#f1f4ef; border:0; margin-right:6px;
+      text-transform:uppercase; font-weight:800; color:#3a3a3a;
+      border-radius:10px 10px 0 0; padding:10px 16px;
+    }
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:focus,
+    .nav-tabs>li.active>a:hover{
+      background:var(--pmaf-green) !important; color:#fff !important;
+      box-shadow:0 10px 24px rgba(124,178,3,.35);
+    }
+    .tab-content{ background:#fff; border-radius:0 10px 10px 10px; padding:14px; }
 
-											  <li>
-											    <a href="donate.html" class="donate-highlight">
-											      <div class="main-menu-title">Donate</div>
-											    </a>
-											  </li>
+    /* Inputs & submit (unchanged feel) */
+    .form-control{ height:52px; border-radius:10px; border:1px solid #dfe6d6; box-shadow:inset 0 1px 1px rgba(0,0,0,.02); }
+    .btn-pmaf{ background:var(--pmaf-green); color:#fff; border:none; height:52px; font-weight:800; text-transform:uppercase; border-radius:12px; width:100%; }
+    .btn-pmaf:hover{ opacity:.95; }
 
-											  <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
-											  <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
-										  </ul>
-									  </nav>
-								  </div>
-							  </div>
-						  </div>
-					  </div>
-				  </div>
-				</header>
-				<!-- =============== /HEADER =============== -->
+    /* OAuth brand buttons: same style as before */
+    .btn-brand{ height:54px; border-radius:14px; font-weight:700; text-transform:uppercase; }
+    .btn-facebook{ color:#1877f2; border:2px solid #1877f2; background:#fff; }
+    .btn-facebook:hover{ background:#1877f2; color:#fff; }
+    .btn-google{ color:#DB4437; border:2px solid #DB4437; background:#fff; }
+    .btn-google:hover{ background:#DB4437; color:#fff; }
+    .or-divider{ display:flex; align-items:center; gap:14px; margin:12px 0; color:#666; }
+    .or-divider .line{ height:2px; flex:1; background:#eee; border-radius:2px; }
 
-				<!-- ===================== LOGIN PORTAL (content only) ===================== -->
-        <style>
-          /* split layout */
-          #portal-login #split{display:flex; flex-wrap:wrap; min-height:calc(100vh - 240px); margin-top:50px;}
-          #portal-login .left,
-          #portal-login .right{flex:1 1 50%; min-height:560px;}
+    /* White helper copy below card */
+    .helper-copy{ color:#fff; text-align:center; margin:22px 0 12px; line-height:1.45; }
 
-          /* Left photo */
-          #portal-login .left{
-            background:url("images/small-pride-flag-on-desk.jpeg") center/cover no-repeat;
-            position:relative;
-          }
+    /* Request Access — regular button (NOT pill) */
+    .request-access-btn{
+      display:inline-block;
+      background:var(--pmaf-green); color:#fff !important;
+      font-weight:800; text-transform:uppercase; letter-spacing:.4px;
+      padding:12px 22px; border-radius:6px; border:none;
+      box-shadow:0 10px 24px rgba(124,178,3,.25);
+    }
+    .request-access-btn:hover{ opacity:.95; transform:translateY(-1px); }
 
-          /* Right panel look: same dark as counters block */
-          #portal-login .right{
-            background:#111111;
-            display:flex; align-items:center; justify-content:center;
-            padding:40px 24px 64px;
-          }
+    /* Right-panel links (outside card) should be white */
+    #portal-login .right a{ color:#fff; text-decoration:underline; }
 
-          /* Inner container on right */
-          #portal-login .right .inner{
-            width:100%; max-width:880px;
-          }
+    @keyframes fadeInUp{ from{opacity:0; transform:translate3d(0,14px,0);} to{opacity:1; transform:translate3d(0,0,0);} }
 
-          /* Hero title (animated like counters section using animate.css) */
-          #portal-login .hero-title{
-            color:#ffffff; text-align:center; line-height:1.1; margin:0 0 20px;
-          }
-          #portal-login .hero-title .line-1{
-            font-family:"Lato",sans-serif; font-weight:400; font-size:34px; letter-spacing:1px;
-          }
-          #portal-login .hero-title .line-2{
-            font-family:"Lato",sans-serif; font-weight:700; font-size:48px; letter-spacing:1px;
-          }
-          @media (min-width:992px){
-            #portal-login .hero-title .line-1{font-size:40px;}
-            #portal-login .hero-title .line-2{font-size:60px;}
-          }
+    @media (max-width:991px){
+      #portal-login .split{ flex-direction:column; }
+      #portal-login .left{ min-height:280px; }
+      .portal-hero .welcome{ font-size:32px; }
+      .portal-hero .portal{ font-size:42px; }
+    }
+  </style>
+</head>
 
-          /* Pills row (unchanged brand) */
-          .pill-row{ display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:10px; margin:10px 0 22px; }
-          .pill{ display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; background:#f6f9f3; color:#7cb203; font-weight:700; font-size:13px; border:2px solid #cfe6ad; }
+<body>
+<div id="wrap" class="boxed">
+  <div class="grey-bg"><!-- Grey BG  -->
 
-          /* Auth card area — keep same sizing/feel centered on right column */
-          #portal-login .auth-wrap{
-            background:#ffffff; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.15);
-            padding:24px; margin:0 auto; max-width:880px;
-          }
-          #portal-login .auth-tabs{
-            border-bottom:1px solid #eee; margin:0 -24px 18px; padding:0 24px; display:flex; gap:10px;
-          }
-          #portal-login .auth-tabs a{
-            display:inline-block; padding:12px 22px; border-radius:9px; background:#f3f6ef; color:#555; font-weight:700; text-transform:uppercase; letter-spacing:.3px;
-          }
-          #portal-login .auth-tabs a.active{
-            background:#7cb203; color:#fff; box-shadow:0 8px 26px rgba(124,178,3,.35);
-          }
-
-          /* Forms */
-          .form-control{height:56px; border-radius:12px;}
-          .btn-pmaf{background:#7cb203; color:#fff; font-weight:700; border:none; border-radius:12px; height:54px;}
-          .btn-pmaf:hover{opacity:.95;}
-          .btn-fb{border:2px solid #1877f2; color:#1877f2; height:56px; border-radius:14px; font-weight:700;}
-          .btn-go{border:2px solid #ea4335; color:#ea4335; height:56px; border-radius:14px; font-weight:700;}
-          .or-rule{position:relative; text-align:center; margin:14px 0;}
-          .or-rule:before{content:""; display:block; height:2px; background:#eee; margin:0 12px;}
-          .or-rule span{position:absolute; top:-12px; left:0; right:0; margin:auto; width:40px; background:#fff; color:#777; font-weight:700;}
-
-          /* Below-card note and button */
-          #portal-login .note{color:#fff; text-align:center; margin:18px auto 10px; max-width:900px; opacity:.9;}
-          #portal-login .cta-center{text-align:center; margin-bottom:2px;}
-        </style>
-
-        <main id="portal-login">
-          <div id="split">
-            <!-- Left photo -->
-            <div class="left" aria-hidden="true"></div>
-
-            <!-- Right (dark) content -->
-            <div class="right">
-              <div class="inner">
-
-                <!-- Big animated title -->
-                <div class="hero-title animated fadeInUp">
-                  <div class="line-1">WELCOME TO THE</div>
-                  <div class="line-2"><strong>PMAF PORTAL</strong></div>
-                </div>
-
-                <!-- Pills -->
-                <div class="pill-row">
-                  <span class="pill">SECURE ACCESS</span>
-                  <span class="pill">ROLE-BASED</span>
-                  <span class="pill">VALUES-ALIGNED</span>
-                </div>
-
-                <!-- Auth Card (tabs + forms) -->
-                <div class="auth-wrap">
-                  <!-- Tabs -->
-                  <div class="auth-tabs">
-                    <a href="#tab-login" class="active" data-toggle="tab">Login</a>
-                    <a href="#tab-apply" data-toggle="tab">PMA Application Registration</a>
-                  </div>
-
-                  <div class="tab-content" style="padding-top:4px;">
-                    <!-- LOGIN TAB -->
-                    <div class="tab-pane fade in active" id="tab-login">
-                      <form id="login-form" class="mb-10">
-                        <div class="form-group">
-                          <input type="email" name="email" class="form-control" placeholder="Email" autocomplete="username">
-                        </div>
-                        <div class="form-group">
-                          <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="current-password">
-                        </div>
-
-                        <div class="row" style="align-items:center; margin-bottom:12px;">
-                          <div class="col-xs-7">
-                            <label style="font-weight:700; color:#666;">
-                              <input type="checkbox" style="margin-right:6px;"> Remember me
-                            </label>
-                          </div>
-                          <div class="col-xs-5 text-right">
-                            <a href="#" style="color:#777; font-weight:700;">Forgot password?</a>
-                          </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-block btn-pmaf">Log In</button>
-
-                        <div class="or-rule"><span>or</span></div>
-
-                        <div class="row" style="gap:14px; display:flex; flex-wrap:wrap;">
-                          <div class="col-sm-6" style="flex:1 1 240px;">
-                            <button type="button" id="facebook-login" class="btn btn-block btn-fb">
-                              <i class="fa fa-facebook"></i> &nbsp; Log In with Facebook
-                            </button>
-                          </div>
-                          <div class="col-sm-6" style="flex:1 1 240px;">
-                            <button type="button" id="google-login" class="btn btn-block btn-go">
-                              <i class="fa fa-google"></i> &nbsp; Log In with Google
-                            </button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-
-                    <!-- APPLY TAB -->
-                    <div class="tab-pane fade" id="tab-apply">
-                      <form id="apply-form">
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="form-group">
-                              <input type="text" name="first_name" class="form-control" placeholder="First Name">
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="form-group">
-                              <input type="text" name="last_name" class="form-control" placeholder="Last Name">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <input type="email" name="email" class="form-control" placeholder="Email">
-                        </div>
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="form-group">
-                              <input type="password" name="password" class="form-control" placeholder="Password">
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="form-group">
-                              <input type="password" name="password2" class="form-control" placeholder="Confirm Password">
-                            </div>
-                          </div>
-                        </div>
-                        <button type="submit" class="btn btn-block btn-pmaf">Create Applicant Account</button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Below-card note + button (white text on dark bg) -->
-                <div class="note">
-                  DON’T HAVE AN ACCOUNT? APPLICANTS CAN REGISTER UNDER <span style="font-weight:700;">PMA APPLICATION REGISTRATION</span>.
-                  <br>REVIEWERS, VOLUNTEERS, AND BOARD MEMBERS SHOULD <a href="request-access.html" style="color:#cfe6ad; font-weight:700; text-decoration:underline;">REQUEST ACCESS</a>.
-                </div>
-                <div class="cta-center">
-                  <a class="btn btn-pmaf" href="request-access.html" style="border-radius:30px; padding:10px 22px;">Request Access</a>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </main>
-        <!-- =================== /LOGIN PORTAL =================== -->
-
-        <!-- ================= FOOTER (unchanged) ================= -->
-        <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
-          <div class="container-m-60">
-            <div class="row">
-              <div class="col-md-3 col-sm-3 widget">
-                <div class="logo-footer-cont">
-                  <a href="index.html">
-                    <img class="logo-footer" src="images/logo-footer-white.png" alt="logo">
-                  </a>
-                </div>
-                <div class="footer-2-text-cont">
-                  <address>
-                    1178 Broadway, 3rd Floor #502<br>
-                    New York, NY 10001
-                  </address>
-                </div>
-                <div class="footer-2-text-cont">646-736-2596<br></div>
-                <div class="footer-2-text-cont">
-                  <a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-sm-3 widget">
-                <h4>QUICK LINKS</h4>
-                <ul class="links-list bold a-text-cont">
-                  <li><a href="index.html">HOME</a></li>
-                  <li><a href="about.html">ABOUT PMAF</a></li>
-                  <li><a href="about-pauli-murray.html">ABOUT PAULI MURRAY</a></li>
-                  <li><a href="programs.html">PROGRAMS</a></li>
-                  <li><a href="blog.html">NEWS</a></li>
-                  <li><a href="donate.html">DONATE</a></li>
-                </ul>
-              </div>
-
-              <div class="col-md-3 col-sm-3 widget">
-                <h4>PMAs 2026</h4>
-                <ul class="links-list a-text-cont">
-                  <li><a href="awards.html">PMAs</a></li>
-                  <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
-                  <li><a href="awards/timeline.html">PMA 2026 TIMELINE</a></li>
-                  <li><a href="awards/FAQs.html">FAQs</a></li>
-                  <li><a href="awards/login.html">LOGIN</a></li>
-                </ul>
-              </div>
-
-              <div class="col-md-3 col-sm-3 widget">
-                <h4>RECENT POSTS</h4>
-                <div id="post-list-footer">
-                  <div class="post-prev-title">
-                    <h3><a class="a-text" href="blog-single-sidebar-right.html">New trends in web design</a></h3>
-                  </div>
-                  <div class="post-prev-info">Jule 10</div>
-
-                  <div class="post-prev-title">
-                    <h3><a class="a-text" href="blog-single-sidebar-right.html">The sound of life</a></h3>
-                  </div>
-                  <div class="post-prev-info">October 10</div>
-
-                  <div class="post-prev-title">
-                    <h3><a class="a-text" href="blog-single-sidebar-right.html">Time for minimalism</a></h3>
-                  </div>
-                  <div class="post-prev-info">September 21</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="footer-2-copy-cont clearfix">
-              <div class="footer-2-soc-a right">
-                <a href="https://www.facebook.com/PauliMurrayAF/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="https://www.instagram.com/PauliMurrayAF/" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/paulimurrayawards" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
-              </div>
-              <div class="left">
-                <a class="footer-2-copy" href="https://paulimurrayawaards.com" target="_blank">
-                  &copy; PAULI MURRAY AWARDS FOUNDATIONS INC. 2025
+    <!-- =================== HEADER (UNCHANGED) =================== -->
+    <header id="nav" class="header header-1 black-header mobile-no-transparent">
+      <div class="header-wrapper">
+        <div class="container-m-30 clearfix">
+          <div class="logo-row">
+            <div class="logo-container-2">
+              <div class="logo-2">
+                <a href="index.html" class="clearfix">
+                  <img src="images/logo-white.png" class="logo-img" alt="White Pauli Murray Awards Foundation Logo">
                 </a>
               </div>
             </div>
+            <div class="menu-btn-respons-container">
+              <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target="#main-menu .navbar-collapse">
+                <span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
+              </button>
+            </div>
           </div>
-        </footer>
-
-				<!-- BACK TO TOP -->
-				<p id="back-top">
-          <a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a>
-        </p>
-				
-        <!-- ===== JS begin (full stack, unchanged) ===== -->
-
-        <!-- jQuery  -->
-        <script src="js/jquery-1.11.2.min.js"></script>
-
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>		
-
-        <!-- MAGNIFIC POPUP -->
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        
-        <!-- PORTFOLIO SCRIPTS -->
-        <script src="js/isotope.pkgd.min.js"></script>
-        <script src="js/imagesloaded.pkgd.min.js"></script>
-        <script src="js/masonry.pkgd.min.js"></script>
-        
-        <!-- COUNTER -->
-        <script src="js/jquery.countTo.js"></script>
-        
-        <!-- APPEAR -->    
-        <script src="js/jquery.appear.js"></script>
-        
-        <!-- OWL CAROUSEL -->    
-        <script src="js/owl.carousel.min.js"></script>
-        
-        <!-- MAIN SCRIPT -->
-        <script src="js/main.js"></script>
-        
-        <!-- REVOSLIDER SCRIPTS  -->
-        <script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>   
-        <script src="rs-plugin/js/jquery.themepunch.revolution-parallax.min.js"></script>
-
-        <!-- SLIDER REVOLUTION INIT (unchanged) -->
-        <script>
-          jQuery(document).ready(function() {
-            if ((navigator.appVersion.indexOf("Win")!=-1) && ( typeof ieDetect !== "undefined" ? (ieDetect == false) : true)) {	
-              jQuery('#rs-fullscr').revolution({
-                dottedOverlay:"none", delay:16000, startwidth:1170, startheight:700, hideThumbs:200,
-                thumbWidth:100, thumbHeight:50, thumbAmount:5, navigationType:"none", navigationArrows:"solo",
-                navigationStyle:"preview4", hideTimerBar:"on", touchenabled:"on", onHoverStop:"on",
-                swipe_velocity:0.7, swipe_min_touches:1, swipe_max_touches:1, drag_block_vertical:false,          
-                parallax:"scroll", parallaxBgFreeze:"on", parallaxLevels:[45,40,35,50], parallaxDisableOnMobile:"on",
-                keyboardNavigation:"off", navigationHAlign:"center", navigationVAlign:"bottom", navigationHOffset:0, navigationVOffset:20,
-                soloArrowLeftHalign:"left", soloArrowLeftValign:"center", soloArrowLeftHOffset:20, soloArrowLeftVOffset:0,
-                soloArrowRightHalign:"right", soloArrowRightValign:"center", soloArrowRightHOffset:20, soloArrowRightVOffset:0,
-                shadow:0, fullWidth:"off", fullScreen:"on", spinner:"spinner4", stopLoop:"off",
-                stopAfterLoops:-1, stopAtSlide:-1, shuffle:"off", autoHeight:"off", forceFullWidth:"off",
-                hideThumbsOnMobile:"off", hideNavDelayOnMobile:1500, hideBulletsOnMobile:"off",
-                hideArrowsOnMobile:"off", hideThumbsUnderResolution:0, hideSliderAtLimit:0,
-                hideCaptionAtLimit:0, hideAllCaptionAtLilmit:0, startWithSlide:0
-              });
-            } else {
-              jQuery('#rs-fullscr').revolution({
-                dottedOverlay:"none", delay:16000, startwidth:1170, startheight:700, hideThumbs:200,
-                thumbWidth:100, thumbHeight:50, thumbAmount:5, navigationType:"none", navigationArrows:"solo",
-                navigationStyle:"preview4", hideTimerBar:"on", touchenabled:"on", onHoverStop:"on",
-                swipe_velocity:0.7, swipe_min_touches:1, swipe_max_touches:1, drag_block_vertical:false,          
-                parallax:"mouse", parallaxBgFreeze:"on", parallaxLevels:[0], parallaxDisableOnMobile:"on",
-                keyboardNavigation:"off", navigationHAlign:"center", navigationVAlign:"bottom", navigationHOffset:0, navigationVOffset:20,
-                soloArrowLeftHalign:"left", soloArrowLeftValign:"center", soloArrowLeftHOffset:20, soloArrowLeftVOffset:0,
-                soloArrowRightHalign:"right", soloArrowRightValign:"center", soloArrowRightHOffset:20, soloArrowRightVOffset:0,
-                shadow:0, fullWidth:"off", fullScreen:"on", spinner:"spinner4", stopLoop:"off",
-                stopAfterLoops:-1, stopAtSlide:-1, shuffle:"off", autoHeight:"off", forceFullWidth:"off",
-                hideThumbsOnMobile:"off", hideNavDelayOnMobile:1500, hideBulletsOnMobile:"off",
-                hideArrowsOnMobile:"off", hideThumbsUnderResolution:0, hideSliderAtLimit:0,
-                hideCaptionAtLimit:0, hideAllCaptionAtLilmit:0, startWithSlide:0
-              });      
-            }									
-          });
-        </script>
-
-        <!-- Supabase (auth) -->
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-        <script>
-          document.addEventListener('DOMContentLoaded', () => {
-            const SUPABASE_URL = "https://icnkxtjzbdqorgvkzpik.supabase.co";
-            const SUPABASE_ANON_KEY = "YOUR_ANON_KEY"; // paste your anon key here
-            const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-            const DASHBOARD_BY_ROLE = {
-              applicant: "applicant-dashboard.html",
-              reviewer:  "reviewer/index.html",
-              volunteer: "volunteer/index.html",
-              board:     "board/index.html",
-              admin:     "admin/index.html"
-            };
-            const DEFAULT_DASHBOARD = "portal/home.html";
-            const PENDING_APPROVAL_URL = "pending-approval.html";
-            const OAUTH_REDIRECT_TO = window.location.origin + "/login.html";
-
-            function doRoleRedirect(user){
-              const meta = user?.user_metadata || {};
-              const role = (meta.role || "").toLowerCase();
-              const approval = (meta.approval_status || "approved").toLowerCase();
-              if (role && role !== "applicant" && approval === "pending") {
-                window.location.href = PENDING_APPROVAL_URL; return;
-              }
-              window.location.href = DASHBOARD_BY_ROLE[role] || DEFAULT_DASHBOARD;
-            }
-
-            // If already logged in, bounce to dashboard
-            sb.auth.getSession().then(({ data:{session }}) => {
-              if (session?.user) doRoleRedirect(session.user);
-            });
-
-            // Email/password login
-            const loginForm = document.getElementById("login-form");
-            loginForm?.addEventListener("submit", async (e) => {
-              e.preventDefault();
-              const fd = new FormData(loginForm);
-              const email = String(fd.get("email")||"").trim();
-              const password = String(fd.get("password")||"");
-              if (!email || !password) return alert("PLEASE ENTER YOUR EMAIL AND PASSWORD.");
-
-              const { error } = await sb.auth.signInWithPassword({ email, password });
-              if (error) return alert("SIGN-IN FAILED: " + error.message);
-
-              const { data:{ user } } = await sb.auth.getUser();
-              doRoleRedirect(user);
-            });
-
-            // PMA Application registration
-            const applyForm = document.getElementById("apply-form");
-            applyForm?.addEventListener("submit", async (e) => {
-              e.preventDefault();
-              const fd = new FormData(applyForm);
-              const first_name = String(fd.get("first_name")||"").trim();
-              const last_name  = String(fd.get("last_name")||"").trim();
-              const email      = String(fd.get("email")||"").trim();
-              const password   = String(fd.get("password")||"");
-              const password2  = String(fd.get("password2")||"");
-              if (!first_name || !last_name || !email || !password) return alert("PLEASE COMPLETE ALL REQUIRED FIELDS.");
-              if (password !== password2) return alert("PASSWORDS DO NOT MATCH.");
-
-              const { error } = await sb.auth.signUp({
-                email, password,
-                options:{
-                  data:{ first_name, last_name, role:"applicant", approval_status:"approved" },
-                  emailRedirectTo: window.location.origin + "/login.html"
-                }
-              });
-              if (error) return alert("REGISTRATION FAILED: " + error.message);
-              alert("SUCCESS! PLEASE CHECK YOUR EMAIL TO CONFIRM, THEN RETURN TO LOG IN.");
-              applyForm.reset();
-              $('a[href="#tab-login"]').tab('show');
-            });
-
-            // OAuth
-            document.getElementById("google-login")?.addEventListener("click", () => {
-              sb.auth.signInWithOAuth({ provider:"google", options:{ redirectTo: OAUTH_REDIRECT_TO } });
-            });
-            document.getElementById("facebook-login")?.addEventListener("click", () => {
-              sb.auth.signInWithOAuth({ provider:"facebook", options:{ redirectTo: OAUTH_REDIRECT_TO } });
-            });
-          });
-        </script>
-
-        <!-- Misc site scripts from template -->
-        <script>
-          function updateDaysUntilAwards() {
-            const eventDate = new Date("October 11, 2026");
-            const today = new Date();
-            const timeDiff = eventDate - today;
-            const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-            const daysEl = document.getElementById("days-until");
-            if (daysEl) daysEl.textContent = daysLeft;
-          }
-          updateDaysUntilAwards();
-        </script>
-
-        <div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;">
-          <div class="close" onclick="closeModal()" style="position:absolute; top:20px; right:30px; font-size:40px; color:#fff; cursor:pointer;">×</div>
-          <video controls autoplay id="pauliVideo" style="width:90%; max-width:900px;">
-            <source src="images/my-name-is-pauli-murray-trailer.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
         </div>
-        <script>
-          function openModal(){ document.getElementById("videoModal").style.display="flex"; document.getElementById("pauliVideo").play(); }
-          function closeModal(){ document.getElementById("videoModal").style.display="none"; const v=document.getElementById("pauliVideo"); v.pause(); v.currentTime=0; }
-        </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/gray-matter@3.1.1/dist/gray-matter.min.js"></script>
-        <script>
-          async function fetchBlogPosts() {
-            const postsFolder = "./content/posts/";
-            const container = document.getElementById("blog-posts");
-            if (!container) return;
-            const postList = [
-              "building-the-future-with-vision-and-integrity.md",
-              "feast-day-of-rev-dr-pauli-murray-esq-honoring-the-saint-who-defied-every-box.md",
-              "legacy-in-progress.md",
-              "pauli-murray-was-always-there—we-just-weren’t-looking.md"
-            ];
-            for (const filename of postList) {
-              try {
-                const res = await fetch(`${postsFolder}${filename}`);
-                const raw = await res.text();
-                const parsed = matter(raw);
-                const { title, date, excerpt, featured_image } = parsed.data;
-                const html = `
-                  <div class="blog-post-preview">
-                    ${featured_image ? `<img src="${featured_image}" alt="${title}" />` : ""}
-                    <h3>${title}</h3>
-                    <p class="date">${new Date(date).toLocaleDateString()}</p>
-                    <p>${excerpt || ""}</p>
-                    <a href="/post.html?file=${filename}" class="btn btn-sm">Read More</a>
+        <div class="main-menu-container">
+          <div class="container-m-30 clearfix">
+            <div id="main-menu">
+              <div class="navbar navbar-default" role="navigation">
+                <nav class="collapse collapsing navbar-collapse right-1024">
+                  <ul class="nav navbar-nav">
+                    <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
+                    <li class="parent">
+                      <a href="about.html"><div class="main-menu-title">About</div></a>
+                      <ul class="sub">
+                        <li><a href="about-us.html">About PMAF</a></li>
+                        <li><a href="about-paulimurray.html">About Pauli Murray</a></li>
+                        <li class="parent">
+                          <a href="board.html">Board of Directors</a>
+                          <ul class="sub">
+                            <li><a href="board-member-bios.html">Board Member Bios</a></li>
+                            <li><a href="join-the-board.html">Join the Board</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
+                    <li class="parent">
+                      <a href="programs.html"><div class="main-menu-title">Programs</div></a>
+                      <ul class="sub">
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="events.html">Events</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
+                    <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
+                    <li>
+                      <a href="donate.html" class="donate-highlight">
+                        <div class="main-menu-title">Donate</div>
+                      </a>
+                    </li>
+                    <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
+                    <li class="active"><a href="login.html"><div class="main-menu-title">Login</div></a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div><!-- /main-menu-container -->
+      </div>
+    </header>
+    <!-- =================== /HEADER =================== -->
+
+    <!-- ===================== LOGIN PORTAL ===================== -->
+    <main id="portal-login">
+      <div class="split">
+        <!-- Left photo -->
+        <div class="left" aria-hidden="true"></div>
+
+        <!-- Right panel -->
+        <div class="right">
+          <div class="portal-hero">
+            <div class="welcome">WELCOME TO THE</div>
+            <div class="portal">PMAF PORTAL</div>
+          </div>
+
+          <div class="pill-row">
+            <span class="pill">SECURE ACCESS</span>
+            <span class="pill">ROLE-BASED</span>
+            <span class="pill">VALUES-ALIGNED</span>
+          </div>
+
+          <div class="auth-wrap">
+            <div class="auth-card">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#tab-login" role="tab" data-toggle="tab">Login</a></li>
+                <li><a href="#tab-apply" role="tab" data-toggle="tab">PMA Application Registration</a></li>
+              </ul>
+
+              <div class="tab-content">
+                <!-- LOGIN TAB -->
+                <div role="tabpanel" class="tab-pane fade in active" id="tab-login">
+                  <div class="auth-inner">
+                    <form id="login-form" autocomplete="on">
+                      <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                      </div>
+
+                      <div class="row" style="align-items:center; margin-bottom:10px;">
+                        <div class="col-xs-6">
+                          <label style="font-weight:700; color:#666;">
+                            <input type="checkbox" style="margin-right:6px;"> Remember me
+                          </label>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                          <a href="#" style="color:#666; font-weight:700;">Forgot password?</a>
+                        </div>
+                      </div>
+
+                      <button type="submit" class="btn btn-pmaf">Log In</button>
+
+                      <div class="or-divider">
+                        <div class="line"></div><div>or</div><div class="line"></div>
+                      </div>
+
+                      <div class="row" style="gap:10px;">
+                        <div class="col-sm-6">
+                          <button type="button" id="facebook-login" class="btn btn-default btn-block btn-brand btn-facebook">
+                            <i class="fa fa-facebook" style="margin-right:6px;"></i> Log In with Facebook
+                          </button>
+                        </div>
+                        <div class="col-sm-6">
+                          <button type="button" id="google-login" class="btn btn-default btn-block btn-brand btn-google">
+                            <i class="fa fa-google" style="margin-right:6px;"></i> Log In with Google
+                          </button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
-                `;
-                container.innerHTML += html;
-              } catch (err) {
-                console.error("Error loading post:", filename, err);
-              }
-            }
-          }
-          document.addEventListener("DOMContentLoaded", fetchBlogPosts);
-        </script>
+                </div>
 
-        <script src="js/load-posts.js"></script>
-        <!-- ===== JS end ===== -->
-			</div>
-		</div>
-  </body>
+                <!-- APPLY TAB -->
+                <div role="tabpanel" class="tab-pane fade" id="tab-apply">
+                  <div class="auth-inner">
+                    <form id="apply-form" autocomplete="on">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input type="password" class="form-control" name="password2" placeholder="Confirm Password" required>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-pmaf">Create PMA Application Account</button>
+                    </form>
+                  </div>
+                </div>
+              </div><!-- /tab-content -->
+            </div><!-- /auth-card -->
+          </div><!-- /auth-wrap -->
+
+          <div class="helper-copy">
+            DON’T HAVE AN ACCOUNT? APPLICANTS CAN REGISTER UNDER <span style="font-weight:800;">PMA APPLICATION REGISTRATION</span>.<br>
+            REVIEWERS, VOLUNTEERS, AND BOARD MEMBERS SHOULD <a href="request-access.html">REQUEST ACCESS</a>.
+          </div>
+          <a class="request-access-btn" href="request-access.html">Request Access</a>
+        </div><!-- /right -->
+      </div><!-- /split -->
+    </main>
+    <!-- ===================== /LOGIN PORTAL ===================== -->
+
+    <!-- =================== FOOTER (UNCHANGED) =================== -->
+    <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
+      <div class="container-m-60">
+        <div class="row">
+          <div class="col-md-3 col-sm-3 widget">
+            <div class="logo-footer-cont">
+              <a href="index.html"><img class="logo-footer" src="images/logo-footer-white.png" alt="logo"></a>
+            </div>
+            <div class="footer-2-text-cont">
+              <address>1178 Broadway, 3rd Floor #502<br>New York, NY 10001</address>
+            </div>
+            <div class="footer-2-text-cont">646-736-2596<br></div>
+            <div class="footer-2-text-cont"><a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a></div>
+          </div>
+
+          <div class="col-md-3 col-sm-3 widget">
+            <h4>QUICK LINKS</h4>
+            <ul class="links-list bold a-text-cont">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="about.html">ABOUT PMAF</a></li>
+              <li><a href="about-pauli-murray.html">ABOUT PAULI MURRAY</a></li>
+              <li><a href="programs.html">PROGRAMS</a></li>
+              <li><a href="blog.html">NEWS</a></li>
+              <li><a href="donate.html">DONATE</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 col-sm-3 widget">
+            <h4>PMAs 2026</h4>
+            <ul class="links-list a-text-cont">
+              <li><a href="awards.html">PMAs</a></li>
+              <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
+              <li><a href="awards/timeline.html">PMA 2026 TIMELINE</a></li>
+              <li><a href="awards/FAQs.html">FAQs</a></li>
+              <li><a href="awards/login.html">LOGIN</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 col-sm-3 widget">
+            <h4>RECENT POSTS</h4>
+            <div id="post-list-footer">
+              <div class="post-prev-title"><h3><a class="a-text" href="blog-single-sidebar-right.html">New trends in web design</a></h3></div>
+              <div class="post-prev-info">Jule 10</div>
+              <div class="post-prev-title"><h3><a class="a-text" href="blog-single-sidebar-right.html">The sound of life</a></h3></div>
+              <div class="post-prev-info">October 10</div>
+              <div class="post-prev-title"><h3><a class="a-text" href="blog-single-sidebar-right.html">Time for minimalism</a></h3></div>
+              <div class="post-prev-info">September 21</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-2-copy-cont clearfix">
+          <div class="footer-2-soc-a right">
+            <a href="https://www.facebook.com/PauliMurrayAF/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/PauliMurrayAF/" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/paulimurrayawards" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
+          </div>
+          <div class="left">
+            <a class="footer-2-copy" href="https://paulimurrayawaards.com" target="_blank">
+              &copy; PAULI MURRAY AWARDS FOUNDATIONS INC. 2025
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- =================== /FOOTER =================== -->
+
+    <!-- BACK TO TOP -->
+    <p id="back-top"><a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a></p>
+
+  </div><!-- /grey-bg -->
+</div><!-- /wrap -->
+
+<!-- ============== JS (full stack) ============== -->
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/jquery.countTo.js"></script>
+<script src="js/jquery.appear.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+<script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>   
+<script src="rs-plugin/js/jquery.themepunch.revolution-parallax.min.js"></script>
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  // Auth wiring (email/password + OAuth) — replace anon key to enable
+  const SUPABASE_URL = "https://icnkxtjzbdqorgvkzpik.supabase.co";
+  const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const DASHBOARD_BY_ROLE = {
+    applicant: "applicant-dashboard.html",
+    reviewer:  "reviewer/index.html",
+    volunteer: "volunteer/index.html",
+    board:     "board/index.html",
+    admin:     "admin/index.html"
+  };
+  const DEFAULT_DASHBOARD = "portal/home.html";
+  const OAUTH_REDIRECT_TO = window.location.origin + "/login.html";
+
+  function doRoleRedirect(user){
+    const r = (user?.user_metadata?.role || "").toLowerCase();
+    window.location.href = DASHBOARD_BY_ROLE[r] || DEFAULT_DASHBOARD;
+  }
+
+  sb.auth.getSession().then(({ data:{session }}) => {
+    if (session?.user) doRoleRedirect(session.user);
+  });
+
+  document.getElementById("login-form")?.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const email = String(fd.get("email")||"").trim();
+    const password = String(fd.get("password")||"");
+    if (!email || !password) return alert("Please enter your email and password.");
+    const { error } = await sb.auth.signInWithPassword({ email, password });
+    if (error) return alert("Sign-in failed: " + error.message);
+    const { data:{ user } } = await sb.auth.getUser();
+    doRoleRedirect(user);
+  });
+
+  document.getElementById("apply-form")?.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const first_name = String(fd.get("first_name")||"").trim();
+    const last_name  = String(fd.get("last_name")||"").trim();
+    const email      = String(fd.get("email")||"").trim();
+    const password   = String(fd.get("password")||"");
+    const password2  = String(fd.get("password2")||"");
+    if (!first_name || !last_name || !email || !password) return alert("Please complete all required fields.");
+    if (password !== password2) return alert("Passwords do not match.");
+    const { error } = await sb.auth.signUp({
+      email, password,
+      options:{
+        data:{ first_name, last_name, role:"applicant", approval_status:"approved" },
+        emailRedirectTo: window.location.origin + "/login.html"
+      }
+    });
+    if (error) return alert("Registration failed: " + error.message);
+    alert("Success! Please check your email to confirm, then return to log in.");
+    e.currentTarget.reset();
+    $('a[href="#tab-login"]').tab('show');
+  });
+
+  document.getElementById("google-login")?.addEventListener("click", () => {
+    sb.auth.signInWithOAuth({ provider:"google", options:{ redirectTo: OAUTH_REDIRECT_TO } });
+  });
+  document.getElementById("facebook-login")?.addEventListener("click", () => {
+    sb.auth.signInWithOAuth({ provider:"facebook", options:{ redirectTo: OAUTH_REDIRECT_TO } });
+  });
+</script>
+
+<!-- Optional: days counter utility from your template -->
+<script>
+  function updateDaysUntilAwards() {
+    const eventDate = new Date("October 11, 2026");
+    const today = new Date();
+    const daysLeft = Math.ceil((eventDate - today) / (1000*60*60*24));
+    const el = document.getElementById("days-until");
+    if (el) el.textContent = daysLeft;
+  }
+  updateDaysUntilAwards();
+</script>
+
+<!-- Netlify Identity (unchanged) -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function(user) {
+      if (!user) {
+        window.netlifyIdentity.on("login", function() {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</body>
 </html>
