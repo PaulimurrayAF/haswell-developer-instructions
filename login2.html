@@ -1,3 +1,6 @@
+Here’s the full `login.html` with the exact spacing, tab styling, footer, and other tweaks you asked for:
+
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,7 +8,7 @@
   <title>PMAF Portal — Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Site CSS -->
+  <!-- Haswell / site CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/icons-fonts.css">
   <link rel="stylesheet" href="css/animate.min.css">
@@ -31,10 +34,10 @@
       background:url('images/small-pride-flag-on-desk.jpeg') center/cover no-repeat;
       position:relative;
     }
-    /* 40% black overlay across the entire photo */
+    /* 40% black overlay across entire photo */
     #split .left::before{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.40); z-index:1; }
 
-    /* Logo + big "PMAF PORTAL" NEXT TO the logo, over the photo */
+    /* Logo + “PMAF PORTAL” next to logo, over the photo */
     .logo-stack{
       position:absolute; z-index:2; top:18px; left:18px;
       display:flex; align-items:center; gap:14px;
@@ -42,7 +45,7 @@
     .logo-stack img{ height:64px; width:auto; display:block; }
     .portal-title{
       margin:0; font-weight:900; letter-spacing:.06em; text-transform:uppercase;
-      color:var(--pmaf-green); line-height:1; font-size:64px;  /* ~60–70px */
+      color:var(--pmaf-green); line-height:1; font-size:64px; /* set 70px if preferred */
     }
     @media (max-width:991px){ .portal-title{ font-size:48px; } .logo-stack img{ height:56px; } }
     @media (max-width:575px){ .portal-title{ font-size:34px; } .logo-stack img{ height:48px; } }
@@ -58,10 +61,10 @@
     .pill-row{ display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:8px; margin:8px 0 16px; }
     .pill{
       display:inline-flex; align-items:center; gap:8px;
-      padding:10px 14px;                    /* +20% */
+      padding:10px 14px;
       border-radius:999px; background:#f6f9f3; color:var(--pmaf-green);
-      font-weight:700; font-size:14px;      /* +20% */
-      border:1px solid #e7f2d9;
+      font-weight:800; font-size:14px; text-transform:uppercase;
+      border:2px solid #a9d16f; /* thicker stroke for visibility */
     }
 
     .link-muted{ color:var(--pmaf-dark); text-decoration:none; }
@@ -69,53 +72,54 @@
     .btn-cta{ background:var(--pmaf-green); color:#fff; border:none; padding:12px 20px; border-radius:12px; font-weight:700; display:inline-block; text-decoration:none; }
     .btn-cta:hover{ filter:brightness(.96); }
 
-    /* Auth card centered with even padding */
+    /* Auth card centered with truly even padding via inner wrapper */
     .login-card{
       background:#fff; border:1px solid #ececec; border-radius:var(--card-radius);
       box-shadow:0 10px 24px rgba(0,0,0,.06); overflow:hidden;
       max-width:760px; width:100%; margin:24px auto 0;
     }
-    .custom-tabs .nav-tabs{
-      border-bottom:2px solid #e8f1d1; padding:0 24px;  /* aligns with panel padding */
-    }
+    .login-card-inner{ padding:24px; } /* identical padding left/right/top/bottom */
+
+    /* Tabs + active state */
+    .custom-tabs .nav-tabs{ margin:0; padding:0 24px; border-bottom:2px solid #e8f1d1; }
     .custom-tabs .nav-tabs>li>a{
       font-weight:700; color:#5b6570; border:1px solid transparent; border-radius:12px 12px 0 0;
       padding:10px 14px; background:#f2f5f0; margin-right:8px; transition:all .15s ease;
     }
-    /* Active tab highlight */
     .custom-tabs .nav-tabs>li.active>a,
     .custom-tabs .nav-tabs>li.active>a:focus,
     .custom-tabs .nav-tabs>li.active>a:hover{
-      color:#1d2329; background:#f6f9f3;
-      border-color:var(--pmaf-green) var(--pmaf-green) transparent;
-      box-shadow:0 6px 14px rgba(124,178,3,.18);
+      background:var(--pmaf-green) !important;  /* PMAF green fill */
+      border-color:var(--pmaf-green) var(--pmaf-green) transparent !important;
+      font-weight:800;                           /* bold text */
+      color:inherit !important;                  /* keep text color */
+      box-shadow:0 8px 18px rgba(124,178,3,.28);
     }
+    .custom-tabs .tab-content{ padding:0 !important; }
     .tab-content-container{
       border:1px solid var(--pmaf-green); border-top:none;
       border-radius:0 0 var(--card-radius) var(--card-radius);
-      padding:24px;                         /* even padding on all sides */
+      padding:24px !important; box-sizing:border-box;
     }
+    /* Kill any negative gutters inside panel content */
+    .tab-content-container .row{ margin-left:0 !important; margin-right:0 !important; }
 
-    /* Form elements (no bootstrap .row gutters to keep padding even) */
     .field{ margin-bottom:15px; }
     .controled{ width:100%; border:1px solid #dfe3e8; border-radius:10px; padding:12px 14px; font-size:15px; outline:none; }
     .controled:focus{ border-color:#cfd6dc; box-shadow:0 0 0 3px rgba(124,178,3,.12); }
     .btn-pmaf{ background:var(--pmaf-green); color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:700; width:100%; }
     .btn-pmaf:hover{ filter:brightness(.96); }
 
-    /* Two-column grid just for first/last name (keeps equal padding) */
     .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
     @media (max-width:575px){ .grid-2{ grid-template-columns:1fr; } }
 
-    /* Social buttons row (brand colors) */
+    /* Social buttons (brand colors) */
     .social-row{ display:flex; gap:10px; flex-wrap:wrap; }
     .social-row > *{ flex:1 1 260px; }
 
     .btn-social{ display:block; width:100%; text-align:center; border-radius:12px; padding:12px 16px; font-weight:700; background:#fff; }
-    /* Facebook blue */
     .btn-facebook{ border:1px solid #1877f2; color:#1877f2; }
     .btn-facebook:hover{ background:#1877f2; color:#fff; border-color:#1877f2; }
-    /* Google red */
     .btn-google{ border:1px solid #db4437; color:#db4437; }
     .btn-google:hover{ background:#db4437; color:#fff; border-color:#db4437; }
 
@@ -124,17 +128,6 @@
     .divider::before{ left:0; } .divider::after{ right:0; }
 
     .row-helpers{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-
-    /* Footer */
-    footer { flex-shrink:0; background:#0f1113; color:#bbb; }
-    .footer-2-top{ padding:40px 0 22px; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08); }
-    .footer-2-top h4{ color:#fff; margin-top:0; margin-bottom:14px; font-weight:700; }
-    .footer-2-top p, .footer-2-top a{ color:#bbb; }
-    .footer-2-top a:hover{ color:#fff; }
-    .footer-2-copy-cont{ padding:18px 0; }
-    .footer-2-soc-a a{ color:#bbb; margin-left:10px; }
-    .footer-2-soc-a a:hover{ color:#fff; }
-    .footer-2-copy{ color:#bbb; }
   </style>
 </head>
 <body id="top">
@@ -161,66 +154,68 @@
           </p>
 
           <div class="pill-row">
-            <span class="pill">Secure Access</span>
-            <span class="pill">Role-Based</span>
-            <span class="pill">Values-Aligned</span>
+            <span class="pill">SECURE ACCESS</span>
+            <span class="pill">ROLE-BASED</span>
+            <span class="pill">VALUES-ALIGNED</span>
           </div>
 
-          <!-- Auth card with TWO tabs (centered, even padding) -->
+          <!-- Auth card with TWO tabs (centered, even padding via inner wrapper) -->
           <div class="login-card">
-            <div class="tabs custom-tabs">
-              <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab-login" data-toggle="tab">Login</a></li>
-                <li><a href="#tab-apply" data-toggle="tab">PMA Application Registration</a></li>
-              </ul>
+            <div class="login-card-inner">
+              <div class="tabs custom-tabs">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#tab-login" data-toggle="tab">Login</a></li>
+                  <li><a href="#tab-apply" data-toggle="tab">PMA Application Registration</a></li>
+                </ul>
 
-              <div class="tab-content">
-                <!-- LOGIN TAB -->
-                <div id="tab-login" class="tab-pane tab-content-container active">
-                  <form id="login-form" action="login.html" method="post" novalidate>
-                    <div class="field"><input type="email" name="email" class="controled" placeholder="Email" required></div>
-                    <div class="field" style="margin-bottom:10px;"><input type="password" name="password" class="controled" placeholder="Password" required></div>
+                <div class="tab-content">
+                  <!-- LOGIN TAB -->
+                  <div id="tab-login" class="tab-pane tab-content-container active">
+                    <form id="login-form" action="login.html" method="post" novalidate>
+                      <div class="field"><input type="email" name="email" class="controled" placeholder="Email" required></div>
+                      <div class="field" style="margin-bottom:10px;"><input type="password" name="password" class="controled" placeholder="Password" required></div>
 
-                    <div class="row-helpers" style="margin:8px 0 14px;">
-                      <label style="display:flex; align-items:center; gap:8px; margin:0;">
-                        <input type="checkbox" name="remember" value="true"> <span style="opacity:.85;">Remember me</span>
-                      </label>
-                      <a class="link-muted" href="forgot-password.html"><small>Forgot password?</small></a>
-                    </div>
+                      <div class="row-helpers" style="margin:8px 0 14px;">
+                        <label style="display:flex; align-items:center; gap:8px; margin:0;">
+                          <input type="checkbox" name="remember" value="true"> <span style="opacity:.85;">Remember me</span>
+                        </label>
+                        <a class="link-muted" href="forgot-password.html"><small>Forgot password?</small></a>
+                      </div>
 
-                    <button type="submit" class="btn-pmaf">Log In</button>
+                      <button type="submit" class="btn-pmaf">Log In</button>
 
-                    <div class="divider"><span>or</span></div>
+                      <div class="divider"><span>or</span></div>
 
-                    <div class="social-row">
-                      <button class="btn-social btn-facebook" id="facebook-login" type="button">
-                        <i class="fa fa-facebook"></i> Log In with Facebook
-                      </button>
-                      <button class="btn-social btn-google" id="google-login" type="button">
-                        <i class="fa fa-google"></i> Log In with Google
-                      </button>
-                    </div>
-                  </form>
-                </div>
+                      <div class="social-row">
+                        <button class="btn-social btn-facebook" id="facebook-login" type="button">
+                          <i class="fa fa-facebook"></i> Log In with Facebook
+                        </button>
+                        <button class="btn-social btn-google" id="google-login" type="button">
+                          <i class="fa fa-google"></i> Log In with Google
+                        </button>
+                      </div>
+                    </form>
+                  </div>
 
-                <!-- APPLICATION REGISTRATION TAB -->
-                <div id="tab-apply" class="tab-pane tab-content-container">
-                  <form id="apply-form" action="register.html" method="post" novalidate>
-                    <div class="grid-2 field" style="margin-top:10px;">
-                      <div><input type="text" name="first_name" class="controled" placeholder="First name" required></div>
-                      <div><input type="text" name="last_name" class="controled" placeholder="Last name" required></div>
-                    </div>
-                    <div class="field"><input type="email" name="email" class="controled" placeholder="Email" required></div>
-                    <div class="field"><input type="password" name="password" class="controled" placeholder="Password" required></div>
-                    <div class="field" style="margin-bottom:20px;"><input type="password" name="password2" class="controled" placeholder="Re-enter password" required></div>
-                    <button type="submit" class="btn-pmaf">Start PMA Application</button>
-                  </form>
-                </div>
-              </div><!-- /tab-content -->
-            </div><!-- /tabs -->
+                  <!-- APPLICATION REGISTRATION TAB -->
+                  <div id="tab-apply" class="tab-pane tab-content-container">
+                    <form id="apply-form" action="register.html" method="post" novalidate>
+                      <div class="grid-2 field" style="margin-top:10px;">
+                        <div><input type="text" name="first_name" class="controled" placeholder="First name" required></div>
+                        <div><input type="text" name="last_name" class="controled" placeholder="Last name" required></div>
+                      </div>
+                      <div class="field"><input type="email" name="email" class="controled" placeholder="Email" required></div>
+                      <div class="field"><input type="password" name="password" class="controled" placeholder="Password" required></div>
+                      <div class="field" style="margin-bottom:20px;"><input type="password" name="password2" class="controled" placeholder="Re-enter password" required></div>
+                      <button type="submit" class="btn-pmaf">Start PMA Application</button>
+                    </form>
+                  </div>
+                </div><!-- /tab-content -->
+              </div><!-- /tabs -->
+            </div><!-- /login-card-inner -->
           </div><!-- /login-card -->
 
-          <!-- Centered “no account” copy + button at the BOTTOM -->
+          <!-- Centered “no account” copy + button at the VERY BOTTOM -->
           <div class="centered" style="text-align:center; margin-top:18px; opacity:.9;">
             Don’t have an account? Applicants can register under <strong>PMA Application Registration</strong>.<br>
             Reviewers, Volunteers, and Board Members should
@@ -234,30 +229,81 @@
     </div><!-- /split -->
   </main>
 
-  <!-- ===== Full Footer (top widgets + bottom bar) ===== -->
-  <footer>
-    <div class="footer-2-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 mb-20">
-            <h4>About PMAF</h4>
-            <p>Honoring the legacy of Rev. Dr. Pauli Murray by uplifting changemakers who advance equity and justice.</p>
+  <!-- ===== FOOTER 3 BLACK (exact block) ===== -->
+  <!-- FOOTER 3 BLACK -->
+  <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
+    <div class="container-m-60">
+      <div class="row">
+
+        <!-- Column 1: Logo + Contact Info -->
+        <div class="col-md-3 col-sm-3 widget">
+          <div class="logo-footer-cont">
+            <a href="index.html">
+              <img class="logo-footer" src="images/logo-footer-white.png" alt="logo">
+            </a>
           </div>
-          <div class="col-md-4 mb-20">
-            <h4>Contact</h4>
-            <p>Email: <a href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a><br>
-              Media: <a href="mailto:press@paulimurrayawards.com">press@paulimurrayawards.com</a></p>
+          <div class="footer-2-text-cont">
+            <address>
+              1178 Broadway, 3rd Floor #502<br>
+              New York, NY 10001
+            </address>
           </div>
-          <div class="col-md-4 mb-20">
-            <h4>Stay Connected</h4>
-            <p>Follow our updates and announcements across social media.</p>
+          <div class="footer-2-text-cont">
+            646-736-2596<br>
+          </div>
+          <div class="footer-2-text-cont">
+            <a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="col-md-3 col-sm-3 widget">
+          <h4>QUICK LINKS</h4>
+          <ul class="links-list bold a-text-cont">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT PMAF</a></li>
+            <li><a href="about-pauli-murray.html">ABOUT PAULI MURRAY</a></li>
+            <li><a href="programs.html">PROGRAMS</a></li>
+            <li><a href="blog.html">NEWS</a></li>
+            <li><a href="donate.html">DONATE</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: PMAs 2026 -->
+        <div class="col-md-3 col-sm-3 widget">
+          <h4>PMAs 2026</h4>
+          <ul class="links-list a-text-cont">
+            <li><a href="awards.html">PMAs</a></li>
+            <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
+            <li><a href="awards/timeline.html">PMA 2026 TIMELINE</a></li>
+            <li><a href="awards/FAQs.html">FAQs</a></li>
+            <li><a href="awards/login.html">LOGIN</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Recent Posts -->
+        <div class="col-md-3 col-sm-3 widget">
+          <h4>RECENT POSTS</h4>
+          <div id="post-list-footer">
+            <div class="post-prev-title">
+              <h3><a class="a-text" href="blog-single-sidebar-right.html">New trends in web design</a></h3>
+            </div>
+            <div class="post-prev-info">Jule 10</div>
+
+            <div class="post-prev-title">
+              <h3><a class="a-text" href="blog-single-sidebar-right.html">The sound of life</a></h3>
+            </div>
+            <div class="post-prev-info">October 10</div>
+
+            <div class="post-prev-title">
+              <h3><a class="a-text" href="blog-single-sidebar-right.html">Time for minimalism</a></h3>
+            </div>
+            <div class="post-prev-info">September 21</div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Footer Bottom -->
-    <div class="container">
+      <!-- Footer Bottom -->
       <div class="footer-2-copy-cont clearfix">
         <!-- Social Links -->
         <div class="footer-2-soc-a right">
@@ -381,3 +427,4 @@
   </script>
 </body>
 </html>
+```
