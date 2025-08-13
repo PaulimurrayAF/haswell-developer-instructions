@@ -44,21 +44,22 @@
       display:flex; flex-wrap:nowrap; width:100%;
       min-height: calc(100vh - 0px);
     }
-    /* LEFT = CONTENT (dark)  */
+    /* LEFT = PHOTO (SWITCHED) */
     #request-access .left{
+      flex:1 1 50%;
+      background:url("images/pride-heart-sticker.jpeg") center/cover no-repeat;
+      position:relative; min-height:680px;
+    }
+    #request-access .left:after{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.35); }
+
+    /* RIGHT = CONTENT (DARK) (SWITCHED) */
+    #request-access .right{
       flex:1 1 50%;
       background:var(--pmaf-dark);
       color:#fff;
       display:flex; flex-direction:column; align-items:center;
       padding:90px 24px 70px;
     }
-    /* RIGHT = PHOTO */
-    #request-access .right{
-      flex:1 1 50%;
-      background:url("images/pride-heart-sticker.jpeg") center/cover no-repeat;
-      position:relative; min-height:680px;
-    }
-    #request-access .right:after{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.35); }
 
     /* ====== HEADLINE & INLINE TAGS ====== */
     .portal-hero{ text-align:center; color:#fff; margin:6px 0 10px; }
@@ -83,7 +84,7 @@
 
     @media (max-width:991px){
       #request-access .split{ flex-direction:column; }
-      #request-access .right{ min-height:280px; }
+      #request-access .left{ min-height:280px; }
       .portal-hero .title{ font-size:42px; }
     }
   </style>
@@ -164,8 +165,11 @@
     <!-- ===================== REQUEST ACCESS PAGE ===================== -->
     <main id="request-access">
       <div class="split">
-        <!-- LEFT: Dark content panel (form) -->
-        <div class="left">
+        <!-- LEFT: Photo panel (now on left) -->
+        <div class="left" aria-hidden="true"></div>
+
+        <!-- RIGHT: Dark content panel (form) -->
+        <div class="right">
           <div class="portal-hero">
             <h1 class="title">REQUEST ACCESS</h1>
           </div>
@@ -226,9 +230,6 @@
             YOUR DASHBOARD WILL BE TAILORED TO THIS ROLE. REQUESTS REQUIRE APPROVAL.
           </p>
         </div>
-
-        <!-- RIGHT: Photo panel (replaces login’s left image; now on right) -->
-        <div class="right" aria-hidden="true"></div>
       </div>
     </main>
     <!-- ===================== /REQUEST ACCESS PAGE ===================== -->
@@ -310,7 +311,7 @@
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/isotope.pkgd.min.js"></script>
 <script src="js/imagesloaded.pkgd.min.js"></script>
-<script src="js/masonry.pkgd.min.js"></script>
+script src="js/masonry.pkgd.min.js"></script>
 <script src="js/jquery.countTo.js"></script>
 <script src="js/jquery.appear.js"></script>
 <script src="js/owl.carousel.min.js"></script>
