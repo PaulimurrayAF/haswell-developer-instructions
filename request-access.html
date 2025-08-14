@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
 
-  <!-- REVICON Fonts-->		
+  <!-- REVICON Fonts-->   
   <link rel="stylesheet" href="rs-plugin/fonts/revicons/revicons.css" type="text/css" media="all" />
 
   <!-- CSS -->
@@ -62,12 +62,12 @@
     }
 
     /* ====== HEADLINE, INTRO, TAGS ====== */
-    .portal-hero{ text-align:center; color:#fff; margin:6px 0 10px; }
+    .portal-hero{ text-align:center; color:#fff; margin:6px 0 10px; margin-top:50px; } /* +50px as requested */
     .portal-hero .title{ font-size:54px; font-weight:800; margin:0; text-transform:uppercase; color:var(--pmaf-green); text-shadow:0 10px 24px rgba(0,0,0,.35); }
     .intro-copy{ max-width:760px; margin:12px auto 8px; line-height:1.55; text-align:center; color:#fff; }
     .hero-tags{
       color:#fff; text-transform:uppercase; font-weight:800; letter-spacing:.5px;
-      opacity:.95; margin:14px 0 20px; text-align:center;
+      opacity:.95; margin:10px 0 20px; text-align:center; /* 20px space after tags */
     }
 
     /* ====== AUTH CARD (unchanged sizing) ====== */
@@ -80,7 +80,7 @@
     .btn-pmaf{ background:var(--pmaf-green); color:#fff; border:none; height:52px; font-weight:800; text-transform:uppercase; border-radius:12px; width:100%; }
     .btn-pmaf:hover{ opacity:.95; }
 
-    /* Helper copy (moved above form per your request) */
+    /* Helper copy  */
     .helper-copy{ color:#fff; text-align:center; margin:10px 0 10px; line-height:1.45; text-transform:uppercase; font-weight:700; }
 
     @media (max-width:991px){
@@ -96,7 +96,7 @@
 <div id="wrap" class="boxed">
   <div class="grey-bg"><!-- Grey BG -->
 
-    <!-- =================== HEADER (UNCHANGED) =================== -->
+    <!-- =================== HEADER (UNCHANGED EXCEPT MENU ITEM) =================== -->
     <header id="nav" class="header header-1 black-header mobile-no-transparent">
       <div class="header-wrapper">
         <div class="container-m-30 clearfix">
@@ -153,7 +153,8 @@
                       </a>
                     </li>
                     <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
-                    <li class="active"><a href="request-access.html"><div class="main-menu-title">Request Access</div></a></li>
+                    <!-- REPLACED: removed 'Request Access', restored 'Login' -->
+                    <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
                   </ul>
                 </nav>
               </div>
@@ -176,21 +177,20 @@
             <h1 class="title">REQUEST ACCESS</h1>
           </div>
 
-          <!-- NEW: Intro paragraph (1st after title) -->
+          <!-- MOVED: TAGS directly under title with 20px space after -->
+          <div class="hero-tags">SECURE ACCESS &nbsp; • &nbsp; ROLE-BASED &nbsp; • &nbsp; VALUES-ALIGNED</div>
+
+          <!-- Intro paragraph (now below tags) -->
           <p class="intro-copy">
             This page is for <strong>Reviewers, Volunteers, and Board Members</strong> who need access to the PMAF Portal.
             If you’re a PMA applicant, please use <a href="login.html#tab-apply" style="color:#fff;text-decoration:underline;">PMA Application Registration</a> on the login page instead.
           </p>
 
-          <!-- MOVED: Helper paragraph (2nd after title) -->
+          <!-- Helper paragraph -->
           <p class="helper-copy">
             ENTER YOUR DETAILS AND SELECT YOUR ROLE.<br>
             YOUR DASHBOARD WILL BE TAILORED TO THIS ROLE. REQUESTS REQUIRE APPROVAL.
           </p>
-
-          <!-- Inline, all-caps tags -->
-          <div class="hero-tags">SECURE ACCESS &nbsp; • &nbsp; ROLE-BASED &nbsp; • &nbsp; VALUES-ALIGNED</div>
-          <div style="height:20px;"></div>
 
           <!-- Form (unchanged) -->
           <div class="auth-wrap">
@@ -242,7 +242,6 @@
             </div>
           </div>
 
-          <!-- (Helper paragraph moved above; nothing below the form now) -->
         </div>
       </div>
     </main>
