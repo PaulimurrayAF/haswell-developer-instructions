@@ -45,40 +45,29 @@
     <!-- ANIMATE -->  
     <link rel="stylesheet" href="css/animate.min.css">
 
-    <!-- Owl CSS (ensure v2) -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- Owl Carousel v2 CSS (CDN to ensure v2) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
     <style>
-      /* ==== Board carousel layout tweaks (scoped) ==== */
+      /* minimal scoped styles for arrow placement & dots */
       .pos-relative { position: relative; }
-
-      .board-carousel-wrap { padding: 0 56px; }  /* space for external arrows */
+      .board-carousel-wrap { padding: 0 56px; }
       @media (max-width: 992px){ .board-carousel-wrap { padding: 0 44px; } }
       @media (max-width: 768px){ .board-carousel-wrap { padding: 0 36px; } }
 
-      .board-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 5;
-        pointer-events: auto;
-      }
+      .board-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
       .board-nav-left  { left: 8px; }
       .board-nav-right { right: 8px; }
-
       .board-nav .btn.btn-xs{
-        background: transparent;
-        border: 2px solid #ffffff;
-        border-radius: 50%;
-        width: 42px; height: 42px; line-height: 38px;
-        padding: 0;
+        background: transparent; border: 2px solid #ffffff; border-radius: 50%;
+        width: 42px; height: 42px; line-height: 38px; padding: 0;
         display: inline-flex; align-items: center; justify-content: center;
         color: #ffffff; transition: all .2s ease;
       }
       .board-nav .btn.btn-xs:hover,
       .board-nav .btn.btn-xs:focus { border-color:#7cb203; color:#7cb203; outline:0; box-shadow:none; }
 
-      /* Dots: one per item, brand colors */
       #board-carousel .owl-dots { margin-top:22px; text-align:center; }
       #board-carousel .owl-dot span{
         width:10px; height:10px; display:inline-block; border-radius:50%;
@@ -123,7 +112,6 @@
                     <!-- MAIN MENU LIST -->
                     <nav class="collapse collapsing navbar-collapse right-1024">
                       <ul class="nav navbar-nav">
-                        <!-- MENU ITEM -->
                         <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
 
                         <!-- ABOUT -->
@@ -142,10 +130,8 @@
                           </ul>
                         </li>
 
-                        <!-- AWARDS -->
                         <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
 
-                        <!-- PROGRAMS -->
                         <li class="parent">
                           <a href="programs.html"><div class="main-menu-title">Programs</div></a>
                           <ul class="sub">
@@ -154,23 +140,16 @@
                           </ul>
                         </li>
 
-                        <!-- BLOG -->
                         <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
-
-                        <!-- FAQ -->
                         <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
 
-                        <!-- DONATE -->
                         <li>
                           <a href="donate.html" class="donate-highlight">
                             <div class="main-menu-title">Donate</div>
                           </a>
                         </li>
 
-                        <!-- CONTACT -->
                         <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
-
-                        <!-- LOGIN -->
                         <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
                       </ul>
                     </nav>
@@ -199,24 +178,21 @@
               BUILDING THE FUTURE WITH VISION AND INTEGRITY
             </h4>
 
-<!-- BOARD PARAGRAPH SECTION (DARK BACKGROUND, FULL WIDTH) -->
-<div style="background-color: #303236; color: #ffffff; padding: 20px 0 60px 0;">
-  <div class="container text-center" style="max-width: 1140px;">
-
-    <!-- White Bold Title Line -->
-    <h4 style="color: #ffffff; font-size: 24px; font-weight: 700; margin-bottom: 20px;">
-      MEET THE LEADERS SHAPING OUR STRATEGY, STEWARDING OUR VALUES, AND GUIDING<br>THE MISSION OF THE PAULI MURRAY AWARDS FOUNDATION
-    </h4>
-
-    <p style="font-size: 18px; line-height: 1.6; font-weight: 400;">
-      The Board of Directors of the Pauli Murray Awards Foundation is a collective of brilliant thinkers,
-      cultural stewards, community leaders, and organizational strategists who reflect the very brilliance
-      we seek to honor. They guide the vision of the Foundation with care, conviction, and clarity —
-      helping to shape a more just and joyful world.
-    </p>
-
-  </div>
-</div>
+            <!-- Paragraph (after subtitle) -->
+            <div style="background:#303236; color:#ffffff; padding:0 0 30px 0;">
+              <div class="container text-center" style="max-width:1140px;">
+                <h4 style="color:#ffffff; font-size:24px; font-weight:700; margin-bottom:20px;">
+                  MEET THE LEADERS SHAPING OUR STRATEGY, STEWARDING OUR VALUES, AND GUIDING<br>
+                  THE MISSION OF THE PAULI MURRAY AWARDS FOUNDATION
+                </h4>
+                <p style="font-size:18px; line-height:1.6; font-weight:400;">
+                  The Board of Directors of the Pauli Murray Awards Foundation is a collective of brilliant thinkers,
+                  cultural stewards, community leaders, and organizational strategists who reflect the very brilliance
+                  we seek to honor. They guide the vision of the Foundation with care, conviction, and clarity —
+                  helping to shape a more just and joyful world.
+                </p>
+              </div>
+            </div>
 
             <!-- Padded wrapper so arrows don't overlap -->
             <div class="board-carousel-wrap pos-relative">
@@ -234,7 +210,10 @@
                 <!-- Cory -->
                 <div class="item text-center">
                   <img src="images/cory-icon.png" alt="Cory L. Scott" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                  <h3 class="mt-20" style="color:#ffffff;">Cory L. Scott<br><small>(He/Him)</small></h3>
+                  <h3 class="mt-20" style="color:#ffffff; font-size:18px; font-weight:700;">
+                    <span style="white-space:nowrap;">Cory L. Scott</span><br>
+                    <small style="font-size:70%; font-weight:400;">(He/Him)</small>
+                  </h3>
                   <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
                     <p class="board-blurb" style="color:#ffffff;">Author, activist, and former pastor with 15+ years of experience leading movements for Black queer communities. PMAF’s visionary founder.</p>
                     <a href="board-member-bios.html#cory" class="button board-readmore">READ MORE</a>
@@ -244,7 +223,10 @@
                 <!-- Nyron -->
                 <div class="item text-center">
                   <img src="images/nyron-icon.png" alt="Nyron Rouse" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                  <h3 class="mt-20" style="color:#ffffff;">Nyron Rouse, ML, MPA<br><small>(He/Him)</small></h3>
+                  <h3 class="mt-20" style="color:#ffffff; font-size:18px; font-weight:700;">
+                    <span style="white-space:nowrap;">Nyron Rouse, ML, MPA</span><br>
+                    <small style="font-size:70%; font-weight:400;">(He/Him)</small>
+                  </h3>
                   <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
                     <p class="board-blurb" style="color:#ffffff;">Strategic funding leader and Iraqi Freedom vet advancing equity and access for marginalized communities nationwide.</p>
                     <a href="board-member-bios.html#nyron" class="button board-readmore">READ MORE</a>
@@ -254,7 +236,10 @@
                 <!-- Darnell -->
                 <div class="item text-center">
                   <img src="images/darnell-icon.png" alt="Darnell Riley" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                  <h3 class="mt-20" style="color:#ffffff;">Darnell Riley, Ed.S<br><small>(He/Him)</small></h3>
+                  <h3 class="mt-20" style="color:#ffffff; font-size:18px; font-weight:700;">
+                    <span style="white-space:nowrap;">Darnell Riley, Ed.S</span><br>
+                    <small style="font-size:70%; font-weight:400;">(He/Him)</small>
+                  </h3>
                   <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
                     <p class="board-blurb" style="color:#ffffff;">Union leader, educator, and curriculum expert dedicated to inclusive education and culturally rooted celebration.</p>
                     <a href="board-member-bios.html#darnell" class="button board-readmore">READ MORE</a>
@@ -264,7 +249,10 @@
                 <!-- Karyden -->
                 <div class="item text-center">
                   <img src="images/karyden-icon.png" alt="Karyden Roberts" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                  <h3 class="mt-20" style="color:#ffffff;">Karyden Roberts<br><small>(She/Her)</small></h3>
+                  <h3 class="mt-20" style="color:#ffffff; font-size:18px; font-weight:700;">
+                    <span style="white-space:nowrap;">Karyden Roberts</span><br>
+                    <small style="font-size:70%; font-weight:400;">(She/Her)</small>
+                  </h3>
                   <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
                     <p class="board-blurb" style="color:#ffffff;">Performance artist and cultural worker using art to reimagine privacy, consent, and liberation across movements.</p>
                     <a href="board-member-bios.html#karyden" class="button board-readmore">READ MORE</a>
@@ -274,7 +262,10 @@
                 <!-- David -->
                 <div class="item text-center">
                   <img src="images/david-icon.png" alt="David Brandyn" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                  <h3 class="mt-20" style="color:#ffffff;">David Brandyn<br><small>(He/Him)</small></h3>
+                  <h3 class="mt-20" style="color:#ffffff; font-size:18px; font-weight:700;">
+                    <span style="white-space:nowrap;">David Brandyn</span><br>
+                    <small style="font-size:70%; font-weight:400;">(He/Him)</small>
+                  </h3>
                   <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
                     <p class="board-blurb" style="color:#ffffff;">Content strategist and wellness advocate championing queer visibility, joy, and sexual health education.</p>
                     <a href="board-member-bios.html#david" class="button board-readmore">READ MORE</a>
@@ -284,7 +275,10 @@
                 <!-- Faith -->
                 <div class="item text-center">
                   <img src="images/faith-icon.png" alt="Faith Rogers" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                  <h3 class="mt-20" style="color:#ffffff;">Faith Rogers, Esq.<br><small>(She/Her)</small></h3>
+                  <h3 class="mt-20" style="color:#ffffff; font-size:18px; font-weight:700;">
+                    <span style="white-space:nowrap;">Faith Rogers, Esq.</span><br>
+                    <small style="font-size:70%; font-weight:400;">(She/Her)</small>
+                  </h3>
                   <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
                     <p class="board-blurb" style="color:#ffffff;">Federal executive turned strategist building equitable systems and culture-driven operations for social good.</p>
                     <a href="board-member-bios.html#faith" class="button board-readmore">READ MORE</a>
@@ -294,7 +288,10 @@
                 <!-- Jon -->
                 <div class="item text-center">
                   <img src="images/jon-icon.png" alt="Jon Pierre" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                  <h3 class="mt-20" style="color:#ffffff;">Jon Pierre<br><small>(He/Him)</small></h3>
+                  <h3 class="mt-20" style="color:#ffffff; font-size:18px; font-weight:700;">
+                    <span style="white-space:nowrap;">Jon Pierre</span><br>
+                    <small style="font-size:70%; font-weight:400;">(He/Him)</small>
+                  </h3>
                   <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
                     <p class="board-blurb" style="color:#ffffff;">Creative director and pop culture commentator reshaping media with authenticity and imagination.</p>
                     <a href="board-member-bios.html#jon" class="button board-readmore">READ MORE</a>
@@ -304,7 +301,10 @@
                 <!-- Chris -->
                 <div class="item text-center">
                   <img src="images/chris-icon.png" alt="Dr. Chris N. Smith" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                  <h3 class="mt-20" style="color:#ffffff;">Dr. Chris N. Smith<br><small>(They/He)</small></h3>
+                  <h3 class="mt-20" style="color:#ffffff; font-size:18px; font-weight:700;">
+                    <span style="white-space:nowrap;">Chris N. Smith, Ph.D</span><br>
+                    <small style="font-size:70%; font-weight:400;">(They/He)</small>
+                  </h3>
                   <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
                     <p class="board-blurb" style="color:#ffffff;">Veteran, statistician, and educator designing data-driven solutions rooted in justice and lived experience.</p>
                     <a href="board-member-bios.html#chris" class="button board-readmore">READ MORE</a>
@@ -314,7 +314,10 @@
                 <!-- Aaron -->
                 <div class="item text-center">
                   <img src="images/aaron-icon.png" alt="Aaron Marcellus" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                  <h3 class="mt-20" style="color:#ffffff;">Aaron Marcellus<br><small>(He/Him)</small></h3>
+                  <h3 class="mt-20" style="color:#ffffff; font-size:18px; font-weight:700;">
+                    <span style="white-space:nowrap;">Aaron Marcellus</span><br>
+                    <small style="font-size:70%; font-weight:400;">(He/Him)</small>
+                  </h3>
                   <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
                     <p class="board-blurb" style="color:#ffffff;">Musician, producer, and creative director whose artistry and leadership inspire through sound and soul.</p>
                     <a href="board-member-bios.html#aaron" class="button board-readmore">READ MORE</a>
@@ -347,6 +350,10 @@
         <div style="background-color:#303236; text-align:center;">
           <div style="height:2px; width:60%; background-color:#7cb203; margin:0 auto;"></div>
         </div>
+
+        <!-- =======================
+             /CONTENT
+        ======================== -->
 
         <!-- FOOTER 3 BLACK -->
         <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
@@ -465,8 +472,8 @@
         <!-- APPEAR -->    
         <script src="js/jquery.appear.js"></script>
         
-        <!-- OWL CAROUSEL (v2) -->    
-        <script src="js/owl.carousel.min.js"></script>
+        <!-- Owl Carousel v2 JS (CDN to ensure v2) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         
         <!-- MAIN SCRIPT -->
         <script src="js/main.js"></script>
@@ -531,19 +538,19 @@
           });
         </script>
 
-        <!-- BOARD CAROUSEL — dedicated init + arrow wiring -->
+        <!-- BOARD CAROUSEL — v2 init + arrow wiring -->
         <script>
           jQuery(function ($) {
             var $el = $('#board-carousel');
 
-            /* If another script touched it, destroy & clean before init */
+            /* If anything initialized it, destroy & clean before init */
             if ($el.data('owl.carousel')) {
               $el.trigger('destroy.owl.carousel');
               $el.find('.owl-stage-outer').children().unwrap();
               $el.removeClass('owl-center owl-loaded owl-text-select-on');
             }
 
-            /* Init with required behavior */
+            /* Init with required behavior (v2 options) */
             $el.owlCarousel({
               loop: true,
               margin: 30,
@@ -551,9 +558,9 @@
               autoplay: true,
               autoplayTimeout: 5000,
               autoplayHoverPause: true,
-              nav: false,       /* external arrows only */
+              nav: false,              /* external arrows only */
               dots: true,
-              dotsEach: 1,      /* one dot per board member */
+              dotsEach: 1,             /* one dot per board member */
               responsive: {
                 0:   { items: 1 },
                 768: { items: 2 },
@@ -561,23 +568,17 @@
               }
             });
 
-            /* Make sure autoplay is running */
-            $('#board-carousel').trigger('play.owl.autoplay', [5000]);
+            /* Ensure autoplay is running */
+            $el.trigger('play.owl.autoplay', [5000]);
 
-            /* External arrows bound by ID (resilient to re-inits) */
-            $('.board-nav-left .prev')
-              .off('click.board')
-              .on('click.board', function(e){ e.preventDefault(); $('#board-carousel').trigger('prev.owl.carousel'); });
-
-            $('.board-nav-right .next')
-              .off('click.board')
-              .on('click.board', function(e){ e.preventDefault(); $('#board-carousel').trigger('next.owl.carousel'); });
-
-            /* Optional: a11y labels for dots */
-            $el.on('initialized.owl.carousel', function(){
-              $(this).find('.owl-dot').each(function(i){
-                $(this).attr('aria-label', 'Board member ' + (i + 1));
-              });
+            /* External arrows bound by ID (works across re-inits) */
+            $('.board-nav-left .prev').off('click.board').on('click.board', function(e){
+              e.preventDefault();
+              $('#board-carousel').trigger('prev.owl.carousel');
+            });
+            $('.board-nav-right .next').off('click.board').on('click.board', function(e){
+              e.preventDefault();
+              $('#board-carousel').trigger('next.owl.carousel');
             });
           });
         </script>
