@@ -116,10 +116,10 @@
 
                         <!-- ABOUT -->
                         <li class="parent">
-                          <a href="about.html"><div class="main-menu-title">About</div></a>
+                          <a href="about-us.html"><div class="main-menu-title">About PMAF</div></a>
                           <ul class="sub">
                             <li><a href="about-us.html">About PMAF</a></li>
-                            <li><a href="about-paulimurray.html">About Pauli Murray</a></li>
+                            <li><a href="about-pauli.html">About Pauli Murray</a></li>
                             <li class="parent">
                               <a href="board.html">Board of Directors</a>
                               <ul class="sub">
@@ -330,7 +330,7 @@
       data-easing="Power1.easeInOut"
       style="z-index: 13; text-align: center;">
       <div style="font-size: 35px; font-weight: 600; line-height: 1.3; color: #333333;">
-        EVERY CATEGORY, NEW STORIES TOLD BOit should be about-suDLY.
+        EVERY CATEGORY, NEW STORIES TOLD BODLY.
       </div>
     </div>
 
@@ -367,6 +367,8 @@
     <video preload="none" width="100%" height="100%"
       poster="images/my-name-is-pauli-murray-no-text.jpeg">
       <source src="images/my-name-is-pauli-murray-trailer.mp4" type="video/mp4" />
+      <video ... muted playsinline>
+
     </video>
   </div>
 
@@ -593,7 +595,7 @@
 <div class="line-3-70" style="background-color: #ffffff; margin-bottom: 30px;"></div>
     <div class="fes2-text-cont" style="font-size: 18px; line-height: 28px; color: #ffffff; margin-top: 20px;">
       <p>
-        The Paul Murray Awards (PMAs) honor 40 Black LGBTQ+ visionaries, ages 18–40, who are shaping culture, transforming communities, and building a more just world. Through celebration, visibility, and support, the PMAs uplift those who embody the legacy and spirit of Pauli Murray.
+        The Pauli Murray Awards (PMAs) honor 40 Black LGBTQ+ visionaries, ages 18–40, who are shaping culture, transforming communities, and building a more just world. Through celebration, visibility, and support, the PMAs uplift those who embody the legacy and spirit of Pauli Murray.
       </p>
       <br>
       <p style="margin-bottom: 0;">
@@ -661,7 +663,7 @@
 </div>
 
         <!-- BOARD OF DIRECTORS SECTION -->
-        <div class="page-section" style="background-color:#303236; padding:40px 0; color:#ffffff;">
+        <div class="page-section" style="background-color:#111111; padding:40px 0; color:#ffffff;">
           <div class="container text-center">
 
             <!-- Title -->
@@ -673,7 +675,7 @@
             </h4>
 
             <!-- Paragraph (after subtitle) -->
-            <div style="background:#303236; color:#ffffff; padding:0 0 30px 0;">
+            <div style="background:#111111; color:#ffffff; padding:0 0 30px 0;">
               <div class="container text-center" style="max-width:1140px;">
                 <h4 style="color:#ffffff; font-size:24px; font-weight:700; margin-bottom:20px;">
                   MEET THE LEADERS SHAPING OUR STRATEGY, STEWARDING OUR VALUES, AND GUIDING<br>
@@ -690,7 +692,7 @@
 
 
 <!-- LEARN MORE ABOUT THE BOARD with Inward-Pointing Animated Arrows -->
-<div style="background-color: #303237; padding: 40px 0; text-align: center;">
+<div style="background-color: #111111; padding: 40px 0; text-align: center;">
   <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
 
     <!-- Left Arrow (→ pointing in) -->
@@ -714,8 +716,8 @@
   </div>
 </div>
 
-<!-- CENTERED DIVIDER LINE (60% width) -->
-<div style="background-color: #303236; text-align: center;">
+<!-- CENTERED DIVIDER LINE -->
+<div style="background-color: #111111; text-align: center;">
   <div style="height: 2px; width: 80%; background-color: #7cb203; margin: 0 auto;"></div>
 </div>
 
@@ -723,12 +725,22 @@
             <div class="board-carousel-wrap pos-relative">
 
               <!-- External Nav -->
-              <div class="board-nav board-nav-left">
-                <a class="btn btn-xs prev" aria-label="Previous"><span class="icon icon-arrows-left"></span></a>
-              </div>
-              <div class="board-nav board-nav-right">
-                <a class="btn btn-xs next" aria-label="Next"><span class="icon icon-arrows-right"></span></a>
-              </div>
+             <div class="board-nav board-nav-left" style="position:absolute; top:50%; transform:translateY(-50%); left:-70px; z-index:5;">
+  <button type="button" class="prev" aria-label="Previous" aria-controls="board-carousel"
+          style="background:rgba(0,0,0,0.35); border:2px solid #7cb203; border-radius:50%;
+                 width:54px; height:54px; line-height:50px; display:inline-flex; align-items:center; justify-content:center; color:#fff;">
+    <span class="icon icon-arrows-left" style="font-size:22px; line-height:1;"></span>
+  </button>
+</div>
+
+<!-- External Nav (right) -->
+<div class="board-nav board-nav-right" style="position:absolute; top:50%; transform:translateY(-50%); right:-70px; z-index:5;">
+  <button type="button" class="next" aria-label="Next" aria-controls="board-carousel"
+          style="background:rgba(0,0,0,0.35); border:2px solid #7cb203; border-radius:50%;
+                 width:54px; height:54px; line-height:50px; display:inline-flex; align-items:center; justify-content:center; color:#fff;">
+    <span class="icon icon-arrows-right" style="font-size:22px; line-height:1;"></span>
+  </button>
+</div>
 
               <!-- BOARD CAROUSEL -->
               <div id="board-carousel" class="owl-carousel owl-theme mt-40">
@@ -739,7 +751,7 @@
                     <span style="white-space:nowrap;">Cory L. Scott</span><br>
                     <small style="color:#ffffff; font-size:70%; font-weight:400;">(He/Him)</small>
                   </h3>
-                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                  <div style="display:flex; flex-direction:column; align-items:center; gap:12px; height:auto;">
                     <p class="board-blurb" style="color:#ffffff;">Author, activist, and former pastor with 15+ years of experience leading movements for Black queer communities. PMAF’s visionary founder.</p>
                     <a href="board-member-bios.html#cory" class="button board-readmore">READ MORE</a>
                   </div>
@@ -752,8 +764,8 @@
                     <span style="white-space:nowrap;">Nyron Rouse, ML, MPA</span><br>
                     <small style="color:#ffffff; font-size:70%; font-weight:400;">(He/Him)</small>
                   </h3>
-                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                    <p class="board-blurb" style="color:#ffffff;">Strategic funding leader and Iraqi Freedom vet advancing equity and access for marginalized communities nationwide.</p>
+<div style="display:flex; flex-direction:column; align-items:center; gap:12px; height:auto;">                    
+  <p class="board-blurb" style="color:#ffffff;">Strategic funding leader and Iraqi Freedom vet advancing equity and access for marginalized communities nationwide.</p>
                     <a href="board-member-bios.html#nyron" class="button board-readmore">READ MORE</a>
                   </div>
                 </div>
@@ -765,8 +777,8 @@
                     <span style="white-space:nowrap;">Darnell Riley, Ed.S</span><br>
                     <small style="color:#ffffff; font-size:70%; font-weight:400;">(He/Him)</small>
                   </h3>
-                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                    <p class="board-blurb" style="color:#ffffff;">Union leader, educator, and curriculum expert dedicated to inclusive education and culturally rooted celebration.</p>
+<div style="display:flex; flex-direction:column; align-items:center; gap:12px; height:auto;">                    
+  <p class="board-blurb" style="color:#ffffff;">Union leader, educator, and curriculum expert dedicated to inclusive education and culturally rooted celebration.</p>
                     <a href="board-member-bios.html#darnell" class="button board-readmore">READ MORE</a>
                   </div>
                 </div>
@@ -778,8 +790,8 @@
                     <span style="white-space:nowrap;">Karyden Roberts</span><br>
                     <small style="color:#ffffff; font-size:70%; font-weight:400;">(She/Her)</small>
                   </h3>
-                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                    <p class="board-blurb" style="color:#ffffff;">Performance artist and cultural worker using art to reimagine privacy, consent, and liberation across movements.</p>
+<div style="display:flex; flex-direction:column; align-items:center; gap:12px; height:auto;">                    
+  <p class="board-blurb" style="color:#ffffff;">Performance artist and cultural worker using art to reimagine privacy, consent, and liberation across movements.</p>
                     <a href="board-member-bios.html#karyden" class="button board-readmore">READ MORE</a>
                   </div>
                 </div>
@@ -791,8 +803,8 @@
                     <span style="white-space:nowrap;">David Brandyn</span><br>
                     <small style="color:#ffffff; font-size:70%; font-weight:400;">(He/Him)</small>
                   </h3>
-                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                    <p class="board-blurb" style="color:#ffffff;">Content strategist and wellness advocate championing queer visibility, joy, and sexual health education.</p>
+<div style="display:flex; flex-direction:column; align-items:center; gap:12px; height:auto;">                    
+  <p class="board-blurb" style="color:#ffffff;">Content strategist and wellness advocate championing queer visibility, joy, and sexual health education.</p>
                     <a href="board-member-bios.html#david" class="button board-readmore">READ MORE</a>
                   </div>
                 </div>
@@ -804,8 +816,8 @@
                     <span style="white-space:nowrap;">Faith Rogers, Esq.</span><br>
                     <small style="color:#ffffff; font-size:70%; font-weight:400;">(She/Her)</small>
                   </h3>
-                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                    <p class="board-blurb" style="color:#ffffff;">Federal executive turned strategist building equitable systems and culture-driven operations for social good.</p>
+<div style="display:flex; flex-direction:column; align-items:center; gap:12px; height:auto;">
+                      <p class="board-blurb" style="color:#ffffff;">Federal executive turned strategist building equitable systems and culture-driven operations for social good.</p>
                     <a href="board-member-bios.html#faith" class="button board-readmore">READ MORE</a>
                   </div>
                 </div>
@@ -817,7 +829,7 @@
                     <span style="white-space:nowrap;">Jon Pierre</span><br>
                     <small style="color:#ffffff; font-size:70%; font-weight:400;">(He/Him)</small>
                   </h3>
-                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                  <div style="display:flex; flex-direction:column; align-items:center; gap:12px; height:auto;">
                     <p class="board-blurb" style="color:#ffffff;">Creative director and pop culture commentator reshaping media with authenticity and imagination.</p>
                     <a href="board-member-bios.html#jon" class="button board-readmore">READ MORE</a>
                   </div>
@@ -830,7 +842,7 @@
                     <span style="white-space:nowrap;">Chris N. Smith, Ph.D</span><br>
                     <small style="color:#ffffff; font-size:70%; font-weight:400;">(They/He)</small>
                   </h3>
-                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                  <div style="display:flex; flex-direction:column; align-items:center; gap:12px; height:auto;">
                     <p class="board-blurb" style="color:#ffffff;">Veteran, statistician, and educator designing data-driven solutions rooted in justice and lived experience.</p>
                     <a href="board-member-bios.html#chris" class="button board-readmore">READ MORE</a>
                   </div>
@@ -843,7 +855,7 @@
                     <span style="white-space:nowrap;">Aaron Marcellus</span><br>
                     <small style="color:#ffffff; font-size:70%; font-weight:400;">(He/Him)</small>
                   </h3>
-                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                  <div style="display:flex; flex-direction:column; align-items:center; gap:12px; height:auto;">
                     <p class="board-blurb" style="color:#ffffff;">Musician, producer, and creative director whose artistry and leadership inspire through sound and soul.</p>
                     <a href="board-member-bios.html#aaron" class="button board-readmore">READ MORE</a>
                   </div>
@@ -1038,8 +1050,8 @@
                 <h4>QUICK LINKS</h4>
                 <ul class="links-list bold a-text-cont">
                   <li><a href="index.html">HOME</a></li>
-                  <li><a href="about.html">ABOUT PMAF</a></li>
-                  <li><a href="about-pauli-murray.html">ABOUT PAULI MURRAY</a></li>
+                  <li><a href="about-us.html">ABOUT PMAF</a></li>
+                  <li><a href="about-pauli.html">ABOUT PAULI MURRAY</a></li>
                   <li><a href="programs.html">PROGRAMS</a></li>
                   <li><a href="blog.html">NEWS</a></li>
                   <li><a href="donate.html">DONATE</a></li>
@@ -1065,7 +1077,7 @@
                   <div class="post-prev-title">
                     <h3><a class="a-text" href="blog-single-sidebar-right.html">New trends in web design</a></h3>
                   </div>
-                  <div class="post-prev-info">Jule 10</div>
+                  <div class="post-prev-info">July 10</div>
 
                   <div class="post-prev-title">
                     <h3><a class="a-text" href="blog-single-sidebar-right.html">The sound of life</a></h3>
@@ -1092,7 +1104,7 @@
               <!-- Copyright -->
               <div class="left">
                 <a class="footer-2-copy" href="https://paulimurrayawaards.com" target="_blank">
-                  &copy; PAULI MURRAY AWARDS FOUNDATIONS INC. 2025
+                  &copy; PAULI MURRAY AWARDS FOUNDATION INC. 2025
                 </a>
               </div>
             </div>
