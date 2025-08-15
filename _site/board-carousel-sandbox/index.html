@@ -44,6 +44,48 @@
   
     <!-- ANIMATE -->  
     <link rel="stylesheet" href="css/animate.min.css">
+
+    <!-- Owl CSS (ensure v2) -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <style>
+      /* ==== Board carousel layout tweaks (scoped) ==== */
+      .pos-relative { position: relative; }
+
+      .board-carousel-wrap { padding: 0 56px; }  /* space for external arrows */
+      @media (max-width: 992px){ .board-carousel-wrap { padding: 0 44px; } }
+      @media (max-width: 768px){ .board-carousel-wrap { padding: 0 36px; } }
+
+      .board-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 5;
+        pointer-events: auto;
+      }
+      .board-nav-left  { left: 8px; }
+      .board-nav-right { right: 8px; }
+
+      .board-nav .btn.btn-xs{
+        background: transparent;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        width: 42px; height: 42px; line-height: 38px;
+        padding: 0;
+        display: inline-flex; align-items: center; justify-content: center;
+        color: #ffffff; transition: all .2s ease;
+      }
+      .board-nav .btn.btn-xs:hover,
+      .board-nav .btn.btn-xs:focus { border-color:#7cb203; color:#7cb203; outline:0; box-shadow:none; }
+
+      /* Dots: one per item, brand colors */
+      #board-carousel .owl-dots { margin-top:22px; text-align:center; }
+      #board-carousel .owl-dot span{
+        width:10px; height:10px; display:inline-block; border-radius:50%;
+        background:#7cb203; opacity:.35; margin:0 5px; transition:opacity .2s ease;
+      }
+      #board-carousel .owl-dot.active span{ opacity:1; }
+    </style>
   </head>
 
   <body>
@@ -141,9 +183,13 @@
           </div>
         </header>
 
+        <!-- =======================
+             CONTENT
+        ======================== -->
+
         <!-- BOARD OF DIRECTORS SECTION -->
         <div class="page-section" style="background-color:#303236; padding:40px 0; color:#ffffff;">
-          <div class="container text-center pos-relative">
+          <div class="container text-center">
 
             <!-- Title -->
             <div class="title-fs-45" style="color:#ffffff; margin-top:0; margin-bottom:30px;">
@@ -153,124 +199,131 @@
               BUILDING THE FUTURE WITH VISION AND INTEGRITY
             </h4>
 
-            <!-- PARAGRAPH (moved directly after subtitle) -->
-            <div style="background:#303236; color:#ffffff; padding:0 0 30px 0;">
-              <div class="container text-center" style="max-width:1140px;">
-                <h4 style="color:#7cb203; font-size:24px; font-weight:400; margin-bottom:20px;">
-                  MEET THE CHANGEMAKERS SHAPING OUR STRATEGY, STEWARDING OUR VALUES, AND GUIDING<br>
-                  THE MISSION OF THE PAULI MURRAY AWARDS FOUNDATION
-                </h4>
-                <p style="font-size:18px; line-height:1.6; font-weight:400;">
-                  The Board of Directors of the Pauli Murray Awards Foundation is a collective of brilliant thinkers,
-                  cultural stewards, community leaders, and organizational strategists who reflect the very brilliance
-                  we seek to honor. They guide the vision of the Foundation with care, conviction, and clarity —
-                  helping to shape a more just and joyful world.
-                </p>
+<!-- BOARD PARAGRAPH SECTION (DARK BACKGROUND, FULL WIDTH) -->
+<div style="background-color: #303236; color: #ffffff; padding: 20px 0 60px 0;">
+  <div class="container text-center" style="max-width: 1140px;">
+
+    <!-- White Bold Title Line -->
+    <h4 style="color: #ffffff; font-size: 24px; font-weight: 700; margin-bottom: 20px;">
+      MEET THE LEADERS SHAPING OUR STRATEGY, STEWARDING OUR VALUES, AND GUIDING<br>THE MISSION OF THE PAULI MURRAY AWARDS FOUNDATION
+    </h4>
+
+    <p style="font-size: 18px; line-height: 1.6; font-weight: 400;">
+      The Board of Directors of the Pauli Murray Awards Foundation is a collective of brilliant thinkers,
+      cultural stewards, community leaders, and organizational strategists who reflect the very brilliance
+      we seek to honor. They guide the vision of the Foundation with care, conviction, and clarity —
+      helping to shape a more just and joyful world.
+    </p>
+
+  </div>
+</div>
+
+            <!-- Padded wrapper so arrows don't overlap -->
+            <div class="board-carousel-wrap pos-relative">
+
+              <!-- External Nav -->
+              <div class="board-nav board-nav-left">
+                <a class="btn btn-xs prev" aria-label="Previous"><span class="icon icon-arrows-left"></span></a>
               </div>
-            </div>
-            <!-- /PARAGRAPH -->
+              <div class="board-nav board-nav-right">
+                <a class="btn btn-xs next" aria-label="Next"><span class="icon icon-arrows-right"></span></a>
+              </div>
 
-            <!-- External Nav (outside carousel) -->
-            <div class="board-nav board-nav-left">
-              <a class="btn btn-xs prev" aria-label="Previous"><span class="icon icon-arrows-left"></span></a>
-            </div>
-            <div class="board-nav board-nav-right">
-              <a class="btn btn-xs next" aria-label="Next"><span class="icon icon-arrows-right"></span></a>
-            </div>
-
-            <!-- BOARD CAROUSEL -->
-            <div id="board-carousel" class="owl-carousel owl-theme mt-40">
-              <!-- Cory -->
-              <div class="item text-center">
-                <img src="images/cory-icon.png" alt="Cory L. Scott" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                <h3 class="mt-20" style="color:#ffffff;">Cory L. Scott<br><small>(He/Him)</small></h3>
-                <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                  <p class="board-blurb" style="color:#ffffff;">Author, activist, and former pastor with 15+ years of experience leading movements for Black queer communities. PMAF’s visionary founder.</p>
-                  <a href="board-member-bios.html#cory" class="button board-readmore">READ MORE</a>
+              <!-- BOARD CAROUSEL -->
+              <div id="board-carousel" class="owl-carousel owl-theme mt-40">
+                <!-- Cory -->
+                <div class="item text-center">
+                  <img src="images/cory-icon.png" alt="Cory L. Scott" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
+                  <h3 class="mt-20" style="color:#ffffff;">Cory L. Scott<br><small>(He/Him)</small></h3>
+                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                    <p class="board-blurb" style="color:#ffffff;">Author, activist, and former pastor with 15+ years of experience leading movements for Black queer communities. PMAF’s visionary founder.</p>
+                    <a href="board-member-bios.html#cory" class="button board-readmore">READ MORE</a>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Nyron -->
-              <div class="item text-center">
-                <img src="images/nyron-icon.png" alt="Nyron Rouse" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                <h3 class="mt-20" style="color:#ffffff;">Nyron Rouse<br><small>(He/Him)</small></h3>
-                <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                  <p class="board-blurb" style="color:#ffffff;">Strategic funding leader and Iraqi Freedom vet advancing equity and access for marginalized communities nationwide.</p>
-                  <a href="board-member-bios.html#nyron" class="button board-readmore">READ MORE</a>
+                <!-- Nyron -->
+                <div class="item text-center">
+                  <img src="images/nyron-icon.png" alt="Nyron Rouse" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
+                  <h3 class="mt-20" style="color:#ffffff;">Nyron Rouse, ML, MPA<br><small>(He/Him)</small></h3>
+                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                    <p class="board-blurb" style="color:#ffffff;">Strategic funding leader and Iraqi Freedom vet advancing equity and access for marginalized communities nationwide.</p>
+                    <a href="board-member-bios.html#nyron" class="button board-readmore">READ MORE</a>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Darnell -->
-              <div class="item text-center">
-                <img src="images/darnell-icon.png" alt="Darnell Riley" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                <h3 class="mt-20" style="color:#ffffff;">Darnell Riley<br><small>(He/Him)</small></h3>
-                <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                  <p class="board-blurb" style="color:#ffffff;">Union leader, educator, and curriculum expert dedicated to inclusive education and culturally rooted celebration.</p>
-                  <a href="board-member-bios.html#darnell" class="button board-readmore">READ MORE</a>
+                <!-- Darnell -->
+                <div class="item text-center">
+                  <img src="images/darnell-icon.png" alt="Darnell Riley" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
+                  <h3 class="mt-20" style="color:#ffffff;">Darnell Riley, Ed.S<br><small>(He/Him)</small></h3>
+                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                    <p class="board-blurb" style="color:#ffffff;">Union leader, educator, and curriculum expert dedicated to inclusive education and culturally rooted celebration.</p>
+                    <a href="board-member-bios.html#darnell" class="button board-readmore">READ MORE</a>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Karyden -->
-              <div class="item text-center">
-                <img src="images/karyden-icon.png" alt="Karyden Roberts" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                <h3 class="mt-20" style="color:#ffffff;">Karyden Roberts<br><small>(She/Her)</small></h3>
-                <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                  <p class="board-blurb" style="color:#ffffff;">Performance artist and cultural worker using art to reimagine privacy, consent, and liberation across movements.</p>
-                  <a href="board-member-bios.html#karyden" class="button board-readmore">READ MORE</a>
+                <!-- Karyden -->
+                <div class="item text-center">
+                  <img src="images/karyden-icon.png" alt="Karyden Roberts" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
+                  <h3 class="mt-20" style="color:#ffffff;">Karyden Roberts<br><small>(She/Her)</small></h3>
+                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                    <p class="board-blurb" style="color:#ffffff;">Performance artist and cultural worker using art to reimagine privacy, consent, and liberation across movements.</p>
+                    <a href="board-member-bios.html#karyden" class="button board-readmore">READ MORE</a>
+                  </div>
                 </div>
-              </div>
 
-              <!-- David -->
-              <div class="item text-center">
-                <img src="images/david-icon.png" alt="David Brandyn" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                <h3 class="mt-20" style="color:#ffffff;">David Brandyn<br><small>(He/Him)</small></h3>
-                <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                  <p class="board-blurb" style="color:#ffffff;">Content strategist and wellness advocate championing queer visibility, joy, and sexual health education.</p>
-                  <a href="board-member-bios.html#david" class="button board-readmore">READ MORE</a>
+                <!-- David -->
+                <div class="item text-center">
+                  <img src="images/david-icon.png" alt="David Brandyn" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
+                  <h3 class="mt-20" style="color:#ffffff;">David Brandyn<br><small>(He/Him)</small></h3>
+                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                    <p class="board-blurb" style="color:#ffffff;">Content strategist and wellness advocate championing queer visibility, joy, and sexual health education.</p>
+                    <a href="board-member-bios.html#david" class="button board-readmore">READ MORE</a>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Faith -->
-              <div class="item text-center">
-                <img src="images/faith-icon.png" alt="Faith Rogers" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                <h3 class="mt-20" style="color:#ffffff;">Faith Rogers, Esq.<br><small>(She/Her)</small></h3>
-                <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                  <p class="board-blurb" style="color:#ffffff;">Federal executive turned strategist building equitable systems and culture-driven operations for social good.</p>
-                  <a href="board-member-bios.html#faith" class="button board-readmore">READ MORE</a>
+                <!-- Faith -->
+                <div class="item text-center">
+                  <img src="images/faith-icon.png" alt="Faith Rogers" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
+                  <h3 class="mt-20" style="color:#ffffff;">Faith Rogers, Esq.<br><small>(She/Her)</small></h3>
+                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                    <p class="board-blurb" style="color:#ffffff;">Federal executive turned strategist building equitable systems and culture-driven operations for social good.</p>
+                    <a href="board-member-bios.html#faith" class="button board-readmore">READ MORE</a>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Jon -->
-              <div class="item text-center">
-                <img src="images/jon-icon.png" alt="Jon Pierre" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                <h3 class="mt-20" style="color:#ffffff;">Jon Pierre<br><small>(He/Him)</small></h3>
-                <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                  <p class="board-blurb" style="color:#ffffff;">Creative director and pop culture commentator reshaping media with authenticity and imagination.</p>
-                  <a href="board-member-bios.html#jon" class="button board-readmore">READ MORE</a>
+                <!-- Jon -->
+                <div class="item text-center">
+                  <img src="images/jon-icon.png" alt="Jon Pierre" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
+                  <h3 class="mt-20" style="color:#ffffff;">Jon Pierre<br><small>(He/Him)</small></h3>
+                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                    <p class="board-blurb" style="color:#ffffff;">Creative director and pop culture commentator reshaping media with authenticity and imagination.</p>
+                    <a href="board-member-bios.html#jon" class="button board-readmore">READ MORE</a>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Chris -->
-              <div class="item text-center">
-                <img src="images/chris-icon.png" alt="Dr. Chris N. Smith" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                <h3 class="mt-20" style="color:#ffffff;">Dr. Chris N. Smith<br><small>(They/He)</small></h3>
-                <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                  <p class="board-blurb" style="color:#ffffff;">Veteran, statistician, and educator designing data-driven solutions rooted in justice and lived experience.</p>
-                  <a href="board-member-bios.html#chris" class="button board-readmore">READ MORE</a>
+                <!-- Chris -->
+                <div class="item text-center">
+                  <img src="images/chris-icon.png" alt="Dr. Chris N. Smith" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
+                  <h3 class="mt-20" style="color:#ffffff;">Dr. Chris N. Smith<br><small>(They/He)</small></h3>
+                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                    <p class="board-blurb" style="color:#ffffff;">Veteran, statistician, and educator designing data-driven solutions rooted in justice and lived experience.</p>
+                    <a href="board-member-bios.html#chris" class="button board-readmore">READ MORE</a>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Aaron -->
-              <div class="item text-center">
-                <img src="images/aaron-icon.png" alt="Aaron Marcellus" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
-                <h3 class="mt-20" style="color:#ffffff;">Aaron Marcellus<br><small>(He/Him)</small></h3>
-                <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
-                  <p class="board-blurb" style="color:#ffffff;">Musician, producer, and creative director whose artistry and leadership inspire through sound and soul.</p>
-                  <a href="board-member-bios.html#aaron" class="button board-readmore">READ MORE</a>
+                <!-- Aaron -->
+                <div class="item text-center">
+                  <img src="images/aaron-icon.png" alt="Aaron Marcellus" class="img-responsive center-block" style="border-radius:50%; max-width:200px;">
+                  <h3 class="mt-20" style="color:#ffffff;">Aaron Marcellus<br><small>(He/Him)</small></h3>
+                  <div style="display:flex; flex-direction:column; justify-content:space-between; height:220px;">
+                    <p class="board-blurb" style="color:#ffffff;">Musician, producer, and creative director whose artistry and leadership inspire through sound and soul.</p>
+                    <a href="board-member-bios.html#aaron" class="button board-readmore">READ MORE</a>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <!-- /#board-carousel -->
+
+              </div><!-- /#board-carousel -->
+            </div><!-- /.board-carousel-wrap -->
+
           </div>
         </div>
 
@@ -294,10 +347,6 @@
         <div style="background-color:#303236; text-align:center;">
           <div style="height:2px; width:60%; background-color:#7cb203; margin:0 auto;"></div>
         </div>
-
-        <!-- =======================
-             /CONTENT
-        ======================== -->
 
         <!-- FOOTER 3 BLACK -->
         <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
@@ -416,14 +465,13 @@
         <!-- APPEAR -->    
         <script src="js/jquery.appear.js"></script>
         
-        <!-- OWL CAROUSEL -->    
+        <!-- OWL CAROUSEL (v2) -->    
         <script src="js/owl.carousel.min.js"></script>
         
         <!-- MAIN SCRIPT -->
         <script src="js/main.js"></script>
         
         <!-- REVOSLIDER SCRIPTS  -->
-        <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
         <script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>   
         <script src="rs-plugin/js/jquery.themepunch.revolution-parallax.min.js"></script>
         
@@ -432,126 +480,42 @@
           jQuery(document).ready(function() {
             if ((navigator.appVersion.indexOf("Win")!=-1) && ( ieDetect == false )) { 
               jQuery('#rs-fullscr').revolution({
-                dottedOverlay:"none",
-                delay:16000,
-                startwidth:1170,
-                startheight:700,
-                hideThumbs:200,
-                thumbWidth:100,
-                thumbHeight:50,
-                thumbAmount:5,
-                navigationType:"none",
-                navigationArrows:"solo",
-                navigationStyle:"preview4",
-                hideTimerBar:"on",
-                touchenabled:"on",
-                onHoverStop:"on",
-                swipe_velocity:0.7,
-                swipe_min_touches:1,
-                swipe_max_touches:1,
-                drag_block_vertical:false,
-                parallax:"scroll",
-                parallaxBgFreeze:"on",
-                parallaxLevels:[45,40,35,50],
-                parallaxDisableOnMobile:"on",
-                keyboardNavigation:"off",
-                navigationHAlign:"center",
-                navigationVAlign:"bottom",
-                navigationHOffset:0,
-                navigationVOffset:20,
-                soloArrowLeftHalign:"left",
-                soloArrowLeftValign:"center",
-                soloArrowLeftHOffset:20,
-                soloArrowLeftVOffset:0,
-                soloArrowRightHalign:"right",
-                soloArrowRightValign:"center",
-                soloArrowRightHOffset:20,
-                soloArrowRightVOffset:0,
-                shadow:0,
-                fullWidth:"off",
-                fullScreen:"on",
-                spinner:"spinner4",
-                stopLoop:"off",
-                stopAfterLoops:-1,
-                stopAtSlide:-1,
-                shuffle:"off",
-                autoHeight:"off",
-                forceFullWidth:"off",
-                hideThumbsOnMobile:"off",
-                hideNavDelayOnMobile:1500,
-                hideBulletsOnMobile:"off",
-                hideArrowsOnMobile:"off",
-                hideThumbsUnderResolution:0,
-                hideSliderAtLimit:0,
-                hideCaptionAtLimit:0,
-                hideAllCaptionAtLilmit:0,
-                startWithSlide:0
+                dottedOverlay:"none", delay:16000, startwidth:1170, startheight:700, hideThumbs:200,
+                thumbWidth:100, thumbHeight:50, thumbAmount:5, navigationType:"none", navigationArrows:"solo",
+                navigationStyle:"preview4", hideTimerBar:"on", touchenabled:"on", onHoverStop:"on",
+                swipe_velocity:0.7, swipe_min_touches:1, swipe_max_touches:1, drag_block_vertical:false,
+                parallax:"scroll", parallaxBgFreeze:"on", parallaxLevels:[45,40,35,50], parallaxDisableOnMobile:"on",
+                keyboardNavigation:"off", navigationHAlign:"center", navigationVAlign:"bottom", navigationHOffset:0, navigationVOffset:20,
+                soloArrowLeftHalign:"left", soloArrowLeftValign:"center", soloArrowLeftHOffset:20, soloArrowLeftVOffset:0,
+                soloArrowRightHalign:"right", soloArrowRightValign:"center", soloArrowRightHOffset:20, soloArrowRightVOffset:0,
+                shadow:0, fullWidth:"off", fullScreen:"on", spinner:"spinner4", stopLoop:"off", stopAfterLoops:-1, stopAtSlide:-1,
+                shuffle:"off", autoHeight:"off", forceFullWidth:"off", hideThumbsOnMobile:"off", hideNavDelayOnMobile:1500,
+                hideBulletsOnMobile:"off", hideArrowsOnMobile:"off", hideThumbsUnderResolution:0, hideSliderAtLimit:0,
+                hideCaptionAtLimit:0, hideAllCaptionAtLilmit:0, startWithSlide:0
               });
             } else {
               jQuery('#rs-fullscr').revolution({
-                dottedOverlay:"none",
-                delay:16000,
-                startwidth:1170,
-                startheight:700,
-                hideThumbs:200,
-                thumbWidth:100,
-                thumbHeight:50,
-                thumbAmount:5,
-                navigationType:"none",
-                navigationArrows:"solo",
-                navigationStyle:"preview4",
-                hideTimerBar:"on",
-                touchenabled:"on",
-                onHoverStop:"on",
-                swipe_velocity:0.7,
-                swipe_min_touches:1,
-                swipe_max_touches:1,
-                drag_block_vertical:false,
-                parallax:"mouse",
-                parallaxBgFreeze:"on",
-                parallaxLevels:[0],
-                parallaxDisableOnMobile:"on",
-                keyboardNavigation:"off",
-                navigationHAlign:"center",
-                navigationVAlign:"bottom",
-                navigationHOffset:0,
-                navigationVOffset:20,
-                soloArrowLeftHalign:"left",
-                soloArrowLeftValign:"center",
-                soloArrowLeftHOffset:20,
-                soloArrowLeftVOffset:0,
-                soloArrowRightHalign:"right",
-                soloArrowRightValign:"center",
-                soloArrowRightHOffset:20,
-                soloArrowRightVOffset:0,
-                shadow:0,
-                fullWidth:"off",
-                fullScreen:"on",
-                spinner:"spinner4",
-                stopLoop:"off",
-                stopAfterLoops:-1,
-                stopAtSlide:-1,
-                shuffle:"off",
-                autoHeight:"off",
-                forceFullWidth:"off",
-                hideThumbsOnMobile:"off",
-                hideNavDelayOnMobile:1500,
-                hideBulletsOnMobile:"off",
-                hideArrowsOnMobile:"off",
-                hideThumbsUnderResolution:0,
-                hideSliderAtLimit:0,
-                hideCaptionAtLimit:0,
-                hideAllCaptionAtLilmit:0,
-                startWithSlide:0
+                dottedOverlay:"none", delay:16000, startwidth:1170, startheight:700, hideThumbs:200,
+                thumbWidth:100, thumbHeight:50, thumbAmount:5, navigationType:"none", navigationArrows:"solo",
+                navigationStyle:"preview4", hideTimerBar:"on", touchenabled:"on", onHoverStop:"on",
+                swipe_velocity:0.7, swipe_min_touches:1, swipe_max_touches:1, drag_block_vertical:false,
+                parallax:"mouse", parallaxBgFreeze:"on", parallaxLevels:[0], parallaxDisableOnMobile:"on",
+                keyboardNavigation:"off", navigationHAlign:"center", navigationVAlign:"bottom", navigationHOffset:0, navigationVOffset:20,
+                soloArrowLeftHalign:"left", soloArrowLeftValign:"center", soloArrowLeftHOffset:20, soloArrowLeftVOffset:0,
+                soloArrowRightHalign:"right", soloArrowRightValign:"center", soloArrowRightHOffset:20, soloArrowRightVOffset:0,
+                shadow:0, fullWidth:"off", fullScreen:"on", spinner:"spinner4", stopLoop:"off", stopAfterLoops:-1, stopAtSlide:-1,
+                shuffle:"off", autoHeight:"off", forceFullWidth:"off", hideThumbsOnMobile:"off", hideNavDelayOnMobile:1500,
+                hideBulletsOnMobile:"off", hideArrowsOnMobile:"off", hideThumbsUnderResolution:0, hideSliderAtLimit:0,
+                hideCaptionAtLimit:0, hideAllCaptionAtLilmit:0, startWithSlide:0
               });      
             }                 
-          }); //ready
+          });
         </script>
 
-        <!-- GLOBAL Owl init (existing) -->
+        <!-- GLOBAL Owl init — skip #board-carousel -->
         <script>
           $(document).ready(function(){
-            $(".owl-carousel").owlCarousel({
+            $(".owl-carousel").not("#board-carousel").owlCarousel({
               loop: true,
               margin: 30,
               nav: false,
@@ -559,39 +523,37 @@
               autoplay: true,
               autoplayTimeout: 5000,
               responsive: {
-                0:    { items: 1 },
-                768:  { items: 2 },
-                992:  { items: 3 }
+                0:   { items: 1 },
+                768: { items: 2 },
+                992: { items: 3 }
               }
             });
           });
         </script>
 
-        <!-- ***** BOARD CAROUSEL OVERRIDE (external nav + dotsEach:1) ***** -->
+        <!-- BOARD CAROUSEL — dedicated init + arrow wiring -->
         <script>
           jQuery(function ($) {
-            var $board = $('#board-carousel');
+            var $el = $('#board-carousel');
 
-            // If the global script already initialized it, destroy first
-            if ($board.data('owl.carousel')) {
-              $board.trigger('destroy.owl.carousel');
-              $board.find('.owl-stage-outer').children().unwrap();
-              $board.removeClass('owl-center owl-loaded owl-text-select-on');
+            /* If another script touched it, destroy & clean before init */
+            if ($el.data('owl.carousel')) {
+              $el.trigger('destroy.owl.carousel');
+              $el.find('.owl-stage-outer').children().unwrap();
+              $el.removeClass('owl-center owl-loaded owl-text-select-on');
             }
 
-            // Re-init with our settings
-            var $owl = $board.owlCarousel({
+            /* Init with required behavior */
+            $el.owlCarousel({
               loop: true,
               margin: 30,
               smartSpeed: 600,
               autoplay: true,
               autoplayTimeout: 5000,
               autoplayHoverPause: true,
-
-              nav: false,     // external arrows only
+              nav: false,       /* external arrows only */
               dots: true,
-              dotsEach: 1,    // one dot per board member
-
+              dotsEach: 1,      /* one dot per board member */
               responsive: {
                 0:   { items: 1 },
                 768: { items: 2 },
@@ -599,61 +561,26 @@
               }
             });
 
-            // External arrow bindings
-            $('.board-nav.board-nav-left .prev').on('click', function(e){ e.preventDefault(); $owl.trigger('prev.owl.carousel'); });
-            $('.board-nav.board-nav-right .next').on('click', function(e){ e.preventDefault(); $owl.trigger('next.owl.carousel'); });
+            /* Make sure autoplay is running */
+            $('#board-carousel').trigger('play.owl.autoplay', [5000]);
 
-            // a11y labels for dots
-            $owl.on('initialized.owl.carousel', function(){
+            /* External arrows bound by ID (resilient to re-inits) */
+            $('.board-nav-left .prev')
+              .off('click.board')
+              .on('click.board', function(e){ e.preventDefault(); $('#board-carousel').trigger('prev.owl.carousel'); });
+
+            $('.board-nav-right .next')
+              .off('click.board')
+              .on('click.board', function(e){ e.preventDefault(); $('#board-carousel').trigger('next.owl.carousel'); });
+
+            /* Optional: a11y labels for dots */
+            $el.on('initialized.owl.carousel', function(){
               $(this).find('.owl-dot').each(function(i){
                 $(this).attr('aria-label', 'Board member ' + (i + 1));
               });
             });
           });
         </script>
-
-        <!-- External arrow CSS (minimal, scoped) -->
-        <style>
-          .pos-relative { position: relative; }
-          .board-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 3;
-          }
-          .board-nav-left  { left: -10px; }
-          .board-nav-right { right: -10px; }
-          @media (max-width: 1199px) {
-            .board-nav-left  { left: 0; }
-            .board-nav-right { right: 0; }
-          }
-          .board-nav .btn.btn-xs {
-            background: transparent;
-            border: 2px solid #ffffff;
-            border-radius: 50%;
-            width: 42px;
-            height: 42px;
-            line-height: 38px;
-            text-align: center;
-            padding: 0;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: all .2s ease;
-            color: #ffffff;
-          }
-          .board-nav .btn.btn-xs:hover,
-          .board-nav .btn.btn-xs:focus {
-            border-color: #7cb203; color: #7cb203; outline: none; box-shadow: none;
-          }
-          /* dots visuals (match brand) */
-          #board-carousel .owl-dots { margin-top: 22px; text-align: center; }
-          #board-carousel .owl-dot span {
-            width: 10px; height: 10px; display: inline-block; border-radius: 50%;
-            background: #7cb203; opacity: .35; margin: 0 5px; transition: opacity .2s ease;
-          }
-          #board-carousel .owl-dot.active span { opacity: 1; }
-        </style>
 
         <!-- JS end --> 
 
