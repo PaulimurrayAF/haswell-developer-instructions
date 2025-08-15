@@ -1,23 +1,15 @@
 {
   "name": "haswell-developer-instructions",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "eleventy --serve",
+    "build": "eleventy"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PaulimurrayAF/haswell-developer-instructions.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PaulimurrayAF/haswell-developer-instructions/issues"
-  },
-  "homepage": "https://github.com/PaulimurrayAF/haswell-developer-instructions#readme",
-  "description": "",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.55.0"
   }
 }

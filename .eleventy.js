@@ -1,22 +1,20 @@
-module.exports = function(eleventyConfig) {
-  // Copy static assets
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("js");
-  eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("Fonts");
+module.exports = function (eleventyConfig) {
+  // NEW — make a no-op 'safe' filter so Liquid doesn't crash
+  // Works for Liquid (and universal filters)
+  eleventyConfig.addFilter('safe', (value) => value);
+  // Extra safety specifically for Liquid engines
+  if (eleventyConfig.addLiquidFilter) {
+    eleventyConfig.addLiquidFilter('safe', (value) => value);
+  }
 
-  // Define blog post collection
-  eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("content/posts/*.md");
-  });
+  // (keep your existing passthroughs/config here)
+  // Example:
+  // eleventyConfig.addPassthroughCopy("css");
+  // eleventyConfig.addPassthroughCopy("js");
+  // eleventyConfig.addPassthroughCopy("images");
 
   return {
-    dir: {
-      input: ".",              // root of your project
-      includes: "_includes",   // layout & includes folder
-      data: "_data",           // global data
-      output: "_site"          // build output
-    },
-    passthroughFileCopy: true
+    // keep your existing dir settings if you have them
+    // dir: { input: ".", includes: "_includes", data: "_data", output: "_site" }
   };
 };

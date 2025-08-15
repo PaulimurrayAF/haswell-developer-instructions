@@ -1,19 +1,13 @@
 ---
-title: "Feast Day of Rev. Dr. Pauli Murray, Esq.: Honoring the Saint Who Defied
-  Every Box"
-date: 2025-07-01T16:00:16.386Z
-featured_image: /images/uploads/feast-of-pauli-murray-linkedin.jpg
-categories:
-  - Reflection
-excerpt: >-
-  Honoring the Saint Who Defied Every Box
-
-  On July 1, we celebrate the Feast Day of Rev. Dr. Pauli Murray, Esq.—a poet, priest, and prophetic force who reshaped law, language, and liberation. Their sainthood affirms that resistance is holy and that Black queer and trans lives are sacred. At the Pauli Murray Awards Foundation, we carry this legacy forward with pride, purpose, and revolutionary love.
-published: true
-author_name: Cory L. Scott
-author_bio: Author | Activist | Former Pastor | Sex Educator | Strategist | Founder at Pauli Murray Awards Foundation
-author_avatar: /images/uploads/cory-icon.png
-permalink: "/posts/{{ slug }}/"
+title: "Feast Day of Pauli Murray"
+date: 2025-07-02
+author: "Cory L. Scott"
+image: "/images/uploads/pauli.jpg"
+permalink: "/posts/feast-day-of-pauli-murray/"
+tags:
+  - Pauli Murray
+  - History
+excerpt: "Honoring Rev. Dr. Pauli Murray’s enduring influence."
 ---
 
 July 1 marks the **Feast Day of Rev. Dr. Pauli Murray, Esq.**, a moment in the Episcopal Church calendar when the faithful pause to honor a soul whose life and legacy still ripple through our movements, our identities, and our demands for justice. For us at the Pauli Murray Awards Foundation, it’s more than a date on a calendar. It’s a call to remembrance. A call to action. A call to become.

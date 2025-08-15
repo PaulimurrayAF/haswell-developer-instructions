@@ -210,8 +210,7 @@
 
   <!-- POST BODY CONTENT -->
 <div class="post-prev-text">
-  {{ content | safe }}
-</div>
+{{ content }} {# TODO: Restore '| safe' filter after custom filter is added in .eleventy.js #}</div>
 
 <!-- POST ITEM -->
 <div class="blog-post wow fadeIn pb-50">
