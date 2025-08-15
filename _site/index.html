@@ -651,11 +651,11 @@
     </h4>
 
 
-    <!-- BOARD CAROUSEL -->
+<!-- BOARD CAROUSEL (external nav + dots per item) -->
 <div class="page-section" style="background:#303236; padding:60px 0;">
   <div class="container pos-relative">
 
-    <!-- External Nav (left / right) -->
+    <!-- External Nav -->
     <div class="board-nav board-nav-left">
       <a class="btn btn-xs prev" aria-label="Previous">
         <span class="icon icon-arrows-left"></span>
@@ -667,8 +667,8 @@
       </a>
     </div>
 
-    <!-- The Carousel -->
-    <div id="board-carousel" class="owl-carousel owl-theme mt-40">
+    <!-- Carousel -->
+    <div id="board-carousel" class="owl-carousel owl-theme mt-40" role="region" aria-label="Board of Directors">
 
       <!-- Cory -->
       <div class="item text-center">
@@ -1094,6 +1094,39 @@
     <!-- OWL CAROUSEL -->    
     <script src="js/owl.carousel.min.js"></script>
     
+    <!-- BOARD CAROUSELF -->
+<script>
+  jQuery(function ($) {
+    var $owl = $('#board-carousel').owlCarousel({
+      loop: true,
+      margin: 30,
+      smartSpeed: 600,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true,
+      nav: false,          // using external nav
+      dots: true,          // show dots
+      dotsEach: 1,         // one dot per board member
+      responsive: {
+        0:   { items: 1 },
+        600: { items: 2 },
+        992: { items: 3 }
+      }
+    });
+
+    // External nav bindings
+    $('.board-nav-left .prev').on('click', function(e){ e.preventDefault(); $owl.trigger('prev.owl.carousel'); });
+    $('.board-nav-right .next').on('click', function(e){ e.preventDefault(); $owl.trigger('next.owl.carousel'); });
+
+    // Optional: add accessible labels to dots
+    $owl.on('initialized.owl.carousel', function(){
+      $(this).find('.owl-dot').each(function(i){
+        $(this).attr('aria-label', 'Board member ' + (i + 1));
+      });
+    });
+  });
+</script>
+
     <!-- MAIN SCRIPT -->
 		<script src="js/main.js"></script>
 		
