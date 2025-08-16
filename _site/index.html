@@ -56,6 +56,7 @@
       @media (max-width: 992px){ .board-carousel-wrap { padding: 0 44px; } }
       @media (max-width: 768px){ .board-carousel-wrap { padding: 0 36px; } }
 
+      /* (Outer arrow styles left in case you re-enable later) */
       .board-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
       .board-nav-left  { left: 12px; }
       .board-nav-right { right: 12px; }
@@ -364,11 +365,9 @@
     data-aspectratio="16:9"
     data-forcerewind="on"
     style="z-index: 2;">
-    <video preload="none" width="100%" height="100%"
+    <video preload="none" width="100%" height="100%" muted playsinline
       poster="images/my-name-is-pauli-murray-no-text.jpeg">
       <source src="images/my-name-is-pauli-murray-trailer.mp4" type="video/mp4" />
-      <video ... muted playsinline>
-
     </video>
   </div>
 
@@ -639,7 +638,7 @@
         </p>
 
 <div style="text-align: center; margin-top: 30px;">
-  <a href="about-paulimurray.html"
+  <a href="about-pauli.html"
      style="
        display: inline-block;
        padding: 12px 30px;
@@ -724,23 +723,7 @@
             <!-- Padded wrapper so arrows don't overlap -->
             <div class="board-carousel-wrap pos-relative">
 
-              <!-- External Nav -->
-             <div class="board-nav board-nav-left" style="position:absolute; top:50%; transform:translateY(-50%); left:-70px; z-index:5;">
-  <button type="button" class="prev" aria-label="Previous" aria-controls="board-carousel"
-          style="background:rgba(0,0,0,0.35); border:2px solid #7cb203; border-radius:50%;
-                 width:54px; height:54px; line-height:50px; display:inline-flex; align-items:center; justify-content:center; color:#fff;">
-    <span class="icon icon-arrows-left" style="font-size:22px; line-height:1;"></span>
-  </button>
-</div>
-
-<!-- External Nav (right) -->
-<div class="board-nav board-nav-right" style="position:absolute; top:50%; transform:translateY(-50%); right:-70px; z-index:5;">
-  <button type="button" class="next" aria-label="Next" aria-controls="board-carousel"
-          style="background:rgba(0,0,0,0.35); border:2px solid #7cb203; border-radius:50%;
-                 width:54px; height:54px; line-height:50px; display:inline-flex; align-items:center; justify-content:center; color:#fff;">
-    <span class="icon icon-arrows-right" style="font-size:22px; line-height:1;"></span>
-  </button>
-</div>
+              <!-- (Removed outer nav buttons to avoid duplicate arrows) -->
 
               <!-- BOARD CAROUSEL -->
               <div id="board-carousel" class="owl-carousel owl-theme mt-40">
@@ -1009,23 +992,64 @@
 </div>
 
         
-        <!-- NEWS LETTER -->
-        <div class="page-section nl-cont">
-          <div class="container">
-            <div class="relative" >
-              <div id="mc_embed_signup" class="nl-form-container clearfix">
-                <form action="http://abcgomel.us9.list-manage.com/subscribe/post-json?u=ba37086d08bdc9f56f3592af0&amp;id=e38247f7cc&amp;c=?" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletterform validate" target="_blank" novalidate>   <!-- EDIT THIS ACTION URL (add "post-json?u" instead of "post?u" and appended "&amp;c=?" to the end of this URL) -->
-                  <input type="email" value="" name="EMAIL" class="email nl-email-input" id="mce-EMAIL" placeholder="Enter your email" required>
-                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                  <div style="position: absolute; left: -5000px;"><input type="text" name="b_ba37086d08bdc9f56f3592af0_e38247f7cc" tabindex="-1" value=""></div>
-          
-                  <input type="submit" value="SUBSCRIBE" name="subscribe" id="mc-embedded-subscribe" class="button medium gray">
-                </form>
-                <div id="notification_container"  ></div>
-              </div>
-            </div>
+<!-- STAY IN THE LOOP (NEWSLETTER) -->
+<div id="newsletter" class="page-section pmaf-newsletter">
+  <div class="container">
+    <div class="row" style="align-items:center;">
+
+      <!-- LEFT IMAGE -->
+      <div class="col-md-6 hidden-sm hidden-xs">
+        <img src="images/pm-leaning.png" alt="Rev. Dr. Pauli Murray" class="img-responsive">
+      </div>
+
+      <!-- RIGHT COPY + FORM -->
+      <div class="col-md-6">
+        <h2 class="section-title" style="margin-bottom:8px;">STAY IN THE LOOP</h2>
+        <h3 class="nl-subtitle">Join our mailing list</h3>
+        <p class="nl-copy">
+          Be the first to know when the Pauli Murray Awards go live. Sign up below to
+          stay updated on nominations, events, and launch announcements.
+        </p>
+
+        <!-- Mailchimp Form -->
+        <form action="https://paulimurrayawards.us8.list-manage.com/subscribe/post?u=e1ed0cd8f0b1d39e4dc502fa9&amp;id=810c6e1fd1&amp;f_id=004ec6e1f0"
+              method="post" target="_blank" class="newsletter-form" novalidate>
+
+          <div class="form-group">
+            <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="Email Address *" aria-label="Email Address">
           </div>
-        </div>
+
+          <div class="form-group">
+            <input type="text" name="FNAME" id="mce-FNAME" required placeholder="First Name *" aria-label="First Name">
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="LNAME" id="mce-LNAME" required placeholder="Last Name *" aria-label="Last Name">
+          </div>
+
+          <div class="form-group">
+            <input type="tel" name="PHONE" id="mce-PHONE" placeholder="Phone Number" aria-label="Phone Number">
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="COMPANY" id="mce-COMPANY" placeholder="Company" aria-label="Company">
+          </div>
+
+          <button type="submit" class="btn-nl">Subscribe</button>
+
+          <!-- Honeypot (do not change/remove) -->
+          <div style="position:absolute; left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_e1ed0cd8f0b1d39e4dc502fa9_810c6e1fd1" tabindex="-1" value="">
+          </div>
+
+          <!-- On-page status messages (optional) -->
+          <div id="notification_container" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
         <!-- FOOTER 3 BLACK -->
         <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
@@ -1210,19 +1234,17 @@
           });
         </script>
 
-        <!-- BOARD CAROUSEL — v2 init + arrow wiring -->
+        <!-- BOARD CAROUSEL — v2 init (built-in arrows only) -->
         <script>
           jQuery(function ($) {
             var $el = $('#board-carousel');
 
-            /* If anything initialized it, destroy & clean before init */
             if ($el.data('owl.carousel')) {
               $el.trigger('destroy.owl.carousel');
               $el.find('.owl-stage-outer').children().unwrap();
               $el.removeClass('owl-center owl-loaded owl-text-select-on');
             }
 
-            /* Init with required behavior (v2 options) */
             $el.owlCarousel({
               loop: true,
               margin: 30,
@@ -1231,9 +1253,12 @@
               autoplayTimeout: 5000,
               autoplayHoverPause: true,
               nav: true,
-              navText: ['<span class="icon arrow_left"></span>', '<span class="icon arrow_right"></span>'],              /* external arrows only */
+              navText: [
+                '<span class="icon icon-arrows-left"></span>',
+                '<span class="icon icon-arrows-right"></span>'
+              ],
               dots: true,
-              dotsEach: 1,             /* one dot per board member */
+              dotsEach: 1,
               responsive: {
                 0:   { items: 1 },
                 768: { items: 2 },
@@ -1241,18 +1266,7 @@
               }
             });
 
-            /* Ensure autoplay is running */
             $el.trigger('play.owl.autoplay', [5000]);
-
-            /* External arrows bound by ID (works across re-inits) */
-            $('.board-nav-left .prev').off('click.board').on('click.board', function(e){
-              e.preventDefault();
-              $('#board-carousel').trigger('prev.owl.carousel');
-            });
-            $('.board-nav-right .next').off('click.board').on('click.board', function(e){
-              e.preventDefault();
-              $('#board-carousel').trigger('next.owl.carousel');
-            });
           });
         </script>
 
