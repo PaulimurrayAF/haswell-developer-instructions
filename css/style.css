@@ -11400,3 +11400,56 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 }
 .btn-nl:hover, .btn-nl:focus { background:#6aa200; }
 
+/* ===== PMAF two-tone variant for Haswell Testimonial Style 1 ===== */
+.pmaf-green .ts-icon-container{
+  /* this column is the left rail; we stack 3 slabs inside it */
+  width: 180px;               /* match Haswell proportion */
+  display: flex;
+  flex-direction: column;
+}
+
+.pmaf-green .ts-icon-container::before,
+.pmaf-green .ts-icon-container::after{
+  content: "";
+  display: block;
+  height: 72px;               /* top/bottom light slabs */
+  background: #c9ea7a;        /* LIGHT PMAF green */
+}
+
+.pmaf-green .ts-icon-middle{
+  /* center dark slab that holds the ringed icon */
+  background: #7cb203;        /* PMAF brand green */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 0;            /* height of the middle slab */
+}
+
+.pmaf-green .ts-icon-ring{
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 4px solid #3b4654;  /* the charcoal ring like Haswell */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pmaf-green .ts-icon-ring i{
+  font-size: 32px;
+  line-height: 1;
+  color: #3b4654;             /* icon uses the same charcoal */
+}
+
+/* keep Haswell's right side look; tweak spacing if you want it tighter */
+.pmaf-green .ts-main-container-bg { background: #efefef; }
+.pmaf-green .ts-text-container > div { font-size: 16px; line-height: 26px; }
+.pmaf-green .author-testimonial { font-weight: 700; }
+.pmaf-green .quote-author-description { color: #6e7a89; }
+@media (max-width: 767px){
+  .pmaf-green .ts-icon-container { width: 140px; }
+  .pmaf-green .ts-icon-container::before,
+  .pmaf-green .ts-icon-container::after { height: 56px; }
+  .pmaf-green .ts-icon-middle { padding: 26px 0; }
+  .pmaf-green .ts-icon-ring { width: 72px; height: 72px; }
+}
