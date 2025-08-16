@@ -11354,3 +11354,17 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 }
 .btn-nl:hover, .btn-nl:focus { background:#6aa200; }
 
+/* Board Carousel Arrows Hover Effect */
+.board-carousel .owl-nav button.owl-prev,
+.board-carousel .owl-nav button.owl-next {
+  background: #7cb203;   /* Solid green base */
+  color: #fff;           /* White arrows */
+  border-radius: 50%;    /* Circular */
+  transition: all 0.3s ease; /* Smooth fade */
+}
+
+.board-carousel .owl-nav button.owl-prev:hover,
+.board-carousel .owl-nav button.owl-next:hover {
+  background: #9cd933;   /* Lighter green on hover */
+  color: #303236;        /* Dark gray arrow on hover */
+}
