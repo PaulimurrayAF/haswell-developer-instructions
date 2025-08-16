@@ -11392,7 +11392,7 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   display:inline-block;
   background:#7cb203;
   color:#fff;
-  padding:10px 10px;
+  padding:14px 28px;
   border:0; border-radius:8px;
   font-weight:800; letter-spacing:.5px;
   text-transform:uppercase;
@@ -11400,36 +11400,3 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 }
 .btn-nl:hover, .btn-nl:focus { background:#6aa200; }
 
-/* === Global Button Normalization (exclude board carousel read-more) === */
-/* Targets common button classes/anchors across the theme + slider */
-a.button:not(.board-readmore),
-a.tp-button,
-.btn, .btn:link, .btn:visited,
-.btn-nl,
-.button.medium,
-.button.thin {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;           /* uniform height */
-  padding: 10px 10px;         /* adjust to fit min-height */
-  border-radius: 10px !important; /* rounded corners */
-  line-height: 1.1;           /* avoid stretching text */
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-/* Make sure slider TP buttons get the same height/rounding */
-.tp-button,
-.tp-button.white,
-.tp-button.dark {
-  border-radius: 10px !important;
-  min-height: 44px;
-  padding: 10px 10px !important;
-}
-
-/* Keep board carousel "READ MORE" buttons unchanged */
-.board-readmore { border-radius: 4px; min-height: initial; padding: 8px 16px; }
-
-/* Newsletter button inherits the global spec, keep color scheme */
-.btn-nl { min-height: 44px; }
