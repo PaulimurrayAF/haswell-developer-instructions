@@ -6,568 +6,396 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="description" content="Meet the leaders guiding our mission with expertise, creativity, and bold vision for equity and celebration.">
 
-  <!-- Haswell stack (match site) -->
+  <!-- Haswell stack (matches site) -->
   <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.min.css" media="screen">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,300,700" rel="stylesheet">
   <link rel="stylesheet" href="css/icons-fonts.css">
-  <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.min.css">
 
   <style>
-    /* ====== HERO (half-height, blog-copy style) ====== */
-    .page-title-img-sm {
-      background-position:center center; background-size:cover;
+    /* ===== Title block (match blog-copy, half height) ===== */
+    .page-title-slim {
+      background-size: cover; background-position: center;
+      position: relative; overflow: hidden;
+      padding-top: 120px; padding-bottom: 120px; /* ~half of pt-250 */
+    }
+    .page-title-slim .overlay {
+      position:absolute; inset:0; background:rgba(0,0,0,.45);
+    }
+    .page-title-slim .title-wrap { position:relative; z-index:2; }
+    .page-title-slim h1 { color:#fff; font-size:56px; line-height:1.15; margin:0 0 8px; }
+    .page-title-slim .page-sub-title { color:#fff; font-size:22px; line-height:1.5; }
+
+    /* ===== Section shells (alternate backgrounds like home) ===== */
+    .section-default { background:#ffffff; }
+    .section-alt     { background:#f5f6f7; } /* soft grey used across site */
+    .section-pad     { padding:60px 0; }
+    @media (max-width: 768px){ .section-pad{ padding:44px 0; } }
+
+    /* ===== Profile rows (Testimonial Style 1-inspired) ===== */
+    .profile-row {
+      display:flex; align-items:center; min-height:220px; border-radius:0;
+      background:#ededee; /* inner strip color like shortcode’s grey box */
       position:relative; overflow:hidden;
-      min-height: 160px; /* half-ish */
-      padding-top: 120px; padding-bottom: 90px;
     }
-    .page-title-img-sm .overlay-dark {
-      position:absolute; inset:0; background:rgba(0,0,0,.45); z-index:1;
+    .profile-accent {
+      width:44px;            /* half the previous feel */
+      min-width:44px;
+      height:100%;
     }
-    .page-title-img-sm .content { position:relative; z-index:2; }
-    .page-title-img-sm h1.page-title{
-      color:#fff; font-weight:700; line-height:1.1; margin:0;
-      font-size:42px;
-    }
-    .page-title-img-sm .page-sub-title{
-      color:#fff; font-size:18px; line-height:28px; margin-top:10px;
-    }
+    /* Single colors per group */
+    .accent-green { background:#7cb203; }       /* PMAF green for Board */
+    .accent-gray  { background:#c7ccd1; }       /* medium gray for Advisors */
 
-    /* ====== SECTION TITLES (match index blocks) ====== */
-    .section-title-wrap { margin-bottom: 25px; }
-    .section-title-wrap .title-fs-45{
-      font-size: 45px; line-height:1.15; margin:0; color:#303236;
+    .profile-inner {
+      display:flex; align-items:center; gap:28px; width:100%;
+      padding:26px 26px;                        /* base padding */
     }
-    .section-title-wrap .line-3-70{
-      width:70px; height:3px; background:#7cb203; margin:15px 0 0 0;
+    .profile-photo {
+      flex:0 0 220px; width:220px; height:220px; border-radius:50%;
+      object-fit:cover; border:6px solid #7cb203; /* ring for board */
+      background:#fff;
     }
-    .section-dark .title-fs-45, .section-dark p { color:#fff; }
-    .section-dark .line-3-70 { background:#fff; }
+    .advisor-ring { border-color:#c7ccd1; }     /* ring color for advisors */
 
-    /* ====== BLOCK BACKGROUNDS (alternate like index) ====== */
-    .block-light { background:#ffffff; }
-    .block-grey  { background:#f5f5f5; }     /* like grey-light-bg */
-    .section-dark { background:#111111; }
+    /* Text column + safe gutter so text never hits the photo */
+    .profile-copy { flex:1 1 auto; max-width:100%; }
+    .gutter-right { padding-right:24px; }       /* when photo is on the right */
+    .gutter-left  { padding-left:24px; }        /* when photo is on the left  */
 
-    /* ====== BIO ROWS (testimonial-1 layout, 20% tighter) ====== */
-    .bio-row{
-      position:relative; display:flex; align-items:center;
-      min-height: 210px;  /* reduced ~20% */
-      padding: 28px 20px; overflow:hidden;
-    }
-    .bio-inner{
-      display:flex; align-items:center; width:100%;
-      gap: 26px;
-    }
-    /* Accent bar — same side as photo, half old width */
-    .accent{
-      flex: 0 0 56px; height: 100%; /* half-ish visual */
-      background:#7cb203; /* PMAF green for Board, overridden for Advisors */
-    }
-    .accent.gray { background:#6b6f76; } /* single gray for Advisors */
+    /* Headings above the copy */
+    .profile-name { font-size:28px; font-weight:800; color:#24354e; margin:0 0 4px; }
+    .profile-meta { font-size:14px; letter-spacing:.6px; font-weight:800; color:#7f8a9a; text-transform:uppercase; margin:2px 0 14px; }
+    .profile-pron { font-weight:400; color:#6c788b; margin-left:6px; }
+    .profile-text { font-size:17px; line-height:1.8; color:#2f2f2f; margin:0; }
 
-    .bio-photo{
-      flex: 0 0 200px; display:flex; justify-content:center; align-items:center;
-    }
-    .bio-photo img{
-      width: 180px; height:180px; border-radius:50%;
-      object-fit:cover; border:4px solid #7cb203;
-    }
-    .bio-photo.gray img{ border-color:#6b6f76; }
+    /* Flip layout every other item */
+    .profile-row.reverse .profile-inner { flex-direction:row-reverse; }
+    .profile-row.reverse .profile-photo { margin-left:0; }
+    .profile-row.reverse .profile-accent { order:-1; }
 
-    .bio-text{ flex:1 1 auto; max-width: 100%; }
-    .bio-head{
-      margin-bottom: 6px;
-      display:flex; flex-direction:column;
-    }
-    .bio-name{
-      font-size:26px; font-weight:800; color:#24354e; margin:0;
-    }
-    .bio-name small{ font-weight:400; opacity:.75; font-size:70%; }
-    .bio-title{
-      margin:6px 0 10px 0; letter-spacing:.02em; font-weight:800;
-      color:#7a889d;
-    }
-    .bio-blurb{ margin:0; font-size:16px; line-height:26px; color:#2f2f2f; }
-
-    /* When photo on right: flip layout & right-justify heading */
-    .bio-row.right .bio-inner{ flex-direction: row-reverse; }
-    .bio-row.right .accent { order: 3; }           /* keep accent by photo */
-    .bio-row.right .bio-head{ align-items:flex-end; }
-    .bio-row.right .bio-name, .bio-row.right .bio-title{ text-align:right; }
-    .bio-row.right .bio-blurb{ text-align:left; }  /* body stays left for readability */
-
-    /* Safe content margin so text never hits the photo */
-    .bio-text{ padding: 0 10px; }
-
-    /* Responsiveness */
+    /* Responsive tweaks */
     @media (max-width: 992px){
-      .bio-inner{ flex-direction:column; align-items:flex-start; gap:16px; }
-      .bio-row.right .bio-inner{ flex-direction:column; align-items:flex-start; }
-      .accent{ width:100%; height:16px; }
-      .bio-photo{ order:2; }
-      .bio-head{ align-items:flex-start !important; }
-      .bio-name, .bio-title{ text-align:left !important; }
-      .bio-photo img{ width:150px; height:150px; }
+      .profile-photo { width:180px; height:180px; }
+    }
+    @media (max-width: 768px){
+      .profile-row, .profile-inner { align-items:flex-start; }
+      .profile-inner { flex-direction:column; gap:16px; }
+      .profile-photo { width:144px; height:144px; }
+      .gutter-left, .gutter-right { padding:0; }
+      .profile-accent { width:28px; min-width:28px; }
     }
 
-    /* ====== DOC CARDS (thumbnails 25% smaller) ====== */
-    .doc-thumb{
-      width: 75%; max-width: 220px; border-radius:6px;
-      box-shadow:0 4px 18px rgba(0,0,0,.15);
-    }
-    .dl-btn{
-      display:inline-block; padding:12px 18px; font-weight:700; border-radius:2px;
-      background:#7cb203; color:#fff; text-decoration:none;
-    }
-    .dl-btn:hover{ opacity:.9; }
+    /* Document thumbs (25% smaller) */
+    .doc-thumb { width:75%; max-width:260px; height:auto; border-radius:6px; box-shadow:0 6px 20px rgba(0,0,0,.15); }
+
+    /* Utility */
+    .mb-30{ margin-bottom:30px; }
+    .mb-40{ margin-bottom:40px; }
+    .mt-0{ margin-top:0; }
   </style>
 </head>
-<body class="board-page">
-  <div id="wrap" class="boxed">
-    <div class="grey-bg">
+<body>
 
-      <!-- ====== HEADER (site header include) ====== -->
-      <header id="nav" class="header header-1 black-header mobile-no-transparent">
-        <div class="header-wrapper">
-          <div class="container-m-30 clearfix">
-            <div class="logo-row">
-              <div class="logo-container-2">
-                <div class="logo-2">
-                  <a href="index.html" class="clearfix">
-                    <img src="images/logo-white.png" class="logo-img" alt="Pauli Murray Awards Foundation">
-                  </a>
-                </div>
-              </div>
-              <div class="menu-btn-respons-container">
-                <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target="#main-menu .navbar-collapse">
-                  <span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="main-menu-container">
-            <div class="container-m-30 clearfix">
-              <div id="main-menu">
-                <div class="navbar navbar-default" role="navigation">
-                  <nav class="collapse collapsing navbar-collapse right-1024">
-                    <ul class="nav navbar-nav">
-                      <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
-                      <li class="parent">
-                        <a href="about-us.html"><div class="main-menu-title">About PMAF</div></a>
-                        <ul class="sub">
-                          <li><a href="about-us.html">About PMAF</a></li>
-                          <li><a href="about-pauli.html">About Pauli Murray</a></li>
-                          <li class="parent">
-                            <a href="board.html">Board of Directors</a>
-                            <ul class="sub">
-                              <li><a href="board-member-bios.html">Board Member Bios</a></li>
-                              <li><a href="join-the-board.html">Join the Board</a></li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
-                      <li class="parent">
-                        <a href="programs.html"><div class="main-menu-title">Programs</div></a>
-                        <ul class="sub">
-                          <li><a href="programs.html">Programs</a></li>
-                          <li><a href="events.html">Events</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
-                      <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
-                      <li>
-                        <a href="donate.html" class="donate-highlight"><div class="main-menu-title">Donate</div></a>
-                      </li>
-                      <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
-                      <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
+  <!-- ===== Title (small like blog-copy) ===== -->
+  <div class="page-title-slim page-title-img" style="background-image:url('images/pm-typing.jpg');">
+    <div class="overlay"></div>
+    <div class="title-wrap relative container align-left">
+      <div class="row">
+        <div class="col-md-9">
+          <h1>BOARD OF DIRECTORS</h1>
+          <div class="page-sub-title">Leading with Vision and Commitment</div>
         </div>
-      </header>
+      </div>
+    </div>
+  </div>
 
-      <!-- ====== PAGE TITLE (half height, blog-copy style) ====== -->
-      <div class="page-title-cont page-title-img-sm" style="background-image:url('images/pm-typing.jpg')">
-        <div class="overlay-dark"></div>
-        <div class="content relative container align-left">
-          <div class="row">
-            <div class="col-md-10">
-              <h1 class="page-title">BOARD OF DIRECTORS</h1>
-              <div class="page-sub-title">Leading with Vision and Commitment</div>
-            </div>
+  <!-- ===== Intro block (default bg) ===== -->
+  <div class="section-default section-pad">
+    <div class="container">
+      <div class="row"><div class="col-md-10">
+        <p class="mb-30" style="font-size:18px; line-height:1.8;">
+          The Pauli Murray Awards Foundation is governed by a national Board of Directors committed to the vision, values, and stewardship of this work. Each member brings lived experience and professional expertise in service of our mission.
+        </p>
+        <p class="mb-30" style="font-size:18px; line-height:1.8;">
+          Meet the visionaries guiding the Foundation’s direction and integrity. Our Board of Directors holds fiduciary responsibility for the Foundation and plays a vital role in shaping our long-term strategy, financial stewardship, and institutional accountability.
+        </p>
+        <p style="font-size:16px; line-height:1.7; color:#6c788b;">
+          <strong>Officers:</strong> Cory L. Scott — Chair • Nyron Rouse, LL.M, MPA — Vice Chair • Karyden Roberts — Secretary • Darnell Riley, M.Ed, Ed.S — Interim Treasurer
+        </p>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ===== BOARD (alt bg) ===== -->
+  <div class="section-alt section-pad">
+    <div class="container">
+
+      <!-- 1 Cory (photo right) -->
+      <div class="profile-row mb-40">
+        <div class="profile-accent accent-green"></div>
+        <div class="profile-inner">
+          <img class="profile-photo" src="images/cory-icon.png" alt="Cory L. Scott">
+          <div class="profile-copy gutter-right">
+            <h3 class="profile-name">Cory L. Scott <span class="profile-pron">(He/Him)</span></h3>
+            <div class="profile-meta">Chair &amp; Founding Executive Director</div>
+            <p class="profile-text">
+              Author, activist, and former pastor with 15+ years in nonprofit leadership and movement work for Black queer communities—leading with strategic clarity and grounded care.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- ====== INTRO (Block 1 – light) ====== -->
-      <div class="page-section block-light p-80-cont">
-        <div class="container">
-          <div class="section-title-wrap wow fadeInUp" data-wow-duration="0.8s">
-            <div class="title-fs-45">About the Board</div>
-            <div class="line-3-70"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-11">
-              <p style="font-size:18px; line-height:28px;">
-                The Pauli Murray Awards Foundation is governed by a national Board of Directors committed to the vision, values, and stewardship of this work. Each member brings lived experience and professional expertise in service of our mission.
-              </p>
-              <p style="font-size:18px; line-height:28px;">
-                Meet the visionaries guiding the Foundation’s direction and integrity. Our Board of Directors holds fiduciary responsibility for the Foundation and plays a vital role in shaping our long-term strategy, financial stewardship, and institutional accountability.
-              </p>
-              <p style="font-size:16px; line-height:26px; margin-top:16px;">
-                <strong>Officers:</strong> Cory L. Scott — Chair &nbsp;&bull;&nbsp; Nyron Rouse, LL.M, MPA — Vice Chair &nbsp;&bull;&nbsp; Karyden Roberts — Secretary &nbsp;&bull;&nbsp; Darnell Riley, M.Ed, Ed.S — Interim Treasurer
-              </p>
-            </div>
+      <!-- 2 Nyron (photo left) -->
+      <div class="profile-row reverse mb-40">
+        <div class="profile-accent accent-green"></div>
+        <div class="profile-inner">
+          <img class="profile-photo" src="images/nyron-icon.png" alt="Nyron Rouse, LL.M, MPA">
+          <div class="profile-copy gutter-left">
+            <h3 class="profile-name">Nyron Rouse, LL.M, MPA <span class="profile-pron">(He/Him)</span></h3>
+            <div class="profile-meta">Vice Chair</div>
+            <p class="profile-text">
+              Strategic funding leader and Iraqi Freedom veteran advancing equity and access nationwide; guides government grants and multi-sector partnerships with a justice-first lens.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- ====== BOARD (Block 2 – grey) ====== -->
-      <div class="page-section block-grey p-60-cont">
-        <div class="container">
-          <div class="section-title-wrap wow fadeInUp" data-wow-duration="0.8s">
-            <div class="title-fs-45">Board of <span class="bold">Directors</span></div>
-            <div class="line-3-70"></div>
-          </div>
-
-          <!-- 1 Cory (photo right) -->
-          <div class="bio-row right block-light" style="margin-bottom:18px;">
-            <div class="bio-inner">
-              <div class="accent"></div>
-              <div class="bio-photo"><img src="images/cory-icon.png" alt="Cory L. Scott"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">Cory L. Scott <small>(He/Him)</small></h3>
-                  <div class="bio-title">CHAIR &amp; FOUNDING EXECUTIVE DIRECTOR</div>
-                </div>
-                <p class="bio-blurb">Author, activist, and former pastor with 15+ years in nonprofit leadership and movement work for Black queer communities—leading with strategic clarity and grounded care.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2 Nyron (photo left) -->
-          <div class="bio-row block-light" style="margin-bottom:18px;">
-            <div class="bio-inner">
-              <div class="accent"></div>
-              <div class="bio-photo"><img src="images/nyron-icon.png" alt="Nyron Rouse"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">Nyron Rouse, LL.M, MPA <small>(He/Him)</small></h3>
-                  <div class="bio-title">VICE CHAIR</div>
-                </div>
-                <p class="bio-blurb">Strategic funding leader and Iraqi Freedom veteran advancing equity and access nationwide; guides government grants and multi-sector partnerships with a justice-first lens.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3 Darnell (right) -->
-          <div class="bio-row right block-light" style="margin-bottom:18px;">
-            <div class="bio-inner">
-              <div class="accent"></div>
-              <div class="bio-photo"><img src="images/darnell-icon.png" alt="Darnell Riley"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">Darnell Riley, M.Ed, Ed.S <small>(He/Him)</small></h3>
-                  <div class="bio-title">INTERIM TREASURER</div>
-                </div>
-                <p class="bio-blurb">Union leader, educator, and curriculum specialist dedicated to inclusive education and culturally rooted celebration.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4 Karyden (left) -->
-          <div class="bio-row block-light" style="margin-bottom:18px;">
-            <div class="bio-inner">
-              <div class="accent"></div>
-              <div class="bio-photo"><img src="images/karyden-icon.png" alt="Karyden Roberts"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">Karyden Roberts <small>(She/Her)</small></h3>
-                  <div class="bio-title">SECRETARY</div>
-                </div>
-                <p class="bio-blurb">Performance artist and cultural worker using art to reimagine privacy, consent, and liberation across movements.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 5 David (right) -->
-          <div class="bio-row right block-light" style="margin-bottom:18px;">
-            <div class="bio-inner">
-              <div class="accent"></div>
-              <div class="bio-photo"><img src="images/david-icon.png" alt="David Brandyn"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">David Brandyn <small>(He/Him)</small></h3>
-                  <div class="bio-title">BOARD MEMBER</div>
-                </div>
-                <p class="bio-blurb">Content strategist and wellness advocate championing queer visibility, joy, and sexual health education.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 6 Faith (left) -->
-          <div class="bio-row block-light" style="margin-bottom:18px;">
-            <div class="bio-inner">
-              <div class="accent"></div>
-              <div class="bio-photo"><img src="images/faith-icon.png" alt="Faith Rogers"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">Faith Rogers, Esq. <small>(She/Her)</small></h3>
-                  <div class="bio-title">BOARD MEMBER</div>
-                </div>
-                <p class="bio-blurb">Federal executive turned strategist building equitable systems and culture-driven operations for social good.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 7 Jon (right) -->
-          <div class="bio-row right block-light" style="margin-bottom:18px;">
-            <div class="bio-inner">
-              <div class="accent"></div>
-              <div class="bio-photo"><img src="images/jon-icon.png" alt="Jon Pierre"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">Jon Pierre <small>(He/Him)</small></h3>
-                  <div class="bio-title">BOARD MEMBER</div>
-                </div>
-                <p class="bio-blurb">Creative director and pop culture commentator reshaping media with authenticity and imagination.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 8 Chris (left) -->
-          <div class="bio-row block-light" style="margin-bottom:18px;">
-            <div class="bio-inner">
-              <div class="accent"></div>
-              <div class="bio-photo"><img src="images/chris-icon.png" alt="Chris N. Smith"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">Chris N. Smith, Ph.D. <small>(They/He)</small></h3>
-                  <div class="bio-title">BOARD MEMBER</div>
-                </div>
-                <p class="bio-blurb">Veteran, statistician, and educator designing data-driven solutions rooted in justice and lived experience.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 9 Aaron (right) -->
-          <div class="bio-row right block-light">
-            <div class="bio-inner">
-              <div class="accent"></div>
-              <div class="bio-photo"><img src="images/aaron-icon.png" alt="Aaron Marcellus"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">Aaron Marcellus <small>(He/Him)</small></h3>
-                  <div class="bio-title">BOARD MEMBER</div>
-                </div>
-                <p class="bio-blurb">Musician, producer, and creative director whose artistry and leadership inspire through sound and soul.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ====== ADVISORS (Block 3 – light) ====== -->
-      <div class="page-section block-light p-60-cont">
-        <div class="container">
-          <div class="section-title-wrap wow fadeInUp" data-wow-duration="0.8s">
-            <div class="title-fs-45">Advisors to the <span class="bold">Board</span></div>
-            <div class="line-3-70"></div>
-          </div>
-
-          <!-- Advisors use gray accent + gray border around photos -->
-          <!-- Joseph (left) -->
-          <div class="bio-row block-grey" style="margin-bottom:18px;">
-            <div class="bio-inner">
-              <div class="accent gray"></div>
-              <div class="bio-photo gray"><img src="images/Joseph Harrington.png" alt="Joseph Harrington"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">Joseph Harrington</h3>
-                  <div class="bio-title">ADVISOR</div>
-                </div>
-                <p class="bio-blurb">Seasoned nonprofit leader and strategist with deep experience in governance, cultural programming, and organizational development. Joseph centers historically marginalized voices—particularly within Black and LGBTQ+ communities—bringing collaborative vision and operational strength to guide mission-driven growth and impact.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Jonathan (right) -->
-          <div class="bio-row right block-grey" style="margin-bottom:18px;">
-            <div class="bio-inner">
-              <div class="accent gray"></div>
-              <div class="bio-photo gray"><img src="images/Jonathan McCrory.png" alt="Jonathan McCrory"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">Jonathan McCrory</h3>
-                  <div class="bio-title">ADVISOR</div>
-                </div>
-                <p class="bio-blurb">Obie Award–winning artist, director, and cultural curator whose career bridges art and activism. As a longtime leader in Black theater, Jonathan elevates visionary storytelling and cultivates spaces where creativity drives liberation, community-building, and cultural transformation.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Zimife (left) -->
-          <div class="bio-row block-grey" style="margin-bottom:18px;">
-            <div class="bio-inner">
-              <div class="accent gray"></div>
-              <div class="bio-photo gray"><img src="images/Zimi Umeh.png" alt="Zimife Umeh"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">Zimife Umeh, PhD</h3>
-                  <div class="bio-title">ADVISOR</div>
-                </div>
-                <p class="bio-blurb">Sociologist and researcher examining the intersections of race, gender, inequality, and justice. Dr. Umeh’s work follows the reentry journeys of formerly incarcerated women, pairing rigorous, mixed-methods research with a justice-oriented lens that connects academic insight to real-world equity solutions.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Asia (right) -->
-          <div class="bio-row right block-grey">
-            <div class="bio-inner">
-              <div class="accent gray"></div>
-              <div class="bio-photo gray"><img src="images/Asia Hodges.png" alt="Asia Hodges"></div>
-              <div class="bio-text">
-                <div class="bio-head">
-                  <h3 class="bio-name">Asia Hodges, MS</h3>
-                  <div class="bio-title">ADVISOR</div>
-                </div>
-                <p class="bio-blurb">Clinical Research Associate, medical writer, and regulatory consultant with an MS in Microbiology (University of Florida). Asia brings site-level clinical trial management, four years in regulatory compliance, and a growing focus on health informatics and precision medicine—translating complex data through clear visualization and equity-minded insights.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ====== LEADERSHIP OPPORTUNITIES (Block 4 – grey) ====== -->
-      <div class="page-section block-grey p-60-cont">
-        <div class="container">
-          <div class="section-title-wrap wow fadeInUp" data-wow-duration="0.8s">
-            <div class="title-fs-45">Leadership <span class="bold">Opportunities</span></div>
-            <div class="line-3-70"></div>
-          </div>
-
-          <div class="row" style="align-items:flex-start;">
-            <!-- Thumbnails (25% smaller) -->
-            <div class="col-sm-4 col-md-3 mb-30">
-              <a href="docs/board-engagement-guide.pdf" title="Download Board Engagement Guide">
-                <img src="docs/board-engagement-guide-thumbnail.png" alt="Board Engagement Guide" class="doc-thumb">
-              </a>
-            </div>
-            <div class="col-sm-4 col-md-3 mb-30">
-              <a href="docs/advisory-committee-cverview.pdf" title="Download Advisory Committee Overview">
-                <img src="docs/advisory-committee-cverview-thumbnail.png" alt="Advisory Committee Overview" class="doc-thumb">
-              </a>
-            </div>
-
-            <!-- Copy + buttons -->
-            <div class="col-md-6">
-              <p class="mb-20"><strong>Help Shape the Future of Black LGBTQ+ Leadership</strong></p>
-              <p class="mb-20">
-                We are seeking passionate, values-aligned individuals to help steward and grow this movement—as Board Members and as Advisors serving on Advisory Committees.
-              </p>
-
-              <h4 class="mt-10">Ideal Candidates</h4>
-              <ul class="list-tight">
-                <li>Reflect the diversity of Black LGBTQ+ communities across gender, geography, and life experience</li>
-                <li>Bring expertise in nonprofit governance, fundraising, law, finance, media, education, policy, philanthropy, or health</li>
-                <li>Demonstrate a sustained commitment to racial justice, LGBTQ+ equity, and collective liberation</li>
-              </ul>
-
-              <p class="mt-20">
-                <a class="dl-btn" href="docs/board-engagement-guide.pdf">Download Board Engagement Guide</a>
-                &nbsp;&nbsp;
-                <a class="dl-btn" href="docs/advisory-committee-cverview.pdf">Advisory Committee Overview</a>
-              </p>
-            </div>
+      <!-- 3 Darnell (photo right) -->
+      <div class="profile-row mb-40">
+        <div class="profile-accent accent-green"></div>
+        <div class="profile-inner">
+          <img class="profile-photo" src="images/darnell-icon.png" alt="Darnell Riley, M.Ed, Ed.S">
+          <div class="profile-copy gutter-right">
+            <h3 class="profile-name">Darnell Riley, M.Ed, Ed.S <span class="profile-pron">(He/Him)</span></h3>
+            <div class="profile-meta">Interim Treasurer</div>
+            <p class="profile-text">
+              Union leader, educator, and curriculum expert dedicated to inclusive education and culturally rooted celebration; shapes systems that center students and families.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- ====== FOOTER (site footer include) ====== -->
-      <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
-        <div class="container-m-60">
-          <div class="row">
-            <div class="col-md-3 col-sm-3 widget">
-              <div class="logo-footer-cont">
-                <a href="index.html"><img class="logo-footer" src="images/logo-footer-white.png" alt="logo"></a>
-              </div>
-              <div class="footer-2-text-cont">
-                <address>1178 Broadway, 3rd Floor #502<br>New York, NY 10001</address>
-              </div>
-              <div class="footer-2-text-cont">646-736-2596<br></div>
-              <div class="footer-2-text-cont">
-                <a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a>
-              </div>
-            </div>
-
-            <div class="col-md-3 col-sm-3 widget">
-              <h4>QUICK LINKS</h4>
-              <ul class="links-list bold a-text-cont">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about-us.html">ABOUT PMAF</a></li>
-                <li><a href="about-pauli.html">ABOUT PAULI MURRAY</a></li>
-                <li><a href="programs.html">PROGRAMS</a></li>
-                <li><a href="blog.html">NEWS</a></li>
-                <li><a href="donate.html">DONATE</a></li>
-              </ul>
-            </div>
-
-            <div class="col-md-3 col-sm-3 widget">
-              <h4>PMAs 2026</h4>
-              <ul class="links-list a-text-cont">
-                <li><a href="awards.html">PMAs</a></li>
-                <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
-                <li><a href="awards/timeline.html">PMA 2026 TIMELINE</a></li>
-                <li><a href="awards/FAQs.html">FAQs</a></li>
-                <li><a href="awards/login.html">LOGIN</a></li>
-              </ul>
-            </div>
-
-            <div class="col-md-3 col-sm-3 widget">
-              <h4>RECENT POSTS</h4>
-              <div id="post-list-footer">
-                <div class="post-prev-title"><h3><a class="a-text" href="#">New trends in web design</a></h3></div>
-                <div class="post-prev-info">July 10</div>
-                <div class="post-prev-title"><h3><a class="a-text" href="#">The sound of life</a></h3></div>
-                <div class="post-prev-info">October 10</div>
-                <div class="post-prev-title"><h3><a class="a-text" href="#">Time for minimalism</a></h3></div>
-                <div class="post-prev-info">September 21</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="footer-2-copy-cont clearfix">
-            <div class="footer-2-soc-a right">
-              <a href="https://www.facebook.com/PauliMurrayAF/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-              <a href="https://www.instagram.com/PauliMurrayAF/" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/paulimurrayawards" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
-            </div>
-            <div class="left">
-              <a class="footer-2-copy" href="#" target="_blank">
-                &copy; PAULI MURRAY AWARDS FOUNDATION INC. 2025
-              </a>
-            </div>
+      <!-- 4 Karyden (photo left) -->
+      <div class="profile-row reverse mb-40">
+        <div class="profile-accent accent-green"></div>
+        <div class="profile-inner">
+          <img class="profile-photo" src="images/karyden-icon.png" alt="Karyden Roberts">
+          <div class="profile-copy gutter-left">
+            <h3 class="profile-name">Karyden Roberts <span class="profile-pron">(She/Her)</span></h3>
+            <div class="profile-meta">Secretary</div>
+            <p class="profile-text">
+              Performance artist and cultural worker using art to reimagine privacy, consent, and liberation across movements; builds practices that honor body wisdom and community care.
+            </p>
           </div>
         </div>
-      </footer>
+      </div>
+
+      <!-- 5 David (photo right) -->
+      <div class="profile-row mb-40">
+        <div class="profile-accent accent-green"></div>
+        <div class="profile-inner">
+          <img class="profile-photo" src="images/david-icon.png" alt="David Brandyn">
+          <div class="profile-copy gutter-right">
+            <h3 class="profile-name">David Brandyn <span class="profile-pron">(He/Him)</span></h3>
+            <div class="profile-meta">Director</div>
+            <p class="profile-text">
+              Content strategist and wellness advocate championing queer visibility, joy, and sexual health education; connects culture to public health with clarity and heart.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 Faith (photo left) -->
+      <div class="profile-row reverse mb-40">
+        <div class="profile-accent accent-green"></div>
+        <div class="profile-inner">
+          <img class="profile-photo" src="images/faith-icon.png" alt="Faith Rogers, Esq.">
+          <div class="profile-copy gutter-left">
+            <h3 class="profile-name">Faith Rogers, Esq. <span class="profile-pron">(She/Her)</span></h3>
+            <div class="profile-meta">Director</div>
+            <p class="profile-text">
+              Federal executive turned strategist building equitable systems and culture-driven operations for social good; bridges policy, practice, and people-centered change.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 Jon (photo right) -->
+      <div class="profile-row mb-40">
+        <div class="profile-accent accent-green"></div>
+        <div class="profile-inner">
+          <img class="profile-photo" src="images/jon-icon.png" alt="Jon Pierre">
+          <div class="profile-copy gutter-right">
+            <h3 class="profile-name">Jon Pierre <span class="profile-pron">(He/Him)</span></h3>
+            <div class="profile-meta">Director</div>
+            <p class="profile-text">
+              Creative director and pop-culture commentator reshaping media with authenticity and imagination; tells stories that affirm Black queer brilliance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 Chris (photo left) -->
+      <div class="profile-row reverse mb-40">
+        <div class="profile-accent accent-green"></div>
+        <div class="profile-inner">
+          <img class="profile-photo" src="images/chris-icon.png" alt="Chris N. Smith, Ph.D.">
+          <div class="profile-copy gutter-left">
+            <h3 class="profile-name">Chris N. Smith, Ph.D. <span class="profile-pron">(They/He)</span></h3>
+            <div class="profile-meta">Director</div>
+            <p class="profile-text">
+              Veteran, statistician, and educator designing data-driven solutions rooted in justice and lived experience; translates numbers into narratives for impact.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 Aaron (photo right) -->
+      <div class="profile-row">
+        <div class="profile-accent accent-green"></div>
+        <div class="profile-inner">
+          <img class="profile-photo" src="images/aaron-icon.png" alt="Aaron Marcellus">
+          <div class="profile-copy gutter-right">
+            <h3 class="profile-name">Aaron Marcellus <span class="profile-pron">(He/Him)</span></h3>
+            <div class="profile-meta">Director</div>
+            <p class="profile-text">
+              Musician, producer, and creative director whose artistry and leadership inspire through sound and soul; builds platforms for collective joy and transformation.
+            </p>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
 
-  <!-- JS -->
+  <!-- ===== ADVISORS (default bg) ===== -->
+  <div class="section-default section-pad">
+    <div class="container">
+      <div class="row"><div class="col-md-12">
+        <h2 class="section-title-2 mt-0">Advisors to the Board</h2>
+        <p style="font-size:18px; line-height:1.8; max-width:980px;">
+          Our Advisors bring depth, wisdom, and creative perspective to PMAF. They come from diverse backgrounds across the arts, academia, health, and culture; they serve as thought partners and advocates who enrich the Foundation’s strategy and impact. (Advisors are non-voting.)
+        </p>
+      </div></div>
+
+      <!-- Joseph (photo right) -->
+      <div class="profile-row mb-40">
+        <div class="profile-accent accent-gray"></div>
+        <div class="profile-inner">
+          <img class="profile-photo advisor-ring" src="images/Joseph Harrington.png" alt="Joseph Harrington">
+          <div class="profile-copy gutter-right">
+            <h3 class="profile-name">Joseph Harrington</h3>
+            <div class="profile-meta">Advisor</div>
+            <p class="profile-text">
+              Seasoned nonprofit leader and strategist with deep experience in governance, cultural programming, and organizational development. Joseph centers historically marginalized voices—particularly within Black and LGBTQ+ communities—bringing collaborative vision and operational strength to guide mission-driven growth and impact.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jonathan (photo left) -->
+      <div class="profile-row reverse mb-40">
+        <div class="profile-accent accent-gray"></div>
+        <div class="profile-inner">
+          <img class="profile-photo advisor-ring" src="images/Jonathan McCrory.png" alt="Jonathan McCrory">
+          <div class="profile-copy gutter-left">
+            <h3 class="profile-name">Jonathan McCrory</h3>
+            <div class="profile-meta">Advisor</div>
+            <p class="profile-text">
+              Obie Award–winning artist, director, and cultural curator whose career bridges art and activism. As a longtime leader in Black theater, Jonathan elevates visionary storytelling and cultivates spaces where creativity drives liberation, community-building, and cultural transformation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zimife (photo right) -->
+      <div class="profile-row mb-40">
+        <div class="profile-accent accent-gray"></div>
+        <div class="profile-inner">
+          <img class="profile-photo advisor-ring" src="images/Zimi Umeh.png" alt="Zimife Umeh, PhD">
+          <div class="profile-copy gutter-right">
+            <h3 class="profile-name">Zimife Umeh, PhD</h3>
+            <div class="profile-meta">Advisor</div>
+            <p class="profile-text">
+              Sociologist and researcher examining the intersections of race, gender, inequality, and justice. Dr. Umeh’s work follows the reentry journeys of formerly incarcerated women, pairing rigorous, mixed-methods research with a justice-oriented lens that connects academic insight to real-world equity solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asia (photo left) -->
+      <div class="profile-row reverse">
+        <div class="profile-accent accent-gray"></div>
+        <div class="profile-inner">
+          <img class="profile-photo advisor-ring" src="images/Asia Hodges.png" alt="Asia Hodges, MS">
+          <div class="profile-copy gutter-left">
+            <h3 class="profile-name">Asia Hodges, MS</h3>
+            <div class="profile-meta">Advisor</div>
+            <p class="profile-text">
+              Clinical Research Associate, medical writer, and regulatory consultant with an MS in Microbiology (University of Florida). Asia brings site-level clinical trial management, four years in regulatory compliance, and a growing focus on health informatics and precision medicine—translating complex data through clear visualization and equity-minded insights.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== Leadership Opportunities (alt bg; placed AFTER Advisors) ===== -->
+  <div class="section-alt section-pad">
+    <div class="container">
+      <div class="row">
+        <!-- Thumbnails column (25% smaller already via .doc-thumb) -->
+        <div class="col-md-4 col-sm-5 mb-40 text-center">
+          <a href="docs/board-engagement-guide.pdf" title="Board Engagement Guide">
+            <img class="doc-thumb" src="images/board-engagement-guide-thumbnail.png" alt="Board Engagement Guide thumbnail">
+          </a>
+          <br><br>
+          <a href="docs/advisory-committee-cverview.pdf" title="Advisory Committee Overview">
+            <img class="doc-thumb" src="images/advisory-committee-cverview-thumbnail.png" alt="Advisory Committee Overview thumbnail">
+          </a>
+        </div>
+
+        <!-- Text column -->
+        <div class="col-md-8 col-sm-7">
+          <h2 class="section-title-2 mt-0">Leadership Opportunities</h2>
+          <p class="mb-30" style="font-size:18px; line-height:1.8;">
+            Help shape the future of Black LGBTQ+ leadership by serving with PMAF—on the Board of Directors or as an Advisor. We seek values-aligned leaders across governance, fundraising, law, finance, media, education, policy, philanthropy, and health.
+          </p>
+
+          <h4>Ideal Board Candidates</h4>
+          <ul style="margin-bottom:18px;">
+            <li>Reflect the diversity of Black LGBTQ+ communities across gender, geography, and life experience</li>
+            <li>Bring expertise in nonprofit governance and strategic growth</li>
+            <li>Commit to racial justice, LGBTQ+ equity, and collective liberation</li>
+          </ul>
+
+          <h4 class="mt-0">Board Responsibilities</h4>
+          <ul>
+            <li>Quarterly board meetings (virtual and/or in person)</li>
+            <li>Service on at least one committee</li>
+            <li>Support development and visibility efforts</li>
+            <li>Annual personal contribution at a meaningful level</li>
+            <li>Three-year term, renewable once</li>
+          </ul>
+
+          <p class="mb-0" style="margin-top:22px;">
+            <a class="button medium thin hover-dark" href="docs/board-engagement-guide.pdf">Download Board Engagement Guide</a>
+            &nbsp;&nbsp;
+            <a class="button medium thin hover-dark" href="docs/advisory-committee-cverview.pdf">Advisory Committee Overview</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- (Optional) Footer include lives in your template -->
+
+  <!-- Minimal JS (no carousel needed) -->
   <script src="js/jquery-1.11.2.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.appear.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>
