@@ -11392,7 +11392,7 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   display:inline-block;
   background:#7cb203;
   color:#fff;
-  padding:14px 28px;
+  padding:10px 10px;
   border:0; border-radius:8px;
   font-weight:800; letter-spacing:.5px;
   text-transform:uppercase;
@@ -11412,7 +11412,7 @@ a.tp-button,
   align-items: center;
   justify-content: center;
   min-height: 44px;           /* uniform height */
-  padding: 10px 24px;         /* adjust to fit min-height */
+  padding: 10px 10px;         /* adjust to fit min-height */
   border-radius: 10px !important; /* rounded corners */
   line-height: 1.1;           /* avoid stretching text */
   text-decoration: none;
@@ -11425,7 +11425,7 @@ a.tp-button,
 .tp-button.dark {
   border-radius: 10px !important;
   min-height: 44px;
-  padding: 10px 24px !important;
+  padding: 10px 10px !important;
 }
 
 /* Keep board carousel "READ MORE" buttons unchanged */
