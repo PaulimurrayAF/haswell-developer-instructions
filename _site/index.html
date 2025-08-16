@@ -1006,41 +1006,67 @@
 </div>
         
 <!-- STAY IN THE LOOP -->
-<div class="page-section" style="padding: 60px 0; background-color:#f9f9f9;">
+<div class="page-section nl-cont" style="background-color:#303236; color:#ffffff; padding:50px 0;">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
+    <div class="relative">
+      <div class="row">
+        <div class="col-md-12">
 
-        <!-- TITLE + LINE -->
-        <div class="fes2-main-title-cont wow fadeInDown text-left" style="margin-bottom:0;">
-          <div class="title-fs-45">
-            STAY IN THE LOOP
+          <!-- Title block aligned flush with vertical line -->
+          <div style="display:flex; align-items:center; margin-bottom:0;">
+            <!-- Vertical line -->
+            <div style="width:4px; height:46px; background:#7cb203; margin-right:14px;"></div>
+
+            <!-- Titles (no extra spacing) -->
+            <div>
+              <div class="title-fs-45" style="margin:0; color:#ffffff;">STAY IN THE LOOP</div>
+              <h2 style="margin:0; color:#7cb203; font-weight:700;">JOIN OUR MAILING LIST</h2>
+            </div>
           </div>
-          <div class="title-line-4 green-bg" style="margin-bottom:10px;"></div>
-          <h2 class="mb-0" style="color:#7cb203;">JOIN OUR MAILING LIST</h2>
+
+          <!-- Next sentence (no gap under the green subhead) -->
+          <p style="margin:0; color:#ffffff;">Subscribe for updates and announcements.</p>
+
+          <!-- Spacer so the rest of the section doesn't move upward -->
+          <br><br>
+
+          <!-- Mailchimp form (unchanged, just inherits white text bg) -->
+          <div id="mc_embed_signup" class="nl-form-container clearfix">
+            <form action="http://abcgomel.us9.list-manage.com/subscribe/post-json?u=ba37086d08bdc9f56f3592af0&amp;id=e38247f7cc&amp;c=?"
+                  method="post"
+                  id="mc-embedded-subscribe-form"
+                  name="mc-embedded-subscribe-form"
+                  class="newsletterform validate"
+                  target="_blank"
+                  novalidate>
+              <input type="email"
+                     value=""
+                     name="EMAIL"
+                     class="email nl-email-input"
+                     id="mce-EMAIL"
+                     placeholder="Enter your email"
+                     required
+                     style="background:#ffffff; color:#303236;">
+              <!-- real people should not fill this in and expect good things -->
+              <div style="position: absolute; left: -5000px;">
+                <input type="text" name="b_ba37086d08bdc9f56f3592af0_e38247f7cc" tabindex="-1" value="">
+              </div>
+
+              <input type="submit"
+                     value="SUBSCRIBE"
+                     name="subscribe"
+                     id="mc-embedded-subscribe"
+                     class="button medium gray">
+            </form>
+            <div id="notification_container"></div>
+          </div>
+
         </div>
-
-        <!-- DESCRIPTION -->
-        <p class="mb-0">
-          Subscribe for updates and announcements.
-        </p>
-
-        <!-- ADD SPACER TO KEEP CONTENT FROM MOVING UP -->
-        <br><br>
-
-        <!-- FORM -->
-        <form class="newsletter-form mt-20" id="newsletter" method="post" action="php/newsletter.php">
-          <input type="email" name="newsletter-email" required placeholder="Enter Your Email Address" 
-                 class="newsletter-input input-md input-circle form-control">
-          <button type="submit" class="newsletter-button">
-            <span class="newsletter-text">SUBSCRIBE</span>
-          </button>
-        </form>
-
       </div>
     </div>
   </div>
 </div>
+
 
         <!-- FOOTER 3 BLACK -->
         <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
