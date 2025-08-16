@@ -1004,27 +1004,27 @@
             
   </div>
 </div>
-
         
 <!-- STAY IN THE LOOP (NEWSLETTER) -->
-<div id="newsletter" class="page-section pmaf-newsletter" style="background-color:#303236; padding-bottom:0;">
+<div id="newsletter" class="page-section pmaf-newsletter" style="background-color:#111111; padding-bottom:0;">
   <div class="container">
     <div class="row" style="align-items:center;">
 
       <!-- LEFT IMAGE -->
       <div class="col-md-6 hidden-sm hidden-xs">
-        <img src="images/pm-leaning.png" 
-             alt="Rev. Dr. Pauli Murray" 
-             class="img-responsive wow fadeInLeft">
+        <img src="images/pm-leaning.png"
+             alt="Rev. Dr. Pauli Murray"
+             class="img-responsive wow fadeInLeft"
+             data-wow-duration="0.8s" data-wow-offset="60">
       </div>
 
-      <!-- RIGHT COPY + FORM -->
-      <div class="col-md-6 text-center">
-        <h2 class="section-title wow fadeInRight" style="margin-bottom:8px; color:#fff; font-weight:bold;">
+      <!-- RIGHT COPY + FORM (animate all together) -->
+      <div class="col-md-6 text-center wow fadeInRight" data-wow-duration="0.8s" data-wow-offset="60">
+        <h2 class="section-title" style="margin-bottom:8px; color:#fff; font-weight:800;">
           STAY IN THE LOOP
         </h2>
         <h3 class="nl-subtitle" style="text-transform:uppercase; color:#fff;">
-          Join our mailing list
+          JOIN OUR MAILING LIST
         </h3>
         <p class="nl-copy" style="color:#fff;">
           Be the first to know when the Pauli Murray Awards go live. Sign up below to
@@ -1033,22 +1033,27 @@
 
         <!-- Mailchimp Form -->
         <form action="https://paulimurrayawards.us8.list-manage.com/subscribe/post?u=e1ed0cd8f0b1d39e4dc502fa9&amp;id=810c6e1fd1&amp;f_id=004ec6e1f0"
-              method="post" target="_blank" class="newsletter-form" novalidate style="max-width:400px; margin:0 auto;">
+              method="post" target="_blank" class="newsletter-form" novalidate
+              style="max-width:420px; margin:0 auto;">
 
           <div class="form-group">
-            <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="Email Address *" aria-label="Email Address">
+            <input type="email" name="EMAIL" id="mce-EMAIL" required
+                   placeholder="Email Address *" aria-label="Email Address">
           </div>
 
           <div class="form-group">
-            <input type="text" name="FNAME" id="mce-FNAME" required placeholder="First Name *" aria-label="First Name">
+            <input type="text" name="FNAME" id="mce-FNAME" required
+                   placeholder="First Name *" aria-label="First Name">
           </div>
 
           <div class="form-group">
-            <input type="text" name="LNAME" id="mce-LNAME" required placeholder="Last Name *" aria-label="Last Name">
+            <input type="text" name="LNAME" id="mce-LNAME" required
+                   placeholder="Last Name *" aria-label="Last Name">
           </div>
 
           <div class="form-group">
-            <input type="tel" name="PHONE" id="mce-PHONE" placeholder="Phone Number" aria-label="Phone Number">
+            <input type="tel" name="PHONE" id="mce-PHONE"
+                   placeholder="Phone Number" aria-label="Phone Number">
           </div>
 
           <button type="submit" class="btn-nl">Subscribe</button>
@@ -1057,13 +1062,14 @@
           <div style="position:absolute; left:-5000px;" aria-hidden="true">
             <input type="text" name="b_e1ed0cd8f0b1d39e4dc502fa9_810c6e1fd1" tabindex="-1" value="">
           </div>
+
+          <!-- Optional status area -->
+          <div id="notification_container" role="status" aria-live="polite"></div>
         </form>
       </div>
     </div>
   </div>
 </div>
-
-
 
         <!-- FOOTER 3 BLACK -->
         <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">

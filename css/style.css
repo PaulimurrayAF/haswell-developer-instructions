@@ -11368,3 +11368,34 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   background: #9cd933;   /* Lighter green on hover */
   color: #303236;        /* Dark gray arrow on hover */
 }
+/* === PMAF Newsletter (counter-matched dark) === */
+.pmaf-newsletter { background:#111111; padding:80px 0; }
+.pmaf-newsletter .nl-subtitle { font-weight:800; margin:0 0 16px; }
+.pmaf-newsletter .nl-copy { opacity:.95; margin:0 0 24px; }
+
+/* Inputs: PMAF green outline, white text on dark bg */
+.newsletter-form .form-group { margin-bottom:16px; }
+.newsletter-form input {
+  width:100%;
+  padding:12px 14px;
+  border:2px solid #7cb203;   /* PMAF green */
+  border-radius:6px;
+  background:transparent;
+  color:#ffffff;               /* white input text */
+  font-size:16px;
+}
+.newsletter-form input::placeholder { color:#ffffff; opacity:.7; }
+.newsletter-form input:focus { outline:none; border-color:#7cb203; box-shadow:none; }
+
+/* Button: PMAF green */
+.btn-nl{
+  display:inline-block;
+  background:#7cb203;
+  color:#fff;
+  padding:14px 28px;
+  border:0; border-radius:8px;
+  font-weight:800; letter-spacing:.5px;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.btn-nl:hover, .btn-nl:focus { background:#6aa200; }
