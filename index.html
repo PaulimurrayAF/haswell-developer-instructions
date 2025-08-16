@@ -56,7 +56,6 @@
       @media (max-width: 992px){ .board-carousel-wrap { padding: 0 44px; } }
       @media (max-width: 768px){ .board-carousel-wrap { padding: 0 36px; } }
 
-      /* (Outer arrow styles left in case you re-enable later) */
       .board-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
       .board-nav-left  { left: 12px; }
       .board-nav-right { right: 12px; }
@@ -164,11 +163,11 @@
         </header>
 
 <!-- REVO SLIDER FULLSCREEN 1 -->
-				<div class="relative">
-					<div class="rs-fullscr-container">
-						
-						<div id="rs-fullscr" class="tp-banner" >
-							<ul>	
+        <div class="relative">
+          <div class="rs-fullscr-container">
+            
+            <div id="rs-fullscr" class="tp-banner" >
+              <ul>  
 <!-- SLIDE 1 -->
 <li data-transition="zoomout" data-slotamount="1" data-masterspeed="1500"
     data-thumb="images/welcome-thumbnail.png"
@@ -365,8 +364,7 @@
     data-aspectratio="16:9"
     data-forcerewind="on"
     style="z-index: 2;">
-    <video preload="none" width="100%" height="100%" muted playsinline
-      poster="images/my-name-is-pauli-murray-no-text.jpeg">
+    <video preload="none" width="100%" height="100%" poster="images/my-name-is-pauli-murray-no-text.jpeg" muted playsinline>
       <source src="images/my-name-is-pauli-murray-trailer.mp4" type="video/mp4" />
     </video>
   </div>
@@ -413,13 +411,13 @@
   </div>
 </li>
 
-							</ul>
-					
-						</div>
-						
-					</div>	
-					
-					  <!-- SCROLL ICON -->
+              </ul>
+          
+            </div>
+            
+          </div>  
+          
+            <!-- SCROLL ICON -->
     <div class="local-scroll-cont">
       <a href="#about" class="scroll-down smooth-scroll">
         <div class="icon icon-arrows-down"></div>
@@ -495,7 +493,7 @@
         <div class="row">
 
           <div class="col-md-6 col-sm-6">
-            <div class="fes1-box wow fadeIn" data-wow-delay="400ms">
+            <div class="fes1-box wow FadeIn" data-wow-delay="400ms">
               <div class="fes1-box-icon">
                 <img src="images/icon-community.png" alt="Community Icon" style="height: 45px;">
               </div>
@@ -723,7 +721,23 @@
             <!-- Padded wrapper so arrows don't overlap -->
             <div class="board-carousel-wrap pos-relative">
 
-              <!-- (Removed outer nav buttons to avoid duplicate arrows) -->
+              <!-- External Nav -->
+             <div class="board-nav board-nav-left" style="position:absolute; top:50%; transform:translateY(-50%); left:-70px; z-index:5;">
+  <button type="button" class="prev" aria-label="Previous" aria-controls="board-carousel"
+          style="background:rgba(0,0,0,0.35); border:2px solid #7cb203; border-radius:50%;
+                 width:54px; height:54px; line-height:50px; display:inline-flex; align-items:center; justify-content:center; color:#fff;">
+    <span class="icon icon-arrows-left" style="font-size:22px; line-height:1;"></span>
+  </button>
+</div>
+
+<!-- External Nav (right) -->
+<div class="board-nav board-nav-right" style="position:absolute; top:50%; transform:translateY(-50%); right:-70px; z-index:5;">
+  <button type="button" class="next" aria-label="Next" aria-controls="board-carousel"
+          style="background:rgba(0,0,0,0.35); border:2px solid #7cb203; border-radius:50%;
+                 width:54px; height:54px; line-height:50px; display:inline-flex; align-items:center; justify-content:center; color:#fff;">
+    <span class="icon icon-arrows-right" style="font-size:22px; line-height:1;"></span>
+  </button>
+</div>
 
               <!-- BOARD CAROUSEL -->
               <div id="board-carousel" class="owl-carousel owl-theme mt-40">
@@ -1234,17 +1248,19 @@
           });
         </script>
 
-        <!-- BOARD CAROUSEL — v2 init (built-in arrows only) -->
+        <!-- BOARD CAROUSEL — v2 init + arrow wiring -->
         <script>
           jQuery(function ($) {
             var $el = $('#board-carousel');
 
+            /* If anything initialized it, destroy & clean before init */
             if ($el.data('owl.carousel')) {
               $el.trigger('destroy.owl.carousel');
               $el.find('.owl-stage-outer').children().unwrap();
               $el.removeClass('owl-center owl-loaded owl-text-select-on');
             }
 
+            /* Init with required behavior (v2 options) */
             $el.owlCarousel({
               loop: true,
               margin: 30,
@@ -1252,13 +1268,9 @@
               autoplay: true,
               autoplayTimeout: 5000,
               autoplayHoverPause: true,
-              nav: true,
-              navText: [
-                '<span class="icon icon-arrows-left"></span>',
-                '<span class="icon icon-arrows-right"></span>'
-              ],
+              nav: false,            /* INTERNAL ARROWS OFF */
               dots: true,
-              dotsEach: 1,
+              dotsEach: 1,           /* one dot per board member */
               responsive: {
                 0:   { items: 1 },
                 768: { items: 2 },
@@ -1266,7 +1278,18 @@
               }
             });
 
+            /* Ensure autoplay is running */
             $el.trigger('play.owl.autoplay', [5000]);
+
+            /* External arrows bound by ID (works across re-inits) */
+            $('.board-nav-left .prev').off('click.board').on('click.board', function(e){
+              e.preventDefault();
+              $('#board-carousel').trigger('prev.owl.carousel');
+            });
+            $('.board-nav-right .next').off('click.board').on('click.board', function(e){
+              e.preventDefault();
+              $('#board-carousel').trigger('next.owl.carousel');
+            });
           });
         </script>
 
