@@ -19,7 +19,6 @@
     /* ---- Section backgrounds (alternate like index) ---- */
     .section-default { background:#ffffff; }
     .section-alt     { background:#f7f7f7; }
-    .section-dark    { background:#303236; color:#fff; }
     .section-pad     { padding:60px 0; }
 
     /* ---- Title block (half height, like blog-copy) ---- */
@@ -27,18 +26,11 @@
       position: relative; overflow: hidden;
       background-image:url('images/huge-pride-flag-people.jpeg');
       background-size:cover; background-position:center;
-      height: 320px;   /* ~half the previous height */
+      height: 320px;
     }
-    .page-title-slim::before {
-      content:""; position:absolute; inset:0; background:rgba(0,0,0,.45);
-    }
-    .page-title-slim .inner {
-      position:relative; z-index:2;
-      height:100%; display:flex; align-items:center;
-    }
-    .page-title-slim h1 {
-      font-size:56px; line-height:64px; color:#fff; margin:0 0 6px 0;
-    }
+    .page-title-slim::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,.45); }
+    .page-title-slim .inner { position:relative; z-index:2; height:100%; display:flex; align-items:center; }
+    .page-title-slim h1 { font-size:56px; line-height:64px; color:#fff; margin:0 0 6px 0; }
     .page-title-slim .sub { color:#fff; font-size:22px; line-height:32px; }
 
     /* ---- Intro text block under title ---- */
@@ -47,97 +39,64 @@
     /* ---- Profile (board/advisors) blocks ---- */
     :root{
       --pmaf-green:#7cb203;
-      --gray-accent:#9aa3ad;   /* medium gray for advisor accent */
+      --gray-accent:#9aa3ad;
     }
     .profile-row{
       position:relative; border-radius:12px;
-      padding:26px 28px; margin-bottom:36px;
-      background:#ededed; /* base for both groups; outer section gives alternation */
-      overflow:hidden;
+      padding:22px 24px; margin-bottom:36px;
+      background:#ededed; overflow:hidden;
     }
     /* Accent bar: sits on the OUTER edge of the side the photo is on */
-    .profile-accent{
-      position:absolute; top:0; bottom:0; width:24px; z-index:1;
-      background:var(--pmaf-green);
-    }
-    /* Default layout: photo on RIGHT, accent on RIGHT outside edge */
+    .profile-accent{ position:absolute; top:0; bottom:0; width:24px; z-index:1; background:var(--pmaf-green); }
     .profile-accent.right { right:0; }
-    /* Reverse layout: photo on LEFT, accent on LEFT outside edge */
     .profile-accent.left  { left:0; }
+    .accent-gray{ background:var(--gray-accent); }
 
-    .profile-inner{
-      position:relative; z-index:2;
-      display:flex; align-items:center; gap:28px;
-    }
+    .profile-inner{ position:relative; z-index:2; display:flex; align-items:center; gap:28px; }
 
     /* Photo */
     .profile-photo{
-      width:220px; height:220px; object-fit:cover;
+      width:200px; height:200px; object-fit:cover;
       border-radius:50%; border:8px solid var(--pmaf-green);
       flex:0 0 auto;
     }
-    .advisor-ring{ border-color:#9aa3ad; } /* advisor photo ring */
+    .advisor-ring{ border-color:#9aa3ad; }
 
     /* Copy */
     .profile-copy{ flex:1 1 auto; }
-    .profile-name{
-      font-size:30px; line-height:1.25; margin:0 0 6px 0; color:#24354e; font-weight:800;
-    }
+    .profile-name{ font-size:30px; line-height:1.25; margin:0 0 6px 0; color:#24354e; font-weight:800; }
     .profile-pron{ font-weight:600; color:#8a96a6; margin-left:6px; }
-    .profile-meta{
-      text-transform:uppercase; letter-spacing:.08em; font-weight:800;
-      color:#8a96a6; margin-bottom:12px;
-    }
+    .profile-meta{ text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:12px; }
     .profile-text{ font-size:18px; line-height:1.75; margin:0 0 10px 0; }
 
-    /* Gutters keep text from running into the photo */
+    /* Keep text from running into the photo */
     .gutter-right{ padding-right:24px; }
     .gutter-left { padding-left:24px; }
 
-    /* Reverse puts the photo on the LEFT but text remains left-justified */
+    /* Reverse puts the photo on the LEFT; text stays left-aligned */
     .profile-row.reverse .profile-inner{ flex-direction:row-reverse; }
-    .profile-row.reverse .gutter-left { padding-left:24px; } /* keep */
-    .profile-row.reverse .gutter-right{ padding-right:24px; } /* keep */
-
-    /* Advisor accent color */
-    .accent-gray{ background:var(--gray-accent); }
 
     /* Read more link */
-    .read-more{
-      font-weight:700; text-decoration:underline; color:#24354e;
-    }
+    .read-more{ font-weight:700; text-decoration:underline; color:#24354e; }
     .read-more:hover{ color:var(--pmaf-green); }
 
-    /* Block size tweak (~20% smaller from earlier larger variant) */
-    .profile-photo{ width:200px; height:200px; }
-    .profile-row{ padding:22px 24px; }
-
-    /* Responsive */
-    @media (max-width: 991px){
-      .profile-inner{ flex-direction:column; align-items:flex-start; }
-      .profile-row.reverse .profile-inner{ flex-direction:column; }
-      .profile-accent.left, .profile-accent.right{ width:16px; }
-      .gutter-left, .gutter-right{ padding:0; }
-      .profile-photo{ margin-bottom:14px; }
-    }
-
     /* Section headings (match index.html look) */
-    .title-fs-45{
-      font-size:45px; line-height:1.1; color:#303236; margin-top:0; margin-bottom:20px;
-    }
+    .title-fs-45{ font-size:45px; line-height:1.1; color:#303236; margin-top:0; margin-bottom:20px; }
     .title-fs-45 .bold{ font-weight:800; }
     .line-3-100{ width:100px; height:3px; background:#7cb203; margin-bottom:20px; }
-    .line-3-70 { width:70px; height:3px; background:#7cb203; margin-bottom:20px; }
 
-    /* Document thumbnails row */
-    .doc-thumb{
-      border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15);
-      width:75%; height:auto; /* 25% smaller than full width image */
-    }
+    /* Leadership: match ADS 2 layout; thumbs flush top */
+    .fes2-main-text-cont .title-fs-45{ margin-bottom:0; }
+    .fes2-text-cont{ font-size:18px; line-height:28px; margin-top:20px; }
+    .hr-line{ height:1px; background:#d8d8d8; margin:30px 0; }
+
+    /* Doc thumbnail look */
+    .thumb-framed{ border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15); display:inline-block; max-width:100%; height:auto; }
   </style>
 </head>
 
 <body class="board-page">
+
   <!-- ====== TITLE ====== -->
   <div class="page-title-slim">
     <div class="inner container">
@@ -365,123 +324,112 @@
 
     </div>
   </div>
-</div>
 
-  <!-- LEADERSHIP OPPORTUNITIES SECTION -->
-<div class="page-section" id="leadership">
-  <div class="container">
-    
- <div class="section-alt section-pad">
+  <!-- ====== LEADERSHIP OPPORTUNITIES (alt bg, stand-alone block) ====== -->
+  <div class="section-alt section-pad" id="leadership">
     <div class="container">
       <div class="row"><div class="col-md-12">
         <div class="title-fs-45">LEADERSHIP <span class="bold">OPPORTUNITIES</span></div>
         <div class="line-3-100"></div>
         <p style="font-size:18px; line-height:1.8; max-width:980px;">
-         At the Pauli Murray Awards Foundation, leadership is more than a title — it’s a commitment to building a future where Black LGBTQ+ brilliance is visible, celebrated, and supported. Whether through governance on our Board of Directors or creative collaboration in our advisory committees, we invite dedicated changemakers to step forward and help shape the vision, sustainability, and impact of this movement.        </p>
+          At the Pauli Murray Awards Foundation, leadership is more than a title — it’s a commitment to building a future where Black LGBTQ+ brilliance is visible, celebrated, and supported. Whether through governance on our Board of Directors or creative collaboration in our advisory committees, we invite dedicated changemakers to step forward and help shape the vision, sustainability, and impact of this movement.
+        </p>
       </div></div>
 
-    <!-- Join Board of Directors -->
-    <div class="row mt-60 mb-60">
-      <!-- Text Column -->
-      <div class="col-md-6">
-        <div class="fes2-main-text-cont">
-          <div class="title-fs-45">
-            Join the<br><span class="bold">PMAF Board of Directors</span>
+      <!-- Join Board of Directors (ADS 2 layout: text left, button; thumb right) -->
+      <div class="row mt-40 mb-40">
+        <div class="col-md-6">
+          <div class="fes2-main-text-cont">
+            <div class="title-fs-45">
+              Join the<br><span class="bold">PMAF Board of Directors</span>
+            </div>
+            <div class="line-3-100"></div>
+            <div class="fes2-text-cont">
+              We’re building a bold, visionary board of changemakers committed to the liberation, celebration, and advancement of Black LGBTQ+ communities. If that resonates with you, we invite you to explore what it means to serve on our Board of Directors.
+            </div>
+
+            <h4 class="mt-30">What We’re Looking For:</h4>
+            <ul>
+              <li>A demonstrated commitment to racial, gender, and queer justice</li>
+              <li>Professional and/or lived experience relevant to our mission</li>
+              <li>A collaborative spirit and deep integrity</li>
+              <li>Capacity to engage meaningfully and consistently in board service</li>
+            </ul>
+
+            <h4 class="mt-20">Board Members Are Expected To:</h4>
+            <ul>
+              <li>Attend quarterly board meetings (virtually or in person)</li>
+              <li>Participate on at least one committee</li>
+              <li>Contribute to the Foundation’s fundraising and development efforts</li>
+              <li>Serve as public ambassadors for the organization</li>
+              <li>Uphold fiduciary, legal, and strategic oversight</li>
+            </ul>
+
+            <h4 class="mt-20">Support &amp; Orientation:</h4>
+            <ul>
+              <li>A comprehensive orientation and onboarding experience</li>
+              <li>Access to our Board Engagement Guide (linked below)</li>
+              <li>Ongoing mentorship and support</li>
+              <li>An annual board retreat (virtual or hybrid)</li>
+            </ul>
+
+            <div class="mt-30">
+              <a class="button medium thin hover-dark" href="docs/board-engagement-guide.pdf" target="_blank">Download Board Engagement Guide</a>
+            </div>
           </div>
-          <div class="line-3-100"></div>
-          <div class="fes2-text-cont">
-            We’re building a bold, visionary board of changemakers committed to the liberation, celebration, and advancement of Black LGBTQ+ communities. If that resonates with you, we invite you to explore what it means to serve on our Board of Directors.
-          </div>
+        </div>
 
-          <h4 class="mt-30">What We’re Looking For:</h4>
-          <ul>
-            <li>A demonstrated commitment to racial, gender, and queer justice</li>
-            <li>Professional and/or lived experience relevant to our mission</li>
-            <li>A collaborative spirit and deep integrity</li>
-            <li>Capacity to engage meaningfully and consistently in board service</li>
-          </ul>
-
-          <h4 class="mt-20">Board Members Are Expected To:</h4>
-          <ul>
-            <li>Attend quarterly board meetings (virtually or in person)</li>
-            <li>Participate on at least one committee</li>
-            <li>Contribute to the Foundation’s fundraising and development efforts</li>
-            <li>Serve as public ambassadors for the organization</li>
-            <li>Uphold fiduciary, legal, and strategic oversight</li>
-          </ul>
-
-          <h4 class="mt-20">Support & Orientation:</h4>
-          <ul>
-            <li>A comprehensive orientation and onboarding experience</li>
-            <li>Access to our Board Engagement Guide (linked below)</li>
-            <li>Ongoing mentorship and support</li>
-            <li>An annual board retreat (virtual or hybrid)</li>
-          </ul>
-
-          <div class="mt-30">
-            <a class="button medium thin hover-dark" href="docs/board-engagement-guide.pdf" target="_blank">Download Board Engagement Guide</a>
-          </div>
+        <div class="col-md-6 text-center">
+          <img src="images/board-engagement-guide-thumbnail.png" alt="Board Engagement Guide Thumbnail" class="thumb-framed img-responsive">
         </div>
       </div>
 
-      <!-- Thumbnail Column -->
-      <div class="col-md-6 text-center">
-        <img src="images/board-engagement-guide.png" alt="Board Engagement Guide Thumbnail" class="img-responsive">
-      </div>
-    </div>
+      <div class="hr-line"></div>
 
-    <!-- Divider -->
-    <div class="hr-line"></div>
+      <!-- Join Advisory Committee (ADS 2 layout) -->
+      <div class="row mt-40">
+        <div class="col-md-6">
+          <div class="fes2-main-text-cont">
+            <div class="title-fs-45">
+              Join an<br><span class="bold">Advisory Committee</span>
+            </div>
+            <div class="line-3-100"></div>
+            <div class="fes2-text-cont">Make an Impact Without Governance Duties</div>
 
-    <!-- Join Advisory Committee -->
-    <div class="row mt-60">
-      <!-- Text Column -->
-      <div class="col-md-6">
-        <div class="fes2-main-text-cont">
-          <div class="title-fs-45">
-            Join an<br><span class="bold">Advisory Committee</span>
-          </div>
-          <div class="line-3-100"></div>
-          <div class="fes2-text-cont">
-            Make an Impact Without Governance Duties
-          </div>
+            <p>
+              Our advisory committees offer opportunities to contribute skills, strategy, and creativity without the legal responsibilities of a board seat. These groups are project-based and deeply collaborative, focused on areas like communications, public engagement, fundraising, and honoree experience.
+            </p>
 
-          <p>
-            Our advisory committees offer opportunities to contribute skills, strategy, and creativity without the legal responsibilities of a board seat. These groups are project-based and deeply collaborative, focused on areas like communications, public engagement, fundraising, and honoree experience.
-          </p>
+            <h4 class="mt-20">You might be a good fit if you:</h4>
+            <ul>
+              <li>Bring experience in event planning, media, storytelling, or social impact</li>
+              <li>Want to support from your city, campus, or digital community</li>
+              <li>Are energized by uplifting Black LGBTQ+ brilliance</li>
+            </ul>
 
-          <h4 class="mt-20">You might be a good fit if you:</h4>
-          <ul>
-            <li>Bring experience in event planning, media, storytelling, or social impact</li>
-            <li>Want to support from your city, campus, or digital community</li>
-            <li>Are energized by uplifting Black LGBTQ+ brilliance</li>
-          </ul>
+            <h4 class="mt-20">Committee Focus Areas:</h4>
+            <ul>
+              <li><b>Honoree Selection Committee</b> – Leads the evaluation and interview process for PMA nominees</li>
+              <li><b>Fundraising &amp; Development Committee</b> – Supports donor outreach, events, and strategic partnerships</li>
+              <li><b>Programs &amp; Cohort Committee</b> – Advises on honoree programming and year-round engagement</li>
+              <li><b>Communications &amp; Visibility Committee</b> – Helps shape media, storytelling, and public engagement</li>
+              <li><b>Legacy &amp; Archives Committee</b> – Supports preservation and celebration of Black LGBTQ+ histories</li>
+            </ul>
 
-          <h4 class="mt-20">Committee Focus Areas:</h4>
-          <ul>
-            <li><b>Honoree Selection Committee</b> – Leads the evaluation and interview process for PMA nominees</li>
-            <li><b>Fundraising & Development Committee</b> – Supports donor outreach, events, and strategic partnerships</li>
-            <li><b>Programs & Cohort Committee</b> – Advises on honoree programming and year-round engagement</li>
-            <li><b>Communications & Visibility Committee</b> – Helps shape media, storytelling, and public engagement</li>
-            <li><b>Legacy & Archives Committee</b> – Supports preservation and celebration of Black LGBTQ+ histories</li>
-          </ul>
-
-          <div class="mt-30">
-            <a class="button medium thin hover-dark" href="docs/advisory-committee-overview.pdf" target="_blank">Download Advisory Committee Overview</a>
+            <div class="mt-30">
+              <a class="button medium thin hover-dark" href="docs/advisory-committee-overview.pdf" target="_blank">Download Advisory Committee Overview</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Thumbnail Column -->
-      <div class="col-md-6 text-center">
-        <img src="images/advisory-committee-overview-thumbnail.png" alt="Advisory Committee Overview Thumbnail" class="img-responsive">
+        <div class="col-md-6 text-center">
+          <img src="images/advisory-committee-overview-thumbnail.png" alt="Advisory Committee Overview Thumbnail" class="thumb-framed img-responsive">
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!-- END LEADERSHIP OPPORTUNITIES -->
 
-  <!-- Minimal JS (only if your theme needs it) -->
+  <!-- Minimal JS (theme needs) -->
   <script src="js/jquery-1.11.2.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </body>
