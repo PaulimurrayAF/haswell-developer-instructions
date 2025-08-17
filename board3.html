@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<!--
+  Title: Board of Directors
+  Description: Meet the leaders guiding our mission with expertise, creativity, and bold vision for equity and celebration.
+  Author: Cory L. Scott
+  Designed by: 11soft
+  Coded by: Cory L. Scott
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Board of Directors — Pauli Murray Awards Foundation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="Meet the leaders guiding our mission with expertise, creativity, and bold vision for equity and celebration.">
+  <meta name="keywords" content="PMAF board, nonprofit leadership, LGBTQ+ board, Black leadership, foundation governance">
+
+  <!-- FAVICONS -->
+  <link rel="shortcut icon" href="images/favicon/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+
+  <!-- REVICON Fonts-->
+  <link rel="stylesheet" href="rs-plugin/fonts/revicons/revicons.css" type="text/css" media="all" />
+
+  <!-- CSS -->
+  <!-- REVOSLIDER CSS SETTINGS -->
+  <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.min.css" media="screen">
+
+  <!--  BOOTSTRAP -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!--  GOOGLE FONT -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,300,700" type="text/css">
+
+  <!-- ICONS ELEGANT FONT & FONT AWESOME & LINEA ICONS  -->
+  <link rel="stylesheet" href="css/icons-fonts.css">
+
+  <!--  CSS THEME -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ANIMATE -->
+  <link rel="stylesheet" href="css/animate.min.css">
+
+  <!-- Owl Carousel v2 CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+  <!-- Page-specific minimal CSS -->
+  <style>
+    /* ===== Title (drop 20px from where it was) ===== */
+    .page-title-cont.page-title-img { background-position:center; background-size:cover; }
+
+    /* ===== Section backgrounds (per your spec) ===== */
+    .board-section      { background:#111111; color:#ffffff; }
+    .advisor-section    { background:#ffffff; color:#2f2f2f; }
+    .leadership-section { background:#303236; color:#ffffff; }
+
+    /* ===== Intro text ===== */
+    .lead-tight p{ margin-bottom:14px; font-size:18px; line-height:1.75; }
+
+    /* ===== Profile blocks (uniform margins & width, alternate L/R) ===== */
+    .profile-wrap{ max-width:820px; margin:0 auto; } /* matches shortcodes-like width */
+
+    .board-block{
+      display:flex; align-items:center; gap:22px;
+      margin:40px auto;                /* >>> one source of truth for margins <<< */
+      padding:18px 22px; border-radius:12px; background:#ededed;
+    }
+    .board-block img{
+      width:170px; height:170px; object-fit:cover; border-radius:50%;
+      border:6px solid #7cb203; flex:0 0 auto;
+      margin-top:0 !important;         /* ensure flush alignment with titles */
+    }
+    .board-block .content{ flex:1 1 auto; }
+    .board-block .content h3{ margin:0 0 6px; font-size:26px; line-height:1.25; color:#24354e; font-weight:800; }
+    .board-block .content p{ margin:0 0 8px; font-size:17px; line-height:1.7; color:#2b3748; }
+    .board-block .content .read-more{ font-weight:700; text-decoration:underline; color:#24354e; }
+    .board-block .content .read-more:hover{ color:#7cb203; }
+
+    /* Alternate sides */
+    .board-block.photo-left  { flex-direction:row; }
+    .board-block.photo-right { flex-direction:row-reverse; }
+
+    /* Advisor ring color */
+    .advisor-ring{ border-color:#9aa3ad !important; }
+
+    /* Section headers like index.html */
+    .section-title-2{ font-size:45px; line-height:1.1; margin:0 0 20px; }
+    .line-3-100{ width:100px; height:3px; background:#7cb203; margin-bottom:20px; }
+
+    /* Leadership thumbnails flush with titles */
+    .thumb-framed{
+      border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15);
+      display:block; max-width:100%; height:auto; margin-top:0 !important;
+    }
+    .fes2-main-text-cont .section-title-2{ margin-top:0 !important; } /* no top margin so it’s flush with the image top */
+
+    /* Buttons */
+    .button.board-readmore,
+    .dl-btn{
+      background:#7cb203; color:#fff !important; border:none;
+      padding:12px 18px; font-weight:700; border-radius:2px; display:inline-block;
+    }
+    .button.board-readmore:hover,
+    .dl-btn:hover{ opacity:.92; color:#fff !important; }
+
+    /* Dark section text */
+    .leadership-section h2, .leadership-section p, .leadership-section li { color:#ffffff; }
+
+    /* Utilities */
+    .mt-20{margin-top:20px;} .mt-30{margin-top:30px;} .mt-40{margin-top:40px;}
+    .mb-20{margin-bottom:20px;} .mb-30{margin-bottom:30px;} .mb-40{margin-bottom:40px;}
+    .hr-line{ height:1px; background:#d8d8d8; margin:30px 0; }
+  </style>
+</head>
+<body>
+  <div id="wrap" class="boxed ">
+    <div class="grey-bg"> <!-- Grey BG  -->
+
+      <!-- HEADER 1 BLACK MOBILE-NO-TRANSPARENT -->
+      <header id="nav" class="header header-1 black-header mobile-no-transparent">
+        <div class="header-wrapper">
+          <div class="container-m-30 clearfix">
+            <div class="logo-row">
+              <!-- LOGO -->
+              <div class="logo-container-2">
+                <div class="logo-2">
+                  <a href="index.html" class="clearfix">
+                    <img src="images/logo-white.png" class="logo-img" alt="White Pauli Murray Awards Foundation Logo">
+                  </a>
+                </div>
+              </div>
+              <!-- BUTTON -->
+              <div class="menu-btn-respons-container">
+                <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target="#main-menu .navbar-collapse">
+                  <span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- MAIN MENU CONTAINER -->
+          <div class="main-menu-container">
+            <div class="container-m-30 clearfix">
+              <!-- MAIN MENU -->
+              <div id="main-menu">
+                <div class="navbar navbar-default" role="navigation">
+                  <!-- MAIN MENU LIST -->
+                  <nav class="collapse collapsing navbar-collapse right-1024">
+                    <ul class="nav navbar-nav">
+                      <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
+
+                      <!-- ABOUT -->
+                      <li class="parent">
+                        <a href="about-us.html"><div class="main-menu-title">About PMAF</div></a>
+                        <ul class="sub">
+                          <li><a href="about-us.html">About PMAF</a></li>
+                          <li><a href="about-pauli.html">About Pauli Murray</a></li>
+                          <li class="parent">
+                            <a href="board.html">Board of Directors</a>
+                            <ul class="sub">
+                              <li><a href="board-member-bios.html">Board Member Bios</a></li>
+                              <li><a href="join-the-board.html">Join the Board</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
+
+                      <li class="parent">
+                        <a href="programs.html"><div class="main-menu-title">Programs</div></a>
+                        <ul class="sub">
+                          <li><a href="programs.html">Programs</a></li>
+                          <li><a href="events.html">Events</a></li>
+                        </ul>
+                      </li>
+
+                      <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
+                      <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
+
+                      <li>
+                        <a href="donate.html" class="donate-highlight">
+                          <div class="main-menu-title">Donate</div>
+                        </a>
+                      </li>
+
+                      <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
+                      <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <!-- /MAIN MENU -->
+            </div>
+          </div>
+          <!-- /MAIN MENU CONTAINER -->
+        </div>
+      </header>
+
+      <!-- ===== PAGE TITLE (dropped 20px) ===== -->
+      <div class="page-section">
+        <div class="page-title-cont page-title-large grey-dark-bg page-title-img"
+             style="background-image:url('images/pm-typing.jpg'); padding-top:270px;">
+          <div class="relative container align-left">
+            <div class="row">
+              <div class="col-md-8">
+                <h1 class="page-title" style="color:#fff;">BOARD OF DIRECTORS</h1>
+                <div class="page-sub-title" style="color:#fff;">Leading with Vision and Commitment</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== INTRO ===== -->
+      <div class="page-section">
+        <div class="section-default section-pad">
+          <div class="container">
+            <div class="row"><div class="col-md-11">
+              <div class="lead-tight">
+                <p>The Pauli Murray Awards Foundation is governed by a national Board of Directors committed to the vision, values, and stewardship of this work. Each member brings lived experience and professional expertise in service of our mission.</p>
+                <p>Meet the visionaries guiding the Foundation’s direction and integrity. Our Board of Directors holds fiduciary responsibility for the Foundation and plays a vital role in shaping our long-term strategy, financial stewardship, and institutional accountability.</p>
+                <p><strong>Officers:</strong> Cory L. Scott — Chair • Nyron Rouse, LL.M, MPA — Vice Chair • Karyden Roberts — Secretary • Darnell Riley, M.Ed, Ed.S — Interim Treasurer</p>
+              </div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BOARD ===== -->
+      <div class="page-section board-section">
+        <div class="section-pad">
+          <div class="container">
+            <div class="row"><div class="col-md-12">
+              <h2 class="section-title-2" style="color:#fff;">MEET THE BOARD</h2>
+              <div class="line-3-100"></div>
+            </div></div>
+
+            <div class="profile-wrap">
+              <!-- 1 Cory — LEFT -->
+              <div class="board-block photo-left">
+                <img class="" src="images/cory-icon.png" alt="Cory L. Scott">
+                <div class="content">
+                  <h3>Cory L. Scott <span style="font-weight:600; color:#8a96a6;">(He/Him)</span></h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Chair &amp; Founding Executive Director</div>
+                  <p>Author, activist, and former pastor with 15+ years in nonprofit leadership and movement work for Black queer communities—leading with strategic clarity and grounded care.</p>
+                  <a class="read-more" href="board/cory-l-scott.html">Read More</a>
+                </div>
+              </div>
+
+              <!-- 2 Nyron — RIGHT -->
+              <div class="board-block photo-right">
+                <img class="" src="images/nyron-icon.png" alt="Nyron Rouse, LL.M, MPA">
+                <div class="content">
+                  <h3>Nyron Rouse, LL.M, MPA <span style="font-weight:600; color:#8a96a6;">(He/Him)</span></h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Vice Chair</div>
+                  <p>Strategic funding leader and Iraqi Freedom veteran advancing equity and access nationwide; guides government grants and multi-sector partnerships with a justice-first lens.</p>
+                  <a class="read-more" href="board/nyron-rouse.html">Read More</a>
+                </div>
+              </div>
+
+              <!-- 3 Darnell — LEFT -->
+              <div class="board-block photo-left">
+                <img class="" src="images/darnell-icon.png" alt="Darnell Riley, M.Ed, Ed.S">
+                <div class="content">
+                  <h3>Darnell Riley, M.Ed, Ed.S <span style="font-weight:600; color:#8a96a6;">(He/Him)</span></h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Interim Treasurer</div>
+                  <p>Union leader, educator, and curriculum expert dedicated to inclusive education and culturally rooted celebration; shapes systems that center students and families.</p>
+                  <a class="read-more" href="board/darnell-riley.html">Read More</a>
+                </div>
+              </div>
+
+              <!-- 4 Karyden — RIGHT -->
+              <div class="board-block photo-right">
+                <img class="" src="images/karyden-icon.png" alt="Karyden Roberts">
+                <div class="content">
+                  <h3>Karyden Roberts <span style="font-weight:600; color:#8a96a6;">(She/Her)</span></h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Secretary</div>
+                  <p>Performance artist and cultural worker using art to reimagine privacy, consent, and liberation across movements; builds practices that honor body wisdom and community care.</p>
+                  <a class="read-more" href="board/karyden-roberts.html">Read More</a>
+                </div>
+              </div>
+
+              <!-- 5 David — LEFT -->
+              <div class="board-block photo-left">
+                <img class="" src="images/david-icon.png" alt="David Brandyn">
+                <div class="content">
+                  <h3>David Brandyn <span style="font-weight:600; color:#8a96a6;">(He/Him)</span></h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
+                  <p>Content strategist and wellness advocate championing queer visibility, joy, and sexual health education; connects culture to public health with clarity and heart.</p>
+                  <a class="read-more" href="board/david-brandyn.html">Read More</a>
+                </div>
+              </div>
+
+              <!-- 6 Faith — RIGHT -->
+              <div class="board-block photo-right">
+                <img class="" src="images/faith-icon.png" alt="Faith Rogers, Esq.">
+                <div class="content">
+                  <h3>Faith Rogers, Esq. <span style="font-weight:600; color:#8a96a6;">(She/Her)</span></h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
+                  <p>Federal executive turned strategist building equitable systems and culture-driven operations for social good; bridges policy, practice, and people-centered change.</p>
+                  <a class="read-more" href="board/faith-rogers.html">Read More</a>
+                </div>
+              </div>
+
+              <!-- 7 Jon — LEFT -->
+              <div class="board-block photo-left">
+                <img class="" src="images/jon-icon.png" alt="Jon Pierre">
+                <div class="content">
+                  <h3>Jon Pierre <span style="font-weight:600; color:#8a96a6;">(He/Him)</span></h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
+                  <p>Creative director and pop-culture commentator reshaping media with authenticity and imagination; tells stories that affirm Black queer brilliance.</p>
+                  <a class="read-more" href="board/jon-pierre.html">Read More</a>
+                </div>
+              </div>
+
+              <!-- 8 Chris — RIGHT -->
+              <div class="board-block photo-right">
+                <img class="" src="images/chris-icon.png" alt="Chris N. Smith, Ph.D.">
+                <div class="content">
+                  <h3>Chris N. Smith, Ph.D. <span style="font-weight:600; color:#8a96a6;">(They/He)</span></h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
+                  <p>Veteran, statistician, and educator designing data-driven solutions rooted in justice and lived experience; translates numbers into narratives for impact.</p>
+                  <a class="read-more" href="board/chris-n-smith.html">Read More</a>
+                </div>
+              </div>
+
+              <!-- 9 Aaron — LEFT -->
+              <div class="board-block photo-left">
+                <img class="" src="images/aaron-icon.png" alt="Aaron Marcellus">
+                <div class="content">
+                  <h3>Aaron Marcellus <span style="font-weight:600; color:#8a96a6;">(He/Him)</span></h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
+                  <p>Musician, producer, and creative director whose artistry and leadership inspire through sound and soul; builds platforms for collective joy and transformation.</p>
+                  <a class="read-more" href="board/aaron-marcellus.html">Read More</a>
+                </div>
+              </div>
+            </div><!-- /.profile-wrap -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ADVISORS ===== -->
+      <div class="page-section advisor-section">
+        <div class="section-pad">
+          <div class="container">
+            <div class="row"><div class="col-md-12">
+              <h2 class="section-title-2">ADVISORS TO THE BOARD</h2>
+              <div class="line-3-100"></div>
+              <p style="font-size:18px; line-height:1.8; max-width:980px;">
+                Our Advisors bring depth, wisdom, and creative perspective to PMAF. They come from diverse backgrounds across the arts, academia, health, and culture; they serve as thought partners and advocates who enrich the Foundation’s strategy and impact. (Advisors are non-voting.)
+              </p>
+            </div></div>
+
+            <div class="profile-wrap">
+              <!-- Joseph — LEFT -->
+              <div class="board-block photo-left">
+                <img class="advisor-ring" src="images/Joseph Harrington.png" alt="Joseph Harrington">
+                <div class="content">
+                  <h3>Joseph Harrington</h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Advisor</div>
+                  <p>Seasoned nonprofit leader and strategist with deep experience in governance, cultural programming, and organizational development. Joseph centers historically marginalized voices—particularly within Black and LGBTQ+ communities—bringing collaborative vision and operational strength to guide mission-driven growth and impact.</p>
+                </div>
+              </div>
+
+              <!-- Jonathan — RIGHT -->
+              <div class="board-block photo-right">
+                <img class="advisor-ring" src="images/Jonathan McCrory.png" alt="Jonathan McCrory">
+                <div class="content">
+                  <h3>Jonathan McCrory</h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Advisor</div>
+                  <p>Obie Award–winning artist, director, and cultural curator whose career bridges art and activism. As a longtime leader in Black theater, Jonathan elevates visionary storytelling and cultivates spaces where creativity drives liberation, community-building, and cultural transformation.</p>
+                </div>
+              </div>
+
+              <!-- Zimife — LEFT -->
+              <div class="board-block photo-left">
+                <img class="advisor-ring" src="images/Zimi Umeh.png" alt="Zimife Umeh, PhD">
+                <div class="content">
+                  <h3>Zimife Umeh, PhD</h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Advisor</div>
+                  <p>Sociologist and researcher examining the intersections of race, gender, inequality, and justice. Dr. Umeh’s work follows the reentry journeys of formerly incarcerated women, pairing rigorous, mixed-methods research with a justice-oriented lens that connects academic insight to real-world equity solutions.</p>
+                </div>
+              </div>
+
+              <!-- Asia — RIGHT -->
+              <div class="board-block photo-right">
+                <img class="advisor-ring" src="images/Asia Hodges.png" alt="Asia Hodges, MS">
+                <div class="content">
+                  <h3>Asia Hodges, MS</h3>
+                  <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Advisor</div>
+                  <p>Clinical Research Associate, medical writer, and regulatory consultant with an MS in Microbiology (University of Florida). Asia brings site-level clinical trial management, four years in regulatory compliance, and a growing focus on health informatics and precision medicine—translating complex data through clear visualization and equity-minded insights.</p>
+                </div>
+              </div>
+            </div><!-- /.profile-wrap -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== LEADERSHIP OPPORTUNITIES (ADS 2 structure; titles flush with thumbs) ===== -->
+      <div class="page-section leadership-section" id="leadership">
+        <div class="section-pad">
+          <div class="container">
+            <div class="row"><div class="col-md-12">
+              <h2 class="section-title-2">LEADERSHIP <span class="bold">OPPORTUNITIES</span></h2>
+              <div class="line-3-100"></div>
+              <p style="font-size:18px; line-height:1.8; max-width:980px;">
+                At the Pauli Murray Awards Foundation, leadership is more than a title — it’s a commitment to building a future where Black LGBTQ+ brilliance is visible, celebrated, and supported. Whether through governance on our Board of Directors or creative collaboration in our advisory committees, we invite dedicated changemakers to step forward and help shape the vision, sustainability, and impact of this movement.
+              </p>
+            </div></div>
+
+            <!-- Join Board of Directors -->
+            <div class="row mt-40 mb-40" style="align-items:flex-start;">
+              <div class="col-md-6">
+                <div class="fes2-main-text-cont">
+                  <h2 class="section-title-2" style="margin-top:0;">Join the<br><span class="bold">PMAF Board of Directors</span></h2>
+                  <div class="line-3-100"></div>
+                  <div class="fes2-text-cont">
+                    We’re building a bold, visionary board of changemakers committed to the liberation, celebration, and advancement of Black LGBTQ+ communities. If that resonates with you, we invite you to explore what it means to serve on our Board of Directors.
+                  </div>
+
+                  <h4 class="mt-30">What We’re Looking For:</h4>
+                  <ul>
+                    <li>A demonstrated commitment to racial, gender, and queer justice</li>
+                    <li>Professional and/or lived experience relevant to our mission</li>
+                    <li>A collaborative spirit and deep integrity</li>
+                    <li>Capacity to engage meaningfully and consistently in board service</li>
+                  </ul>
+
+                  <h4 class="mt-20">Board Members Are Expected To:</h4>
+                  <ul>
+                    <li>Attend quarterly board meetings (virtually or in person)</li>
+                    <li>Participate on at least one committee</li>
+                    <li>Contribute to the Foundation’s fundraising and development efforts</li>
+                    <li>Serve as public ambassadors for the organization</li>
+                    <li>Uphold fiduciary, legal, and strategic oversight</li>
+                  </ul>
+
+                  <h4 class="mt-20">Support &amp; Orientation:</h4>
+                  <ul>
+                    <li>A comprehensive orientation and onboarding experience</li>
+                    <li>Access to our Board Engagement Guide (linked below)</li>
+                    <li>Ongoing mentorship and support</li>
+                    <li>An annual board retreat (virtual or hybrid)</li>
+                  </ul>
+
+                  <div class="mt-30">
+                    <a class="button medium thin hover-dark"
+                       href="docs/board-engagement-guide.pdf"
+                       target="_blank"
+                       style="background:#7cb203; color:#fff !important; border:none; padding:12px 18px; font-weight:700; border-radius:2px;">
+                       Download Board Engagement Guide
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 text-center">
+                <img src="images/board-engagement-thumbnail.png"
+                     alt="Board Engagement Guide Thumbnail"
+                     class="thumb-framed img-responsive"
+                     style="width:40%; height:auto;">
+              </div>
+            </div>
+
+            <div class="hr-line"></div>
+
+            <!-- Join Advisory Committee -->
+            <div class="row mt-40" style="align-items:flex-start;">
+              <div class="col-md-6">
+                <div class="fes2-main-text-cont">
+                  <h2 class="section-title-2" style="margin-top:0;">Join an<br><span class="bold">Advisory Committee</span></h2>
+                  <div class="line-3-100"></div>
+                  <div class="fes2-text-cont">Make an Impact Without Governance Duties</div>
+
+                  <p>
+                    Our advisory committees offer opportunities to contribute skills, strategy, and creativity without the legal responsibilities of a board seat. These groups are project-based and deeply collaborative, focused on areas like communications, public engagement, fundraising, and honoree experience.
+                  </p>
+
+                  <h4 class="mt-20">You might be a good fit if you:</h4>
+                  <ul>
+                    <li>Bring experience in event planning, media, storytelling, or social impact</li>
+                    <li>Want to support from your city, campus, or digital community</li>
+                    <li>Are energized by uplifting Black LGBTQ+ brilliance</li>
+                  </ul>
+
+                  <h4 class="mt-20">Committee Focus Areas:</h4>
+                  <ul>
+                    <li><b>Honoree Selection Committee</b> – Leads the evaluation and interview process for PMA nominees</li>
+                    <li><b>Fundraising &amp; Development Committee</b> – Supports donor outreach, events, and strategic partnerships</li>
+                    <li><b>Programs &amp; Cohort Committee</b> – Advises on honoree programming and year-round engagement</li>
+                    <li><b>Communications &amp; Visibility Committee</b> – Helps shape media, storytelling, and public engagement</li>
+                    <li><b>Legacy &amp; Archives Committee</b> – Supports preservation and celebration of Black LGBTQ+ histories</li>
+                  </ul>
+
+                  <div class="mt-30">
+                    <a class="button medium thin hover-dark"
+                       href="docs/advisory-committee-overview.pdf"
+                       target="_blank"
+                       style="background:#7cb203; color:#fff !important; border:none; padding:12px 18px; font-weight:700; border-radius:2px;">
+                       Download Advisory Committee Overview
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 text-center">
+                <img src="images/advisory-committee-overview-thumbnail.png"
+                     alt="Advisory Committee Overview Thumbnail"
+                     class="thumb-framed img-responsive"
+                     style="width:40%; height:auto;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== FOOTER 4 BLACK ===== -->
+      <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
+        <div class="container-m-60">
+          <div class="row">
+
+            <!-- Column 1: Logo + Contact Info -->
+            <div class="col-md-3 col-sm-3 widget">
+              <div class="logo-footer-cont">
+                <a href="index.html">
+                  <img class="logo-footer" src="images/logo-footer-white.png" alt="logo">
+                </a>
+              </div>
+              <div class="footer-2-text-cont">
+                <address>
+                  1178 Broadway, 3rd Floor #502<br>
+                  New York, NY 10001
+                </address>
+              </div>
+              <div class="footer-2-text-cont">646-736-2596<br></div>
+              <div class="footer-2-text-cont">
+                <a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a>
+              </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="col-md-3 col-sm-3 widget">
+              <h4>QUICK LINKS</h4>
+              <ul class="links-list bold a-text-cont">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about-us.html">ABOUT PMAF</a></li>
+                <li><a href="about-pauli.html">ABOUT PAULI MURRAY</a></li>
+                <li><a href="programs.html">PROGRAMS</a></li>
+                <li><a href="blog.html">NEWS</a></li>
+                <li><a href="donate.html">DONATE</a></li>
+              </ul>
+            </div>
+
+            <!-- Column 3: PMAs 2026 -->
+            <div class="col-md-3 col-sm-3 widget">
+              <h4>PMAs 2026</h4>
+              <ul class="links-list a-text-cont">
+                <li><a href="awards.html">PMAs</a></li>
+                <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
+                <li><a href="awards/timeline.html">PMA 2026 TIMELINE</a></li>
+                <li><a href="awards/FAQs.html">FAQs</a></li>
+                <li><a href="awards/login.html">LOGIN</a></li>
+              </ul>
+            </div>
+
+            <!-- Column 4: Recent Posts -->
+            <div class="col-md-3 col-sm-3 widget">
+              <h4>RECENT POSTS</h4>
+              <div id="post-list-footer">
+                <div class="post-prev-title">
+                  <h3><a class="a-text" href="blog-single-sidebar-right.html">New trends in web design</a></h3>
+                </div>
+                <div class="post-prev-info">July 10</div>
+
+                <div class="post-prev-title">
+                  <h3><a class="a-text" href="blog-single-sidebar-right.html">The sound of life</a></h3>
+                </div>
+                <div class="post-prev-info">October 10</div>
+
+                <div class="post-prev-title">
+                  <h3><a class="a-text" href="blog-single-sidebar-right.html">Time for minimalism</a></h3>
+                </div>
+                <div class="post-prev-info">September 21</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-2-copy-cont clearfix">
+            <!-- Social Links -->
+            <div class="footer-2-soc-a right">
+              <a href="https://www.facebook.com/PauliMurrayAF/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/PauliMurrayAF/" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/paulimurrayawards" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="left">
+              <a class="footer-2-copy" href="https://paulimurrayawaards.com" target="_blank">
+                &copy; PAULI MURRAY AWARDS FOUNDATION INC. 2025
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- BACK TO TOP -->
+      <p id="back-top">
+        <a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a>
+      </p>
+
+      <!-- JS begin -->
+
+      <!-- jQuery  -->
+      <script src="js/jquery-1.11.2.min.js"></script>
+
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+
+      <!-- MAGNIFIC POPUP -->
+      <script src="js/jquery.magnific-popup.min.js"></script>
+
+      <!-- PORTFOLIO SCRIPTS -->
+      <script src="js/isotope.pkgd.min.js"></script>
+      <script src="js/imagesloaded.pkgd.min.js"></script>
+      <script src="js/masonry.pkgd.min.js"></script>
+
+      <!-- COUNTER -->
+      <script src="js/jquery.countTo.js"></script>
+
+      <!-- APPEAR -->
+      <script src="js/jquery.appear.js"></script>
+
+      <!-- Owl Carousel v2 JS (CDN) -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+      <!-- MAIN SCRIPT -->
+      <script src="js/main.js"></script>
+
+      <!-- REVOSLIDER SCRIPTS  -->
+      <script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+      <script src="rs-plugin/js/jquery.themepunch.revolution-parallax.min.js"></script>
+
+      <!-- SLIDER REVOLUTION INIT (unchanged) -->
+      <script>
+        jQuery(document).ready(function() {
+          if ((navigator.appVersion.indexOf("Win")!=-1) && ( ieDetect == false )) {
+            jQuery('#rs-fullscr').revolution({
+              dottedOverlay:"none", delay:16000, startwidth:1170, startheight:700, hideThumbs:200,
+              thumbWidth:100, thumbHeight:50, thumbAmount:5, navigationType:"none", navigationArrows:"solo",
+              navigationStyle:"preview4", hideTimerBar:"on", touchenabled:"on", onHoverStop:"on",
+              swipe_velocity:0.7, swipe_min_touches:1, swipe_max_touches:1, drag_block_vertical:false,
+              parallax:"scroll", parallaxBgFreeze:"on", parallaxLevels:[45,40,35,50], parallaxDisableOnMobile:"on",
+              keyboardNavigation:"off", navigationHAlign:"center", navigationVAlign:"bottom", navigationHOffset:0, navigationVOffset:20,
+              soloArrowLeftHalign:"left", soloArrowLeftValign:"center", soloArrowLeftHOffset:20, soloArrowLeftVOffset:0,
+              soloArrowRightHalign:"right", soloArrowRightValign:"center", soloArrowRightHOffset:20, soloArrowRightVOffset:0,
+              shadow:0, fullWidth:"off", fullScreen:"on", spinner:"spinner4", stopLoop:"off", stopAfterLoops:-1, stopAtSlide:-1,
+              shuffle:"off", autoHeight:"off", forceFullWidth:"off", hideThumbsOnMobile:"off", hideNavDelayOnMobile:1500,
+              hideBulletsOnMobile:"off", hideArrowsOnMobile:"off", hideThumbsUnderResolution:0, hideSliderAtLimit:0,
+              hideCaptionAtLimit:0, hideAllCaptionAtLilmit:0, startWithSlide:0
+            });
+          } else {
+            jQuery('#rs-fullscr').revolution({
+              dottedOverlay:"none", delay:16000, startwidth:1170, startheight:700, hideThumbs:200,
+              thumbWidth:100, thumbHeight:50, thumbAmount:5, navigationType:"none", navigationArrows:"solo",
+              navigationStyle:"preview4", hideTimerBar:"on", touchenabled:"on", onHoverStop:"on",
+              swipe_velocity:0.7, swipe_min_touches:1, swipe_max_touches:1, drag_block_vertical:false,
+              parallax:"mouse", parallaxBgFreeze:"on", parallaxLevels:[0], parallaxDisableOnMobile:"on",
+              keyboardNavigation:"off", navigationHAlign:"center", navigationVAlign:"bottom", navigationHOffset:0, navigationVOffset:20,
+              soloArrowLeftHalign:"left", soloArrowLeftValign:"center", soloArrowLeftHOffset:20, soloArrowLeftVOffset:0,
+              soloArrowRightHalign:"right", soloArrowRightValign:"center", soloArrowRightHOffset:20, soloArrowRightVOffset:0,
+              shadow:0, fullWidth:"off", fullScreen:"on", spinner:"spinner4", stopLoop:"off", stopAfterLoops:-1, stopAtSlide:-1,
+              shuffle:"off", autoHeight:"off", forceFullWidth:"off", hideThumbsOnMobile:"off", hideNavDelayOnMobile:1500,
+              hideBulletsOnMobile:"off", hideArrowsOnMobile:"off", hideThumbsUnderResolution:0, hideSliderAtLimit:0,
+              hideCaptionAtLimit:0, hideAllCaptionAtLilmit:0, startWithSlide:0
+            });
+          }
+        });
+      </script>
+
+      <!-- GLOBAL Owl init — skip #board-carousel (not used here) -->
+      <script>
+        $(document).ready(function(){
+          $(".owl-carousel").not("#board-carousel").owlCarousel({
+            loop: true,
+            margin: 30,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            responsive: {
+              0:   { items: 1 },
+              768: { items: 2 },
+              992: { items: 3 }
+            }
+          });
+        });
+      </script>
+
+      <!-- Misc utilities preserved from your template -->
+      <script>
+        function updateDaysUntilAwards() {
+          const eventDate = new Date("October 11, 2026");
+          const today = new Date();
+          const timeDiff = eventDate - today;
+          const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+          const daysEl = document.getElementById("days-until");
+          if (daysEl) { daysEl.textContent = daysLeft; }
+        }
+        updateDaysUntilAwards();
+      </script>
+
+      <!-- VIDEO MODAL -->
+      <div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;">
+        <div class="close" onclick="closeModal()" style="position:absolute; top:20px; right:30px; font-size:40px; color:#fff; cursor:pointer;">×</div>
+        <video controls autoplay id="pauliVideo" style="width:90%; max-width:900px;">
+          <source src="images/my-name-is-pauli-murray-trailer.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <script>
+        function openModal() {
+          document.getElementById("videoModal").style.display = "flex";
+          document.getElementById("pauliVideo").play();
+        }
+        function closeModal() {
+          document.getElementById("videoModal").style.display = "none";
+          const video = document.getElementById("pauliVideo");
+          video.pause();
+          video.currentTime = 0;
+        }
+      </script>
+
+      <script>
+        function matchPmaSectionHeights() {
+          const left = document.getElementById("pma-left");
+          const right = document.getElementById("pma-right");
+          if (left && right) { right.style.height = left.offsetHeight + "px"; }
+        }
+        window.addEventListener("load", matchPmaSectionHeights);
+        window.addEventListener("resize", matchPmaSectionHeights);
+      </script>
+
+      <!-- Netlify Identity Widget -->
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      <script>
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", function(user) {
+            if (!user) {
+              window.netlifyIdentity.on("login", function() {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      </script>
+
+      <!-- Load gray-matter correctly -->
+      <script src="https://cdn.jsdelivr.net/npm/gray-matter@3.1.1/dist/gray-matter.min.js"></script>
+
+      <script>
+        async function fetchBlogPosts() {
+          const postsFolder = "./content/posts/";
+          const container = document.getElementById("blog-posts");
+          if (!container) return;
+
+          const postList = [
+            "building-the-future-with-vision-and-integrity.md",
+            "feast-day-of-rev-dr-pauli-murray-esq-honoring-the-saint-who-defied-every-box.md",
+            "legacy-in-progress.md",
+            "pauli-murray-was-always-there—we-just-weren’t-looking.md"
+          ];
+
+          for (const filename of postList) {
+            try {
+              const res = await fetch(`${postsFolder}${filename}`);
+              const raw = await res.text();
+              const parsed = matter(raw);
+              const { title, date, excerpt, featured_image } = parsed.data;
+
+              const html = `
+                <div class="blog-post-preview">
+                  ${featured_image ? `<img src="${featured_image}" alt="${title}" />` : ""}
+                  <h3>${title}</h3>
+                  <p class="date">${new Date(date).toLocaleDateString()}</p>
+                  <p>${excerpt || ""}</p>
+                  <a href="/post.html?file=${filename}" class="btn btn-sm">Read More</a>
+                </div>
+              `;
+              container.innerHTML += html;
+            } catch (err) {
+              console.error("Error loading post:", filename, err);
+            }
+          }
+        }
+        document.addEventListener("DOMContentLoaded", fetchBlogPosts);
+      </script>
+
+      <script src="js/load-posts.js"></script>
+
+    </div><!-- /.grey-bg -->
+  </div><!-- /#wrap -->
+</body>
+</html>
