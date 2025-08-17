@@ -11240,12 +11240,11 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 .tp-bullets {
   display: none !important;
 }
-/* Increase footer logo size by 40% */
+/* Footer logo size decreased by ~10% */
 .logo-footer {
-  max-height: 98px; /* Original was likely ~70px */
+  max-height: 88px; /* Reduced from 98px */
   height: auto;
-  width: auto;
-
+  width: auto
 }
 /* Custom fix for Slide 2 button overlap */
 .fix-btn-slide2 {
