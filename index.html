@@ -1765,5 +1765,25 @@
 
       </div><!-- /.grey-bg -->
     </div><!-- /#wrap -->
+
+    <script>
+  $(document).ready(function(){
+    if (!$('#board-carousel').data('owl.carousel')) {
+      $('#board-carousel').owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: false,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        responsive:{
+          0:{ items:1 },
+          768:{ items:2 },
+          992:{ items:3 }
+        }
+      });
+    }
+  });
+</script>
   </body>
 </html>
