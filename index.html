@@ -3,9 +3,7 @@
 
   Title: Pauli Murray Awards Foundation
   Description: Celebrating Black LGBTQ+ brilliance through national awards, leadership programs, and advocacy. 
-  Author: Cory L. Scott
-  Designed by: 11soft
-  Coded by: Cory L. Scott
+  Author: Pauli Murray Awards Foundation, Inc.
   
 -->
 
@@ -115,23 +113,35 @@
                         <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
 
                         <!-- ABOUT -->
-                        <li class="parent">
-                          <a href="about-us.html"><div class="main-menu-title">About PMAF</div></a>
-                          <ul class="sub">
-                            <li><a href="about-us.html">About PMAF</a></li>
-                            <li><a href="about-pauli.html">About Pauli Murray</a></li>
-                            <li class="parent">
-                              <a href="board.html">Board of Directors</a>
-                              <ul class="sub">
-                                <li><a href="board.html">Board of Directors</a></li>
-                                <li><a href="board-member-bios.html">Board Member Bios</a></li>
-                                <li><a href="join-the-board.html">Join the Board</a></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
+<li class="parent">
+  <a href="about-us.html"><div class="main-menu-title">About PMAF</div></a>
+  <ul class="sub">
+    <!-- On-page section jumps -->
+    <li><a href="about-us.html#our-work">Our Work</a></li>
 
-                        <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
+    <!-- Board of Directors (parent with subpages) -->
+    <li class="parent">
+      <a href="about-us.html#board">Board of Directors</a>
+      <ul class="sub">
+        <li><a href="cory-scott.html">Cory L. Scott</a></li>
+        <li><a href="nyron-rouse.html">Nyron M. Rouse</a></li>
+        <li><a href="darnell-riley.html">Darnell Riley</a></li>
+        <li><a href="karyden-roberts.html">Karyden Roberts</a></li>
+        <li><a href="faith-rogers.html">Faith Rogers</a></li>
+        <li><a href="christopher-smith.html">Christopher N. Smith</a></li>
+        <li><a href="jon-pierre.html">Jon Pierre</a></li>
+        <li><a href="david-brandyn.html">David Brandyn</a></li>
+        <li><a href="aaron-marcellus.html">Aaron Marcellus</a></li>
+      </ul>
+    </li>
+
+    <li><a href="about-us.html#advisors">Advisors to the Board</a></li>
+    <li><a href="about-us.html#leadership">Leadership Opportunities</a></li>
+  </ul>
+</li>
+
+                        <li><a href="about-pauli.html"><div class="main-menu-title">About Pauli Murray</div></a></li>
+                        <li><a href="awards.html"><div class="main-menu-title">PMAs</div></a></li>
 
                         <li class="parent">
                           <a href="programs.html"><div class="main-menu-title">Programs</div></a>
@@ -171,6 +181,7 @@
               <ul>  
 <!-- SLIDE 1 -->
 <li data-transition="zoomout" data-slotamount="1" data-masterspeed="1500"
+    data-thumb="images/welcome-thumbnail.png"
     data-saveperformance="on" data-title="WELCOME">
 
   <!-- MAIN IMAGE -->
@@ -234,8 +245,9 @@
   </div>
 </li>
 
-<!-- SLIDE 2 -->
+<!-- SLIDE 2 (was SLIDE 4 — video; play button green; no opacity-scroll2) -->
 <li data-transition="zoomout" data-slotamount="1" data-masterspeed="1500"
+    data-thumb="images/my-name-is-pauli-murray-key-art.jpeg"
     data-saveperformance="on" data-title="MY NAME IS PAULI MURRAY">
 
   <!-- MAIN IMAGE (Fallback) -->
@@ -260,35 +272,38 @@
     data-dottedoverlay="twoxtwo"
     data-aspectratio="16:9"
     data-forcerewind="on"
-    style="z-index:2; pointer-events:none;">
-    <video preload="none" width="100%" height="100%" muted playsinline>
+    style="z-index: 2;">
+    <video preload="none" width="100%" height="100%" poster="images/my-name-is-pauli-murray-no-text.jpeg" muted playsinline>
       <source src="images/my-name-is-pauli-murray-mute.mp4" type="video/mp4" />
     </video>
   </div>
 
-  <div class="rs-parallaxlevel-4 opacity-scroll2">
+  <!-- NOTE: removed 'opacity-scroll2' so text + play button never fade on scroll -->
+  <div class="rs-parallaxlevel-4">
+    <!-- SINGLE TP-CAPTION WRAPPING GRID -->
     <div class="tp-caption tp-resizeme"
       data-x="center" data-y="center"
       data-speed="700" data-start="800"
       data-easing="Power1.easeInOut"
-      data-end="999999" data-endspeed="0"
-      style="z-index: 20; width: 100%;">
+      style="z-index: 10; width: 100%;">
 
+      <!-- Faux Grid Layout -->
       <div style="display: flex; justify-content: space-between; align-items: center; width: 90%; margin: 0 auto; max-width: 1140px; min-height: 100vh;">
 
+        <!-- COLUMN 1 (SPACER) -->
         <div style="flex: 1;"></div>
 
-        <div style="flex: 1; display: flex; justify-content: center; align-items:center;">
-          <a class="popup-video" href="javascript:void(0);" onclick="openModal()" 
-             style="position: relative; z-index: 99; display: inline-block;">
-            <svg width="70" height="70" viewBox="0 0 100 100" fill="#ffffff" xmlns="http://www.w3.org/2000/svg"
-                 style="cursor: pointer; transition: all 0.3s ease;">
-              <circle cx="50" cy="50" r="48" stroke="#ffffff" stroke-width="4" fill="none"/>
-              <polygon points="40,30 75,50 40,70" fill="#ffffff"/>
+        <!-- COLUMN 2 (Centered Play Button - PMAF Green) -->
+        <div style="flex: 1; display: flex; justify-content: center;">
+          <a class="popup-video" href="javascript:void(0);" onclick="openModal()">
+            <svg width="70" height="70" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Play trailer">
+              <circle cx="50" cy="50" r="48" stroke="#7cb203" stroke-width="4" fill="none"/>
+              <polygon points="40,30 75,50 40,70" fill="#7cb203"/>
             </svg>
           </a>
         </div>
 
+        <!-- COLUMN 3 (Text Block) -->
         <div style="flex: 1; color: #ffffff; text-align: left;">
           <div style="font-size: 32px; margin-bottom: 20px;">Poet. Lawyer. Activist.</div>
           <div style="font-size: 32px; margin-bottom: 30px;">Priest. Prophet. Saint.</div>
@@ -306,8 +321,9 @@
   </div>
 </li>
 
-<!-- SLIDE 3 -->
+<!-- SLIDE 3 (was SLIDE 2 — unchanged otherwise) -->
 <li data-transition="zoomout" data-slotamount="1" data-masterspeed="1500"
+    data-thumb="images/fuel-the-future-thumbnail.png"
     data-saveperformance="on" data-title="FUEL THE FUTURE">
 
   <!-- MAIN IMAGE -->
@@ -346,6 +362,9 @@
     </div>
 
   </div>
+      </div>
+    </div>
+  </div>
 </li>
 
               </ul>
@@ -363,7 +382,7 @@
   </div>
 </div>
 
-<!-- PMAF VALUES BLOCK -->
+          <!-- PMAF VALUES BLOCK -->
 <div id="about" class="page-section" style="padding-bottom: 0;">
   <div class="row" style="display: flex; align-items: stretch; margin: 0;">
 
@@ -553,7 +572,9 @@
 </div>
         
 
-       <!-- ABOUT PAULI BLOCK -->
+<!-- =========================
+     ABOUT PAULI BLOCK (TEXT RIGHT)
+     ========================= -->
 <div class="page-section grey-light-bg clearfix">
   <div class="fes7-img-cont col-md-5">
     <div class="fes7-img" style="background-image: url(images/pm-true-community-card.jpeg)"></div>
@@ -562,39 +583,183 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-6 fes7-text-cont p-80-cont">
-<div class="title-fs-45" style="color: #303236; margin-top: 0; margin-bottom: 30px;">
-  ABOUT<br>
-  <span class="bold">PAULI MURRAY</span>
-</div>
-<div class="line-3-70" style="background-color: #2f2f2f; margin-bottom: 30px;"></div>
+        <div class="title-fs-45" style="color: #303236; margin-top: 0; margin-bottom: 30px;">
+          ABOUT<br>
+          <span class="bold">PAULI MURRAY</span>
+        </div>
+        <div class="line-3-70" style="background-color: #2f2f2f; margin-bottom: 30px;"></div>
         <p style="font-size: 18px; line-height: 28px; margin-bottom: 40px;">
           Pauli Murray, Howard University School of Law Class of 1944. Their legal theory shaped the arguments in <i>Brown v. Board of Education</i>. A mentor to Ruth Bader Ginsburg. The first Black person assigned female at birth to be ordained as an Episcopal priest. A poet. A trailblazer. A visionary. A queer person whose identity—like so many others—has too often been erased. <br><br>
           And yet, this is only the beginning of their story. To understand Murray is to uncover the roots of modern democracy and the ongoing fight for equity. Their legacy touches law, faith, gender, race, and justice. Learning about Pauli is learning how we got here—and how we move forward.
         </p>
 
-<div style="text-align: center; margin-top: 30px;">
-  <a href="about-pauli.html"
-     style="
-       display: inline-block;
-       padding: 12px 30px;
-       font-size: 14px;
-       font-weight: 700;
-       color: #7cb203;
-       background-color: #303236;
-       border: 1px solid #7cb203;
-       text-decoration: none;
-       transition: all 0.3s ease;
-     "
-     onmouseover="this.style.backgroundColor='#7cb203'; this.style.color='#ffffff';"
-     onmouseout="this.style.backgroundColor='#303236'; this.style.color='#7cb203';">
-    LEARN MORE
-  </a>
-</div>
-
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="about-pauli.html"
+            style="
+              display: inline-block;
+              padding: 12px 30px;
+              font-size: 14px;
+              font-weight: 700;
+              color: #7cb203;
+              background-color: #303236;
+              border: 1px solid #7cb203;
+              text-decoration: none;
+              transition: all 0.3s ease;
+              border-radius: 10px;"
+            onmouseover="this.style.backgroundColor='#7cb203'; this.style.color='#ffffff';"
+            onmouseout="this.style.backgroundColor='#303236'; this.style.color='#7cb203';">
+            LEARN MORE
+          </a>
+        </div>
       </div>
     </div><!--end of row-->
   </div>
 </div>
+
+
+<!-- =========================
+     ARCHITECT OF JUSTICE (TEXT LEFT)
+     ========================= -->
+<div class="page-section grey-light-bg clearfix">
+  <!-- RIGHT IMAGE (offset pushes it to the right) -->
+  <div class="fes7-img-cont col-md-5 col-md-offset-7">
+    <div class="fes7-img" style="background-image:url(images/pauli-justice.jpeg)"></div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- LEFT TEXT -->
+      <div class="col-md-6 p-80-cont">
+        <div class="title-fs-45" style="color:#303236; margin-top:0; margin-bottom:30px;">
+          ARCHITECT OF <br><span class="bold">JUSTICE</span>
+        </div>
+        <div class="line-3-70" style="background-color:#7cb203; margin-bottom:30px;"></div>
+
+        <p style="font-size:18px; line-height:28px; margin-bottom:20px;">
+          Pauli Murray’s 1950 volume <em>States’ Laws on Race and Color</em> mapped segregation statutes with such precision that Thurgood Marshall called it the “bible” of the civil rights movement. It armed litigators with hard facts, strategic leverage, and a national vista of Jim Crow’s reach—turning scattered struggles into a coordinated legal offensive.
+        </p>
+        <p style="font-size:18px; line-height:28px; margin-bottom:20px;">
+          Even earlier, while at Howard University School of Law, Murray’s senior thesis argued that segregation violated the 14th Amendment. That audacious position did more than challenge doctrine; it gave language and logic to a generation of lawyers who would dismantle “separate but equal” in <em>Brown v. Board of Education</em>.
+        </p>
+        <p style="font-size:18px; line-height:28px; margin-bottom:20px;">
+          Murray’s analysis insisted that freedom movements are braided—race, gender, class, and power cannot be separated without losing truth. That conviction animated Murray’s co-founding of the National Organization for Women (NOW) in 1966 and informed the legal frameworks Ruth Bader Ginsburg later advanced on gender equality.
+        </p>
+        <p style="font-size:18px; line-height:28px; margin-bottom:0;">
+          The result is a legal legacy that is both cerebral and fiercely practical: scholarship that became strategy, and strategy that became social change. Murray didn’t just interpret the Constitution—they helped the nation imagine a more honest application of it.
+        </p>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div>
+
+
+<!-- =========================
+     WRITER AND POET (TEXT RIGHT)
+     ========================= -->
+<div class="page-section grey-light-bg clearfix">
+  <!-- LEFT IMAGE -->
+  <div class="fes7-img-cont col-md-5">
+    <div class="fes7-img" style="background-image:url(images/pauli-writer.jpeg)"></div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- RIGHT TEXT -->
+      <div class="col-md-6 col-md-offset-6 p-80-cont">
+        <div class="title-fs-45" style="color:#303236; margin-top:0; margin-bottom:30px;">
+          WRITER <br><span class="bold">AND POET</span>
+        </div>
+        <div class="line-3-70" style="background-color:#7cb203; margin-bottom:30px;"></div>
+
+        <p style="font-size:18px; line-height:28px; margin-bottom:20px;">
+          Murray wrote because the archive had gaps big enough to swallow whole lives. In <em>Proud Shoes</em>, a family history becomes a mirror for the nation—revealing how love, violence, survival, and contradiction live side by side in American memory. The book refuses simplification; it invites readers to sit with complexity until clarity emerges.
+        </p>
+        <p style="font-size:18px; line-height:28px; margin-bottom:20px;">
+          The poetry of <em>Dark Testament</em> moves in another register—lyrical, spiritual, insurgent. Through verse, Murray articulates grief without surrender and hope without naïveté. The poems braid theology and politics, private longing and public witness, crafting a language capacious enough for both pain and transformation.
+        </p>
+        <p style="font-size:18px; line-height:28px; margin-bottom:20px;">
+          Together, the memoir and poems do more than supplement the legal record; they expand our sense of what counts as evidence. Feeling, memory, and story become forms of knowledge—indispensable to any honest account of how change happens and what it costs.
+        </p>
+        <p style="font-size:18px; line-height:28px; margin-bottom:0;">
+          Murray’s literature gives us interiority alongside impact, ensuring their legacy isn’t confined to case law but lives also in the imagination—where new futures are rehearsed before they’re enacted.
+        </p>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div>
+
+
+<!-- =========================
+     SPIRITUAL TRAILBLAZER (TEXT LEFT)
+     ========================= -->
+<div class="page-section grey-light-bg clearfix">
+  <!-- RIGHT IMAGE -->
+  <div class="fes7-img-cont col-md-5 col-md-offset-7">
+    <div class="fes7-img" style="background-image:url(images/pauli-priest.jpeg)"></div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- LEFT TEXT -->
+      <div class="col-md-6 p-80-cont">
+        <div class="title-fs-45" style="color:#303236; margin-top:0; margin-bottom:30px;">
+          SPIRITUAL <br><span class="bold">TRAILBLAZER</span>
+        </div>
+        <div class="line-3-70" style="background-color:#7cb203; margin-bottom:30px;"></div>
+
+        <p style="font-size:18px; line-height:28px; margin-bottom:20px;">
+          In 1977, Murray became the first Black woman—and the first known LGBTQ+ person—ordained in the Episcopal Church. The moment was not mere ceremony; it was a public argument about who belongs at the altar and who is authorized to declare good news. Murray’s answer was simple and seismic: everyone.
+        </p>
+        <p style="font-size:18px; line-height:28px; margin-bottom:20px;">
+          Murray’s preaching flowed from the same well as their legal work: a conviction that dignity is not negotiable. The pulpit became another forum for liberation, where scripture was read with the eyes of the oppressed and tradition was measured against the command to love neighbor without exception.
+        </p>
+        <p style="font-size:18px; line-height:28px; margin-bottom:20px;">
+          The ministry did not retreat from struggle; it leaned toward the world’s wounds. Murray modeled a spirituality that could tell the truth about harm and still insist on wholeness. It was rigor without cruelty, compassion without compromise—a theology that welcomed doubt as a doorway to deeper faith.
+        </p>
+        <p style="font-size:18px; line-height:28px; margin-bottom:0;">
+          In this way, Murray braided lawyer, prophet, and pastor into one vocation. The church was not a refuge from activism but its continuation—another place to practice the courage to include.
+        </p>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div>
+
+
+<!-- =========================
+     GENDER, QUEERNESS & LEGACY (TEXT RIGHT)
+     ========================= -->
+<div class="page-section grey-light-bg clearfix">
+  <!-- LEFT IMAGE -->
+  <div class="fes7-img-cont col-md-5">
+    <div class="fes7-img" style="background-image:url(images/pauli-legacy.jpeg)"></div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- RIGHT TEXT -->
+      <div class="col-md-6 col-md-offset-6 p-80-cont">
+        <div class="title-fs-45" style="color:#303236; margin-top:0; margin-bottom:30px;">
+          GENDER, QUEERNESS <br><span class="bold">AND LEGACY</span>
+        </div>
+        <div class="line-3-70" style="background-color:#7cb203; margin-bottom:30px;"></div>
+
+        <p style="font-size:18px; line-height:28px; margin-bottom:20px;">
+          In private writings, Murray described feeling male-identified and pursued medical pathways largely inaccessible in their era. Without today’s vocabulary—nonbinary, transmasculine, gender-expansive—Murray nonetheless lived at the edges of language, insisting on a self that did not fit the given boxes.
+        </p>
+        <p style="font-size:18px; line-height:28px; margin-bottom:20px;">
+          That insistence was not only personal; it was philosophical. Murray’s life asked the country to expand its imagination about gender just as their legal work demanded an expanded imagination of equality. The same throughline runs across it all: a refusal to mistake custom for truth or hierarchy for order.
+        </p>
+        <p style="font-size:18px; line-height:28px; margin-bottom:20px;">
+          Murray died in 1985, but the resonance of their witness has only deepened. In 2012, the Episcopal Church canonized Murray a saint, honoring a life that fused intellect, art, and faith into a singular calling. Today, Murray’s story animates classrooms, movements, and communities that look to their vision for courage and clarity.
+        </p>
+        <p style="font-size:18px; line-height:28px; margin-bottom:0;">
+          The documentary <em>My Name Is Pauli Murray</em> has carried this legacy to new audiences, but the truest memorial is the work still unfolding in Murray’s wake—legal arguments sharpened, poems remembered, pulpits widened, and identities honored. The future Murray imagined keeps arriving, because people keep building it.
+        </p>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div>
+
 
         <!-- BOARD OF DIRECTORS SECTION -->
         <div class="page-section" style="background-color:#111111; padding:40px 0; color:#ffffff;">
@@ -1023,203 +1188,36 @@
 </div>
 
 
-<!DOCTYPE html>
-<!--
-
-  Title: Pauli Murray Awards Foundation
-  Description: Celebrating Black LGBTQ+ brilliance through national awards, leadership programs, and advocacy. 
-  Author: Cory L. Scott
-  Designed by: 11soft
-  Coded by: Cory L. Scott
-  
--->
-
-<html lang="en">
-  <head>
-    <title>Pauli Murray Awards Foundation</title>
-    <meta name="description" content="Honoring Black LGBTQ+ brilliance through national awards, leadership, and advocacy.">
-    <meta name="keywords" content="Pauli Murray, Black LGBTQ Awards, Social Justice, Leadership, PMAF">
-    <meta name="author" content="Cory L. Scott">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <!-- FAVICONS -->
-    <link rel="shortcut icon" href="images/favicon/favicon.png">
-    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
-
-    <!-- REVICON Fonts-->   
-    <link rel="stylesheet" href="rs-plugin/fonts/revicons/revicons.css" type="text/css" media="all" />
-
-    <!-- CSS -->
-    <!-- REVOSLIDER CSS SETTINGS -->
-    <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.min.css" media="screen">
-
-    <!--  BOOTSTRAP -->
-    <link rel="stylesheet" href="css/bootstrap.min.css"> 
-  
-    <!--  GOOGLE FONT -->   
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,300,700" type="text/css">
-
-    <!-- ICONS ELEGANT FONT & FONT AWESOME & LINEA ICONS  -->   
-    <link rel="stylesheet" href="css/icons-fonts.css"> 
-  
-    <!--  CSS THEME -->   
-    <link rel="stylesheet" href="css/style.css">
-  
-    <!-- ANIMATE -->  
-    <link rel="stylesheet" href="css/animate.min.css">
-
-    <!-- Owl Carousel v2 CSS (CDN to ensure v2) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
-    <style>
-      /* minimal scoped styles for arrow placement & dots */
-      .pos-relative { position: relative; }
-      .board-carousel-wrap { padding: 0 56px; }
-      @media (max-width: 992px){ .board-carousel-wrap { padding: 0 44px; } }
-      @media (max-width: 768px){ .board-carousel-wrap { padding: 0 36px; } }
-
-      .board-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
-      .board-nav-left  { left: 12px; }
-      .board-nav-right { right: 12px; }
-      .board-nav .btn.btn-xs{
-        background: transparent; border: 2px solid #ffffff; border-radius: 50%;
-        width: 42px; height: 42px; line-height: 38px; padding: 0;
-        display: inline-flex; align-items: center; justify-content: center;
-        color: #ffffff; transition: all .2s ease;
-      }
-      .board-nav .btn.btn-xs:hover,
-      .board-nav .btn.btn-xs:focus { border-color:#7cb203; color:#7cb203; outline:0; box-shadow:none; }
-
-      #board-carousel .owl-dots { margin-top:22px; text-align:center; }
-      #board-carousel .owl-dot span{
-        width:10px; height:10px; display:inline-block; border-radius:50%;
-        background:#7cb203; opacity:.35; margin:0 5px; transition:opacity .2s ease;
-      }
-      #board-carousel .owl-dot.active span{ opacity:1; }
-    </style>
-  </head>
-
-  <body>
-    <div id="wrap" class="boxed ">
-      <div class="grey-bg"> <!-- Grey BG  --> 
-        
-        <!-- HEADER 1 BLACK MOBILE-NO-TRANSPARENT -->
-        <header id="nav" class="header header-1 black-header mobile-no-transparent">
-          <div class="header-wrapper">
-            <div class="container-m-30 clearfix">
-              <div class="logo-row">
-                <!-- LOGO --> 
-                <div class="logo-container-2">
-                  <div class="logo-2">
-                    <a href="index.html" class="clearfix">
-                      <img src="images/logo-white.png" class="logo-img" alt="White Pauli Murray Awards Foundation Logo">
-                    </a>
-                  </div>
-                </div>
-                <!-- BUTTON --> 
-                <div class="menu-btn-respons-container">
-                  <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target="#main-menu .navbar-collapse">
-                    <span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- MAIN MENU CONTAINER -->
-            <div class="main-menu-container">
-              <div class="container-m-30 clearfix"> 
-                <!-- MAIN MENU -->
-                <div id="main-menu">
-                  <div class="navbar navbar-default" role="navigation">
-                    <!-- MAIN MENU LIST -->
-                    <nav class="collapse collapsing navbar-collapse right-1024">
-                      <ul class="nav navbar-nav">
-                        <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
-
-                        <!-- ABOUT -->
-                        <li class="parent">
-                          <a href="about-us.html"><div class="main-menu-title">About PMAF</div></a>
-                          <ul class="sub">
-                            <li><a href="about-us.html">About PMAF</a></li>
-                            <li><a href="about-pauli.html">About Pauli Murray</a></li>
-                            <li class="parent">
-                              <a href="board.html">Board of Directors</a>
-                              <ul class="sub">
-                                <li><a href="board-member-bios.html">Board Member Bios</a></li>
-                                <li><a href="join-the-board.html">Join the Board</a></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-
-                        <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
-
-                        <li class="parent">
-                          <a href="programs.html"><div class="main-menu-title">Programs</div></a>
-                          <ul class="sub">
-                            <li><a href="programs.html">Programs</a></li>
-                            <li><a href="events.html">Events</a></li>
-                          </ul>
-                        </li>
-
-                        <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
-                        <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
-
-                        <li>
-                          <a href="donate.html" class="donate-highlight">
-                            <div class="main-menu-title">Donate</div>
-                          </a>
-                        </li>
-
-                        <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
-                        <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-                <!-- /MAIN MENU -->
-              </div>
-            </div>
-            <!-- /MAIN MENU CONTAINER -->
-          </div>
-        </header>
-
-<!-- PASTE PAGE CONTENT HERE -->
-
-<!-- PMAF FOOTER -->
-<footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
-  <div class="container">
-    <div class="row">
+<!-- ================= PMAF FOOTER ================= -->
+<footer id="footer4"
+  class="page-section footer2-black"
+  style="width:100%; margin:0; left:auto; right:auto; padding:24px 0 26px;"
+  >
+  <div class="container-m-30" style="padding-left:20px; padding-right:30px;">
+    <div class="row" style="margin-left:0; margin-right:0;">
 
       <!-- Column 1: Logo + Contact Info -->
-      <div class="col-md-3 col-sm-3 widget">
-        <div class="logo-footer-cont">
-          <a href="index.html">
-            <img class="logo-footer" src="images/logo-footer-white.png" alt="logo">
-          </a>
+      <div class="col-md-3 col-sm-6 widget" style="margin-top:0; margin-bottom:0;">
+        <div class="logo-footer-cont" style="margin-bottom:12px;">
+          <a href="index.html"><img class="logo-footer" src="images/logo-footer-white.png" alt="logo"></a>
         </div>
         <div class="footer-2-text-cont">
-          <address>
-            1178 Broadway, 3rd Floor #502<br>
-            New York, NY 10001
+          <address style="margin-bottom:8px;">
+           1178 Broadway, 3rd Floor #502<br>
+           New York, NY 10001          
           </address>
         </div>
-        <div class="footer-2-text-cont">646-736-2596<br></div>
-        <div class="footer-2-text-cont">
-          <a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a>
-        </div>
+        <div class="footer-2-text-cont" style="margin-bottom:8px;">646-736-2596</div>
+        <div class="footer-2-text-cont"><a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a></div>
       </div>
 
       <!-- Column 2: Quick Links -->
-      <div class="col-md-3 col-sm-3 widget">
-        <h4>QUICK LINKS</h4>
+      <div class="col-md-3 col-sm-6 widget" style="margin-top:0; margin-bottom:0;">
+        <h4 style="margin-top:0;">QUICK LINKS</h4>
         <ul class="links-list bold a-text-cont">
           <li><a href="index.html">HOME</a></li>
           <li><a href="about-us.html">ABOUT PMAF</a></li>
-          <li><a href="about-pauli-murray.html">ABOUT PAULI MURRAY</a></li>
+          <li><a href="about-pauli.html">ABOUT PAULI</a></li>
           <li><a href="programs.html">PROGRAMS</a></li>
           <li><a href="blog.html">NEWS</a></li>
           <li><a href="donate.html">DONATE</a></li>
@@ -1227,8 +1225,8 @@
       </div>
 
       <!-- Column 3: PMAs 2026 -->
-      <div class="col-md-3 col-sm-3 widget">
-        <h4>PMAs 2026</h4>
+      <div class="col-md-3 col-sm-6 widget" style="margin-top:0; margin-bottom:0;">
+        <h4 style="margin-top:0;">PMAs 2026</h4>
         <ul class="links-list a-text-cont">
           <li><a href="awards.html">PMAs</a></li>
           <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
@@ -1239,44 +1237,36 @@
       </div>
 
       <!-- Column 4: Recent Posts -->
-      <div class="col-md-3 col-sm-3 widget">
-        <h4>RECENT POSTS</h4>
+      <div class="col-md-3 col-sm-6 widget" style="margin-top:0; margin-bottom:0;">
+        <h4 style="margin-top:0;">RECENT POSTS</h4>
         <div id="post-list-footer">
-          <div class="post-prev-title">
-            <h3><a class="a-text" href="blog-single-sidebar-right.html">New trends in web design</a></h3>
-          </div>
+          <div class="post-prev-title"><h3><a class="a-text" href="#">New trends in web design</a></h3></div>
           <div class="post-prev-info">July 10</div>
-
-          <div class="post-prev-title">
-            <h3><a class="a-text" href="blog-single-sidebar-right.html">The sound of life</a></h3>
-          </div>
+          <div class="post-prev-title"><h3><a class="a-text" href="#">The sound of life</a></h3></div>
           <div class="post-prev-info">October 10</div>
-
-          <div class="post-prev-title">
-            <h3><a class="a-text" href="blog-single-sidebar-right.html">Time for minimalism</a></h3>
-          </div>
+          <div class="post-prev-title"><h3><a class="a-text" href="#">Time for minimalism</a></h3></div>
           <div class="post-prev-info">September 21</div>
         </div>
       </div>
 
     </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer-2-copy-cont clearfix">
-      <!-- Social Links -->
-      <div class="footer-2-soc-a right">
-        <a href="https://www.facebook.com/PauliMurrayAF/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.instagram.com/PauliMurrayAF/" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/paulimurrayawards" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
+    <!-- Footer Bottom (centered) -->
+    <div class="footer-2-copy-cont clearfix" style="margin-top:40px; border-top:1px solid rgba(255,255,255,0.1); padding-top:0px;">
+    </div>
+    <div style="text-align:center; margin-top:24px;">
+      <div style="margin-bottom:12px;">
+        <a href="https://www.facebook.com/PauliMurrayAF/" target="_blank" style="font-size:1.5em; color:#fff; margin:0 10px; text-decoration:none;"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/PauliMurrayAF/" target="_blank" style="font-size:1.5em; color:#fff; margin:0 10px; text-decoration:none;"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/paulimurrayawards" target="_blank" style="font-size:1.5em; color:#fff; margin:0 10px; text-decoration:none;"><i class="fa fa-linkedin"></i></a>
       </div>
-
-      <!-- Copyright -->
-      <div class="left">
-        <a class="footer-2-copy" href="https://paulimurrayawaards.com" target="_blank">
+      <div>
+        <a class="footer-2-copy" href="https://paulimurrayawards.com" target="_blank" style="color:#fff; text-decoration:none;">
           &copy; PAULI MURRAY AWARDS FOUNDATION INC. 2025
         </a>
       </div>
     </div>
+
   </div>
 </footer>
 
@@ -1284,6 +1274,14 @@
 <p id="back-top">
   <a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a>
 </p>
+
+    </div><!-- /.grey-bg -->
+  </div><!-- /#wrap -->
+
+        <!-- BACK TO TOP -->
+        <p id="back-top">
+          <a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a>
+        </p>
             
         <!-- JS begin -->
 
@@ -1317,7 +1315,7 @@
         <script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>   
         <script src="rs-plugin/js/jquery.themepunch.revolution-parallax.min.js"></script>
         
-        <!-- SLIDER REVOLUTION INIT (unchanged) -->
+        <!-- SLIDER REVOLUTION INIT -->
         <script>
           jQuery(document).ready(function() {
             if ((navigator.appVersion.indexOf("Win")!=-1) && ( ieDetect == false )) { 
@@ -1354,247 +1352,14 @@
           });
         </script>
 
-        <!-- GLOBAL Owl init — skip #board-carousel -->
-        <script>
-          $(document).ready(function(){
-            $(".owl-carousel").not("#board-carousel").owlCarousel({
-              loop: true,
-              margin: 30,
-              nav: false,
-              dots: true,
-              autoplay: true,
-              autoplayTimeout: 5000,
-              responsive: {
-                0:   { items: 1 },
-                768: { items: 2 },
-                992: { items: 3 }
-              }
-            });
-          });
-        </script>
-
-        <!-- BOARD CAROUSEL — v2 init + arrow wiring -->
-        <script>
-          jQuery(function ($) {
-            var $el = $('#board-carousel');
-
-            /* If anything initialized it, destroy & clean before init */
-            if ($el.data('owl.carousel')) {
-              $el.trigger('destroy.owl.carousel');
-              $el.find('.owl-stage-outer').children().unwrap();
-              $el.removeClass('owl-center owl-loaded owl-text-select-on');
-            }
-
-            /* Init with required behavior (v2 options) */
-            $el.owlCarousel({
-              loop: true,
-              margin: 30,
-              smartSpeed: 600,
-              autoplay: true,
-              autoplayTimeout: 5000,
-              autoplayHoverPause: true,
-              nav: false,              /* external arrows only */
-              dots: true,
-              dotsEach: 1,             /* one dot per board member */
-              responsive: {
-                0:   { items: 1 },
-                768: { items: 2 },
-                992: { items: 3 }
-              }
-            });
-
-            /* Ensure autoplay is running */
-            $el.trigger('play.owl.autoplay', [5000]);
-
-            /* External arrows bound by ID (works across re-inits) */
-            $('.board-nav-left .prev').off('click.board').on('click.board', function(e){
-              e.preventDefault();
-              $('#board-carousel').trigger('prev.owl.carousel');
-            });
-            $('.board-nav-right .next').off('click.board').on('click.board', function(e){
-              e.preventDefault();
-              $('#board-carousel').trigger('next.owl.carousel');
-            });
-          });
-        </script>
-
-        <!-- JS end --> 
-
-        <script>
-          function updateDaysUntilAwards() {
-            const eventDate = new Date("October 11, 2026");
-            const today = new Date();
-            const timeDiff = eventDate - today;
-            const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-            const daysEl = document.getElementById("days-until");
-            if (daysEl) { daysEl.textContent = daysLeft; }
-          }
-          updateDaysUntilAwards();
-        </script>
-
-        <!-- VIDEO MODAL -->
-        <div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;">
-          <div class="close" onclick="closeModal()" style="position:absolute; top:20px; right:30px; font-size:40px; color:#fff; cursor:pointer;">×</div>
-          <video controls autoplay id="pauliVideo" style="width:90%; max-width:900px;">
-            <source src="images/my-name-is-pauli-murray-trailer.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-
-        <script>
-          function openModal() {
-            document.getElementById("videoModal").style.display = "flex";
-            document.getElementById("pauliVideo").play();
-          }
-          function closeModal() {
-            document.getElementById("videoModal").style.display = "none";
-            const video = document.getElementById("pauliVideo");
-            video.pause();
-            video.currentTime = 0;
-          }
-        </script>
-
-        <script>
-          function matchPmaSectionHeights() {
-            const left = document.getElementById("pma-left");
-            const right = document.getElementById("pma-right");
-            if (left && right) { right.style.height = left.offsetHeight + "px"; }
-          }
-          window.addEventListener("load", matchPmaSectionHeights);
-          window.addEventListener("resize", matchPmaSectionHeights);
-        </script>
-
-        <!-- Netlify Identity Widget -->
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        <script>
-          if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", function(user) {
-              if (!user) {
-                window.netlifyIdentity.on("login", function() {
-                  document.location.href = "/admin/";
-                });
-              }
-            });
-          }
-        </script>
-
-        <!-- Load gray-matter correctly -->
-        <script src="https://cdn.jsdelivr.net/npm/gray-matter@3.1.1/dist/gray-matter.min.js"></script>
-
-        <script>
-          async function fetchBlogPosts() {
-            const postsFolder = "./content/posts/";
-            const container = document.getElementById("blog-posts");
-            if (!container) return;
-
-            const postList = [
-              "building-the-future-with-vision-and-integrity.md",
-              "feast-day-of-rev-dr-pauli-murray-esq-honoring-the-saint-who-defied-every-box.md",
-              "legacy-in-progress.md",
-              "pauli-murray-was-always-there—we-just-weren’t-looking.md"
-            ];
-
-            for (const filename of postList) {
-              try {
-                const res = await fetch(`${postsFolder}${filename}`);
-                const raw = await res.text();
-                const parsed = matter(raw);
-                const { title, date, excerpt, featured_image } = parsed.data;
-
-                const html = `
-                  <div class="blog-post-preview">
-                    ${featured_image ? `<img src="${featured_image}" alt="${title}" />` : ""}
-                    <h3>${title}</h3>
-                    <p class="date">${new Date(date).toLocaleDateString()}</p>
-                    <p>${excerpt || ""}</p>
-                    <a href="/post.html?file=${filename}" class="btn btn-sm">Read More</a>
-                  </div>
-                `;
-                container.innerHTML += html;
-              } catch (err) {
-                console.error("Error loading post:", filename, err);
-              }
-            }
-          }
-          document.addEventListener("DOMContentLoaded", fetchBlogPosts);
-        </script>
-
-        <script src="js/load-posts.js"></script>
-
-      </div><!-- /.grey-bg -->
-    </div><!-- /#wrap -->
-  </body>
-</html>
-
-            
-        <!-- JS begin -->
-
-        <!-- jQuery  -->
-        <script src="js/jquery-1.11.2.min.js"></script>
-
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>   
-
-        <!-- MAGNIFIC POPUP -->
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        
-        <!-- PORTFOLIO SCRIPTS -->
-        <script src="js/isotope.pkgd.min.js"></script>
-        <script src="js/imagesloaded.pkgd.min.js"></script>
-        <script src="js/masonry.pkgd.min.js"></script>
-        
-        <!-- COUNTER -->
-        <script src="js/jquery.countTo.js"></script>
-        
-        <!-- APPEAR -->    
-        <script src="js/jquery.appear.js"></script>
-        
-        <!-- Owl Carousel v2 JS (CDN to ensure v2) -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-        
-        <!-- MAIN SCRIPT -->
-        <script src="js/main.js"></script>
-        
-        <!-- REVOSLIDER SCRIPTS  -->
-        <script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>   
-        <script src="rs-plugin/js/jquery.themepunch.revolution-parallax.min.js"></script>
-        
-        <!-- SLIDER REVOLUTION INIT (unchanged) -->
-        <script>
-          jQuery(document).ready(function() {
-            if ((navigator.appVersion.indexOf("Win")!=-1) && ( ieDetect == false )) { 
-              jQuery('#rs-fullscr').revolution({
-                dottedOverlay:"none", delay:16000, startwidth:1170, startheight:700, hideThumbs:200,
-                thumbWidth:100, thumbHeight:50, thumbAmount:5, navigationType:"none", navigationArrows:"solo",
-                navigationStyle:"preview4", hideTimerBar:"on", touchenabled:"on", onHoverStop:"on",
-                swipe_velocity:0.7, swipe_min_touches:1, swipe_max_touches:1, drag_block_vertical:false,
-                parallax:"scroll", parallaxBgFreeze:"on", parallaxLevels:[45,40,35,50], parallaxDisableOnMobile:"on",
-                keyboardNavigation:"off", navigationHAlign:"center", navigationVAlign:"bottom", navigationHOffset:0, navigationVOffset:20,
-                soloArrowLeftHalign:"left", soloArrowLeftValign:"center", soloArrowLeftHOffset:20, soloArrowLeftVOffset:0,
-                soloArrowRightHalign:"right", soloArrowRightValign:"center", soloArrowRightHOffset:20, soloArrowRightVOffset:0,
-                shadow:0, fullWidth:"off", fullScreen:"on", spinner:"spinner4", stopLoop:"off", stopAfterLoops:-1, stopAtSlide:-1,
-                shuffle:"off", autoHeight:"off", forceFullWidth:"off", hideThumbsOnMobile:"off", hideNavDelayOnMobile:1500,
-                hideBulletsOnMobile:"off", hideArrowsOnMobile:"off", hideThumbsUnderResolution:0, hideSliderAtLimit:0,
-                hideCaptionAtLimit:0, hideAllCaptionAtLilmit:0, startWithSlide:0
-              });
-            } else {
-              jQuery('#rs-fullscr').revolution({
-                dottedOverlay:"none", delay:16000, startwidth:1170, startheight:700, hideThumbs:200,
-                thumbWidth:100, thumbHeight:50, thumbAmount:5, navigationType:"none", navigationArrows:"solo",
-                navigationStyle:"preview4", hideTimerBar:"on", touchenabled:"on", onHoverStop:"on",
-                swipe_velocity:0.7, swipe_min_touches:1, swipe_max_touches:1, drag_block_vertical:false,
-                parallax:"mouse", parallaxBgFreeze:"on", parallaxLevels:[0], parallaxDisableOnMobile:"on",
-                keyboardNavigation:"off", navigationHAlign:"center", navigationVAlign:"bottom", navigationHOffset:0, navigationVOffset:20,
-                soloArrowLeftHalign:"left", soloArrowLeftValign:"center", soloArrowLeftHOffset:20, soloArrowLeftVOffset:0,
-                soloArrowRightHalign:"right", soloArrowRightValign:"center", soloArrowRightHOffset:20, soloArrowRightVOffset:0,
-                shadow:0, fullWidth:"off", fullScreen:"on", spinner:"spinner4", stopLoop:"off", stopAfterLoops:-1, stopAtSlide:-1,
-                shuffle:"off", autoHeight:"off", forceFullWidth:"off", hideThumbsOnMobile:"off", hideNavDelayOnMobile:1500,
-                hideBulletsOnMobile:"off", hideArrowsOnMobile:"off", hideThumbsUnderResolution:0, hideSliderAtLimit:0,
-                hideCaptionAtLimit:0, hideAllCaptionAtLilmit:0, startWithSlide:0
-              });      
-            }                 
-          });
-        </script>
+<style>
+  /* Force-hide revslider hover thumbnails, keep preview4 arrows */
+  .tp-arr-imgholder,
+  .tp-arr-titleholder,
+  .tp-thumb {
+    display: none !important;
+  }
+</style>
 
         <!-- GLOBAL Owl init — skip #board-carousel -->
         <script>
@@ -1765,25 +1530,5 @@
 
       </div><!-- /.grey-bg -->
     </div><!-- /#wrap -->
-
-    <script>
-  $(document).ready(function(){
-    if (!$('#board-carousel').data('owl.carousel')) {
-      $('#board-carousel').owlCarousel({
-        loop: true,
-        margin: 30,
-        nav: false,
-        dots: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        responsive:{
-          0:{ items:1 },
-          768:{ items:2 },
-          992:{ items:3 }
-        }
-      });
-    }
-  });
-</script>
   </body>
 </html>

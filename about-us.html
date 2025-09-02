@@ -2,9 +2,7 @@
 <!--
   Title: About PMAF 
   Description: Meet the leaders and learn the story behind the Pauli Murray Awards Foundation.
-  Author: Cory L. Scott
-  Designed by: 11soft
-  Coded by: Cory L. Scott
+  Author: Pauli Murray Awards Foundation, Inc.
 -->
 <html lang="en">
 <head>
@@ -35,13 +33,24 @@
   <!-- Owl Carousel v2 CSS (kept since template includes it) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+  <!-- Anchor offset for fixed header -->
+  <style>
+    /* Prevent fixed header from covering anchored sections */
+    #our-work, #board, #advisors, #leadership { scroll-margin-top: 110px; }
+    @media (max-width: 1024px) {
+      #our-work, #board, #advisors, #leadership { scroll-margin-top: 80px; }
+    }
+    /* Non-clickable submenu label styling */
+    .no-click { cursor: default; }
+  </style>
 </head>
 
 <body>
   <div id="wrap" class="boxed ">
     <div class="grey-bg"> <!-- Grey BG  -->
 
-      <!-- ===== HEADER (from page template) ===== -->
+      <!-- ===== HEADER ===== -->
       <header id="nav" class="header header-1 black-header mobile-no-transparent">
         <div class="header-wrapper">
           <div class="container-m-30 clearfix">
@@ -64,63 +73,76 @@
           </div>
 
           <!-- MAIN MENU CONTAINER -->
-          <div class="main-menu-container">
-            <div class="container-m-30 clearfix">
-              <!-- MAIN MENU -->
-              <div id="main-menu">
-                <div class="navbar navbar-default" role="navigation">
-                  <!-- MAIN MENU LIST -->
-                  <nav class="collapse collapsing navbar-collapse right-1024">
-                    <ul class="nav navbar-nav">
-                      <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
+            <div class="main-menu-container">
+              <div class="container-m-30 clearfix"> 
+                <!-- MAIN MENU -->
+                <div id="main-menu">
+                  <div class="navbar navbar-default" role="navigation">
+                    <!-- MAIN MENU LIST -->
+                    <nav class="collapse collapsing navbar-collapse right-1024">
+                      <ul class="nav navbar-nav">
+                        <li><a href="index.html"><div class="main-menu-title">Home</div></a></li>
 
-                      <!-- ABOUT -->
-                      <li class="parent">
-                        <a href="about-us.html"><div class="main-menu-title">About PMAF</div></a>
-                        <ul class="sub">
-                          <li><a href="about-us.html">About PMAF</a></li>
-                          <li><a href="about-pauli.html">About Pauli Murray</a></li>
-                          <li class="parent">
-                            <a href="board.html">Board of Directors</a>
-                            <ul class="sub">
-                              <li><a href="board-member-bios.html">Board Member Bios</a></li>
-                              <li><a href="join-the-board.html">Join the Board</a></li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
+                        <!-- ABOUT -->
+<li class="parent">
+  <a href="about-us.html"><div class="main-menu-title">About PMAF</div></a>
+  <ul class="sub">
+    <!-- On-page section jumps -->
+    <li><a href="about-us.html#our-work">Our Work</a></li>
 
-                      <li><a href="awards.html"><div class="main-menu-title">Pauli Murray Awards</div></a></li>
+    <!-- Board of Directors (parent with subpages) -->
+    <li class="parent">
+      <a href="about-us.html#board">Board of Directors</a>
+      <ul class="sub">
+        <li><a href="cory-scott.html">Cory L. Scott</a></li>
+        <li><a href="nyron-rouse.html">Nyron M. Rouse</a></li>
+        <li><a href="darnell-riley.html">Darnell Riley</a></li>
+        <li><a href="karyden-roberts.html">Karyden Roberts</a></li>
+        <li><a href="faith-rogers.html">Faith Rogers</a></li>
+        <li><a href="christopher-smith.html">Christopher N. Smith</a></li>
+        <li><a href="jon-pierre.html">Jon Pierre</a></li>
+        <li><a href="david-brandyn.html">David Brandyn</a></li>
+        <li><a href="aaron-marcellus.html">Aaron Marcellus</a></li>
+      </ul>
+    </li>
 
-                      <li class="parent">
-                        <a href="programs.html"><div class="main-menu-title">Programs</div></a>
-                        <ul class="sub">
-                          <li><a href="programs.html">Programs</a></li>
-                          <li><a href="events.html">Events</a></li>
-                        </ul>
-                      </li>
+    <li><a href="about-us.html#advisors">Advisors to the Board</a></li>
+    <li><a href="about-us.html#leadership">Leadership Opportunities</a></li>
+  </ul>
+</li>
 
-                      <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
-                      <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
+                        <li><a href="about-pauli.html"><div class="main-menu-title">About Pauli Murray</div></a></li>
+                        <li><a href="awards.html"><div class="main-menu-title">PMAs</div></a></li>
 
-                      <li>
-                        <a href="donate.html" class="donate-highlight">
-                          <div class="main-menu-title">Donate</div>
-                        </a>
-                      </li>
+                        <li class="parent">
+                          <a href="programs.html"><div class="main-menu-title">Programs</div></a>
+                          <ul class="sub">
+                            <li><a href="programs.html">Programs</a></li>
+                            <li><a href="events.html">Events</a></li>
+                          </ul>
+                        </li>
 
-                      <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
-                      <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
-                    </ul>
-                  </nav>
+                        <li><a href="blog.html"><div class="main-menu-title">Blog / News</div></a></li>
+                        <li><a href="faq.html"><div class="main-menu-title">FAQ</div></a></li>
+
+                        <li>
+                          <a href="donate.html" class="donate-highlight">
+                            <div class="main-menu-title">Donate</div>
+                          </a>
+                        </li>
+
+                        <li><a href="contact.html"><div class="main-menu-title">Contact</div></a></li>
+                        <li><a href="login.html"><div class="main-menu-title">Login</div></a></li>
+                      </ul>
+                    </nav>
+                  </div>
                 </div>
+                <!-- /MAIN MENU -->
               </div>
-              <!-- /MAIN MENU -->
             </div>
+            <!-- /MAIN MENU CONTAINER -->
           </div>
-          <!-- /MAIN MENU CONTAINER -->
-        </div>
-      </header>
+        </header>
 
 <!-- =========================
      PAGE TITLE (ABOUT PMAF)
@@ -130,8 +152,7 @@
   <div class="inner container" style="position:relative; z-index:2; height:100%; display:flex; align-items:center; padding-top:40px;">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="page-title" style="font-size:56px; line-height:64px; color:#fff; margin:0 0 6px;">ABOUT PMAF</h1>
-        <!-- Force subtitle to a single line -->
+        <h1 class="page-title" style="font-size:56px; line-height:64px; color:#fff; margin:0 0 6px;">ABOUT THE PAULI MURRAY <br>AWARDS FOUNDATION</h1>
         <div class="sub" style="color:#fff; font-size:22px; line-height:32px; white-space:nowrap; overflow:visible;">Honoring Excellence. Celebrating Legacy. Empowering the Future.</div>
       </div>
     </div>
@@ -145,7 +166,7 @@
   <div class="container">
 
     <!-- Our Work (Text left, Image right) -->
-    <div class="row" style="display:flex; align-items:center; margin-bottom:40px;">
+    <div id="our-work" class="row" style="display:flex; align-items:center; margin-bottom:40px;">
       <div class="col-md-6" style="padding-right:30px;">
         <div class="title-fs-45" style="color:#303236; margin:0 0 18px;">OUR <span class="bold">WORK</span></div>
         <div class="line-3-100" style="width:100px; height:3px; background:#7cb203; margin:16px 0 22px;"></div>
@@ -154,14 +175,14 @@
         </p>
       </div>
       <div class="col-md-6" style="text-align:right;">
-        <img src="images/ads-noute.jpg" alt="PMAF work" class="img-responsive" style="max-width:100%; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15);">
+        <img src="images/office-discussion.jpg" alt="PMAF work" class="img-responsive" style="max-width:100%; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15);">
       </div>
     </div>
 
     <!-- Our Story (Image left, Text right) -->
     <div class="row" style="display:flex; align-items:center; margin-bottom:40px;">
       <div class="col-md-6" style="text-align:left; margin-bottom:20px;">
-        <img src="images/ads-noute.jpg" alt="PMAF story" class="img-responsive" style="max-width:100%; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15);">
+        <img src="images/pm-sojourner-truth.jpg" alt="PMAF story" class="img-responsive" style="max-width:100%; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15);">
       </div>
       <div class="col-md-6" style="padding-left:30px;">
         <div class="title-fs-45" style="color:#303236; margin:0 0 18px;">OUR <span class="bold">STORY</span></div>
@@ -173,12 +194,12 @@
     </div>
 
     <!-- Our Namesake (Text left, Image right) -->
-    <div class="row" style="display:flex; align-items:flex-start;">
-      <div class="col-md-6" style="padding-right:30px;">
+    <div class="row" style="display:flex; align-items:center;">
+      <!-- LEFT: TEXT -->
+      <div class="col-md-6" style="padding-right:30px; display:flex; flex-direction:column; justify-content:center;">
         <div class="title-fs-45" style="color:#303236; margin:0 0 18px;">OUR <span class="bold">NAMESAKE</span></div>
         <div class="line-3-100" style="width:100px; height:3px; background:#7cb203; margin:16px 0 22px;"></div>
 
-        <!-- UPDATED COPY EXACTLY AS PROVIDED -->
         <p style="font-size:18px; line-height:28px; margin-bottom:16px;">
           Pauli Murray was a poet, priest, lawyer, and prophetic voice for justice. As a Black, queer, nonbinary trailblazer, their work challenged the boundaries of race, gender, and power long before the world had language for it.
         </p>
@@ -192,9 +213,11 @@
           PMAF is proud to honor their name—and carry forward their legacy.
         </p>
       </div>
-      <!-- Move photo down so its top aligns with first paragraph -->
-      <div class="col-md-6" style="text-align:right; margin-top:72px;">
-        <img src="images/pauli_55.jpeg" alt="Pauli Murray" class="img-responsive" style="max-width:100%; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15);">
+
+      <!-- RIGHT: IMAGE -->
+      <div class="col-md-6" style="text-align:right;">
+        <img src="images/pauli_55.jpeg" alt="Pauli Murray" class="img-responsive"
+            style="max-width:100%; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15);">
       </div>
     </div>
 
@@ -204,27 +227,40 @@
 <!-- =========================
      BOARD OF DIRECTORS – INTRO (fixed)
      ========================= -->
-<div class="page-section" style="background:#303236; padding:60px 0;">
+<div id="board" class="page-section" style="background:#303236; padding:60px 0;">
   <div class="container">
-    <div class="row" style="display:flex; align-items:center;">
-      <!-- LEFT: IMAGE (same sizing approach as above sections) -->
-      <div class="col-md-5" style="text-align:left;">
-        <img src="images/friends-holding-flag-in-sun.jpeg"
-             alt="Friends holding flag in the sun"
-             class="img-responsive"
-             style="max-width:100%; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15);">
+    <div class="row" style="display:flex; align-items:stretch;">
+
+      <!-- LEFT: IMAGE (will match right text height & crop on the right) -->
+      <div class="col-md-5" style="display:flex; align-items:stretch;">
+        <img
+          id="board-photo"
+          src="images/friends-holding-flag-in-sun.jpeg"
+          alt="Friends holding flag in the sun"
+          style="
+            width:100%;
+            height:auto;                 /* will be overridden by JS */
+            object-fit:cover;            /* crop instead of squish */
+            object-position:left center; /* crop from the right side */
+            border-radius:6px;
+            box-shadow:0 4px 16px rgba(0,0,0,.15);
+            display:block;
+          ">
       </div>
 
-      <!-- RIGHT: TEXT -->
-      <div class="col-md-7">
+      <!-- RIGHT: TEXT (header + subheader + paragraphs) -->
+      <div class="col-md-7" id="board-text">
+
+        <!-- HEADER + LINE + SUBHEADER -->
         <div class="title-fs-45" style="font-size:45px; line-height:1.1; color:#ffffff; margin:0 0 20px;">
           BOARD OF <span class="bold" style="font-weight:800;">DIRECTORS</span>
         </div>
-        <div class="line-3-100" style="width:100px; height:3px; background:#7cb203; margin-bottom:14px;"></div>
+        <div class="line-3-100" style="width:100px; height:3px; background:#7cb203; margin:16px 0 22px;"></div>
         <div class="section-subtitle" style="color:#e9eef5; font-size:22px; line-height:32px; margin:0 0 16px;">
           Leading with Vision and Commitment
         </div>
 
+        <!-- PARAGRAPHS -->
         <p style="font-size:18px; line-height:1.8; color:#e9eef5; margin:0 0 14px;">
           The Pauli Murray Awards Foundation is governed by a national Board of Directors committed to the vision, values, and stewardship of this work. Each member brings lived experience and professional expertise in service of our mission.
         </p>
@@ -234,238 +270,264 @@
         <p style="margin:0; font-size:18px; line-height:1.8; color:#ffffff;">
           <strong>Officers:</strong> Cory L. Scott — Chair • Nyron Rouse, LL.M, MPA — Vice Chair • Karyden Roberts — Secretary • Darnell Riley, M.Ed, Ed.S — Interim Treasurer
         </p>
+
       </div>
+
     </div>
   </div>
 </div>
+
+<!-- JS: sync photo height to text height (runs on load + resize) -->
+<script>
+(function(){
+  function syncPhotoHeight(){
+    var text = document.getElementById('board-text');
+    var img  = document.getElementById('board-photo');
+    if(!text || !img) return;
+
+    var h = text.offsetHeight;
+    if (h < 240) h = 240;
+    img.style.height = h + 'px';
+  }
+
+  window.addEventListener('load', syncPhotoHeight);
+  var _t;
+  window.addEventListener('resize', function(){
+    clearTimeout(_t);
+    _t = setTimeout(syncPhotoHeight, 150);
+  });
+})();
+</script>
 
 <!-- CENTERED DIVIDER LINE -->
 <div style="background-color: #303236; text-align: center;">
   <div style="height: 2px; width: 80%; background-color: #7cb203; margin: 0 auto;"></div>
 </div>
 
-      <!-- ===== BOARD ===== -->
-      <div class="page-section" style="background:#303236; padding:60px 0;">
-        <div class="container">
-          <div class="row"><div class="col-md-12">
-            <div class="title-fs-45 wow fadeInUp" style="font-size:45px; line-height:1.1; color:#ffffff; margin:0 0 20px;">MEET THE <span class="bold" style="font-weight:800;">BOARD</span></div>
-          </div></div>
+<!-- ===== BOARD ===== -->
+<div class="page-section" style="background:#303236; padding:60px 0;">
+  <div class="container">
+    <div class="row"><div class="col-md-12">
+      <div class="title-fs-45 wow fadeInUp" style="font-size:45px; line-height:1.1; color:#ffffff; margin:0 0 20px;">MEET THE <span class="bold" style="font-weight:800;">BOARD</span></div>
+    </div></div>
 
-          <div class="profile-wrap" style="max-width:100%; margin:0;">
+    <div class="profile-wrap" style="max-width:100%; margin:0;">
 
-<!-- Cory — PHOTO LEFT, ACCENT RIGHT -->
-<div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
-  <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
-    <img class="profile-photo" src="images/icon-cory.png" alt="Cory L. Scott" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Cory L. Scott</h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Chair & Founding Executive Director</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Author, activist, former pastor, and founder of PMAF. Cory brings over 15 years of experience in nonprofit leadership, spiritual care, and advocacy for Black queer communities. He leads the Foundation’s vision with strategic clarity and grounded purpose.</p>
-      <a class="read-more" href="board/cory-scott.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-<!-- Nyron — PHOTO RIGHT, ACCENT LEFT -->
-<div class="profile-row photo-right" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
-  <div class="profile-accent left" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; left:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row-reverse;">
-    <img class="profile-photo" src="images/icon-nyron.png" alt="Nyron Rouse" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Nyron Rouse</h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Vice Chair</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">A strategic funding expert and nonprofit leader with a deep commitment to equity, access, and systems-level change. Nyron currently serves as Director of Government Grants and Strategic Funding at Global Electronics Association. A U.S. Army veteran and Operation Iraqi Freedom medic, he uplifts underrepresented voices across Black and LGBTQ+ communities.</p>
-      <a class="read-more" href="board/nyron-rouse.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-<!-- Darnell — PHOTO LEFT, ACCENT RIGHT -->
-<div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
-  <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
-    <img class="profile-photo" src="images/icon-darnell.png" alt="Darnell Riley" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Darnell Riley</h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Interim Treasurer</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Educator, union advocate, and curriculum developer. A high school social studies teacher in Washington, DC, and a doctoral candidate in Teaching and Learning, Darnell is engaged in equity-focused curriculum work with the Center for Black Education Development.</p>
-      <a class="read-more" href="board/darnell-riley.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-<!-- Karyden — PHOTO RIGHT, ACCENT LEFT -->
-<div class="profile-row photo-right" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
-  <div class="profile-accent left" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; left:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row-reverse;">
-    <img class="profile-photo" src="images/icon-karyden.png" alt="Karyden Roberts" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Karyden Roberts</h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Secretary</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Multidisciplinary performance artist, organizer, and cultural worker bridging Oakland and New Orleans. Karyden’s work explores identity, consent, privacy, and sovereignty through art and organizing.</p>
-      <a class="read-more" href="board/karyden-roberts.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-<!-- Faith — PHOTO LEFT, ACCENT RIGHT -->
-<div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
-  <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
-    <img class="profile-photo" src="images/icon-faith.png" alt="Faith Rogers" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Faith Rogers, Esq.</h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Leader in operations, strategy, and culture-building with over a decade of experience strengthening internal systems for mission-driven organizations. Faith holds a B.B.A. and J.D. from Howard University.</p>
-      <a class="read-more" href="board/faith-rogers.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-<!-- Christopher — PHOTO RIGHT, ACCENT LEFT -->
-<div class="profile-row photo-right" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
-  <div class="profile-accent left" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; left:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row-reverse;">
-    <img class="profile-photo" src="images/icon-chris.png" alt="Dr. Christopher N. Smith" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Dr. Christopher N. Smith</h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Strategist, statistician, and educator with expertise in policy, education, and equity-centered leadership. A U.S. Air Force veteran and published academic whose Ph.D. from Howard University focuses on intragroup discrimination among African Americans.</p>
-      <a class="read-more" href="board/christopher-smith.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-<!-- Jon — PHOTO LEFT, ACCENT RIGHT -->
-<div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
-  <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
-    <img class="profile-photo" src="images/icon-jon.png" alt="Jon Pierre" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Jon Pierre</h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Award-winning creative director, music industry professional, and entrepreneur. Founder of Indavisual Media and Pier Entertainment, Jon has shaped brands and ventures in entertainment and media.</p>
-      <a class="read-more" href="board/jon-pierre.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-<!-- David — PHOTO RIGHT, ACCENT LEFT -->
-<div class="profile-row photo-right" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
-  <div class="profile-accent left" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; left:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row-reverse;">
-    <img class="profile-photo" src="images/icon-david.png" alt="David Brandyn" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">David Brandyn</h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Public figure, content strategist, and advocate for LGBTQ+ physical, sexual, and mental health. David brings creative brilliance and cultural insight to the Board, with a commitment to visibility and joy as forms of resistance.</p>
-      <a class="read-more" href="board/david-brandyn.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-<!-- Aaron — PHOTO LEFT, ACCENT RIGHT -->
-<div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
-  <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
-    <img class="profile-photo" src="images/icon-aaron.png" alt="Aaron Marcellus" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Aaron Marcellus <span class="profile-pron" style="font-weight:600; color:#8a96a6; margin-left:6px;">(He/Him)</span></h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0 0 8px; color:#24354e;">Musician, producer, and creative director whose artistry and leadership inspire through sound and soul; builds platforms for collective joy and transformation.</p>
-      <a class="read-more" href="board/aaron-marcellus.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-</div><!-- /.profile-wrap -->
+      <!-- Cory — PHOTO LEFT, ACCENT RIGHT -->
+      <div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
+        <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
+          <img class="profile-photo" src="images/icon-cory.png" alt="Cory L. Scott" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Cory L. Scott</h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Chair & Founding Executive Director</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Author, activist, former pastor, and founder of PMAF. Cory brings over 15 years of experience in nonprofit leadership, spiritual care, and advocacy for Black queer communities. He leads the Foundation’s vision with strategic clarity and grounded purpose.</p>
+            <a class="read-more" href="cory-scott.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
         </div>
       </div>
 
-      <!-- ===== ADVISORS (page-section, bg #ffffff) ===== -->
-      <div class="page-section" style="background:#ffffff; padding:60px 0;">
-        <div class="container">
-          <div class="row"><div class="col-md-12">
-            <div class="title-fs-45 wow fadeInUp" style="font-size:45px; line-height:1.1; color:#303236; margin:0 0 20px;">ADVISORS TO THE <span class="bold" style="font-weight:800;">BOARD</span></div>
-            <div class="line-3-100" style="width:100px; height:3px; background:#7cb203; margin-bottom:26px;"></div>
-            <p style="font-size:18px; line-height:1.8; max-width:980px;">
-              Our Advisors bring depth, wisdom, and creative perspective to PMAF. They come from diverse backgrounds across the arts, academia, health, and culture; they serve as thought partners and advocates who enrich the Foundation’s strategy and impact. (Advisors are non-voting.)
-            </p>
-            <br>
-          </div></div>
-
-          <div class="profile-wrap" style="max-width:100%; margin:0;">
-
-<!-- Joseph — PHOTO LEFT, ACCENT RIGHT -->
-<div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#f5f5f5; color:#24354e; overflow:hidden;">
-  <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
-    <img class="profile-photo" src="images/icon-joseph.png" alt="Joseph Harrington" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Joseph Harrington</h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Advisor</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Arts leader and advocate for community-centered cultural programming. Joseph has shaped innovative artistic spaces that highlight Black queer creativity and foster intergenerational dialogue.</p>
-      <a class="read-more" href="advisors/joseph-harrington.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-<!-- Jonathan — PHOTO RIGHT, ACCENT LEFT -->
-<div class="profile-row photo-right" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#f5f5f5; color:#24354e; overflow:hidden;">
-  <div class="profile-accent left" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; left:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row-reverse;">
-    <img class="profile-photo" src="images/icon-jonathan.png" alt="Jonathan McCrorry" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Jonathan McCrorry</h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Advisor</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Director, producer, and arts executive with a career dedicated to advancing socially conscious theatre and storytelling that uplifts marginalized voices.</p>
-      <a class="read-more" href="advisors/jonathan-mccrorry.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-<!-- Zimi — PHOTO LEFT, ACCENT RIGHT -->
-<div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#f5f5f5; color:#24354e; overflow:hidden;">
-  <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
-    <img class="profile-photo" src="images/icon-zimi.png" alt="Zimi Umeh" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Zimi Umeh</h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Advisor</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Producer and strategist working at the intersections of media, culture, and technology, with a focus on amplifying Black queer stories on a national stage.</p>
-      <a class="read-more" href="advisors/zimi-umeh.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-<!-- Asia — PHOTO RIGHT, ACCENT LEFT -->
-<div class="profile-row photo-right" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#f5f5f5; color:#24354e; overflow:hidden;">
-  <div class="profile-accent left" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; left:0; z-index:1;"></div>
-  <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row-reverse;">
-    <img class="profile-photo" src="images/icon-asia.png" alt="Asia" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
-    <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
-      <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Asia</h3>
-      <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Advisor</div>
-      <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Advisor bringing deep expertise in grassroots organizing and community empowerment, with a focus on supporting Black LGBTQ+ leadership and sustainable social impact.</p>
-      <a class="read-more" href="advisors/asia.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
-    </div>
-  </div>
-</div>
-
-</div>
+      <!-- Nyron — PHOTO RIGHT, ACCENT LEFT -->
+      <div class="profile-row photo-right" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
+        <div class="profile-accent left" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; left:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row-reverse;">
+          <img class="profile-photo" src="images/icon-nyron.png" alt="Nyron Rouse" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Nyron Rouse</h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Vice Chair</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">A strategic funding expert and nonprofit leader with a deep commitment to equity, access, and systems-level change. Nyron currently serves as Director of Government Grants and Strategic Funding at Global Electronics Association. A U.S. Army veteran and Operation Iraqi Freedom medic, he uplifts underrepresented voices across Black and LGBTQ+ communities.</p>
+            <a class="read-more" href="nyron-rouse.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
         </div>
       </div>
+
+      <!-- Darnell — PHOTO LEFT, ACCENT RIGHT -->
+      <div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
+        <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
+          <img class="profile-photo" src="images/icon-darnell.png" alt="Darnell Riley" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Darnell Riley</h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Interim Treasurer</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Educator, union advocate, and curriculum developer. A high school social studies teacher in Washington, DC, and a doctoral candidate in Teaching and Learning, Darnell is engaged in equity-focused curriculum work with the Center for Black Education Development.</p>
+            <a class="read-more" href="darnell-riley.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Karyden — PHOTO RIGHT, ACCENT LEFT -->
+      <div class="profile-row photo-right" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
+        <div class="profile-accent left" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; left:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row-reverse;">
+          <img class="profile-photo" src="images/icon-karyden.png" alt="Karyden Roberts" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Karyden Roberts</h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Secretary</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Multidisciplinary performance artist, organizer, and cultural worker bridging Oakland and New Orleans. Karyden’s work explores identity, consent, privacy, and sovereignty through art and organizing.</p>
+            <a class="read-more" href="karyden-roberts.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Faith — PHOTO LEFT, ACCENT RIGHT -->
+      <div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
+        <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
+          <img class="profile-photo" src="images/icon-faith.png" alt="Faith Rogers" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Faith Rogers, Esq.</h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Leader in operations, strategy, and culture-building with over a decade of experience strengthening internal systems for mission-driven organizations. Faith holds a B.B.A. and J.D. from Howard University.</p>
+            <a class="read-more" href="faith-rogers.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Christopher — PHOTO RIGHT, ACCENT LEFT -->
+      <div class="profile-row photo-right" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
+        <div class="profile-accent left" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; left:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row-reverse;">
+          <img class="profile-photo" src="images/icon-chris.png" alt="Dr. Christopher N. Smith" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Dr. Christopher N. Smith</h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Strategist, statistician, and educator with expertise in policy, education, and equity-centered leadership. A U.S. Air Force veteran and published academic whose Ph.D. from Howard University focuses on intragroup discrimination among African Americans.</p>
+            <a class="read-more" href="christopher-smith.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jon — PHOTO LEFT, ACCENT RIGHT -->
+      <div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
+        <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
+          <img class="profile-photo" src="images/icon-jon.png" alt="Jon Pierre" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Jon Pierre</h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Award-winning creative director, music industry professional, and entrepreneur. Founder of Indavisual Media and Pier Entertainment, Jon has shaped brands and ventures in entertainment and media.</p>
+            <a class="read-more" href="jon-pierre.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- David — PHOTO RIGHT, ACCENT LEFT -->
+      <div class="profile-row photo-right" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
+        <div class="profile-accent left" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; left:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row-reverse;">
+          <img class="profile-photo" src="images/icon-david.png" alt="David Brandyn" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">David Brandyn</h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Public figure, content strategist, and advocate for LGBTQ+ physical, sexual, and mental health. David brings creative brilliance and cultural insight to the Board, with a commitment to visibility and joy as forms of resistance.</p>
+            <a class="read-more" href="david-brandyn.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aaron — PHOTO LEFT, ACCENT RIGHT -->
+      <div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#ededed; color:#24354e; overflow:hidden;">
+        <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
+          <img class="profile-photo" src="images/icon-aaron.png" alt="Aaron Marcellus" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Aaron Marcellus <span class="profile-pron" style="font-weight:600; color:#8a96a6; margin-left:6px;">(He/Him)</span></h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Director</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0 0 8px; color:#24354e;">Musician, producer, and creative director whose artistry and leadership inspire through sound and soul; builds platforms for collective joy and transformation.</p>
+            <a class="read-more" href="aaron-marcellus.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.profile-wrap -->
+  </div>
+</div>
+
+<!-- ===== ADVISORS (page-section, bg #ffffff) ===== -->
+<div id="advisors" class="page-section" style="background:#dddddd; padding:60px 0;">
+  <div class="container">
+    <div class="row"><div class="col-md-12">
+      <div class="title-fs-45 wow fadeInUp" style="font-size:45px; line-height:1.1; color:#303236; margin:0 0 20px;">
+        ADVISORS TO THE <span class="bold" style="font-weight:800;">BOARD</span>
+      </div>
+      <div class="line-3-100" style="width:100px; height:3px; background:#7cb203; margin-bottom:26px;"></div>
+      <p style="font-size:18px; line-height:1.8; max-width:980px; color:#303236;">
+        Our Advisors bring depth, wisdom, and creative perspective to PMAF. They come from diverse backgrounds across the arts, academia, health, and culture; they serve as thought partners and advocates who enrich the Foundation’s strategy and impact. (Advisors are non-voting.)
+      </p>
+      <br>
+    </div></div>
+
+    <div class="profile-wrap" style="max-width:100%; margin:0;">
+
+      <!-- Joseph — PHOTO LEFT, ACCENT RIGHT -->
+      <div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#f5f5f5; color:#24354e; overflow:hidden;">
+        <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
+          <img class="profile-photo" src="images/icon-joseph.png" alt="Joseph Harrington" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Joseph Harrington</h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Advisor</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Arts leader and advocate for community-centered cultural programming. Joseph has shaped innovative artistic spaces that highlight Black queer creativity and foster intergenerational dialogue.</p>
+            <a class="read-more" href="advisors/joseph-harrington.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jonathan — PHOTO RIGHT, ACCENT LEFT -->
+      <div class="profile-row photo-right" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#f5f5f5; color:#24354e; overflow:hidden;">
+        <div class="profile-accent left" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; left:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row-reverse;">
+          <img class="profile-photo" src="images/icon-jonathan.png" alt="Jonathan McCrorry" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Jonathan McCrorry</h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Advisor</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Director, producer, and arts executive with a career dedicated to advancing socially conscious theatre and storytelling that uplifts marginalized voices.</p>
+            <a class="read-more" href="advisors/jonathan-mccrorry.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zimi — PHOTO LEFT, ACCENT RIGHT -->
+      <div class="profile-row photo-left" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#f5f5f5; color:#24354e; overflow:hidden;">
+        <div class="profile-accent right" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; right:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row;">
+          <img class="profile-photo" src="images/icon-zimi.png" alt="Zimi Umeh" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Zimi Umeh</h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Advisor</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Producer and strategist working at the intersections of media, culture, and technology, with a focus on amplifying Black queer stories on a national stage.</p>
+            <a class="read-more" href="advisors/zimi-umeh.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asia — PHOTO RIGHT, ACCENT LEFT -->
+      <div class="profile-row photo-right" style="position:relative; border-radius:12px; padding:18px 22px; margin:0 auto 26px; background:#f5f5f5; color:#24354e; overflow:hidden;">
+        <div class="profile-accent left" style="position:absolute; top:0; bottom:0; width:20px; background:#7cb203; left:0; z-index:1;"></div>
+        <div class="profile-inner" style="position:relative; z-index:2; display:flex; align-items:center; gap:22px; flex-direction:row-reverse;">
+          <img class="profile-photo" src="images/icon-asia.png" alt="Asia" style="width:170px; height:170px; object-fit:cover; border-radius:50%; border:6px solid #7cb203;">
+          <div class="profile-copy" style="flex:1 1 auto; padding:0 30px;">
+            <h3 class="profile-name" style="font-size:26px; line-height:1.25; margin:0 0 6px; color:#24354e; font-weight:800;">Asia</h3>
+            <div class="profile-meta" style="text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:#8a96a6; margin-bottom:8px;">Advisor</div>
+            <p class="profile-text" style="font-size:17px; line-height:1.7; margin:0;">Advisor bringing deep expertise in grassroots organizing and community empowerment, with a focus on supporting Black LGBTQ+ leadership and sustainable social impact.</p>
+            <a class="read-more" href="advisors/asia.html" style="font-weight:700; text-decoration:underline; color:#24354e;">Read More</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- ===== LEADERSHIP OPPORTUNITIES TITLE BLOCK ===== -->
-<div class="page-section" id="leadership" style="background:#111111; padding:60px 0;">
+<div id="leadership" class="page-section" style="background:#111111; padding:60px 0;">
   <div class="container" style="padding-left:15px; padding-right:15px;">
     <div class="row" style="margin-left:0; margin-right:0; display:flex; align-items:center;">
 
       <!-- LEFT: IMAGE -->
       <div class="col-md-6" style="padding-left:15px; padding-right:15px; text-align:center;">
         <img src="images/pm-letter-appeal.jpg" alt="Leadership Opportunities" 
-             style="width:100%; height:auto; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.2);">
+              style="width:100%; height:auto; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.2);">
       </div>
 
       <!-- RIGHT: TITLE + TEXT -->
@@ -483,161 +545,154 @@
           impact of this movement.
         </p>
       </div>
-
-<!-- CENTERED DIVIDER LINE -->
-<div style="background-color:#111111; text-align:center; padding:40px 0;">
-  <div style="height:2px; width:80%; background-color:#7cb203; margin:0 auto;"></div>
-</div>
-
-<!-- JOIN THE BOARD OF DIRECTORS -->
-<div class="row" style="display:flex; align-items:center; margin-left:-15px; margin-right:-15px; margin-top:40px;">
-  <!-- LEFT: TEXT -->
-  <div class="col-md-6" style="padding-left:15px; padding-right:15px;">
-    <div class="fes2-main-text-cont" style="padding:0; margin:0;">
-     <div class="title-fs-45" style="color:#ffffff; margin:0 0 20px; font-size:22px; line-height:28px;">
-  JOIN PMAF's <span class="bold">BOARD OF DIRECTORS</span>
-</div>
-      <div class="line-3-100" style="width:100px; height:3px; background:#7cb203; margin-bottom:26px;"></div>
-
-      <p style="font-size:18px; line-height:28px; color:#ffffff; margin:0 0 16px;">
-        We’re building a bold, visionary board of individuals committed to the liberation, celebration, and advancement of Black LGBTQ+ communities. If that resonates with you, we invite you to explore what it means to serve on our Board of Directors.
-      </p>
-
-      <h4 style="margin-top:30px; margin-bottom:10px; color:#ffffff; font-weight:bold;">What We’re Looking For:</h4>
-      <ul style="color:#ffffff; font-size:18px; line-height:28px; margin:0; padding-left:18px;">
-        <li>A demonstrated commitment to racial, gender, and queer justice</li>
-        <li>Professional and/or lived experience relevant to our mission</li>
-        <li>A collaborative spirit and deep integrity</li>
-        <li>Capacity to engage meaningfully and consistently in board service</li>
-      </ul>
-
-      <h4 style="margin-top:20px; margin-bottom:10px; color:#ffffff; font-weight:bold;">Board Members Are Expected To:</h4>
-      <ul style="color:#ffffff; font-size:18px; line-height:28px; margin:0; padding-left:18px;">
-        <li>Attend quarterly board meetings (virtually or in person)</li>
-        <li>Participate on at least one committee</li>
-        <li>Contribute to the Foundation’s fundraising and development efforts</li>
-        <li>Serve as public ambassadors for the organization</li>
-        <li>Uphold fiduciary, legal, and strategic oversight</li>
-      </ul>
-
-      <h4 style="margin-top:20px; margin-bottom:10px; color:#ffffff; font-weight:bold;">Support &amp; Orientation:</h4>
-      <ul style="color:#ffffff; font-size:18px; line-height:28px; margin:0; padding-left:18px;">
-        <li>A comprehensive orientation and onboarding experience</li>
-        <li>Access to our Board Engagement Guide (linked below)</li>
-        <li>Ongoing mentorship and support</li>
-        <li>An annual board retreat (virtual or hybrid)</li>
-      </ul>
-      <br>
-
-      <a href="docs/board-engagement-guide.pdf" class="button medium green"
-         style="background-color:#7cb203; color:#ffffff; text-decoration:none; padding:12px 25px; font-size:14px; font-weight:600; border-radius:3px; display:inline-block;">
-        DOWNLOAD BOARD ENGAGEMENT GUIDE
-      </a>
     </div>
-  </div>
 
-  <!-- RIGHT: IMAGE -->
-  <div class="col-md-6" style="padding-left:15px; padding-right:15px; text-align:right; display:flex; align-items:center; justify-content:flex-end;">
-    <a href="docs/board-engagement-guide.pdf" target="_blank" style="display:inline-block;">
-      <img src="images/board-engagement-thumbnail.png" alt="Board Engagement Guide Thumbnail"
-           style="height:447px; width:auto; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15);">
-    </a>
-  </div>
-</div>
-<br>
-<br>
+    <!-- CENTERED DIVIDER LINE -->
+    <div style="background-color:#111111; text-align:center; padding:40px 0;">
+      <div style="height:2px; width:100%; background-color:#7cb203; margin:0 auto;"></div>
+    </div>
 
-<!-- CENTERED DIVIDER LINE -->
-<div style="background-color:#111111; text-align:center; padding:40px 0;">
-  <div style="height:2px; width:80%; background-color:#7cb203; margin:0 auto;"></div>
-</div>
+    <!-- JOIN THE BOARD OF DIRECTORS (2-COLUMN TEXT, NO THUMBNAIL) -->
+    <div class="row" style="display:flex; align-items:flex-start; margin-left:-15px; margin-right:-15px; margin-top:40px;">
+      <!-- LEFT COL -->
+      <div class="col-md-6" style="padding-left:15px; padding-right:15px;">
+        <div class="fes2-main-text-cont" style="padding:0; margin:0;">
+          <div class="title-fs-45" style="color:#ffffff; margin:0 0 20px; font-size:22px; line-height:28px;">
+            JOIN PMAF's <span class="bold">BOARD OF DIRECTORS</span>
+          </div>
+          <div class="line-3-100" style="width:100px; height:3px; background:#7cb203; margin-bottom:26px;"></div>
 
-<!-- JOIN AN ADVISORY COMMITTEE -->
-<div class="row" style="display:flex; align-items:center; margin-left:-15px; margin-right:-15px; margin-top:40px;">
-  <!-- LEFT: TEXT -->
-  <div class="col-md-6" style="padding-left:15px; padding-right:15px;">
-    <div class="fes2-main-text-cont" style="padding:0; margin:0;">
-      <div class="title-fs-45" style="color:#ffffff; margin:0 0 20px; font-size:22px; line-height:28px;">
-  JOIN AN <span class="bold">ADVISORY COMMITTEE</span>
-</div>
-      <div class="line-3-100" style="width:100px; height:3px; background:#7cb203; margin-bottom:26px;"></div>
+          <p style="font-size:18px; line-height:28px; color:#ffffff; margin:0 0 16px;">
+            We’re building a bold, visionary board of individuals committed to the liberation, celebration, and advancement of Black LGBTQ+ communities. If that resonates with you, we invite you to explore what it means to serve on our Board of Directors.
+          </p>
 
-      <div class="fes2-text-cont" style="font-size:18px; line-height:28px; color:#ffffff; font-weight:bold; margin:0 0 10px;">
-        Make an Impact Without Governance Duties
+          <h4 style="margin-top:30px; margin-bottom:10px; color:#ffffff; font-weight:bold;">What We’re Looking For:</h4>
+          <ul style="color:#ffffff; font-size:18px; line-height:28px; margin:0; padding-left:18px;">
+            <li>A demonstrated commitment to racial, gender, and queer justice</li>
+            <li>Professional and/or lived experience relevant to our mission</li>
+            <li>A collaborative spirit and deep integrity</li>
+            <li>Capacity to engage meaningfully and consistently in board service</li>
+          </ul>
+        </div>
       </div>
 
-      <p style="font-size:18px; line-height:28px; color:#ffffff; margin-top:10px;">
-        Our advisory committees offer opportunities to contribute skills, strategy, and creativity without the legal responsibilities of a board seat. These groups are project-based and deeply collaborative, focused on areas like communications, public engagement, fundraising, and honoree experience.
-      </p>
+      <!-- RIGHT COLUMN -->
+      <div class="col-md-6" style="padding-left:15px; padding-right:15px;">
+        <div class="fes2-main-text-cont" style="padding:0; margin:0;">
+          <h4 style="margin-top:0; margin-bottom:10px; color:#ffffff; font-weight:bold;">Board Members Are Expected To:</h4>
+          <ul style="color:#ffffff; font-size:18px; line-height:28px; margin:0 0 16px; padding-left:18px;">
+            <li>Attend quarterly board meetings (virtually or in person)</li>
+            <li>Participate on at least one committee</li>
+            <li>Contribute to the Foundation’s fundraising and development efforts</li>
+            <li>Serve as public ambassadors for the organization</li>
+            <li>Uphold fiduciary, legal, and strategic oversight</li>
+          </ul>
 
-      <h4 style="margin-top:20px; color:#ffffff; font-weight:bold;">You might be a good fit if you:</h4>
-      <ul style="color:#ffffff; font-size:18px; line-height:28px; margin:0; padding-left:18px;">
-        <li>Bring experience in event planning, media, storytelling, or social impact</li>
-        <li>Want to support from your city, campus, or digital community</li>
-        <li>Are energized by uplifting Black LGBTQ+ brilliance</li>
-      </ul>
+          <h4 style="margin-top:20px; margin-bottom:10px; color:#ffffff; font-weight:bold;">Support &amp; Orientation:</h4>
+          <ul style="color:#ffffff; font-size:18px; line-height:28px; margin:0; padding-left:18px;">
+            <li>A comprehensive orientation and onboarding experience</li>
+            <li>Access to our Board Engagement Guide (linked below)</li>
+            <li>Ongoing mentorship and support</li>
+            <li>An annual board retreat (virtual or hybrid)</li>
+          </ul>
 
-      <h4 style="margin-top:20px; color:#ffffff; font-weight:bold;">Committee Focus Areas:</h4>
-      <ul style="color:#ffffff; font-size:18px; line-height:28px; margin:0; padding-left:18px;">
-        <li><b>Honoree Selection Committee</b> – Leads the evaluation and interview process for PMA nominees</li>
-        <li><b>Fundraising &amp; Development Committee</b> – Supports donor outreach, events, and strategic partnerships</li>
-        <li><b>Programs &amp; Cohort Committee</b> – Advises on honoree programming and year-round engagement</li>
-        <li><b>Communications &amp; Visibility Committee</b> – Helps shape media, storytelling, and public engagement</li>
-        <li><b>Legacy &amp; Archives Committee</b> – Supports preservation and celebration of Black LGBTQ+ histories</li>
-      </ul>
-      <br>
-
-      <a href="docs/advisory-committee-overview.pdf" class="button medium green"
-         style="background-color:#7cb203; color:#ffffff; text-decoration:none; padding:12px 25px; font-size:14px; font-weight:600; border-radius:3px; display:inline-block;">
-        DOWNLOAD ADVISORY COMMITTEE OVERVIEW
-      </a>
-    </div>
-  </div>
-
-  <!-- RIGHT: IMAGE -->
-  <div class="col-md-6" style="padding-left:15px; padding-right:15px; text-align:right; display:flex; align-items:center; justify-content:flex-end;">
-    <a href="docs/advisory-committee-overview.pdf" target="_blank" style="display:inline-block;">
-      <img src="images/advisory-committee-overview-thumbnail.png" alt="Advisory Committee Overview Thumbnail"
-           style="height:447px; width:auto; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15);">
-    </a>
-  </div>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- PMAF FOOTER -->
-<footer id="footer4" class="page-section pt-80 pb-50 footer2-black">
-  <div class="container">
-    <div class="row">
-
-      <!-- Column 1: Logo + Contact Info -->
-      <div class="col-md-3 col-sm-3 widget">
-        <div class="logo-footer-cont">
-          <a href="index.html">
-            <img class="logo-footer" src="images/logo-footer-white.png" alt="logo">
+          <br>
+          <a href="docs/board-engagement-guide.pdf" class="button medium green"
+              style="background-color:#7cb203; color:#ffffff; text-decoration:none; padding:12px 25px; font-size:14px; font-weight:600; border-radius:3px; display:inline-block;">
+            DOWNLOAD BOARD ENGAGEMENT GUIDE
           </a>
         </div>
+      </div>
+    </div>
+
+    <br><br>
+
+    <!-- CENTERED DIVIDER LINE -->
+    <div style="background-color:#111111; text-align:center; padding:40px 0;">
+      <div style="height:2px; width:80%; background-color:#7cb203; margin:0 auto;"></div>
+    </div>
+
+    <!-- JOIN AN ADVISORY COMMITTEE (2-COLUMN TEXT, NO THUMBNAIL) -->
+    <div class="row" style="display:flex; align-items:flex-start; margin-left:-15px; margin-right:-15px; margin-top:40px;">
+      <!-- LEFT COL -->
+      <div class="col-md-6" style="padding-left:15px; padding-right:15px;">
+        <div class="fes2-main-text-cont" style="padding:0; margin:0;">
+          <div class="title-fs-45" style="color:#ffffff; margin:0 0 20px; font-size:22px; line-height:28px;">
+            JOIN AN <span class="bold">ADVISORY COMMITTEE</span>
+          </div>
+          <div class="line-3-100" style="width:100px; height:3px; background:#7cb203; margin-bottom:26px;"></div>
+
+          <div class="fes2-text-cont" style="font-size:18px; line-height:28px; color:#ffffff; font-weight:bold; margin:0 0 10px;">
+            Make an Impact Without Governance Duties
+          </div>
+          <p style="font-size:18px; line-height:28px; color:#ffffff; margin:0 0 16px;">
+            Our advisory committees offer opportunities to contribute skills, strategy, and creativity without the legal responsibilities of a board seat. These groups are project-based and deeply collaborative, focused on areas like communications, public engagement, fundraising, and honoree experience.
+          </p>
+
+          <h4 style="margin-top:20px; color:#ffffff; font-weight:bold; margin-bottom:10px;">You might be a good fit if you:</h4>
+          <ul style="color:#ffffff; font-size:18px; line-height:28px; margin:0; padding-left:18px;">
+            <li>Bring experience in event planning, media, storytelling, or social impact</li>
+            <li>Want to support from your city, campus, or digital community</li>
+            <li>Are energized by uplifting Black LGBTQ+ brilliance</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="col-md-6" style="padding-left:15px; padding-right:15px;">
+        <div class="fes2-main-text-cont" style="padding:0; margin:0;">
+          <h4 style="margin-top:0; color:#ffffff; font-weight:bold; margin-bottom:10px;">Committee Focus Areas:</h4>
+          <ul style="color:#ffffff; font-size:18px; line-height:28px; margin:0 0 16px; padding-left:18px;">
+            <li><b>Honoree Selection Committee</b> – Leads the evaluation and interview process for PMA nominees</li>
+            <li><b>Fundraising &amp; Development Committee</b> – Supports donor outreach, events, and strategic partnerships</li>
+            <li><b>Programs &amp; Cohort Committee</b> – Advises on honoree programming and year-round engagement</li>
+            <li><b>Communications &amp; Visibility Committee</b> – Helps shape media, storytelling, and public engagement</li>
+            <li><b>Legacy &amp; Archives Committee</b> – Supports preservation and celebration of Black LGBTQ+ histories</li>
+          </ul>
+
+          <br>
+          <a href="docs/advisory-committee-overview.pdf" class="button medium green"
+            style="background-color:#7cb203; color:#ffffff; text-decoration:none; padding:12px 25px; font-size:14px; font-weight:600; border-radius:3px; display:inline-block;">
+            DOWNLOAD ADVISORY COMMITTEE OVERVIEW
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:80px; background:#111111;"></div>
+  </div>
+</div>
+
+<!-- ================= PMAF FOOTER ================= -->
+<footer id="footer4"
+  class="page-section footer2-black"
+  style="width:100%; margin:0; left:auto; right:auto; padding:24px 0 26px;"
+  >
+  <div class="container-m-30" style="padding-left:20px; padding-right:30px;">
+    <div class="row" style="margin-left:0; margin-right:0;">
+
+      <!-- Column 1: Logo + Contact Info -->
+      <div class="col-md-3 col-sm-6 widget" style="margin-top:0; margin-bottom:0;">
+        <div class="logo-footer-cont" style="margin-bottom:12px;">
+          <a href="index.html"><img class="logo-footer" src="images/logo-footer-white.png" alt="logo"></a>
+        </div>
         <div class="footer-2-text-cont">
-          <address>
-            1178 Broadway, 3rd Floor #502<br>
-            New York, NY 10001
+          <address style="margin-bottom:8px;">
+           1178 Broadway, 3rd Floor #502<br>
+           New York, NY 10001          
           </address>
         </div>
-        <div class="footer-2-text-cont">646-736-2596<br></div>
-        <div class="footer-2-text-cont">
-          <a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a>
-        </div>
+        <div class="footer-2-text-cont" style="margin-bottom:8px;">646-736-2596</div>
+        <div class="footer-2-text-cont"><a class="a-text" href="mailto:info@paulimurrayawards.com">info@paulimurrayawards.com</a></div>
       </div>
 
       <!-- Column 2: Quick Links -->
-      <div class="col-md-3 col-sm-3 widget">
-        <h4>QUICK LINKS</h4>
+      <div class="col-md-3 col-sm-6 widget" style="margin-top:0; margin-bottom:0;">
+        <h4 style="margin-top:0;">QUICK LINKS</h4>
         <ul class="links-list bold a-text-cont">
           <li><a href="index.html">HOME</a></li>
           <li><a href="about-us.html">ABOUT PMAF</a></li>
-          <li><a href="about-pauli-murray.html">ABOUT PAULI MURRAY</a></li>
+          <li><a href="about-pauli.html">ABOUT PAULI</a></li>
           <li><a href="programs.html">PROGRAMS</a></li>
           <li><a href="blog.html">NEWS</a></li>
           <li><a href="donate.html">DONATE</a></li>
@@ -645,8 +700,8 @@
       </div>
 
       <!-- Column 3: PMAs 2026 -->
-      <div class="col-md-3 col-sm-3 widget">
-        <h4>PMAs 2026</h4>
+      <div class="col-md-3 col-sm-6 widget" style="margin-top:0; margin-bottom:0;">
+        <h4 style="margin-top:0;">PMAs 2026</h4>
         <ul class="links-list a-text-cont">
           <li><a href="awards.html">PMAs</a></li>
           <li><a href="awards/application-info.html">APPLICATION INFO</a></li>
@@ -657,44 +712,36 @@
       </div>
 
       <!-- Column 4: Recent Posts -->
-      <div class="col-md-3 col-sm-3 widget">
-        <h4>RECENT POSTS</h4>
+      <div class="col-md-3 col-sm-6 widget" style="margin-top:0; margin-bottom:0;">
+        <h4 style="margin-top:0;">RECENT POSTS</h4>
         <div id="post-list-footer">
-          <div class="post-prev-title">
-            <h3><a class="a-text" href="blog-single-sidebar-right.html">New trends in web design</a></h3>
-          </div>
+          <div class="post-prev-title"><h3><a class="a-text" href="#">New trends in web design</a></h3></div>
           <div class="post-prev-info">July 10</div>
-
-          <div class="post-prev-title">
-            <h3><a class="a-text" href="blog-single-sidebar-right.html">The sound of life</a></h3>
-          </div>
+          <div class="post-prev-title"><h3><a class="a-text" href="#">The sound of life</a></h3></div>
           <div class="post-prev-info">October 10</div>
-
-          <div class="post-prev-title">
-            <h3><a class="a-text" href="blog-single-sidebar-right.html">Time for minimalism</a></h3>
-          </div>
+          <div class="post-prev-title"><h3><a class="a-text" href="#">Time for minimalism</a></h3></div>
           <div class="post-prev-info">September 21</div>
         </div>
       </div>
 
     </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer-2-copy-cont clearfix">
-      <!-- Social Links -->
-      <div class="footer-2-soc-a right">
-        <a href="https://www.facebook.com/PauliMurrayAF/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.instagram.com/PauliMurrayAF/" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/paulimurrayawards" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
+    <!-- Footer Bottom (centered) -->
+    <div class="footer-2-copy-cont clearfix" style="margin-top:40px; border-top:1px solid rgba(255,255,255,0.1); padding-top:0px;">
+    </div>
+    <div style="text-align:center; margin-top:24px;">
+      <div style="margin-bottom:12px;">
+        <a href="https://www.facebook.com/PauliMurrayAF/" target="_blank" style="font-size:1.5em; color:#fff; margin:0 10px; text-decoration:none;"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/PauliMurrayAF/" target="_blank" style="font-size:1.5em; color:#fff; margin:0 10px; text-decoration:none;"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/paulimurrayawards" target="_blank" style="font-size:1.5em; color:#fff; margin:0 10px; text-decoration:none;"><i class="fa fa-linkedin"></i></a>
       </div>
-
-      <!-- Copyright -->
-      <div class="left">
-        <a class="footer-2-copy" href="https://paulimurrayawaards.com" target="_blank">
+      <div>
+        <a class="footer-2-copy" href="https://paulimurrayawards.com" target="_blank" style="color:#fff; text-decoration:none;">
           &copy; PAULI MURRAY AWARDS FOUNDATION INC. 2025
         </a>
       </div>
     </div>
+
   </div>
 </footer>
 
@@ -776,17 +823,5 @@
   </script>
 
   <script src="js/load-posts.js"></script>
-
-  <!-- Small helpers -->
-  <style>
-    /* Align the title to match site spacing and drop it by 20px */
-    .page-title-slim .container { padding-left: 15px; padding-right: 15px; }
-
-    /* Ensure section headers look consistent */
-    .title-fs-45 .bold { font-weight: 800; }
-
-    /* Read-more hover in dark section context (only affects link color on hover) */
-    .page-section[style*="#111111"] .read-more:hover { color:#7cb203 !important; }
-  </style>
 </body>
 </html>

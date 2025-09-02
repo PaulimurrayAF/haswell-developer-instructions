@@ -11452,3 +11452,6 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
   .pmaf-green .ts-icon-middle { padding: 26px 0; }
   .pmaf-green .ts-icon-ring { width: 72px; height: 72px; }
 }
+#footer4 .container-m-60 {
+  margin-bottom: 0 !important;
+}
