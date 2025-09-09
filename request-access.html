@@ -173,8 +173,21 @@
               </div>
             </div>
             <!-- /MAIN MENU -->
+             
+					<!-- SEARCH READ DOCUMENTATION -->
+					<ul class="cd-header-buttons">
+						<li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
+					</ul> <!-- cd-header-buttons -->
+					<div id="cd-search" class="cd-search">
+						<form class="form-search" id="searchForm" action="page-search-results.html" method="get">
+							<input type="text" value="" name="q" id="q" placeholder="Search...">
+						</form>
+					</div>
+					
+				  </div>
           </div>
         </header>
+
     <!-- =================== /HEADER =================== -->
 
     <!-- ===================== REQUEST ACCESS PAGE ===================== -->
@@ -262,6 +275,52 @@
       </div>
     </main>
     <!-- ===================== /REQUEST ACCESS PAGE ===================== -->
+<!-- NEWSLETTER -->
+<div class="page-section nl-cont">
+  <div class="container">
+    <div class="relative">
+      <div id="mc_embed_signup" class="nl-form-container clearfix">
+        <form
+          action="https://paulimurrayawards.us8.list-manage.com/subscribe/post-json?u=e1ed0cd8f0b1d39e4dc502fa9&amp;id=810c6e1fd1&amp;f_id=004ec6e1f0&amp;c=?"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+          class="newsletterform validate"
+          target="_blank"
+          novalidate
+        >
+          <label for="mce-EMAIL" class="sr-only">Email Address</label>
+          <input
+            type="email"
+            value=""
+            name="EMAIL"
+            class="email nl-email-input"
+            id="mce-EMAIL"
+            placeholder="Join our mailing list"
+            aria-label="Email address"
+            required
+          >
+
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+          <div style="position:absolute; left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_e1ed0cd8f0b1d39e4dc502fa9_810c6e1fd1" tabindex="-1" value="">
+          </div>
+
+          <input
+            type="submit"
+            value="SUBSCRIBE"
+            name="subscribe"
+            id="mc-embedded-subscribe"
+            class="button medium pmaf-green-btn"
+          >
+        </form>
+
+        <!-- Where success/error messages will render -->
+        <div id="notification_container"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- =================== FOOTER =================== -->
     <footer id="footer4" class="page-section pt-80 pb-50 footer2-black">

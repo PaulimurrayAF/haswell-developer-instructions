@@ -171,9 +171,21 @@
               </div>
             </div>
             <!-- /MAIN MENU CONTAINER -->
+
+					<!-- /SEARCH READ DOCUMENTATION -->
+					<ul class="cd-header-buttons">
+						<li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
+					</ul> <!-- cd-header-buttons -->
+					<div id="cd-search" class="cd-search">
+						<form class="form-search" id="searchForm" action="page-search-results.html" method="get">
+							<input type="text" value="" name="q" id="q" placeholder="Search...">
+						</form>
+					</div>
+					
+				  </div>
           </div>
         </header>
-
+        
 <!-- REVO SLIDER FULLSCREEN 1 -->
         <div class="relative">
           <div class="rs-fullscr-container">
@@ -645,7 +657,6 @@
             </div>
 
 
-<!-- LEARN MORE ABOUT THE BOARD with Inward-Pointing Animated Arrows -->
 <div style="background-color: #111111; padding: 40px 0; text-align: center;">
   <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
 
@@ -964,7 +975,7 @@
 
         
 <!-- STAY IN THE LOOP (NEWSLETTER) -->
-<div id="newsletter" class="page-section pmaf-newsletter" style="background-color:#111111; padding-bottom:0;">
+<div id="newsletter" class="page-section pmaf-newsletter" style="background-color:#303236; padding-bottom:0;">
   <div class="container">
     <div class="row" style="align-items:center;">
 
@@ -976,71 +987,54 @@
              data-wow-duration="0.8s" data-wow-offset="60">
       </div>
 
-      <!-- RIGHT COPY + FORM (animate all together) -->
+      <!-- RIGHT COPY + FORM -->
       <div class="col-md-6 text-center wow fadeInRight" data-wow-duration="0.8s" data-wow-offset="60">
-<div class="title-fs-45" style="color:#ffffff; margin-top:0; margin-bottom:30px;">
-              <span class="bold">STAY IN THE LOOP</span>
-            </div>
-            <!-- Text -->
-    <a href="board.html" style="
-      font-size: 22px;
-      font-weight: 700;
-      color: #7cb203;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-decoration: none;
-    ">
-      JOIN OUR MAILING LIST
-    </a>
-     <br><br>
-        <p class="nl-copy" style="color:#fff;">
+        <div class="title-fs-45" style="color:#ffffff; margin-top:0; margin-bottom:10px;">
+          <span class="bold">STAY IN THE LOOP</span>
+        </div>
+        <div class="pmaf-newsletter-subtitle">Join Our Mailing List</div>
+
+        <p class="nl-copy" style="color:#fff; margin-top:12px;">
           Be the first to know when the Pauli Murray Awards go live. Sign up below to
           stay updated on nominations, events, and launch announcements.
         </p>
 
-        <!-- Mailchimp Form -->
-        <form action="https://paulimurrayawards.us8.list-manage.com/subscribe/post?u=e1ed0cd8f0b1d39e4dc502fa9&amp;id=810c6e1fd1&amp;f_id=004ec6e1f0"
-              method="post" target="_blank" class="newsletter-form" novalidate
-              style="max-width:420px; margin:0 auto;">
+        <!-- Mailchimp Form (JSONP) -->
+        <form
+          action="https://paulimurrayawards.us8.list-manage.com/subscribe/post-json?u=e1ed0cd8f0b1d39e4dc502fa9&amp;id=810c6e1fd1&amp;f_id=004fc6e1f0&amp;c=?"
+          method="post"
+          target="_blank"
+          class="newsletter-form validate"
+          novalidate
+          style="max-width:520px; margin:18px auto 0;"
+        >
+          <label for="mce-EMAIL" class="sr-only">Email Address</label>
+          <input type="email" name="EMAIL" id="mce-EMAIL" class="nl-input" placeholder="Email Address *" required aria-required="true">
 
-          <div class="form-group">
-            <input type="email" name="EMAIL" id="mce-EMAIL" required
-                   placeholder="Email Address *" aria-label="Email Address"
-                   style="border:2px solid #7cb203;">
-          </div>
+          <label for="mce-FNAME" class="sr-only">First Name</label>
+          <input type="text" name="FNAME" id="mce-FNAME" class="nl-input" placeholder="First Name *" required aria-required="true">
 
-          <div class="form-group">
-            <input type="text" name="FNAME" id="mce-FNAME" required
-                   placeholder="First Name *" aria-label="First Name"
-                   style="border:2px solid #7cb203;">
-          </div>
+          <label for="mce-LNAME" class="sr-only">Last Name</label>
+          <input type="text" name="LNAME" id="mce-LNAME" class="nl-input" placeholder="Last Name *" required aria-required="true">
 
-          <div class="form-group">
-            <input type="text" name="LNAME" id="mce-LNAME" required
-                   placeholder="Last Name *" aria-label="Last Name"
-                   style="border:2px solid #7cb203;">
-          </div>
-
-          <div class="form-group">
-            <input type="tel" name="PHONE" id="mce-PHONE"
-                   placeholder="Phone Number" aria-label="Phone Number"
-                   style="border:2px solid #7cb203;">
-          </div>
-
-          <button type="submit" class="btn-nl">Subscribe</button>
+          <label for="mce-PHONE" class="sr-only">Phone Number</label>
+          <input type="tel" name="PHONE" id="mce-PHONE" class="nl-input" placeholder="Phone Number">
 
           <!-- Honeypot -->
           <div style="position:absolute; left:-5000px;" aria-hidden="true">
             <input type="text" name="b_e1ed0cd8f0b1d39e4dc502fa9_810c6e1fd1" tabindex="-1" value="">
           </div>
 
-          <!-- Optional status area -->
-          <div id="notification_container" role="status" aria-live="polite"></div>
+          <button type="submit" id="mc-embedded-subscribe" class="button medium pmaf-green-btn" style="width:100%;">Subscribe</button>
+
+          <!-- Inline status messages -->
+          <div id="notification_container" role="status" aria-live="polite" style="margin-top:10px;"></div>
         </form>
       </div>
     </div>
   </div>
 </div>
+
 
 
 <!-- ================= PMAF FOOTER ================= -->

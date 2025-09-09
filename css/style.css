@@ -11455,3 +11455,29 @@ ul#flickr-feeds li a, ul#flickr-sfeeds li a img {
 #footer4 .container-m-60 {
   margin-bottom: 0 !important;
 }
+/* FAQ toggle styling with contrast */
+dl.toggle dt a {
+  display: block;
+  background: #e0e0e0;   /* darker grey for question */
+  color: #000 !important;
+  padding: 15px 20px;
+  font-weight: 600;
+  border: 1px solid #d0d0d0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+dl.toggle dt a:hover {
+  background: #7cb203;   /* PMAF green */
+  color: #fff !important;
+}
+
+dl.toggle dd {
+  background: #f7f7f7;   /* lighter grey for answer */
+  color: #000 !important;
+  padding: 15px 20px;
+  border: 1px solid #e0e0e0;
+  border-top: none;       /* avoid double border between Q & A */
+  margin-bottom: 15px;    /* spacing between FAQs */
+
+  
+}
